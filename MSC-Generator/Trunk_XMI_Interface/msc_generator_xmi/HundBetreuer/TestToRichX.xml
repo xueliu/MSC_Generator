@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.eclipse.org/uml2/1.0.0/UML" xmi:id="_6ctLwpKyEdyEEovRy1YO4g" name="Data" appliedProfile="_6ctLxpKyEdyEEovRy1YO4g _6ctLyZKyEdyEEovRy1YO4g _6ctLzJKyEdyEEovRy1YO4g _6ctLz5KyEdyEEovRy1YO4g">
+  <ownedComment xmi:id="_6ctLw5KyEdyEEovRy1YO4g" body="Author:Administrator.&#xA;Created:14.11.07 13:13.&#xA;Title:.&#xA;Comment:.&#xA;" annotatedElement="_6ctLwpKyEdyEEovRy1YO4g"/>
+  <packageImport xmi:id="_6ctLxJKyEdyEEovRy1YO4g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML2_LIBRARIES/UML2PrimitiveTypes.library.uml2#_EfRZoK86EdieaYgxtVWN8Q"/>
+  </packageImport>
+  <packageImport xmi:id="_6ctLxZKyEdyEEovRy1YO4g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML2_LIBRARIES/JavaPrimitiveTypes.library.uml2#_RjmyoK86EdieaYgxtVWN8Q"/>
+  </packageImport>
+  <packageImport xmi:type="uml:ProfileApplication" xmi:id="_6ctLxpKyEdyEEovRy1YO4g">
+    <eAnnotations xmi:id="_6ctLx5KyEdyEEovRy1YO4g" source="attributes">
+      <details xmi:id="_6ctLyJKyEdyEEovRy1YO4g" key="version" value="0"/>
+    </eAnnotations>
+    <importedPackage xmi:type="uml:Profile" href="UML_Standard_Profile.MagicDraw_Profile.DSL_Customization.profile.uml2#_6czT7pKyEdyEEovRy1YO4g"/>
+    <importedProfile href="UML_Standard_Profile.MagicDraw_Profile.DSL_Customization.profile.uml2#_6czT7pKyEdyEEovRy1YO4g"/>
+  </packageImport>
+  <packageImport xmi:type="uml:ProfileApplication" xmi:id="_6ctLyZKyEdyEEovRy1YO4g">
+    <eAnnotations xmi:id="_6ctLypKyEdyEEovRy1YO4g" source="attributes">
+      <details xmi:id="_6ctLy5KyEdyEEovRy1YO4g" key="version" value="0"/>
+    </eAnnotations>
+    <importedPackage xmi:type="uml:Profile" href="UML_Standard_Profile.Validation_Profile.profile.uml2#_6ctPkZKyEdyEEovRy1YO4g"/>
+    <importedProfile href="UML_Standard_Profile.Validation_Profile.profile.uml2#_6ctPkZKyEdyEEovRy1YO4g"/>
+  </packageImport>
+  <packageImport xmi:type="uml:ProfileApplication" xmi:id="_6ctLzJKyEdyEEovRy1YO4g">
+    <eAnnotations xmi:id="_6ctLzZKyEdyEEovRy1YO4g" source="attributes">
+      <details xmi:id="_6ctLzpKyEdyEEovRy1YO4g" key="version" value="0"/>
+    </eAnnotations>
+    <importedPackage xmi:type="uml:Profile" href="UML_Standard_Profile.UML_Standard_Profile.profile.uml2#_6ctL3ZKyEdyEEovRy1YO4g"/>
+    <importedProfile href="UML_Standard_Profile.UML_Standard_Profile.profile.uml2#_6ctL3ZKyEdyEEovRy1YO4g"/>
+  </packageImport>
+  <packageImport xmi:type="uml:ProfileApplication" xmi:id="_6ctLz5KyEdyEEovRy1YO4g">
+    <eAnnotations xmi:id="_6ctL0JKyEdyEEovRy1YO4g" source="attributes">
+      <details xmi:id="_6ctL0ZKyEdyEEovRy1YO4g" key="version" value="0"/>
+    </eAnnotations>
+    <importedPackage xmi:type="uml:Profile" href="UML_Standard_Profile.MagicDraw_Profile.profile.uml2#_6ctIwJKyEdyEEovRy1YO4g"/>
+    <importedProfile href="UML_Standard_Profile.MagicDraw_Profile.profile.uml2#_6ctIwJKyEdyEEovRy1YO4g"/>
+  </packageImport>
+  <ownedMember xmi:type="uml:Package" xmi:id="_6ctL0pKyEdyEEovRy1YO4g" name="TestToRPack">
+    <ownedMember xmi:type="uml:Class" xmi:id="_6ctL05KyEdyEEovRy1YO4g" name="Hund">
+      <ownedAttribute xmi:id="_6ctL1JKyEdyEEovRy1YO4g" visibility="private" type="_6ctL1pKyEdyEEovRy1YO4g" association="_6ctL2ZKyEdyEEovRy1YO4g"/>
+      <ownedAttribute xmi:id="_6ctL1ZKyEdyEEovRy1YO4g" name="rasse" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML2_LIBRARIES/UML2PrimitiveTypes.library.uml2#_IXlH8a86EdieaYgxtVWN8Q"/>
+      </ownedAttribute>
+    </ownedMember>
+    <ownedMember xmi:type="uml:Class" xmi:id="_6ctL1pKyEdyEEovRy1YO4g" name="Betreuer">
+      <ownedAttribute xmi:id="_6ctL15KyEdyEEovRy1YO4g" visibility="private" type="_6ctL05KyEdyEEovRy1YO4g" association="_6ctL2ZKyEdyEEovRy1YO4g"/>
+      <ownedAttribute xmi:id="_6ctL2JKyEdyEEovRy1YO4g" name="name" visibility="private" type="_6ctL2pKyEdyEEovRy1YO4g"/>
+    </ownedMember>
+    <ownedMember xmi:type="uml:Association" xmi:id="_6ctL2ZKyEdyEEovRy1YO4g" memberEnd="_6ctL1JKyEdyEEovRy1YO4g _6ctL15KyEdyEEovRy1YO4g"/>
+    <ownedMember xmi:type="uml:Class" xmi:id="_6ctL2pKyEdyEEovRy1YO4g" name="ST"/>
+  </ownedMember>
+  <ownedMember xmi:type="uml:Package" xmi:id="_6ctL25KyEdyEEovRy1YO4g" name="UML Standard Profile">
+    <ownedComment xmi:id="_6ctL3JKyEdyEEovRy1YO4g" body="UML Standard Profile contains several popular stereotypes, tag definitions and constraints described in UML 1.4 and UML 2.0 Specifications." annotatedElement="_6ctL25KyEdyEEovRy1YO4g"/>
+  </ownedMember>
+</uml:Model>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di2="http://www.papyrusuml.org" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML">
+  <di2:Diagram isVisible="true" fontFamily="Arial" lineStyle="solid" fontColor="255:255:255" foregroundColor="255:255:255" backgroundColor="255:255:255" borderColor="255:255:255" position="0:0" name="DefaultDiagram">
+    <owner xsi:type="di2:Uml1SemanticModelBridge">
+      <element xsi:type="uml:Model" href="PapyrusImportTest4.uml#_EVF0sMqOEdywHoHpq6V9iA"/>
+    </owner>
+  </di2:Diagram>
+  <di2:Diagram isVisible="true" fontFamily="Arial" lineStyle="solid" fontColor="255:255:255" foregroundColor="255:255:255" backgroundColor="255:255:255" borderColor="255:255:255" position="0:0" name="Sequence diagram of PapyrusImportTest4" type="SequenceDiagram">
+    <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="23:-83" size="1097:267">
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="18:40" size="100:143">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.0">
+          <element xsi:type="uml:Lifeline" href="PapyrusImportTest4.uml#_INZjAMqOEdywHoHpq6V9iA"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="546:40" size="100:154">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.1">
+          <element xsi:type="uml:Lifeline" href="PapyrusImportTest4.uml#_JQWNwMqOEdywHoHpq6V9iA"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="127:40" size="100:159">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.2">
+          <element xsi:type="uml:Lifeline" href="PapyrusImportTest4.uml#_KQPkgMqOEdywHoHpq6V9iA"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="648:40" size="100:159">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.3">
+          <element xsi:type="uml:Lifeline" href="PapyrusImportTest4.uml#_OHmQkMqOEdywHoHpq6V9iA"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="232:40" size="100:186">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.4">
+          <element xsi:type="uml:Lifeline" href="PapyrusImportTest4.uml#_Qkg-8MqOEdywHoHpq6V9iA"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="757:40" size="100:172">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.5">
+          <element xsi:type="uml:Lifeline" href="PapyrusImportTest4.uml#_RYwfUMqOEdywHoHpq6V9iA"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="337:40" size="104:182">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.6">
+          <element xsi:type="uml:Lifeline" href="PapyrusImportTest4.uml#_SilOIMqOEdywHoHpq6V9iA"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="860:40" size="100:185">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.7">
+          <element xsi:type="uml:Lifeline" href="PapyrusImportTest4.uml#_T-vqIMqOEdywHoHpq6V9iA"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="445:40" size="100:192">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.8">
+          <element xsi:type="uml:Lifeline" href="PapyrusImportTest4.uml#_cOf50MqOEdywHoHpq6V9iA"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="966:40" size="100:184">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.9">
+          <element xsi:type="uml:Lifeline" href="PapyrusImportTest4.uml#_c0UjsMqOEdywHoHpq6V9iA"/>
+        </semanticModel>
+      </contained>
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0">
+        <element xsi:type="uml:Interaction" href="PapyrusImportTest4.uml#_FthnQMqOEdywHoHpq6V9iA"/>
+      </semanticModel>
+    </contained>
+    <owner xsi:type="di2:Uml1SemanticModelBridge">
+      <element xsi:type="uml:Model" href="PapyrusImportTest4.uml#_EVF0sMqOEdywHoHpq6V9iA"/>
+    </owner>
+  </di2:Diagram>
+</xmi:XMI>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.eclipse.org/uml2/1.0.0/UML" xmi:id="_EFsgt5KsEdyEEovRy1YO4g" name="Data" appliedProfile="_EFsgu5KsEdyEEovRy1YO4g _EFsgvpKsEdyEEovRy1YO4g _EFsgwZKsEdyEEovRy1YO4g _EFsgxJKsEdyEEovRy1YO4g">
+  <ownedComment xmi:id="_EFsguJKsEdyEEovRy1YO4g" body="Author:Administrator.&#xA;Created:14.11.07 13:13.&#xA;Title:.&#xA;Comment:.&#xA;" annotatedElement="_EFsgt5KsEdyEEovRy1YO4g"/>
+  <packageImport xmi:id="_EFsguZKsEdyEEovRy1YO4g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML2_LIBRARIES/UML2PrimitiveTypes.library.uml2#_EfRZoK86EdieaYgxtVWN8Q"/>
+  </packageImport>
+  <packageImport xmi:id="_EFsgupKsEdyEEovRy1YO4g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML2_LIBRARIES/JavaPrimitiveTypes.library.uml2#_RjmyoK86EdieaYgxtVWN8Q"/>
+  </packageImport>
+  <packageImport xmi:type="uml:ProfileApplication" xmi:id="_EFsgu5KsEdyEEovRy1YO4g">
+    <eAnnotations xmi:id="_EFsgvJKsEdyEEovRy1YO4g" source="attributes">
+      <details xmi:id="_EFsgvZKsEdyEEovRy1YO4g" key="version" value="0"/>
+    </eAnnotations>
+    <importedPackage xmi:type="uml:Profile" href="UML_Standard_Profile.Validation_Profile.profile.uml2#_EFyno5KsEdyEEovRy1YO4g"/>
+    <importedProfile href="UML_Standard_Profile.Validation_Profile.profile.uml2#_EFyno5KsEdyEEovRy1YO4g"/>
+  </packageImport>
+  <packageImport xmi:type="uml:ProfileApplication" xmi:id="_EFsgvpKsEdyEEovRy1YO4g">
+    <eAnnotations xmi:id="_EFsgv5KsEdyEEovRy1YO4g" source="attributes">
+      <details xmi:id="_EFsgwJKsEdyEEovRy1YO4g" key="version" value="0"/>
+    </eAnnotations>
+    <importedPackage xmi:type="uml:Profile" href="UML_Standard_Profile.UML_Standard_Profile.profile.uml2#_EFsg0pKsEdyEEovRy1YO4g"/>
+    <importedProfile href="UML_Standard_Profile.UML_Standard_Profile.profile.uml2#_EFsg0pKsEdyEEovRy1YO4g"/>
+  </packageImport>
+  <packageImport xmi:type="uml:ProfileApplication" xmi:id="_EFsgwZKsEdyEEovRy1YO4g">
+    <eAnnotations xmi:id="_EFsgwpKsEdyEEovRy1YO4g" source="attributes">
+      <details xmi:id="_EFsgw5KsEdyEEovRy1YO4g" key="version" value="0"/>
+    </eAnnotations>
+    <importedPackage xmi:type="uml:Profile" href="UML_Standard_Profile.MagicDraw_Profile.DSL_Customization.profile.uml2#_EFmcQZKsEdyEEovRy1YO4g"/>
+    <importedProfile href="UML_Standard_Profile.MagicDraw_Profile.DSL_Customization.profile.uml2#_EFmcQZKsEdyEEovRy1YO4g"/>
+  </packageImport>
+  <packageImport xmi:type="uml:ProfileApplication" xmi:id="_EFsgxJKsEdyEEovRy1YO4g">
+    <eAnnotations xmi:id="_EFsgxZKsEdyEEovRy1YO4g" source="attributes">
+      <details xmi:id="_EFsgxpKsEdyEEovRy1YO4g" key="version" value="0"/>
+    </eAnnotations>
+    <importedPackage xmi:type="uml:Profile" href="UML_Standard_Profile.MagicDraw_Profile.profile.uml2#_EFgTMJKsEdyEEovRy1YO4g"/>
+    <importedProfile href="UML_Standard_Profile.MagicDraw_Profile.profile.uml2#_EFgTMJKsEdyEEovRy1YO4g"/>
+  </packageImport>
+  <ownedMember xmi:type="uml:Package" xmi:id="_EFsgx5KsEdyEEovRy1YO4g" name="UML Standard Profile">
+    <ownedComment xmi:id="_EFsgyJKsEdyEEovRy1YO4g" body="UML Standard Profile contains several popular stereotypes, tag definitions and constraints described in UML 1.4 and UML 2.0 Specifications." annotatedElement="_EFsgx5KsEdyEEovRy1YO4g"/>
+  </ownedMember>
+  <ownedMember xmi:type="uml:Package" xmi:id="_EFsgyZKsEdyEEovRy1YO4g" name="TestToRPack">
+    <ownedMember xmi:type="uml:Class" xmi:id="_EFsgypKsEdyEEovRy1YO4g" name="Hund">
+      <ownedAttribute xmi:id="_EFsgy5KsEdyEEovRy1YO4g" visibility="private" type="_EFsgzZKsEdyEEovRy1YO4g" association="_EFsg0JKsEdyEEovRy1YO4g"/>
+      <ownedAttribute xmi:id="_EFsgzJKsEdyEEovRy1YO4g" name="rasse" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML2_LIBRARIES/UML2PrimitiveTypes.library.uml2#_IXlH8a86EdieaYgxtVWN8Q"/>
+      </ownedAttribute>
+    </ownedMember>
+    <ownedMember xmi:type="uml:Class" xmi:id="_EFsgzZKsEdyEEovRy1YO4g" name="Betreuer">
+      <ownedAttribute xmi:id="_EFsgzpKsEdyEEovRy1YO4g" visibility="private" type="_EFsgypKsEdyEEovRy1YO4g" association="_EFsg0JKsEdyEEovRy1YO4g"/>
+      <ownedAttribute xmi:id="_EFsgz5KsEdyEEovRy1YO4g" name="name" visibility="private" type="_EFsg0ZKsEdyEEovRy1YO4g"/>
+    </ownedMember>
+    <ownedMember xmi:type="uml:Association" xmi:id="_EFsg0JKsEdyEEovRy1YO4g" memberEnd="_EFsgy5KsEdyEEovRy1YO4g _EFsgzpKsEdyEEovRy1YO4g"/>
+    <ownedMember xmi:type="uml:Class" xmi:id="_EFsg0ZKsEdyEEovRy1YO4g" name="ST"/>
+  </ownedMember>
+</uml:Model>

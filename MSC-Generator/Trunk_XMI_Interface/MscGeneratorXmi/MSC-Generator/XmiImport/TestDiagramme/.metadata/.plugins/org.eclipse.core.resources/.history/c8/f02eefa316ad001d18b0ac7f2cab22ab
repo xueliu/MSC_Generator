@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di2="http://www.papyrusuml.org" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML">
+  <di2:Diagram isVisible="true" fontFamily="Arial" lineStyle="solid" fontColor="255:255:255" foregroundColor="255:255:255" backgroundColor="255:255:255" borderColor="255:255:255" position="0:0" name="DefaultDiagram">
+    <owner xsi:type="di2:Uml1SemanticModelBridge">
+      <element xsi:type="uml:Model" href="ImportTest3.uml#_EYOyInqHEd2LS6cj6_9KIg"/>
+    </owner>
+  </di2:Diagram>
+  <di2:Diagram isVisible="true" fontFamily="Arial" lineStyle="solid" fontColor="255:255:255" foregroundColor="255:255:255" backgroundColor="255:255:255" borderColor="255:255:255" position="0:0" name="Sequence diagram of ImportTest3" type="SequenceDiagram">
+    <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="15:15" size="630:396">
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="389:40" size="100:274">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.0">
+          <element xsi:type="uml:Lifeline" href="ImportTest3.uml#_kn5XcHqHEd2LS6cj6_9KIg"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="25:40" size="100:275">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.1">
+          <element xsi:type="uml:Lifeline" href="ImportTest3.uml#_k5v8cHqHEd2LS6cj6_9KIg"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="146:40" size="100:267">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.2">
+          <element xsi:type="uml:Lifeline" href="ImportTest3.uml#_lL_jAHqHEd2LS6cj6_9KIg"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="508:40" size="100:264">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.3">
+          <element xsi:type="uml:Lifeline" href="ImportTest3.uml#_ljxw4HqHEd2LS6cj6_9KIg"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="264:40" size="100:280">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.4">
+          <element xsi:type="uml:Lifeline" href="ImportTest3.uml#_m1JSIHqHEd2LS6cj6_9KIg"/>
+        </semanticModel>
+      </contained>
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0">
+        <element xsi:type="uml:Interaction" href="ImportTest3.uml#_jTFgoHqHEd2LS6cj6_9KIg"/>
+      </semanticModel>
+    </contained>
+    <owner xsi:type="di2:Uml1SemanticModelBridge">
+      <element xsi:type="uml:Model" href="ImportTest3.uml#_EYOyInqHEd2LS6cj6_9KIg"/>
+    </owner>
+  </di2:Diagram>
+</xmi:XMI>

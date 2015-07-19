@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>ref</title>
+  <link href="GeneratorBlue.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table class=command>
+      <tr>
+        <th colspan=2 align=left class=headline>
+          REF - Diagram Element
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width=* colspan=2>
+            Use the command <font class='command'>ref</font> to display a ref combined fragment.
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Syntax
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='command'>ref</font>: <font class='instance'>firstinstanceid</font>, <font class='instance'>lastinstanceid</font>, <font class='textpara'>text</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Parameters 
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='instance'>firstinstanceid</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The ID of the first lifeline that should be covered by the ref combined fragment.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='instance'>lastinstanceid</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The ID of the last lifeline that should be covered by the ref combined fragment.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='textpara'>text</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The text that should appear as the name and parameters of the ref combined fragment. 
+          If your text contains punctuation, you must put the complete text in quotes ("").  
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Example
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Combined Fragments</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>600</font>,<font class='property'>auto</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>p1</font>, <font class='textpara'>"Process 1"</font><br>
+                <font class='command'>process</font>: <font class='instance'>p2</font>, <font class='textpara'>"Process 2"</font><br>
+                <font class='command'>process</font>: <font class='instance'>p3</font>, <font class='textpara'>"Process 3"</font><br>
+                <br>
+                <font class='command'>ref</font>: <font class='instance'>p1</font>,<font class='instance'>p2</font>, <font class='textpara'>"Reference 2"</font>;<br>
+                <font class='command'>ref</font>: <font class='instance'>p2</font>,<font class='instance'>p3</font>, <font class='textpara'>"Reference 3"</font>;
+              </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Referenz_1.gif'>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> See also
+        </td>
+      </tr>
+      <tr>
+        <td class=seealso colspan=2>
+          <a href='fragmentbegin.html'><font class='command'>fragmentbegin</font></a>
+          <a href='fragmentseparator.html'><font class='command'>fragmentseparator</font></a>
+          <a href='fragmenttext.html'><font class='command'>fragmenttext</font></a>
+          <a href='fragmentend.html'><font class='command'>fragmentend</font></a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

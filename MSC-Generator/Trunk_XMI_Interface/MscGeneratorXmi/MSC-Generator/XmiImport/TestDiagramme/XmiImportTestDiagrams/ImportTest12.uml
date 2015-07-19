@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_rZFO4KzxEd2Bi9vGIjZOvA" name="ImportTest12">
+  <packageImport xmi:id="_rZFO4azxEd2Bi9vGIjZOvA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_sw2TEKzxEd2Bi9vGIjZOvA" name="Diagram12">
+    <lifeline xmi:id="_vE4LMKzxEd2Bi9vGIjZOvA" name="LifelineA" coveredBy="_YZ4kgazyEd2Bi9vGIjZOvA _b6CRgazyEd2Bi9vGIjZOvA _hssMoKzyEd2Bi9vGIjZOvA _zByQMazyEd2Bi9vGIjZOvA _uS77cKzyEd2Bi9vGIjZOvA _5iMCIKzyEd2Bi9vGIjZOvA _-Mo_EKzyEd2Bi9vGIjZOvA _uS77cazyEd2Bi9vGIjZOvA"/>
+    <lifeline xmi:id="_wkY2IKzxEd2Bi9vGIjZOvA" name="LifelineB" coveredBy="_eL3xQazyEd2Bi9vGIjZOvA _eL3xQKzyEd2Bi9vGIjZOvA _apDKwKzyEd2Bi9vGIjZOvA _jWgqIKzyEd2Bi9vGIjZOvA _n82jIKzyEd2Bi9vGIjZOvA"/>
+    <lifeline xmi:id="_-xNhMKzxEd2Bi9vGIjZOvA" name="LifelineC" coveredBy="_C1764azyEd2Bi9vGIjZOvA _HhV6EKzyEd2Bi9vGIjZOvA _LYyswazyEd2Bi9vGIjZOvA _MjlE4KzyEd2Bi9vGIjZOvA _R2DEEazyEd2Bi9vGIjZOvA _C1764qzyEd2Bi9vGIjZOvA _c0rU0KzyEd2Bi9vGIjZOvA _5iMCIazyEd2Bi9vGIjZOvA _0O8m4KzyEd2Bi9vGIjZOvA _0O8m4azyEd2Bi9vGIjZOvA _9jX_oKzyEd2Bi9vGIjZOvA"/>
+    <lifeline xmi:id="__4KiMKzxEd2Bi9vGIjZOvA" name="LifelineD" coveredBy="_KVv7YKzyEd2Bi9vGIjZOvA _ELOS0KzyEd2Bi9vGIjZOvA _LYyswKzyEd2Bi9vGIjZOvA _MjlE4azyEd2Bi9vGIjZOvA _YZ4kgKzyEd2Bi9vGIjZOvA _R2DEEKzyEd2Bi9vGIjZOvA _ELOS0azyEd2Bi9vGIjZOvA _apDKwazyEd2Bi9vGIjZOvA _b6CRgKzyEd2Bi9vGIjZOvA _c0rU0azyEd2Bi9vGIjZOvA _ous20KzyEd2Bi9vGIjZOvA _kuX08KzyEd2Bi9vGIjZOvA _kuX08azyEd2Bi9vGIjZOvA _zByQMKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_C1764azyEd2Bi9vGIjZOvA" name="StartEO_1" covered="_-xNhMKzxEd2Bi9vGIjZOvA" event="_C110QKzyEd2Bi9vGIjZOvA" execution="_C17646zyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_C1764qzyEd2Bi9vGIjZOvA" name="FinishEO_1" covered="_-xNhMKzxEd2Bi9vGIjZOvA" event="_C1764KzyEd2Bi9vGIjZOvA" execution="_C17646zyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_C17646zyEd2Bi9vGIjZOvA" name="ExecSpec_1" start="_C1764azyEd2Bi9vGIjZOvA" finish="_C1764qzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_ELOS0KzyEd2Bi9vGIjZOvA" name="StartEO_2" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_ELIMMKzyEd2Bi9vGIjZOvA" execution="_ELOS0qzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_ELOS0azyEd2Bi9vGIjZOvA" name="FinishEO_2" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_ELIMMazyEd2Bi9vGIjZOvA" execution="_ELOS0qzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_ELOS0qzyEd2Bi9vGIjZOvA" name="ExecSpec_2" start="_ELOS0KzyEd2Bi9vGIjZOvA" finish="_ELOS0azyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_HhV6EKzyEd2Bi9vGIjZOvA" name="Send1" covered="_-xNhMKzxEd2Bi9vGIjZOvA" event="_HhV6EqzyEd2Bi9vGIjZOvA" message="_HhcAsKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_KVv7YKzyEd2Bi9vGIjZOvA" name="Receive_1" covered="__4KiMKzxEd2Bi9vGIjZOvA" message="_HhcAsKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LYyswKzyEd2Bi9vGIjZOvA" name="Send2" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_LYyswqzyEd2Bi9vGIjZOvA" message="_LY4zYazyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LYyswazyEd2Bi9vGIjZOvA" name="Receive_2" covered="_-xNhMKzxEd2Bi9vGIjZOvA" event="_LY4zYKzyEd2Bi9vGIjZOvA" message="_LY4zYazyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MjlE4KzyEd2Bi9vGIjZOvA" name="Send3" covered="_-xNhMKzxEd2Bi9vGIjZOvA" event="_MjlE4qzyEd2Bi9vGIjZOvA" message="_MjrLgazyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MjlE4azyEd2Bi9vGIjZOvA" name="Receive_3" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_MjrLgKzyEd2Bi9vGIjZOvA" message="_MjrLgazyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_R2DEEKzyEd2Bi9vGIjZOvA" name="Send5" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_R2DEEqzyEd2Bi9vGIjZOvA" message="_R2JKsazyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_R2DEEazyEd2Bi9vGIjZOvA" name="Receive_5" covered="_-xNhMKzxEd2Bi9vGIjZOvA" event="_R2JKsKzyEd2Bi9vGIjZOvA" message="_R2JKsazyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_YZ4kgKzyEd2Bi9vGIjZOvA" name="Send4" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_YZ4kgqzyEd2Bi9vGIjZOvA" message="_YaExwKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_YZ4kgazyEd2Bi9vGIjZOvA" name="Receive_4" covered="_vE4LMKzxEd2Bi9vGIjZOvA" event="_YZ-rIKzyEd2Bi9vGIjZOvA" message="_YaExwKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_apDKwKzyEd2Bi9vGIjZOvA" name="Send6" covered="_wkY2IKzxEd2Bi9vGIjZOvA" event="_apDKwqzyEd2Bi9vGIjZOvA" message="_apPYAKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_apDKwazyEd2Bi9vGIjZOvA" name="Receive_6" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_apJRYKzyEd2Bi9vGIjZOvA" message="_apPYAKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b6CRgKzyEd2Bi9vGIjZOvA" name="Send7" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_b6IYIKzyEd2Bi9vGIjZOvA" message="_b6OewKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_b6CRgazyEd2Bi9vGIjZOvA" name="Receive_7" covered="_vE4LMKzxEd2Bi9vGIjZOvA" event="_b6IYIazyEd2Bi9vGIjZOvA" message="_b6OewKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_c0rU0KzyEd2Bi9vGIjZOvA" name="Send8" covered="_-xNhMKzxEd2Bi9vGIjZOvA" event="_c0rU0qzyEd2Bi9vGIjZOvA" message="_c03iEKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_c0rU0azyEd2Bi9vGIjZOvA" name="Receive_8" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_c0xbcKzyEd2Bi9vGIjZOvA" message="_c03iEKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_eL3xQKzyEd2Bi9vGIjZOvA" name="StartEO_3" covered="_wkY2IKzxEd2Bi9vGIjZOvA" event="_eLrkAKzyEd2Bi9vGIjZOvA" execution="_eL3xQqzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_eL3xQazyEd2Bi9vGIjZOvA" name="FinishEO_3" covered="_wkY2IKzxEd2Bi9vGIjZOvA" event="_eLxqoKzyEd2Bi9vGIjZOvA" execution="_eL3xQqzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_eL3xQqzyEd2Bi9vGIjZOvA" name="ExecSpec_3" start="_eL3xQKzyEd2Bi9vGIjZOvA" finish="_eL3xQazyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hssMoKzyEd2Bi9vGIjZOvA" name="Send9" covered="_vE4LMKzxEd2Bi9vGIjZOvA" event="_hssMoqzyEd2Bi9vGIjZOvA" message="_hs4Z4KzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jWgqIKzyEd2Bi9vGIjZOvA" name="Receive_9" covered="_wkY2IKzxEd2Bi9vGIjZOvA" message="_hs4Z4KzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_kuX08KzyEd2Bi9vGIjZOvA" name="StartEO_4" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_kuLnsKzyEd2Bi9vGIjZOvA" execution="_kuX08qzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_kuX08azyEd2Bi9vGIjZOvA" name="FinishEO_4" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_kuRuUKzyEd2Bi9vGIjZOvA" execution="_kuX08qzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_kuX08qzyEd2Bi9vGIjZOvA" name="ExecSpec_4" start="_kuX08KzyEd2Bi9vGIjZOvA" finish="_kuX08azyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_n82jIKzyEd2Bi9vGIjZOvA" name="Send10" covered="_wkY2IKzxEd2Bi9vGIjZOvA" event="_n82jIqzyEd2Bi9vGIjZOvA" message="_n9CwYKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ous20KzyEd2Bi9vGIjZOvA" name="Receive_10" covered="__4KiMKzxEd2Bi9vGIjZOvA" message="_n9CwYKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_uS77cKzyEd2Bi9vGIjZOvA" name="StartEO_5" covered="_vE4LMKzxEd2Bi9vGIjZOvA" event="_uSvuMKzyEd2Bi9vGIjZOvA" execution="_uS77cqzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_uS77cazyEd2Bi9vGIjZOvA" name="FinishEO_5" covered="_vE4LMKzxEd2Bi9vGIjZOvA" event="_uS100KzyEd2Bi9vGIjZOvA" execution="_uS77cqzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_uS77cqzyEd2Bi9vGIjZOvA" name="ExecSpec_5" start="_uS77cKzyEd2Bi9vGIjZOvA" finish="_uS77cazyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zByQMKzyEd2Bi9vGIjZOvA" name="Send11" covered="__4KiMKzxEd2Bi9vGIjZOvA" event="_zByQMqzyEd2Bi9vGIjZOvA" message="_zCEkEKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zByQMazyEd2Bi9vGIjZOvA" name="Receive_11" covered="_vE4LMKzxEd2Bi9vGIjZOvA" event="_zB-dcKzyEd2Bi9vGIjZOvA" message="_zCEkEKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_0O8m4KzyEd2Bi9vGIjZOvA" name="StartEO_6" covered="_-xNhMKzxEd2Bi9vGIjZOvA" event="_0OqTAKzyEd2Bi9vGIjZOvA" execution="_0O8m4qzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_0O8m4azyEd2Bi9vGIjZOvA" name="FinishEO_6" covered="_-xNhMKzxEd2Bi9vGIjZOvA" event="_0OwZoKzyEd2Bi9vGIjZOvA" execution="_0O8m4qzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_0O8m4qzyEd2Bi9vGIjZOvA" name="ExecSpec_6" start="_0O8m4KzyEd2Bi9vGIjZOvA" finish="_0O8m4azyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5iMCIKzyEd2Bi9vGIjZOvA" name="Send12" covered="_vE4LMKzxEd2Bi9vGIjZOvA" event="_5iMCIqzyEd2Bi9vGIjZOvA" message="_5ieWAKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5iMCIazyEd2Bi9vGIjZOvA" name="Receive_12" covered="_-xNhMKzxEd2Bi9vGIjZOvA" event="_5iSIwKzyEd2Bi9vGIjZOvA" message="_5ieWAKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9jX_oKzyEd2Bi9vGIjZOvA" name="Send13" covered="_-xNhMKzxEd2Bi9vGIjZOvA" message="_6lOzgKzyEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_-Mo_EKzyEd2Bi9vGIjZOvA" name="Receive_13" covered="_vE4LMKzxEd2Bi9vGIjZOvA" message="_6lOzgKzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_HhcAsKzyEd2Bi9vGIjZOvA" name="Message1" receiveEvent="_KVv7YKzyEd2Bi9vGIjZOvA" sendEvent="_HhV6EKzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_LY4zYazyEd2Bi9vGIjZOvA" name="Message2" messageSort="asynchCall" receiveEvent="_LYyswazyEd2Bi9vGIjZOvA" sendEvent="_LYyswKzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_MjrLgazyEd2Bi9vGIjZOvA" name="Message3" messageSort="asynchCall" receiveEvent="_MjlE4azyEd2Bi9vGIjZOvA" sendEvent="_MjlE4KzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_R2JKsazyEd2Bi9vGIjZOvA" name="ReplyForMessage1" messageSort="reply" receiveEvent="_R2DEEazyEd2Bi9vGIjZOvA" sendEvent="_R2DEEKzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_YaExwKzyEd2Bi9vGIjZOvA" name="Message4" messageSort="asynchCall" receiveEvent="_YZ4kgazyEd2Bi9vGIjZOvA" sendEvent="_YZ4kgKzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_apPYAKzyEd2Bi9vGIjZOvA" name="Message5" messageSort="asynchCall" receiveEvent="_apDKwazyEd2Bi9vGIjZOvA" sendEvent="_apDKwKzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_b6OewKzyEd2Bi9vGIjZOvA" name="Message6" messageSort="asynchCall" receiveEvent="_b6CRgazyEd2Bi9vGIjZOvA" sendEvent="_b6CRgKzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_c03iEKzyEd2Bi9vGIjZOvA" name="Message7" messageSort="asynchCall" receiveEvent="_c0rU0azyEd2Bi9vGIjZOvA" sendEvent="_c0rU0KzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_hs4Z4KzyEd2Bi9vGIjZOvA" name="Message8" messageSort="asynchCall" receiveEvent="_jWgqIKzyEd2Bi9vGIjZOvA" sendEvent="_hssMoKzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_n9CwYKzyEd2Bi9vGIjZOvA" name="Message9" messageSort="asynchCall" receiveEvent="_ous20KzyEd2Bi9vGIjZOvA" sendEvent="_n82jIKzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_zCEkEKzyEd2Bi9vGIjZOvA" name="Message10" messageSort="asynchCall" receiveEvent="_zByQMazyEd2Bi9vGIjZOvA" sendEvent="_zByQMKzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_5ieWAKzyEd2Bi9vGIjZOvA" name="Message11" receiveEvent="_5iMCIazyEd2Bi9vGIjZOvA" sendEvent="_5iMCIKzyEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_6lOzgKzyEd2Bi9vGIjZOvA" name="ReplyForMessage11" messageSort="reply" receiveEvent="_-Mo_EKzyEd2Bi9vGIjZOvA" sendEvent="_9jX_oKzyEd2Bi9vGIjZOvA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_C110QKzyEd2Bi9vGIjZOvA" name="StartExecEvt_1"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_C1764KzyEd2Bi9vGIjZOvA" name="FinishExecEvt_1"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_ELIMMKzyEd2Bi9vGIjZOvA" name="StartExecEvt_2"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_ELIMMazyEd2Bi9vGIjZOvA" name="FinishExecEvt_2"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_HhV6EqzyEd2Bi9vGIjZOvA" name="SendEvt1"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_LYyswqzyEd2Bi9vGIjZOvA" name="SendEvt2"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_LY4zYKzyEd2Bi9vGIjZOvA" name="RecvEvt1"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_MjlE4qzyEd2Bi9vGIjZOvA" name="SendEvt3"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_MjrLgKzyEd2Bi9vGIjZOvA" name="RecvEvt2"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_R2DEEqzyEd2Bi9vGIjZOvA" name="SendEvt5"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_R2JKsKzyEd2Bi9vGIjZOvA" name="RecvEvt4"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_YZ4kgqzyEd2Bi9vGIjZOvA" name="SendEvt4"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_YZ-rIKzyEd2Bi9vGIjZOvA" name="RecvEvt3"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_apDKwqzyEd2Bi9vGIjZOvA" name="SendEvt6"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_apJRYKzyEd2Bi9vGIjZOvA" name="RecvEvt5"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_b6IYIKzyEd2Bi9vGIjZOvA" name="SendEvt7"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_b6IYIazyEd2Bi9vGIjZOvA" name="RecvEvt6"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_c0rU0qzyEd2Bi9vGIjZOvA" name="SendEvt8"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_c0xbcKzyEd2Bi9vGIjZOvA" name="RecvEvt7"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_eLrkAKzyEd2Bi9vGIjZOvA" name="StartExecEvt_3"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_eLxqoKzyEd2Bi9vGIjZOvA" name="FinishExecEvt_3"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_hssMoqzyEd2Bi9vGIjZOvA" name="SendEvt9"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_kuLnsKzyEd2Bi9vGIjZOvA" name="StartExecEvt_4"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_kuRuUKzyEd2Bi9vGIjZOvA" name="FinishExecEvt_4"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_n82jIqzyEd2Bi9vGIjZOvA" name="SendEvt10"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_uSvuMKzyEd2Bi9vGIjZOvA" name="StartExecEvt_5"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_uS100KzyEd2Bi9vGIjZOvA" name="FinishExecEvt_5"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_zByQMqzyEd2Bi9vGIjZOvA" name="SendEvt11"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_zB-dcKzyEd2Bi9vGIjZOvA" name="RecvEvt8"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_0OqTAKzyEd2Bi9vGIjZOvA" name="StartExecEvt_6"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_0OwZoKzyEd2Bi9vGIjZOvA" name="FinishExecEvt_6"/>
+  <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_5iMCIqzyEd2Bi9vGIjZOvA" name="SendEvt12"/>
+  <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_5iSIwKzyEd2Bi9vGIjZOvA" name="RecvEvt9"/>
+  <profileApplication xmi:id="_rZFO4qzxEd2Bi9vGIjZOvA">
+    <eAnnotations xmi:id="_rZFO46zxEd2Bi9vGIjZOvA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+  </profileApplication>
+</uml:Model>

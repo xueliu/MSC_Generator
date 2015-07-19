@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmof="http:///schema.omg.org/spec/mof/2.0/cmof.xmi">
+  <cmof:Package xmi:id="_EMOF" name="EMOF">
+    <ownedType xsi:type="cmof:Association" xmi:id="G.1" memberEnd="G.2 G.3">
+      <ownedEnd xmi:id="G.3" type="_EMOF_Property" association="G.1"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Association" xmi:id="G.4" memberEnd="G.5 G.6"/>
+    <ownedType xsi:type="cmof:Association" xmi:id="G.10" memberEnd="G.11 G.12"/>
+    <ownedType xsi:type="cmof:Association" xmi:id="G.13" memberEnd="G.14 G.15"/>
+    <ownedType xsi:type="cmof:Association" xmi:id="G.19" memberEnd="G.20 G.21"/>
+    <ownedType xsi:type="cmof:Association" xmi:id="G.22" memberEnd="G.23 G.24"/>
+    <ownedType xsi:type="cmof:Association" xmi:id="G.28" memberEnd="G.29 G.30">
+      <ownedEnd xmi:id="G.30" lower="0" name="package" type="_EMOF_Package" association="G.28"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Class" name="Class" superClass="_EMOF_Type">
+      <ownedAttribute xmi:id="S.061.1405.32.3" name="isAbstract" type="Boolean" default="false"/>
+      <ownedAttribute xmi:id="G.5" isOrdered="true" lower="0" upper="*" name="ownedAttribute" type="_EMOF_Property" isComposite="true" opposite="G.6" association="G.4"/>
+      <ownedAttribute xmi:id="G.14" isOrdered="true" lower="0" upper="*" name="ownedOperation" type="_EMOF_Operation" isComposite="true" opposite="G.15" association="G.13"/>
+      <ownedAttribute xmi:id="G.17" isOrdered="true" lower="0" upper="*" name="superClass" type="_EMOF_Class"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_DataType" name="DataType" isAbstract="true" superClass="_EMOF_Type">
+      <ownedAttribute xmi:id="S.061.1405.32.5" name="serializable" type="Boolean"/>
+      <ownedAttribute xmi:id="S.061.1405.32.6" name="defaultValue" type="String"/>
+      <ownedAttribute xmi:id="S.061.1405.32.7" name="allowNull" type="Boolean"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Enumeration" name="Enumeration" superClass="_EMOF_DataType">
+      <ownedAttribute xmi:id="G.20" isOrdered="true" lower="0" upper="*" name="ownedLiteral" type="_EMOF_EnumerationLiteral" isComposite="true" opposite="G.21" association="G.19"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_EnumerationLiteral" name="EnumerationLiteral" superClass="_EMOF_NamedElement">
+      <ownedAttribute xmi:id="G.21" lower="0" name="enumeration" type="_EMOF_Enumeration" opposite="G.20" association="G.19"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_NamedElement" name="NamedElement" isAbstract="true" superClass="_EMOF_Object">
+      <ownedAttribute xmi:id="S.061.1405.32.11" name="name" type="String"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Operation" name="Operation" superClass="_EMOF_MultiplicityElement">
+      <ownedAttribute xmi:id="G.8" isOrdered="true" lower="0" upper="*" name="raisedException" type="_EMOF_Type"/>
+      <ownedAttribute xmi:id="G.11" isOrdered="true" lower="0" upper="*" name="ownedParameter" type="_EMOF_Parameter" isComposite="true" opposite="G.12" association="G.10"/>
+      <ownedAttribute xmi:id="G.15" lower="0" name="class" type="_EMOF_Class" opposite="G.14" association="G.13"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Package" name="Package" superClass="_EMOF_NamedElement">
+      <ownedAttribute xmi:id="S.061.1405.32.14" name="uri" type="String"/>
+      <ownedAttribute xmi:id="G.23" isOrdered="true" lower="0" upper="*" name="nestedPackage" type="_EMOF_Package" isComposite="true" opposite="G.24" association="G.22"/>
+      <ownedAttribute xmi:id="G.24" lower="0" name="nestingPackage" type="_EMOF_Package" opposite="G.23" association="G.22"/>
+      <ownedAttribute xmi:id="G.29" isOrdered="true" lower="0" upper="*" name="ownedType" type="_EMOF_Type" isComposite="true" association="G.28"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Parameter" name="Parameter" superClass="_EMOF_MultiplicityElement">
+      <ownedAttribute xmi:id="G.12" lower="0" upper="*" name="operation" type="_EMOF_Operation" opposite="G.11" association="G.10"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_PrimitiveType" name="PrimitiveType" superClass="_EMOF_DataType"/>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_TypedElement" name="TypedElement" isAbstract="true" superClass="_EMOF_NamedElement">
+      <ownedAttribute xmi:id="G.32" lower="0" name="type" type="_EMOF_Type"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Property" name="Property" superClass="_EMOF_MultiplicityElement">
+      <ownedAttribute xmi:id="S.061.1405.32.19" name="isReadOnly" type="Boolean" default="false"/>
+      <ownedAttribute xmi:id="S.061.1405.32.20" name="default" type="String"/>
+      <ownedAttribute xmi:id="S.061.1405.32.21" name="isComposite" type="Boolean" default="false"/>
+      <ownedAttribute xmi:id="S.061.1405.32.22" name="isDerived" type="Boolean" default="false"/>
+      <ownedAttribute xmi:id="S.061.1405.32.23" name="isID" type="Boolean"/>
+      <ownedAttribute xmi:id="G.2" lower="0" name="opposite" type="_EMOF_Property" association="G.1"/>
+      <ownedAttribute xmi:id="G.6" lower="0" name="class" type="_EMOF_Class" opposite="G.5" association="G.4"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_MultiplicityElement" name="MultiplicityElement" isAbstract="true" superClass="_EMOF_TypedElement">
+      <ownedAttribute xmi:id="S.061.1405.32.25" name="isOrdered" type="Boolean" default="false"/>
+      <ownedAttribute xmi:id="S.061.1405.32.26" name="isUnique" type="Boolean" default="true"/>
+      <ownedAttribute xmi:id="S.061.1405.32.27" name="lower" type="Integer"/>
+      <ownedAttribute xmi:id="S.061.1405.32.28" name="upper" type="UnlimitedNatural"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Object" name="Object" superClass="_EMOF_Element">
+      <ownedOperation xmi:id="S.061.1405.32.30" name="getMetaClass" type="_EMOF_Class"/>
+      <ownedOperation xmi:id="S.061.1405.32.31" name="container" type="_EMOF_Object"/>
+      <ownedOperation xmi:id="S.061.1405.32.32" name="equals" type="Boolean">
+        <ownedParameter xmi:id="XX.3.145.33.26" name="element" type="_EMOF_Element"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.33" name="get" type="_EMOF_Element">
+        <ownedParameter xmi:id="XX.3.145.33.28" name="property" type="_EMOF_Property"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.34" name="set">
+        <ownedParameter xmi:id="XX.3.145.33.30" name="property" type="_EMOF_Property"/>
+        <ownedParameter xmi:id="XX.3.145.33.31" name="element" type="_EMOF_Element"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.35" name="isSet" type="Boolean">
+        <ownedParameter xmi:id="XX.3.145.33.32" name="property" type="_EMOF_Property"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.36" name="unset">
+        <ownedParameter xmi:id="XX.3.145.33.34" name="property" type="_EMOF_Property"/>
+      </ownedOperation>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Element" name="Element"/>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Facility" name="Facility" superClass="_EMOF_Element">
+      <ownedOperation xmi:id="S.061.1405.32.47" name="isIdentical" type="Boolean">
+        <ownedParameter xmi:id="XX.3.145.34.41" name="element1" type="_EMOF_Element"/>
+        <ownedParameter xmi:id="XX.3.145.34.42" name="element2" type="_EMOF_Element"/>
+      </ownedOperation>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Factory" name="Factory" superClass="_EMOF_Object">
+      <ownedAttribute xmi:id="G.26" name="package" type="_EMOF_Package"/>
+      <ownedOperation xmi:id="S.061.1405.32.49" name="createFromString" type="_EMOF_Element">
+        <ownedParameter xmi:id="XX.3.145.34.45" name="dataType" type="_EMOF_DataType"/>
+        <ownedParameter xmi:id="XX.3.145.34.46" name="string" type="String"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.50" name="convertToString" type="String">
+        <ownedParameter xmi:id="XX.3.145.34.48" name="dataType" type="_EMOF_DataType"/>
+        <ownedParameter xmi:id="XX.3.145.34.49" name="element" type="_EMOF_Element"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.51" name="create" type="_EMOF_Object">
+        <ownedParameter xmi:id="XX.3.145.34.51" name="metaClass" type="_EMOF_Class"/>
+      </ownedOperation>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Extent" name="Extent" superClass="_EMOF_Element">
+      <ownedOperation xmi:id="S.061.1405.32.53" name="isExclusive" type="Boolean"/>
+      <ownedOperation xmi:id="S.061.1405.32.54" name="useContainment" type="Boolean"/>
+      <ownedOperation xmi:id="S.061.1405.32.55" name="objects" type="_EMOF_ReflectiveSequence"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_URIExtent" name="URIExtent" superClass="_EMOF_Extent">
+      <ownedOperation xmi:id="S.061.1405.32.57" name="contextURI" type="String"/>
+      <ownedOperation xmi:id="S.061.1405.32.58" name="uri" type="String">
+        <ownedParameter xmi:id="XX.3.145.34.59" name="object" type="_EMOF_Object"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.59" name="object" type="_EMOF_Object">
+        <ownedParameter xmi:id="XX.3.145.34.61" name="uri" type="String"/>
+      </ownedOperation>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Type" name="Type" isAbstract="true" superClass="_EMOF_NamedElement">
+      <ownedOperation xmi:id="S.061.1405.32.61" name="isInstance" type="Boolean">
+        <ownedParameter xmi:id="XX.3.145.34.64" name="element" type="_EMOF_Element"/>
+      </ownedOperation>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_Tag" name="Tag" superClass="_EMOF_Object">
+      <ownedAttribute xmi:id="S.061.1405.32.63" name="name" type="String"/>
+      <ownedAttribute xmi:id="S.061.1405.32.64" name="value" type="String"/>
+      <ownedAttribute xmi:id="G.36" lower="0" upper="*" name="element" type="_EMOF_Element"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:Class" xmi:id="_EMOF_ReflectiveSequence" name="ReflectiveSequence" superClass="_EMOF_Element">
+      <ownedOperation xmi:id="S.061.1405.32.66" name="add" type="Boolean">
+        <ownedParameter xmi:id="XX.3.145.34.68" name="element" type="_EMOF_Element"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.67" name="add">
+        <ownedParameter xmi:id="XX.3.145.34.70" name="index" type="Integer"/>
+        <ownedParameter xmi:id="XX.3.145.34.71" name="element" type="_EMOF_Element"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.68" name="addAll" type="Boolean">
+        <ownedParameter xmi:id="XX.3.145.34.72" name="elements" type="_EMOF_ReflectiveSequence"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.69" name="clear"/>
+      <ownedOperation xmi:id="S.061.1405.32.70" name="get" type="_EMOF_Element">
+        <ownedParameter xmi:id="XX.3.145.34.74" name="index" type="Integer"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.71" name="remove" type="Boolean">
+        <ownedParameter xmi:id="XX.3.145.34.76" name="element" type="_EMOF_Element"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.72" name="remove" type="_EMOF_Element">
+        <ownedParameter xmi:id="XX.3.145.34.78" name="index" type="Integer"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.73" name="set" type="_EMOF_Element">
+        <ownedParameter xmi:id="XX.3.145.34.80" name="index" type="Integer"/>
+        <ownedParameter xmi:id="XX.3.145.34.81" name="element" type="_EMOF_Element"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="S.061.1405.32.74" name="size" type="Integer"/>
+    </ownedType>
+    <ownedType xsi:type="cmof:PrimitiveType" xmi:id="Integer" name="Integer"/>
+    <ownedType xsi:type="cmof:PrimitiveType" xmi:id="Boolean" name="Boolean"/>
+    <ownedType xsi:type="cmof:PrimitiveType" xmi:id="String" name="String"/>
+    <ownedType xsi:type="cmof:PrimitiveType" xmi:id="UnlimitedNatural" name="UnlimitedNatural"/>
+  </cmof:Package>
+  <cmof:Tag name="documentation" value="This is the combined/merged EMOF" element="_EMOF"/>
+  <cmof:Tag name="RationalRose:controlledUnitDir" value="D:\MDA\org.omg.mof2\models" element="_EMOF"/>
+  <cmof:Tag name="RationalRose:controlledUnitFile" value="EMOF.cat" element="_EMOF"/>
+  <cmof:Tag name="RationalRose:Tool#3" value="Ecore"/>
+  <cmof:Tag name="RationalRose$Ecore:packageName" value="org.omg.mof2.emof" element="_EMOF"/>
+  <cmof:Tag name="RationalRose$Ecore:prefix" value="EMOF" element="_EMOF"/>
+  <cmof:Tag name="RationalRose$Ecore:referenceName" value="owningClass" element="G.6"/>
+  <cmof:Tag name="RationalRose$Ecore:referenceName" value="owningClass" element="G.15"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Class"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_DataType"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Enumeration"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_EnumerationLiteral"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_NamedElement"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Operation"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Package"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Parameter"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_PrimitiveType"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_TypedElement"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Property"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_MultiplicityElement"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Object"/>
+  <cmof:Tag name="documentation" value="Returns the owner association inherited from Element" element="S.061.1405.32.31"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Element"/>
+  <cmof:Tag name="persistence" value="transient" element="Integer"/>
+  <cmof:Tag name="persistence" value="transient" element="Boolean"/>
+  <cmof:Tag name="persistence" value="transient" element="String"/>
+  <cmof:Tag name="persistence" value="transient" element="UnlimitedNatural"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Facility"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Factory"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Extent"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_URIExtent"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Type"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_Tag"/>
+  <cmof:Tag name="persistence" value="transient" element="_EMOF_ReflectiveSequence"/>
+</xmi:XMI>

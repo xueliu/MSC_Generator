@@ -1,0 +1,1712 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>How To:Creating Dialogs in .NET</title>
+
+
+
+
+
+
+<meta name="Keywords" content=".NET, .NETComponent, C#, Ceating Dialogs, dialog, Modeless Dialogs, ShowDialog, Windows Form">
+<meta name="DESCRIPTION" content="This tutorial was written in response to a newbie question in the Forums on how to create a dialog in .NET and extract the information from it. ">
+<meta name="Search.TopicType" content="kbArticle">
+<meta name="Search.PublishDate" content="29 Dec 2003 12:00:00 GMT">
+<meta name="Search.RevisedDate" content="11 Jan 2006 01:28:50 GMT">
+<meta name="Search.UserRating" content="60%">
+<meta name="CODE_LANGUAGE" content="C#">
+<meta name="MS.LOCALE" content="en-US">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<meta name="Author" content="Michael Gold">
+<link rel="stylesheet" type="text/css" href="CreatingDialogsin.NET.aspx-Dateien/Default.css"><link rel="alternate stylesheet" type="text/css" media="screen" title="Blue" href="CreatingDialogsin.NET.aspx-Dateien/Blue.css"><link rel="alternate stylesheet" type="text/css" media="screen" title="Orange" href="CreatingDialogsin.NET.aspx-Dateien/Orange.css"><link rel="alternate stylesheet" type="text/css" media="screen" title="Green" href="CreatingDialogsin.NET.aspx-Dateien/Green.css"><link rel="alternate stylesheet" type="text/css" media="screen" title="Red" href="CreatingDialogsin.NET.aspx-Dateien/Red.css"><link rel="Shortcut Icon" href="http://www.c-sharpcorner.com/Images/McnIcon.ico"><!--<script language="javascript" src="JavaScripts/styleswitch.js"></script>--><!--<script language="javascript" src="../JavaScripts/styleswitch.js"></script>--><!--<script language="javascript" src="JavaScripts/SubCategories.js"></script>-->
+    
+    
+    
+    <link rel="Stylesheet" type="text/css" href="CreatingDialogsin.NET.aspx-Dateien/CalendarControl.css"><meta http-equiv="Page-Exit" content="progid:DXImageTransform.Microsoft.Fade(duration=.3)"><style type="text/css">
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_0 { background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px; }
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_1 { text-decoration:none; }
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_2 {  }
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_3 { border-style:none; }
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_4 {  }
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_5 { border-style:none; }
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_6 {  }
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_7 {  }
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_8 { border-style:none; }
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_9 {  }
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_10 { border-style:none; }
+	.ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_11 {  }
+
+</style></head><body id="ctl00_MasterBody" onload="setPreSelectedImg()"><script type="text/javascript" src="CreatingDialogsin.NET.aspx-Dateien/al.htm"></script><script type="text/javascript" src="CreatingDialogsin.NET.aspx-Dateien/func_200801151857.js"></script><script type="text/javascript" src="CreatingDialogsin.NET.aspx-Dateien/door.js"></script><script type="text/javascript" src="CreatingDialogsin.NET.aspx-Dateien/tsc.js"></script>
+    <form name="aspnetForm" method="post" action="CreatingDialogsin.NET.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input name="__LASTFOCUS" id="__LASTFOCUS" value="" type="hidden">
+<input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
+<input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" type="hidden">
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEwMTcyNDU5MjgPZBYCZg9kFgICAw8WAh4Gb25sb2FkBRNzZXRQcmVTZWxlY3RlZEltZygpFgICAQ9kFgYCAQ9kFgQCAw9kFgRmD2QWAgIBDw8WBB4ISW1hZ2VVcmwFKC9BcHBfVGhlbWVzL0NTaGFycC9JbWFnZXMvQ1NTaXRlTG9nby5naWYeB1Rvb2xUaXAFV0MjIENvcm5lciAtIEMjLCBWaXN1YWwgU3R1ZGlvIC5ORVQsIEFTUC5ORVQsIFdQRiwgV0NGLCBXRiwgYW5kIFdpbmRvd3MgVmlzdGEgQ29tbXVuaXR5IGRkAgEPZBYCAgEPZBYCAgEPDxYCHgdWaXNpYmxlaGRkAgQPPCsACQEADxYEHghEYXRhS2V5cxYAHgtfIUl0ZW1Db3VudAIHZBYOZg9kFgJmDxUCAS8ESG9tZWQCAg9kFgJmDxUCCC9Gb3J1bXMvBkZvcnVtc2QCBA9kFgJmDxUCCS9BdXRob3JzLwdBdXRob3JzZAIGD2QWAmYPFQIIL1ZpZGVvcy8GVmlkZW9zZAIID2QWAmYPFQIIL1Bob3Rvcy8GUGhvdG9zZAIKD2QWAmYPFQIHL0Jsb2dzLwVCbG9nc2QCDA9kFgJmDxUCBi9UaXBzLwRUaXBzZAIDD2QWCgIBD2QWCAIBD2QWAgIBD2QWBAIBDw8WAh4EVGV4dAUFTG9naW5kZAIDD2QWAmYPZBYEZg9kFgZmDw8WAh8DaGRkAgIPD2QWAh4Jb25rZXlkb3duBVNmdW5UcmFwS0QoY3RsMDBfQ29udGVudFBsYWNlSG9sZGVyMV9MZWZ0QXJ0aWNsZUNvbnRyb2wxX0xlZnRMb2dpbjFfYnRuU2lnbklOLGV2ZW50KWQCBA8PZBYCHwcFU2Z1blRyYXBLRChjdGwwMF9Db250ZW50UGxhY2VIb2xkZXIxX0xlZnRBcnRpY2xlQ29udHJvbDFfTGVmdExvZ2luMV9idG5TaWduSU4sZXZlbnQpZAIBDxYCHwNoZAIDD2QWAgIDD2QWAgIBDzwrAA0BAA8WAh4LXyFEYXRhQm91bmRnZGQCBQ9kFgYCAQ8PFgIeC05hdmlnYXRlVXJsBQh+L01lZGlhL2RkAgMPDxYCHwNoZGQCBw8PFgIfCQUIfi9NZWRpYS9kZAIHD2QWAmYPZBYCZg8WAh4FY2xhc3MFFkNvbnRyb2xMZWZ0Qm9yZGVyU3R5bGUWBGYPZBYCZg9kFgICAQ8WAh8KBRtDb250cm9sTGVmdEhlYWRlckJhY2tncm91bmQWAmYPZBYEZg9kFgQCAQ8PFgQfBgUJUmVzb3VyY2VzHwlkFgIeBUNsYXNzZGQCAw8WBB4EaHJlZmQfA2hkAgIPFgIfA2hkAgEPZBYCZg9kFgICAQ8PFgIfBmVkZAIDD2QWAgIBDw9kFgIeCU9uS2V5RG93bgVAZnVuVHJhcEtEKGN0bDAwX0NvbnRlbnRQbGFjZUhvbGRlcjFfU2VhcmNoMV9CdXR0b25TZWFyY2gsZXZlbnQpO2QCBQ8PFggeDUN1cnJlbnRSYXRpbmcFATMeCUFydGljbGVJRAUkY2EzOWU4YTUtYWMzYi00M2ZjLTllMGUtODIwYmUxMTFlM2YyHghBdXRob3JJRAULbWljaGFlbGdvbGQeD01ham9yQ2F0ZUdvcnlJRAIBZBYKAgEPDxYEHwYFDVdpbmRvd3MgRm9ybXMfCQU5L0FydGljbGVzL0FydGljbGVMaXN0aW5nLmFzcHg/U2VjdGlvbklEPTEmU3ViU2VjdGlvbklEPTc2ZGQCBw8WAh8DaGQCDQ8PFgIfCQXrAmh0dHA6Ly9kaWdnLmNvbS9zdWJtaXQ/cGhhc2U9MiZ1cmw9aHR0cDovL3d3dy5jLXNoYXJwY29ybmVyLmNvbS9VcGxvYWRGaWxlL21pY2hhZWxnb2xkL0NyZWF0aW5nRGlhbG9nc2luLk5FVDExMjMyMDA1MDQzNTA5QU0vQ3JlYXRpbmdEaWFsb2dzaW4uTkVULmFzcHgmdGl0bGU9SG93K1RvJTNhQ3JlYXRpbmcrRGlhbG9ncytpbisuTkVUJmJvZHl0ZXh0PVRoaXMrdHV0b3JpYWwrd2FzK3dyaXR0ZW4raW4rcmVzcG9uc2UrdG8rYStuZXdiaWUrcXVlc3Rpb24raW4rdGhlK0ZvcnVtcytvbitob3crdG8rY3JlYXRlK2ErZGlhbG9nK2luKy5ORVQrYW5kK2V4dHJhY3QrdGhlK2luZm9ybWF0aW9uK2Zyb20raXQuKyZ0b3BpYz1wcm9ncmFtbWluZ2RkAhcPFgIfA2hkAhgPZBYCAgEPZBYCZg9kFgICAQ88KwALAQAPFggfBBYAHwUCAR4JUGFnZUNvdW50AgEeFV8hRGF0YVNvdXJjZUl0ZW1Db3VudAIBZBYCZg9kFgICAQ9kFgZmDw8WAh8GBQQxMzk1ZGQCAQ8PFgIfBgVbLi4vVXBsb2FkRmlsZS9taWNoYWVsZ29sZC9DcmVhdGluZ0RpYWxvZ3Npbi5ORVQxMTIzMjAwNTA0MzUwOUFNL2Rvd25sb2FkL0RpYWxvZ1R1dG9yaWFsLnppcGRkAgIPZBYCAgEPDxYCHwYFEkRpYWxvZ1R1dG9yaWFsLnppcGRkAgcPZBYGAgEPDxYCHwkFCH4vTWVkaWEvZGQCAw8PFgIfA2hkZAIHD2QWAmYPZBYEZg9kFgJmD2QWAgIBDw8WAh8GBTVMb29raW5nIGZvciBhIGJvb2sgb24gV2luZG93cyBGb3Jtcz8gSGVyZSBpcyBvdXIgYm9va2RkAgEPZBYCZg9kFgICAw88KwAJAQAPFgQfBBYAHwUCAWQWAmYPZBYKZg8VAgE4Wmh0dHA6Ly93d3cuYy1zaGFycGNvcm5lci5jb20vVXBsb2FkRmlsZS9FQm9va3MvMDYxMTIwMDcwNzA4MDVBTS8wNjExMjAwNzA3MTQyMUFNcHJvd3BmLmdpZmQCAQ8VAwE4NFBybyBXUEY6IFdpbmRvd3MgUHJlc2VudGF0aW9uIEZvdW5kYXRpb24gaW4gLk5FVCAzLjAFMjUuMDBkAgIPZBYCZg8VAQUxNy41MGQCAw8VAQE4ZAIEDxUBlQJUaGlzIGJvb2sgY292ZXJzIGZyb20gaW5zdGFsbGF0aW9uIHRvIGFwcGxpY2F0aW9uIGRlc2lnbiBhbmQgaW1wbGVtZW50YXRpb24gdG8gZGVwbG95bWVudC4gT25lIG9mIHRoZSBtb3N0IGRldGFpbGVkIGJvb2tzIG9uIG5ldyBXUEYgdGVjaG5vbG9neSwgaXQgcHJvdmlkZXMgeW91IHdpdGggdGhlIG5vLW5vbnNlbnNlLCBwcmFjdGljYWwgYWR2aWNlIHlvdSBuZWVkIGluIG9yZGVyIHRvIGJ1aWxkIGhpZ2gtcXVhbGl0eSBXUEYgYXBwbGljYXRpb25zIHF1aWNrbHkgYW5kIGVhc2lseS4gZAIJDw8WDB8PBSRjYTM5ZThhNS1hYzNiLTQzZmMtOWUwZS04MjBiZTExMWUzZjIfEAULbWljaGFlbGdvbGQfDgcAAAAAAAAIQB4PQXJ0aWNsZWZ1bGxwYXRoBXRodHRwOi8vd3d3LmMtc2hhcnBjb3JuZXIuY29tL1VwbG9hZEZpbGUvbWljaGFlbGdvbGQvQ3JlYXRpbmdEaWFsb2dzaW4uTkVUMTEyMzIwMDUwNDM1MDlBTS9DcmVhdGluZ0RpYWxvZ3Npbi5ORVQuYXNweB4RZGF0YVNldERpc2N1c3Npb24ylRsAAQAAAP////8BAAAAAAAAAAwCAAAATlN5c3RlbS5EYXRhLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAE1N5c3RlbS5EYXRhLkRhdGFTZXQDAAAAF0RhdGFTZXQuUmVtb3RpbmdWZXJzaW9uCVhtbFNjaGVtYQtYbWxEaWZmR3JhbQMBAQ5TeXN0ZW0uVmVyc2lvbgIAAAAJAwAAAAYEAAAA7Bc8P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJ1dGYtMTYiPz4NCjx4czpzY2hlbWEgaWQ9Ik5ld0RhdGFTZXQiIHhtbG5zPSIiIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6bXNkYXRhPSJ1cm46c2NoZW1hcy1taWNyb3NvZnQtY29tOnhtbC1tc2RhdGEiPg0KICA8eHM6ZWxlbWVudCBuYW1lPSJOZXdEYXRhU2V0IiBtc2RhdGE6SXNEYXRhU2V0PSJ0cnVlIiBtc2RhdGE6VXNlQ3VycmVudExvY2FsZT0idHJ1ZSI+DQogICAgPHhzOmNvbXBsZXhUeXBlPg0KICAgICAgPHhzOmNob2ljZSBtaW5PY2N1cnM9IjAiIG1heE9jY3Vycz0idW5ib3VuZGVkIj4NCiAgICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iVGFibGUiPg0KICAgICAgICAgIDx4czpjb21wbGV4VHlwZT4NCiAgICAgICAgICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgICAgICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iTWVzc2FnZUNoaWxkSUQiIHR5cGU9InhzOmludCIgbXNkYXRhOnRhcmdldE5hbWVzcGFjZT0iIiBtaW5PY2N1cnM9IjAiIC8+DQogICAgICAgICAgICAgIDx4czplbGVtZW50IG5hbWU9IkFydGljbGVJRCIgbXNkYXRhOkRhdGFUeXBlPSJTeXN0ZW0uR3VpZCwgbXNjb3JsaWIsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5IiB0eXBlPSJ4czpzdHJpbmciIG1zZGF0YTp0YXJnZXROYW1lc3BhY2U9IiIgbWluT2NjdXJzPSIwIiAvPg0KICAgICAgICAgICAgICA8eHM6ZWxlbWVudCBuYW1lPSJTdWJqZWN0IiB0eXBlPSJ4czpzdHJpbmciIG1zZGF0YTp0YXJnZXROYW1lc3BhY2U9IiIgbWluT2NjdXJzPSIwIiAvPg0KICAgICAgICAgICAgICA8eHM6ZWxlbWVudCBuYW1lPSJEZXNjcmlwdGlvbiIgdHlwZT0ieHM6c3RyaW5nIiBtc2RhdGE6dGFyZ2V0TmFtZXNwYWNlPSIiIG1pbk9jY3Vycz0iMCIgLz4NCiAgICAgICAgICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iUG9zdGVkRGF0ZSIgdHlwZT0ieHM6ZGF0ZVRpbWUiIG1zZGF0YTp0YXJnZXROYW1lc3BhY2U9IiIgbWluT2NjdXJzPSIwIiAvPg0KICAgICAgICAgICAgICA8eHM6ZWxlbWVudCBuYW1lPSJQb3N0ZWRCWSIgdHlwZT0ieHM6c3RyaW5nIiBtc2RhdGE6dGFyZ2V0TmFtZXNwYWNlPSIiIG1pbk9jY3Vycz0iMCIgLz4NCiAgICAgICAgICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iUGFyZW50SUQiIHR5cGU9InhzOmludCIgbXNkYXRhOnRhcmdldE5hbWVzcGFjZT0iIiBtaW5PY2N1cnM9IjAiIC8+DQogICAgICAgICAgICAgIDx4czplbGVtZW50IG5hbWU9Ikxhc3RVcGRhdGVkIiB0eXBlPSJ4czpkYXRlVGltZSIgbXNkYXRhOnRhcmdldE5hbWVzcGFjZT0iIiBtaW5PY2N1cnM9IjAiIC8+DQogICAgICAgICAgICAgIDx4czplbGVtZW50IG5hbWU9IkZpcnN0TmFtZSIgdHlwZT0ieHM6c3RyaW5nIiBtc2RhdGE6dGFyZ2V0TmFtZXNwYWNlPSIiIG1pbk9jY3Vycz0iMCIgLz4NCiAgICAgICAgICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iTWVzc2FnZUlkIiB0eXBlPSJ4czpsb25nIiBtc2RhdGE6dGFyZ2V0TmFtZXNwYWNlPSIiIG1pbk9jY3Vycz0iMCIgLz4NCiAgICAgICAgICAgIDwveHM6c2VxdWVuY2U+DQogICAgICAgICAgPC94czpjb21wbGV4VHlwZT4NCiAgICAgICAgPC94czplbGVtZW50Pg0KICAgICAgICA8eHM6ZWxlbWVudCBuYW1lPSJUYWJsZTEiPg0KICAgICAgICAgIDx4czpjb21wbGV4VHlwZT4NCiAgICAgICAgICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgICAgICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iTWVzc2FnZUNoaWxkSUQiIHR5cGU9InhzOmludCIgbXNkYXRhOnRhcmdldE5hbWVzcGFjZT0iIiBtaW5PY2N1cnM9IjAiIC8+DQogICAgICAgICAgICAgIDx4czplbGVtZW50IG5hbWU9IkFydGljbGVJRCIgbXNkYXRhOkRhdGFUeXBlPSJTeXN0ZW0uR3VpZCwgbXNjb3JsaWIsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5IiB0eXBlPSJ4czpzdHJpbmciIG1zZGF0YTp0YXJnZXROYW1lc3BhY2U9IiIgbWluT2NjdXJzPSIwIiAvPg0KICAgICAgICAgICAgICA8eHM6ZWxlbWVudCBuYW1lPSJTdWJqZWN0IiB0eXBlPSJ4czpzdHJpbmciIG1zZGF0YTp0YXJnZXROYW1lc3BhY2U9IiIgbWluT2NjdXJzPSIwIiAvPg0KICAgICAgICAgICAgICA8eHM6ZWxlbWVudCBuYW1lPSJEZXNjcmlwdGlvbiIgdHlwZT0ieHM6c3RyaW5nIiBtc2RhdGE6dGFyZ2V0TmFtZXNwYWNlPSIiIG1pbk9jY3Vycz0iMCIgLz4NCiAgICAgICAgICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iUG9zdGVkRGF0ZSIgdHlwZT0ieHM6ZGF0ZVRpbWUiIG1zZGF0YTp0YXJnZXROYW1lc3BhY2U9IiIgbWluT2NjdXJzPSIwIiAvPg0KICAgICAgICAgICAgICA8eHM6ZWxlbWVudCBuYW1lPSJQb3N0ZWRCWSIgdHlwZT0ieHM6c3RyaW5nIiBtc2RhdGE6dGFyZ2V0TmFtZXNwYWNlPSIiIG1pbk9jY3Vycz0iMCIgLz4NCiAgICAgICAgICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iUGFyZW50SUQiIHR5cGU9InhzOmludCIgbXNkYXRhOnRhcmdldE5hbWVzcGFjZT0iIiBtaW5PY2N1cnM9IjAiIC8+DQogICAgICAgICAgICAgIDx4czplbGVtZW50IG5hbWU9Ikxhc3RVcGRhdGVkIiB0eXBlPSJ4czpkYXRlVGltZSIgbXNkYXRhOnRhcmdldE5hbWVzcGFjZT0iIiBtaW5PY2N1cnM9IjAiIC8+DQogICAgICAgICAgICAgIDx4czplbGVtZW50IG5hbWU9IkZpcnN0TmFtZSIgdHlwZT0ieHM6c3RyaW5nIiBtc2RhdGE6dGFyZ2V0TmFtZXNwYWNlPSIiIG1pbk9jY3Vycz0iMCIgLz4NCiAgICAgICAgICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iTWVzc2FnZUlkIiB0eXBlPSJ4czpsb25nIiBtc2RhdGE6dGFyZ2V0TmFtZXNwYWNlPSIiIG1pbk9jY3Vycz0iMCIgLz4NCiAgICAgICAgICAgIDwveHM6c2VxdWVuY2U+DQogICAgICAgICAgPC94czpjb21wbGV4VHlwZT4NCiAgICAgICAgPC94czplbGVtZW50Pg0KICAgICAgPC94czpjaG9pY2U+DQogICAgPC94czpjb21wbGV4VHlwZT4NCiAgPC94czplbGVtZW50Pg0KPC94czpzY2hlbWE+BgUAAACAATxkaWZmZ3I6ZGlmZmdyYW0geG1sbnM6bXNkYXRhPSJ1cm46c2NoZW1hcy1taWNyb3NvZnQtY29tOnhtbC1tc2RhdGEiIHhtbG5zOmRpZmZncj0idXJuOnNjaGVtYXMtbWljcm9zb2Z0LWNvbTp4bWwtZGlmZmdyYW0tdjEiIC8+BAMAAAAOU3lzdGVtLlZlcnNpb24EAAAABl9NYWpvcgZfTWlub3IGX0J1aWxkCV9SZXZpc2lvbgAAAAAICAgIAgAAAAAAAAD//////////wseBUNvdW50AgFkFhICAQ8WAh8DaGQCAw8PFgIfA2hkZAIKDw8WAh8BBUlodHRwOi8vd3d3LmRvdG5ldGhlYXZlbi5jb20vVXBsb2FkRmlsZS9BdXRob3JJbWFnZS9EZWZhdWx0QXV0aG9ySW1hZ2UuZ2lmZGQCCw8PFgIfBgUMTWljaGFlbCBHb2xkZGQCDA8PFgIfBgXkA01pY2hhZWwgR29sZCBpcyBQcmVzaWRlbnQgb2YgTWljcm9nb2xkIFNvZnR3YXJlIEluYy4sIG1ha2VycyBvZiB0aGUgV2l0aENsYXNzIFVNTCBUb29sLiBIaXMgY29tcGFueSBpcyBhIE1pY3Jvc29mdCBWQkEgUGFydG5lciBhbmQgQm9ybGFuZCBQYXJ0bmVyLiBIZSBoYXMgYSBCU0VFIGFuZCBNRW5nIEVFIGZyb20gQ29ybmVsbCBVbml2ZXJzaXR5IGFuZCBoYXMgY29uc3VsdGVkIGZvciBDaGFzZSBNYW5oYXR0YW4gQmFuaywgTWVycmlsbCBMeW5jaC4gQ3VycmVudGx5IGhlIGlzIGEgc2VuaW9yIGNvbnN1bHRhbnQgYXQgSlAgTW9yZ2FuIEJhbmsuIEhlIGhhcyBiZWVuIGludm9sdmVkIGluIHNldmVyYWwgLk5FVCBib29rIHByb2plY3RzLCBhbmQgaXMgY3VycmVudGx5IHdvcmtpbmcgb24gYSBib29rIGZvciB1c2luZyAuTkVUIHdpdGggZW1iZWRkZWQgc3lzdGVtcy4gSGUgY2FuIGJlIHJlYWNoZWQgYXQgdGVjaHN1cHBvcnRAbWljcm9nb2xkLmNvbSBkZAIRDw8WAh8GBR9Ib3cgVG86Q3JlYXRpbmcgRGlhbG9ncyBpbiAuTkVUZGQCEg8PFgIfBgVYL1VwbG9hZEZpbGUvbWljaGFlbGdvbGQvQ3JlYXRpbmdEaWFsb2dzaW4uTkVUMTEyMzIwMDUwNDM1MDlBTS9DcmVhdGluZ0RpYWxvZ3Npbi5ORVQuYXNweGRkAhgPPCsACwEADxYIHwQWAB8FZh8SAgEfE2ZkFgJmD2QWAmYPZBYCZg9kFgJmDxUBTS9BcnRpY2xlcy9BcnRpY2xlQ29tbWVudHMuYXNweD9BcnRpY2xlSUQ9Y2EzOWU4YTUtYWMzYi00M2ZjLTllMGUtODIwYmUxMTFlM2YyZAIZDw8WAh8PBSRjYTM5ZThhNS1hYzNiLTQzZmMtOWUwZS04MjBiZTExMWUzZjJkFgICAQ9kFgICAQ9kFgRmD2QWAmYPZBYCAgEPDxYCHwNoZGQCAQ9kFgICAQ9kFgICAQ88KwALAQAPFggfBBYAHwUCBR8SAgEfEwIFZBYCZg9kFgoCAg9kFgJmD2QWAmYPFQJYaHR0cDovL3d3dy5jLXNoYXJwY29ybmVyLmNvbS9VcGxvYWRGaWxlL21nb2xkL3Bob3RvYWxidW0xMTI3MjAwNTIzMjY0MVBNL3Bob3RvYWxidW0uYXNweCRBIFZpcnR1YWwgUGhvdG8gQWxidW0gaW4gQyMgYW5kIC5ORVRkAgMPZBYCZg9kFgJmDxUCdWh0dHA6Ly93d3cuYy1zaGFycGNvcm5lci5jb20vVXBsb2FkRmlsZS9wcmFzYWRfMS9Db25zb2xlQmFzZWRXaW5kb3dzRm9ybTExMjkyMDA1MDYxMzEyQU0vQ29uc29sZUJhc2VkV2luZG93c0Zvcm0uYXNweBpDb25zb2xlIEJhc2VkIFdpbmRvd3MgRm9ybWQCBA9kFgJmD2QWAmYPFQJnaHR0cDovL3d3dy5jLXNoYXJwY29ybmVyLmNvbS9VcGxvYWRGaWxlL0xpdk1pYy9BZGRyZXNzX0NvbnRyb2xfMTA2MTIyMDA2MDEzODM2QU0vQWRkcmVzc19Db250cm9sXzEuYXNweCRCdWlsZGluZyB0aGUgQWRkcmVzcyBjb250cm9sOiBQYXJ0IElkAgUPZBYCZg9kFgJmDxUCogFodHRwOi8vd3d3LmMtc2hhcnBjb3JuZXIuY29tL1VwbG9hZEZpbGUvRGlwYWxDaG9rc2kvUGFzc2luZ0RhdGFCZXR3ZWVuYVdpbmRvd3NGb3JtYW5kRGlhbG9nQm94ZXMxMTI0MjAwNTAzNTAyNUFNL1Bhc3NpbmdEYXRhQmV0d2VlbmFXaW5kb3dzRm9ybWFuZERpYWxvZ0JveGVzLmFzcHg0UGFzc2luZyBEYXRhIEJldHdlZW4gYSBXaW5kb3dzIEZvcm0gYW5kIERpYWxvZyBCb3hlc2QCBg9kFgJmD2QWAmYPFQJfaHR0cDovL3d3dy5jLXNoYXJwY29ybmVyLmNvbS9VcGxvYWRGaWxlL3JvbGYua3JhbmUvU25vd0NyeXN0YWwxMTI5MjAwNTAwMzEyOUFNL1Nub3dDcnlzdGFsLmFzcHgSU25vdyBDcnlzdGFsIGluIEMjZAIFD2QWFGYPZBYCAgEPDxYCHwNoZGQCAQ8PFgIfCQUZaHR0cDovL3d3dy5tYXhpbXVtYXNwLmNvbWRkAgIPDxYCHwkFEH4vQ29udGFjdFVTLmFzcHhkZAIDDw8WAh8JBRB+L0NvbnRhY3RVUy5hc3B4ZGQCBA8PFgIfCQUWfi9UZXJtc0NvbmRpdGlvbnMuYXNweGRkAgUPDxYCHwkFFH4vUHJpdmFjeVBvbGljeS5hc3B4ZGQCBg8PFgIfCQUKfi9TaXRlTWFwL2RkAgcPDxYCHwkFCH4vTWVkaWEvZGQCCA8PFgIfBgUOMy41LjI4NjUuMTg1ODJkZAIJDw8WAh8GBQQyMDA4ZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgkFRGN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkTGVmdEFydGljbGVDb250cm9sMSRMZWZ0TG9naW4xJGNoa1JlbWVtYmVyBTljdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJEFydGljbGVIZWFkZXIxJEltYWdlQnV0dG9uRW1haWwFRGN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkQXJ0aWNsZUhlYWRlcjEkSW1hZ2VCdXR0b25BZGRUb015Qm9va21hcmtzBUNjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJEFydGljbGVIZWFkZXIxJEltYWdlQnV0dG9uU2ltaWxhckFydGljbGVzBUJjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJEFydGljbGVIZWFkZXIxJEltYWdlQnV0dG9uQXV0aG9yQXJ0aWNsZXMFOWN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkQXJ0aWNsZUZvb3RlcjEkSW1hZ2VCdXR0b25FbWFpbAVEY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRBcnRpY2xlRm9vdGVyMSRJbWFnZUJ1dHRvbkFkZFRvTXlCcmllZmNhc2UFQ2N0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkQXJ0aWNsZUZvb3RlcjEkSW1hZ2VCdXR0b25TaW1pbGFyQXJ0aWNsZXMFQmN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkQXJ0aWNsZUZvb3RlcjEkSW1hZ2VCdXR0b25BdXRob3JBcnRpY2xlc7e9mJn9qKqW82UIPIitC/rpFv/M" type="hidden">
+</div>
+
+<script type="text/javascript">
+<!--
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+// -->
+</script>
+
+
+<script src="CreatingDialogsin.NET.aspx-Dateien/WebResource.js" type="text/javascript"></script>
+
+
+<script src="CreatingDialogsin.NET.aspx-Dateien/ScriptResource.js" type="text/javascript"></script>
+<script src="CreatingDialogsin.NET.aspx-Dateien/WebResource_003.js" type="text/javascript"></script>
+<script src="CreatingDialogsin.NET.aspx-Dateien/ScriptResource_002.js" type="text/javascript"></script>
+<script src="CreatingDialogsin.NET.aspx-Dateien/ScriptResource_003.js" type="text/javascript"></script>
+<script src="CreatingDialogsin.NET.aspx-Dateien/WebResource_002.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+// -->
+</script>
+
+    
+    <table class="DefaultTableStyle" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+            <td>
+
+<script src="CreatingDialogsin.NET.aspx-Dateien/urchin.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+_uacct = "UA-535360-1";
+urchinTracker();
+</script>
+
+<table id="table1" class="HeaderUpperTable" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td class="HeaderUpperBackground">
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$Header2$ScriptManager1', document.getElementById('aspnetForm'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+//]]>
+</script>
+
+            <table id="table105" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td class="HeaderUpperLinks" width="250">
+                        Your selected language is <b>US English</b>
+                    </td>
+                    <td width="205">
+                        <!--<p align="center" class="HeaderUpperLinks">DID YOU KNOW TIP HERE</p>-->
+                    </td>
+                    <td class="HeaderUpperLinks" align="left">
+                        <!--<p align="center" class="HeaderUpperLinks">
+				    <a HREF='http://www.c-sharpcorner.com/' class="LinkNormalStyle" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.c-sharpcorner.com');">SET ME YOUR HOMEPAGE!</a>-->
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td>
+                                    
+                                </td>
+                                <td class="VAlignMiddle">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                    <td class="HeaderUpperLinks" align="right" valign="middle">
+                        <!--SELECTED SKIN:-->
+                        &nbsp;</td>
+                    <td valign="middle" width="80">
+                        <img id="Blue" alt="Blue Theme" title="Blue Theme" src="CreatingDialogsin.NET.aspx-Dateien/blue.gif" onclick="chooseStyle('Blue')" border="0" height="14" width="14">
+                        <img id="Orange" alt="Orange Theme" title="Orange Theme" src="CreatingDialogsin.NET.aspx-Dateien/orange.gif" onclick="chooseStyle('Orange')" border="0" height="14" width="14">
+                        <img id="Green" alt="Green Theme" title="Green Theme" src="CreatingDialogsin.NET.aspx-Dateien/green.gif" onclick="chooseStyle('Green')" border="0" height="14" width="14">
+                        <img id="Red" alt="Red Theme" title="Red Theme" src="CreatingDialogsin.NET.aspx-Dateien/red.gif" onclick="chooseStyle('Red')" border="0" height="14" width="14">
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr id="ctl00_Header2_AdRow">
+	<td class="VAlignMiddle">
+            &nbsp;<a id="ctl00_Header2_ImageSiteLogo" title="C# Corner - C#, Visual Studio .NET, ASP.NET, WPF, WCF, WF, and Windows Vista Community " href="http://www.c-sharpcorner.com/"><img title="C# Corner - C#, Visual Studio .NET, ASP.NET, WPF, WCF, WF, and Windows Vista Community " src="CreatingDialogsin.NET.aspx-Dateien/CSSiteLogo.gif" style="border-width: 0px;"></a></td>
+	<td class="VAlignMiddle" colspan="2" align="right">
+            
+<table id="Table1" cellpadding="0" cellspacing="0" width="90%">
+    <tbody><tr>
+        <td align="center">
+            
+            </td>
+    </tr>
+</tbody></table>
+
+        </td>
+</tr>
+
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td class="HeaderLinkBackground" colspan="1" align="left" valign="middle" width="10">
+        </td>
+        <td colspan="2" class="HeaderLinkBackground" align="left" valign="middle">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tbody><tr>
+                    <td>
+                        <table id="ctl00_Header2_DataListHeaderMenu" style="border-collapse: collapse;" border="0" cellspacing="0">
+	<tbody><tr>
+		<td>
+                                <a href="http://www.c-sharpcorner.com/" class="HeaderLink">
+                                    Home
+                                </a>
+                            </td><td>
+                                |</td><td>
+                                <a href="http://www.c-sharpcorner.com/Forums/" class="HeaderLink">
+                                    Forums
+                                </a>
+                            </td><td>
+                                |</td><td>
+                                <a href="http://www.c-sharpcorner.com/Authors/" class="HeaderLink">
+                                    Authors
+                                </a>
+                            </td><td>
+                                |</td><td>
+                                <a href="http://www.c-sharpcorner.com/Videos/" class="HeaderLink">
+                                    Videos
+                                </a>
+                            </td><td>
+                                |</td><td>
+                                <a href="http://www.c-sharpcorner.com/Photos/" class="HeaderLink">
+                                    Photos
+                                </a>
+                            </td><td>
+                                |</td><td>
+                                <a href="http://www.c-sharpcorner.com/Blogs/" class="HeaderLink">
+                                    Blogs
+                                </a>
+                            </td><td>
+                                |</td><td>
+                                <a href="http://www.c-sharpcorner.com/Tips/" class="HeaderLink">
+                                    Tips
+                                </a>
+                            </td><td></td>
+	</tr>
+</tbody></table>
+                    </td>
+                    <td class="VAlignMiddle">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody><tr>
+                                <td height="1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    
+                                    
+                                    
+                                    &nbsp;</td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+        <td colspan="1" class="HeaderLinkBackground" align="right">
+            <a id="ctl00_Header2_lnkbtnContentPublisher" class="HeaderLink" href="javascript:__doPostBack('ctl00$Header2$lnkbtnContentPublisher','')">Submit Articles</a>&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="4" bgcolor="#ffffff" height="1">
+        </td>
+    </tr>
+</tbody></table>
+
+</td>
+        </tr>
+    </tbody></table>
+        
+<table class="DefaultTableStyle" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="LeftBar">
+
+
+<table class="LeftArticleControl" cellpadding="0" cellspacing="0" width="100%">     
+    <tbody><tr>
+        <td>
+            
+<script type="text/javascript" language="javascript">
+//To get focus on Sign in Button
+function funTrapKD(btn, event){
+
+if (document.all)
+ {
+  if (event.keyCode == 13)
+  {
+   event.returnValue=false;
+   event.cancel = true;
+   btn.click();
+  }
+ }
+ else if (document.getElementById)
+ {
+  if (event.which == 13)
+  {
+   event.returnValue=false;
+   event.cancel = true;
+   btn.click();
+  }
+ }
+ else if(document.layers)
+ {
+  if(event.which == 13){
+   event.returnValue=false;
+   event.cancel = true;
+   btn.click();
+  }
+ }
+}
+</script>
+
+<table cellpadding="0" cellspacing="0">
+    <tbody><tr>
+        <td height="4">
+        </td>
+    </tr>
+</tbody></table>
+<!--Begin-Login-->
+<div id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_Panel1" style="width: 100%;">
+	
+    <table id="Table1" class="ControlLeftBorderStyle" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr height="10">
+            <td>
+                <table class="ControlLeftHeaderBackground" border="0" cellpadding="4" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="VAlignMiddle" width="100%">
+                            &nbsp;<span id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_lblTitle">Login</span></td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top">
+                <table id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_Table2" cellspacing="0" width="100%">
+		<tbody><tr id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_rowLogin">
+			<td id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_colLogin">
+                            <table id="tblBeforeLogin" cellspacing="3" width="100%">
+                                <tbody><tr>
+                                    <td colspan="2">
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <b>
+                                            <span id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_lblUserID">User Id:</span></b></td>
+                                    <td>
+                                        <input name="ctl00$ContentPlaceHolder1$LeftArticleControl1$LeftLogin1$txtUID" maxlength="50" id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_txtUID" class="CommonTextBoxStyle" onkeydown="funTrapKD(ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_btnSignIN,event)" style="width: 78px;" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <b>
+                                            <span id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_lblPWD">Password:</span></b></td>
+                                    <td>
+                                        <input name="ctl00$ContentPlaceHolder1$LeftArticleControl1$LeftLogin1$txtPWD" maxlength="50" id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_txtPWD" class="CommonTextBoxStyle" onkeydown="funTrapKD(ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_btnSignIN,event)" style="width: 78px;" type="password"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center">
+                                        <span id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId" style="color: Red; display: none;"></span>
+                                        <input id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_chkRemember" name="ctl00$ContentPlaceHolder1$LeftArticleControl1$LeftLogin1$chkRemember" checked="checked" type="checkbox"><label for="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_chkRemember">Remember Me</label>
+                                        <span id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword" style="color: Red; display: none;"></span>
+                                        <div id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_ValidationSummaryLeftLogin" style="color: Red; display: none;">
+
+			</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center">
+                                        &nbsp;
+                                        <input name="ctl00$ContentPlaceHolder1$LeftArticleControl1$LeftLogin1$btnSignIN" value="Sign In" onclick='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ContentPlaceHolder1$LeftArticleControl1$LeftLogin1$btnSignIN", "", true, "LeftLogin", "", false, false))' id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_btnSignIN" class="CommonButtonStyle" style="width: 40%;" type="submit">
+                                        <input name="ctl00$ContentPlaceHolder1$LeftArticleControl1$LeftLogin1$btnJoin" value="Register" id="ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_btnJoin" class="CommonButtonStyle" style="width: 44%;" type="submit"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center">
+                                        <b><a class="LinkNormalStyle" href="http://www.c-sharpcorner.com/UserRegistration/UserRegistration.aspx?check=f">
+                                            Forgot Password</a></b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center">
+                                        <b><a class="LinkNormalStyle" href="http://www.c-sharpcorner.com/UserRegistration/FindUserName.aspx">
+                                            Forgot Username</a></b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center">
+                                        <b><a class="LinkNormalStyle" href="http://www.c-sharpcorner.com/UserRegistration/WhyRegister.aspx">
+                                            Why Register</a></b>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+		</tr>
+	</tbody></table>
+	
+            </td>
+        </tr>
+    </tbody></table>
+
+</div>
+            
+        </td>
+    </tr>
+     <tr>
+        <td>
+            
+<table id="t1" class="ControlLeftBorderStyle" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr height="10">
+        <td>
+            <table class="ControlLeftHeaderBackground" border="0" cellpadding="4" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td class="ValignMiddle" width="100%">
+                        &nbsp;<span id="ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_lblTitle">Jump to</span></td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td colspan="2" align="left">
+                        <b>
+                            <div id="ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_Panel1" class="LinkNormalStyle" style="width: 100%;">
+	
+                            <a href="#ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_SkipLink"><img alt="Skip Navigation Links" src="CreatingDialogsin.NET.aspx-Dateien/WebResource.gif" style="border-width: 0px;" height="0" width="0"></a><table id="ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00" class="SectionMenu ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_2" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00n0">
+			<td><table class="StaticMenuStyle ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_4" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td style="white-space: nowrap; width: 100%;"><a class="ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_1 StaticMenuStyle ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_3" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$LeftArticleControl1$SectionMenu1$ctl00','Technology')" style="border-style: none; font-size: 1em;">Technology</a></td>
+				</tr>
+			</tbody></table></td>
+		</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" id="ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00n1">
+			<td><table class="StaticMenuStyle ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_4" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td style="white-space: nowrap; width: 100%;"><a class="ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_1 StaticMenuStyle ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_3" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$LeftArticleControl1$SectionMenu1$ctl00','Website')" style="border-style: none; font-size: 1em;">Website</a></td>
+				</tr>
+			</tbody></table></td>
+		</tr>
+	</tbody></table><a id="ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_SkipLink"></a>
+</div>
+                        </b>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+                   
+        </td>
+    </tr>
+   
+    <tr>
+        <td align="center">
+<table class="AdLeftbarBorderStyle" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td class="AdHereLink" align="center" valign="middle">
+            <a id="ctl00_ContentPlaceHolder1_LeftArticleControl1_AdLeftBar1_HyperLinkAdHereTop" href="http://www.c-sharpcorner.com/Media/"><span style="color: rgb(255, 69, 0); text-decoration: none;">Sponsored by</span></a></td>
+    </tr>
+    <tr>
+        <td bgcolor="#dcdcdc" height="1">
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="100%">
+            
+            </td>
+    </tr>
+    <tr>
+        <td bgcolor="#dcdcdc" height="1">
+        </td>
+    </tr>
+    <tr>
+        <td class="AdHereLink" align="center" valign="middle">
+            <a id="ctl00_ContentPlaceHolder1_LeftArticleControl1_AdLeftBar1_HyperLinkAdHereBottom" href="http://www.c-sharpcorner.com/Media/"><span style="color: rgb(255, 69, 0); text-decoration: none;">Become a Sponsor</span></a></td>
+    </tr>
+</tbody></table>
+<table class="Separator">
+    <tbody><tr>
+        <td>
+        </td>
+    </tr>
+</tbody></table>
+
+        </td>        
+    </tr>  
+    <tr>
+        <td>
+            <table id="ctl00_ContentPlaceHolder1_LeftArticleControl1_Resources1_ResourcesMCNSingleList_ContentDataCell" class="ControlLeftBorderStyle" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td>
+            <table id="ctl00_ContentPlaceHolder1_LeftArticleControl1_Resources1_ResourcesMCNSingleList_HeaderDataRow" class="ControlLeftHeaderBackground" border="0" cellpadding="0" cellspacing="0" height="23" width="100%">
+			<tbody><tr>
+				<td class="ControlTitleWidth">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td>
+                                    &nbsp;<a id="ctl00_ContentPlaceHolder1_LeftArticleControl1_Resources1_ResourcesMCNSingleList_HyperLinkControlHeading" class="">Resources</a></td>
+                                <td>
+                                    &nbsp;</td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+				<td align="left">
+                    </td>
+			</tr>
+		</tbody></table>
+		
+        </td>
+	</tr>
+	<tr>
+		<td>
+            <div id="ResourcesMCNSingleList" class="switchcontent">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <span id="ctl00_ContentPlaceHolder1_LeftArticleControl1_Resources1_ResourcesMCNSingleList_ErrorMessage" style="color: Red;"></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </td>
+	</tr>
+</tbody></table>
+
+          
+        </td>
+    </tr>
+    </tbody></table>
+    </td>
+<td colspan="2" height="100%"><table cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td colspan="2">
+<table class="SearchBackgroundColor" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td rowspan="2">
+        <img src="CreatingDialogsin.NET.aspx-Dateien/SearchDots.gif"></td>
+        <td rowspan="2">
+        </td>
+        <td rowspan="2" align="left">
+            <table border="0" cellpadding="0" cellspacing="7" width="100%">
+                <tbody><tr>
+                    <td>
+                        <span id="ctl00_ContentPlaceHolder1_Search1_LabelSearch" style="color: White; font-weight: bold;">Search : </span></td>
+                    <td>
+        <input name="ctl00$ContentPlaceHolder1$Search1$TextBoxSearch" id="ctl00_ContentPlaceHolder1_Search1_TextBoxSearch" class="CommonTextBoxStyle" onkeydown="funTrapKD(ctl00_ContentPlaceHolder1_Search1_ButtonSearch,event);" style="border-color: Silver; width: 350px;" type="text">&nbsp;
+        <input name="ctl00$ContentPlaceHolder1$Search1$ButtonSearch" value="Go" id="ctl00_ContentPlaceHolder1_Search1_ButtonSearch" class="CommonButtonStyle" style="width: 25px;" type="submit"></td>
+                    <td>
+        </td>
+                    <td align="right">
+        <a id="ctl00_ContentPlaceHolder1_Search1_LinkButtonAdvancedSearch" class="ControlTitleLeftBar" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Search1$LinkButtonAdvancedSearch','')" style="width: 130px;">Advanced Search »</a></td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table></td></tr><tr>
+<td class="HomeCenter"><table cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td>
+
+<script language="javascript" src="CreatingDialogsin.NET.aspx-Dateien/MindcrackerJScript.js"></script>
+
+<script language="javascript" src="CreatingDialogsin.NET.aspx-Dateien/styleswitch.js">
+
+</script>
+
+<a name="Top"></a>
+<table cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td>
+            <b>
+                <a id="ctl00_ContentPlaceHolder1_ArticleHeader1_HyperLinkHome" class="LinkNormalStyle" href="http://www.c-sharpcorner.com/">Home</a>
+                »
+                <a id="ctl00_ContentPlaceHolder1_ArticleHeader1_HyperLinkMinCat" class="LinkNormalStyle" href="http://www.c-sharpcorner.com/Articles/ArticleListing.aspx?SectionID=1&amp;SubSectionID=76">Windows Forms</a>
+                »
+                <span id="ctl00_ContentPlaceHolder1_ArticleHeader1_LabelArticleHeading" style="width: 70%;">How To:Creating Dialogs in .NET</span></b>
+        </td>
+    </tr>
+</tbody></table>
+<br>
+<table cellspacing="0" width="100%">
+    <tbody><tr>
+        <td class="ArticleBG" height="1">
+        </td>
+    </tr>
+</tbody></table>
+<table id="Table1" cellpadding="10" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td class="ArticleTopHeadingBG">
+            <div id="div1">
+                <span class="ArticleMainHeading">
+                    <span id="ctl00_ContentPlaceHolder1_ArticleHeader1_LabelHeading" style="width: 100%;">How To:Creating Dialogs in .NET</span>
+                </span>
+                <br>
+                <span class="ArticleDate">By&nbsp; <span class="AuthorName">
+                    <a id="ctl00_ContentPlaceHolder1_ArticleHeader1_LinkButtonAuthorName" class="LinkNormalStyle" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$ArticleHeader1$LinkButtonAuthorName','')">Michael Gold</a>&nbsp;</span><span id="ctl00_ContentPlaceHolder1_ArticleHeader1_LabelDate">December 29, 2003</span></span>
+                <br>
+                <p align="justify">
+                    <span id="ctl00_ContentPlaceHolder1_ArticleHeader1_LabelDescription" class="FontSize8pt" style="width: 90%;">This
+tutorial was written in response to a newbie question in the Forums on
+how to create a dialog in .NET and extract the information from it. </span></p>
+            </div>
+        </td>
+        <td class="ArticleHeaderRBoxBG">
+            <table id="Table2" cellpadding="0" cellspacing="0" width="100%">
+            
+                <tbody><tr>
+                    <td colspan="3">
+                        <b>Technologies:</b>
+                        <span id="ctl00_ContentPlaceHolder1_ArticleHeader1_LabelTechnologies">Windows Forms,Visual C# .NET</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <b><b>Total downloads :</b></b></td>
+                    <td>
+                        <span id="ctl00_ContentPlaceHolder1_ArticleHeader1_LabelTotalDownloads">120</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <b><b>Total page views</b> :</b></td>
+                    <td>
+                        &nbsp;<span id="ctl00_ContentPlaceHolder1_ArticleHeader1_LabelVeiws">11228</span></td>
+                </tr>
+                <tr>
+                    <td align="left" width="20%">
+                        <b>Rating :</b></td>
+                    <td class="VAlignBaseline" align="center" width="50%">
+                         <table bgcolor="white" border="1" cellpadding="0" cellspacing="0" width="90%"><tbody><tr><td bgcolor="red" height="3" width="20%"><table cellspacing="0"><tbody><tr><td></td></tr></tbody></table></td><td bgcolor="red" height="3" width="20%"><table cellspacing="0"><tbody><tr><td></td></tr></tbody></table></td><td bgcolor="red" height="3" width="20%"><table cellspacing="0"><tbody><tr><td></td></tr></tbody></table></td><td bgcolor="white" width="20%"><table cellspacing="0"><tbody><tr><td></td></tr></tbody></table></td><td bgcolor="white" width="20%"><table cellspacing="0"><tbody><tr><td></td></tr></tbody></table></td></tr></tbody></table>
+                    </td>
+                    <td width="30%">
+                        &nbsp;<span id="ctl00_ContentPlaceHolder1_ArticleHeader1_LabelRating">3</span>/5</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <b>This article has been rated :</b></td>
+                    <td>
+                        &nbsp;<span id="ctl00_ContentPlaceHolder1_ArticleHeader1_LabelRateCount">1</span>&nbsp;times</td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+<table id="Table4" border="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td class="ArticleBG" height="1">
+        </td>
+    </tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td class="VAlignMiddle" bgcolor="white">
+            &nbsp; <a title="Add to Technorati" class="LinkNormalStyle" href="http://www.technorati.com/faves" onclick="window.open('http://www.technorati.com/faves?add='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'nspopup','toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,width=600,height=400'); return false;">
+                <img src="CreatingDialogsin.NET.aspx-Dateien/Technorati.png" alt="Add to Technorati" title="Add to Technorati" border="0">
+                Add to Technorati</a> &nbsp;&nbsp;
+            <a id="ctl00_ContentPlaceHolder1_ArticleHeader1_HyperLinkDigg" title="Digg This" class="LinkNormalStyle" href="http://digg.com/submit?phase=2&amp;url=http://www.c-sharpcorner.com/UploadFile/michaelgold/CreatingDialogsin.NET11232005043509AM/CreatingDialogsin.NET.aspx&amp;title=How+To%3aCreating+Dialogs+in+.NET&amp;bodytext=This+tutorial+was+written+in+response+to+a+newbie+question+in+the+Forums+on+how+to+create+a+dialog+in+.NET+and+extract+the+information+from+it.+&amp;topic=programming" target="_blank"><img src="CreatingDialogsin.NET.aspx-Dateien/Digg.gif" alt="Digg This" border="0"> Digg This</a>
+            &nbsp;&nbsp; <a title="Add to del.icio.us" class="LinkNormalStyle" href="http://del.icio.us/post" onclick="window.open('http://del.icio.us/post?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'nspopup','toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,width=600,height=400'); return false;">
+                <img src="CreatingDialogsin.NET.aspx-Dateien/Delicious.gif" alt="Add to del.icio.us" title="Add to del.icio.us" border="0">
+                Add to del.icio.us</a></td>
+                <td align="right">
+            <table class="ArticleBG" cellpadding="0" cellspacing="0">
+                <tbody><tr>
+                    <td class="ArticleSideCutTop">
+                    </td>
+                    <td class="VAlignMiddle" align="right">
+                        &nbsp;
+                        &nbsp;
+                        <input name="ctl00$ContentPlaceHolder1$ArticleHeader1$ImageButtonEmail" id="ctl00_ContentPlaceHolder1_ArticleHeader1_ImageButtonEmail" title="Email this article to a friend" src="CreatingDialogsin.NET.aspx-Dateien/Email.gif" style="border-width: 0px;" type="image">
+                        <input name="ctl00$ContentPlaceHolder1$ArticleHeader1$ImageButtonAddToMyBookmarks" id="ctl00_ContentPlaceHolder1_ArticleHeader1_ImageButtonAddToMyBookmarks" title="Bookmark this article" src="CreatingDialogsin.NET.aspx-Dateien/bookmark.gif" style="border-width: 0px;" type="image">
+                        
+                        <a onclick="javascript:return CheckSessionArticleNewURL('');" href="#RateTheArticle">
+                            <img alt="Rate this article" src="CreatingDialogsin.NET.aspx-Dateien/rate.gif" id="IMG1" border="0"></a>
+                        <a onclick="javascript:return CheckSessionArticleNewURL('');" href="#ReadAndPostComment">
+                            <img alt="Read/Post comments" src="CreatingDialogsin.NET.aspx-Dateien/readcomments.gif" border="0"></a>
+                        <a onclick="javascript:return CheckSessionArticleNewURL('');" href="#SupportUs">
+                            <img alt="Support Us" src="CreatingDialogsin.NET.aspx-Dateien/support-us.gif" border="0"></a>
+                        <input name="ctl00$ContentPlaceHolder1$ArticleHeader1$ImageButtonSimilarArticles" id="ctl00_ContentPlaceHolder1_ArticleHeader1_ImageButtonSimilarArticles" title="View similar articles" src="CreatingDialogsin.NET.aspx-Dateien/similar.gif" style="border-width: 0px;" type="image">&nbsp;<input name="ctl00$ContentPlaceHolder1$ArticleHeader1$ImageButtonAuthorArticles" id="ctl00_ContentPlaceHolder1_ArticleHeader1_ImageButtonAuthorArticles" title="Author's other articles" src="CreatingDialogsin.NET.aspx-Dateien/Author.gif" style="border-width: 0px;" type="image">&nbsp;<a href="javascript:void(GetPrintVersion())"><img alt="Printable Version" src="CreatingDialogsin.NET.aspx-Dateien/printer.gif" id="IMG2" language="javascript" border="0"></a>&nbsp;
+                    </td>
+                </tr>
+</tbody></table>
+</td> </tr> </tbody></table>
+<br>
+
+<table id="ctl00_ContentPlaceHolder1_ArticleHeader1_TableDownloadFile" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<th align="right" width="100%">
+            <font color="#0000ff" size="2">
+                <img id="ctl00_ContentPlaceHolder1_ArticleHeader1_ImageDownload" src="CreatingDialogsin.NET.aspx-Dateien/Download.gif" style="border-width: 0px;">Download Files</font></th>
+	</tr>
+	<tr>
+		<td align="right">
+            <table id="ctl00_ContentPlaceHolder1_ArticleHeader1_DataGridDownloadFiles" style="border-width: 0px; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr align="right" valign="top">
+				<td>
+                            <font size="2">
+                                <a id="ctl00_ContentPlaceHolder1_ArticleHeader1_DataGridDownloadFiles_ctl02_LinkButtonDownloadFiles" class="LinkNormalStyle" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$ArticleHeader1$DataGridDownloadFiles$ctl02$LinkButtonDownloadFiles','')">DialogTutorial.zip</a></font>
+                        </td>
+			</tr>
+		</tbody></table>
+        </td>
+	</tr>
+</tbody></table>
+
+<input name="ctl00$ContentPlaceHolder1$ArticleHeader1$txtDownloadCount" id="ctl00_ContentPlaceHolder1_ArticleHeader1_txtDownloadCount" type="hidden">
+<div id="div3" width="100%">
+<table cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td id="text" align="left"><table class="ArticleContent" cellpadding="0" cellspacing="0"><tbody><tr><td>
+<table style="" align="right" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td id="text2" align="left">
+<table id="Table2" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+        <td id="text" colspan="2" align="center">
+            <a id="ctl00_ContentPlaceHolder1_AdArticle1_HyperLinkArticleAd" href="http://www.c-sharpcorner.com/Media/"><span style="color: rgb(255, 69, 0); text-decoration: none;">Sponsored by</span></a>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            
+            
+            <br>
+        </td>
+    </tr>
+   
+    <tr width="336">
+        <td width="336">
+            <table id="ctl00_ContentPlaceHolder1_AdArticle1_SectionEbook1_Table1" class="EbookBorderStyle" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td>
+            <table class="EbookHeaderBackground" cellpadding="4" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td class="ValignMiddle" align="left" width="100%">
+                        <span class="">
+                            <span id="ctl00_ContentPlaceHolder1_AdArticle1_SectionEbook1_LabelControlTitle">Looking for a book on Windows Forms? Here is our book</span>
+                        </span>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+	</tr>
+	<tr>
+		<td>
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td>
+                        </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="ctl00_ContentPlaceHolder1_AdArticle1_SectionEbook1_DataListSectionEbook" style="width: 100%; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td>
+                                <table class="EbookBackgroundHeading" cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody><tr>
+                                        <td>
+                                            <table align="left" cellpadding="0" cellspacing="0">
+                                                <tbody><tr>
+                                                    <td>
+                                                        <a href="http://www.c-sharpcorner.com/Ebooks/Detail.aspx?EbookID=8">
+                                                            <img src="CreatingDialogsin.NET.aspx-Dateien/06112007071421AMprowpf.gif" class="RightBarHomeImageStyle" border="0">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                            <div>
+                                                <a class="LinkEbookStyle" href="http://www.c-sharpcorner.com/Ebooks/Detail.aspx?EbookID=8">
+                                                    Pro WPF: Windows Presentation Foundation in .NET 3.0
+                                                </a>
+                                                <br>
+                                                <b>Price:</b> US$ <span class="EbookOrangeText">25.00
+                                                </span>
+                                                <br>
+                                                <div id="ctl00_ContentPlaceHolder1_AdArticle1_SectionEbook1_DataListSectionEbook_ctl00_divOurPrice">
+                                                    <b>Our Price:</b> US$ <span class="EbookOurPriceText">17.50
+                                                    </span>
+                                                </div>
+                                                <br>
+                                                <div align="right">
+                                                    <a href="http://www.c-sharpcorner.com/Ebooks/BuyNow.aspx?eBookID=8">
+                                                        <img src="CreatingDialogsin.NET.aspx-Dateien/BuyNow.gif" border="0">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b>Description</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+This book covers from installation to application design and
+implementation to deployment. One of the most detailed books on new WPF
+technology, it provides you with the no-nonsense, practical advice you
+need in order to build high-quality WPF applications quickly and
+easily. </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <a id="ctl00_ContentPlaceHolder1_AdArticle1_SectionEbook1_DataListSectionEbook_ctl00_LinkButtonMoreEbook" class="LinkNormalStyle" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$AdArticle1$SectionEbook1$DataListSectionEbook$ctl00$LinkButtonMoreEbook','')">Browse more books here»</a>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+			</tr>
+		</tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+	</tr>
+</tbody></table>
+
+
+        </td>
+    </tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table><div id="div2" class="PaddingLeft5"><br><font size="2"><p align="justify"></p><p dir="ltr"><font face="Verdana, Arial, Helvetica, sans-serif"><img alt="" src="CreatingDialogsin.NET.aspx-Dateien/Step7.jpg" align="bottom" border="0" hspace="0"></font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">Figure 1 - Dialogs in .NET</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif">This tutorial was
+written in response to a newbie question in the Forums on how to create
+a dialog in .NET and extract the information from it.&nbsp;Admittedly,
+unless you know how to do it, it's not obvious how to create one.&nbsp;
+The thing to remember about a dialog is that it is just another
+variation of a Windows Form with certain properties altered and
+launched with the Show or ShowDialog method of the Form. <strong>Show</strong> is used for modeless dialogs (dialogs that run inside the application&nbsp; message loop).&nbsp;<strong>ShowDialog</strong> is used for modal dialogs (dialogs that run in their own message loop).<br><br></font><font face="Verdana, Arial, Helvetica, sans-serif">The
+first step in creating a new dialog for your application is to right
+click on the Visual Studio Solution Explorer and Choose <strong>Add New Item</strong> shown in figure 2 below:</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><img alt="" src="CreatingDialogsin.NET.aspx-Dateien/Step1.jpg" align="bottom" border="0" hspace="0"></font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">Figure 2 - Adding a new item to the Project</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><strong>Add New Item</strong>&nbsp;will
+bring up a selection of .NET component and classes from which to
+choose.&nbsp;Since a dialog is nothing more than a Windows Form, we
+simply create a new Windows Form and give it the name CustomerDialog.cs.</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><img alt="" src="CreatingDialogsin.NET.aspx-Dateien/Step2.jpg" align="bottom" border="0" hspace="0"></font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">Figure 3 - Choosing the Windows Form to add to the Project </font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">Now
+the Windows Form should show up in the design view in which we can now
+alter the properties of the Form.&nbsp; In order to have the Windows
+Form behave like a dialog, you'll need to change the following
+properties of the Windows Form:&nbsp; <strong>FormBorderStyle, AcceptButton,</strong> and<strong> CancelButton</strong>
+(I don't know about you, but I kind of wish the CancelButton property
+was called RejectButton a more appropriate opposite to AcceptButton.).<br><br></font><font face="Verdana, Arial, Helvetica, sans-serif">To make the Windows Form border look like a dialog, change the FormBorderStyle to <strong>FixedDialog.</strong>&nbsp;
+In order to set the AcceptButton and CancelButton, we need to&nbsp;
+create an OK and Cancel button inside the dialog by dragging two new
+buttons from the toolbox onto the Windows Form as shown in Figure 4:</font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif"><img alt="" src="CreatingDialogsin.NET.aspx-Dateien/Step3.jpg" align="bottom" border="0" hspace="0"></font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">Figure 4 - Adding the Dialog Buttons in the Design View</font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">Now
+we need to set the AcceptButton and CancelButton properties of the
+Windows Form based on these two buttons.&nbsp; Visual Studio is nice
+enough to allow us to select the buttons from a combobox in the
+property view so we don't have to do any typing here (see figure 5):</font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif"><img alt="" src="CreatingDialogsin.NET.aspx-Dateien/Step4.jpg" align="bottom" border="0" hspace="0"></font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">Figure 5 - Choosing Accept and Cancel Buttons in the Properties Window of the Form</font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">Not
+only do we need to tell the dialog which buttons are the AcceptButton
+and CancelButton, but we need to tell the buttons what results they
+will return upon exiting the dialog. Below we change the properties of
+the OKButton and MyCancelButton to reflect the DialogResults:</font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif"><img alt="" src="CreatingDialogsin.NET.aspx-Dateien/Step6a.jpg" align="bottom" border="0" hspace="0">&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Verdana, Arial, Helvetica, sans-serif"><img alt="" src="CreatingDialogsin.NET.aspx-Dateien/Step6b.jpg" align="bottom" border="0" hspace="0"></font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">Figu</font><font face="Verdana, Arial, Helvetica, sans-serif">re 6 - Setting the DialogResult properties of the buttons</font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">We
+have finished changing the Windows Form properties in order to make it
+behave like a dialog.&nbsp; In order to give the sample a little more
+substance, we'll add a few fields for customer entry as shown in figure
+7:</font><font face="Verdana, Arial, Helvetica, sans-serif"></font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif"><img alt="" src="CreatingDialogsin.NET.aspx-Dateien/Step5.jpg" align="bottom" border="0" hspace="0"></font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">Figure 7 - Adding Fields to the Customer Dialog</font></p>
+<p dir="ltr" style="margin-right: 0px;"><font face="Verdana, Arial, Helvetica, sans-serif">Bringing
+up a modal dialog is no more difficult than constructing the dialog and
+then calling ShowDialog.&nbsp;By checking the DialogResult returned by
+the ShowDialog method of the form, we can determine whether or not the
+user rejected(cancelled) or accepted the information inside the
+dialog.&nbsp;Below is the simple code for launching the dialog we just
+created:<br><br></font><font face="Verdana, Arial, Helvetica, sans-serif"><strong><u>Listing 1 - Launching a dialog and checking its DialogResult<br></u><br></strong></font><font face="Verdana, Arial, Helvetica, sans-serif"><font color="#008000" size="2">// construct a new customer dialog<br></font><font size="2">CustomerDialog myCustomerDialog = </font><font color="#0000ff" size="2">new</font><font size="2"> CustomerDialog();<br></font><font color="#008000" size="2">// show the modal dialog until the AcceptButton (OK) or CancelButton(Cancel) is<br>pressed<br></font><font color="#0000ff" size="2">if</font><font size="2"> (myCustomerDialog.ShowDialog() == DialogResult.OK)<br>{<br></font><font color="#008000" size="2">// extract the data from the dialog<br></font><font size="2">MessageBox.Show(myCustomerDialog.Name + " was entered into the database");<br>}<br></font></font><font face="Verdana, Arial, Helvetica, sans-serif"><br>Note
+that dialog maintains the data information after the AcceptButton is
+pressed, so to extract the information, you can simply examine the
+public properties or fields of the dialog.<br><br></font><font face="Verdana, Arial, Helvetica, sans-serif"><strong>Modeless Dialogs<br><br></strong></font><font face="Verdana, Arial, Helvetica, sans-serif">A
+modal dialog has its own message loop, so while its running, you can't
+do anything else in the application until the AcceptButton or
+CancelButton are pressed. A modeless dialog is a dialog you can launch
+which will still allow you to capture events in the
+application.&nbsp;That&nbsp; means you can have the modeless dialog
+running as a separate window and still allow user access to the main
+application.&nbsp;The Show method of the Windows Form is used to launch
+a modeless dialog. This method does not return anything simply because
+once its called, it launches the dialog and returns directly to the
+application.&nbsp;Unlike ShowDialog it doesn't sit and wait for a
+DialogResult from the user.&nbsp;So how do you handle the AcceptButton
+and CancelButton in a modeless dialog?&nbsp; Where and when, and how do
+you extract the information from this dialog?<br><br></font><font face="Verdana, Arial, Helvetica, sans-serif">One
+solution to this problem is to deal with everything inside the button
+event handlers of the modeless dialog.&nbsp; For example if you
+override the OKButton event handler, you can close the dialog
+explicitly and call back to the parent or any object that you have made
+the modeless dialog aware.<br><br></font><font face="Verdana, Arial, Helvetica, sans-serif">Let's
+say you want to show the customer name entered into the name field as
+you did in the modal dialog in listing #1.&nbsp;You also want to show
+the customer name after the user clicks OK in the status bar of the
+main form.&nbsp;In order to do this in a modeless dialog you need to
+first make the dialog aware of the parent form. The easiest way to do
+this is to pass the parent form into the constructor of the modeless
+dialog.<br><br></font><font face="Verdana, Arial, Helvetica, sans-serif"><strong><u>Listing 2 - Changing the constructor of the modeless dialog to accept the parent object: <br><br></u></strong></font><font face="Verdana, Arial, Helvetica, sans-serif"><font color="#008000" size="2">// construct a new customer dialog<br></font><font size="2">CustomerDialog myCustomerDialog = </font><font color="#0000ff" size="2">new</font><font size="2"> CustomerDialog();<br></font><font color="#008000" size="2">// show the modal dialog until the AcceptButton (OK) or CancelButton(Cancel) is pressed<br></font><font color="#0000ff" size="2">if</font><font size="2"> (myCustomerDialog.ShowDialog() == DialogResult.OK)<br>{<br></font><font color="#008000" size="2">// extract the data from the dialog<br></font><font size="2">MessageBox.Show(myCustomerDialog.Name + " was entered into the database");<br>}Form1 TheParentForm = </font><font color="#0000ff" size="2">null</font><font size="2">;<br></font><font color="#0000ff" size="2">public</font><font size="2"> CustomerDialog(Form1 parent)<br>{<br></font><font color="#008000" size="2">//<br></font><font color="#008000" size="2">// Required for Windows Form Designer support<br></font><font color="#008000" size="2">//<br></font><font size="2">InitializeComponent();<br>TheParentForm = parent; </font><font color="#008000" size="2">// assign a reference to the parent creating the modeless dialog<br></font><font size="2">}<br></font></font><font face="Verdana, Arial, Helvetica, sans-serif"><br>Now
+when the user clicks OK in the modeless dialog, we can call a method
+back to the parent form to display the customer name&nbsp; in the
+status bar.<br><br></font><font face="Verdana, Arial, Helvetica, sans-serif"><strong><u>Listing 3 - Calling back to the parent object and closing the dialog <br><br></u></strong></font><font face="Verdana, Arial, Helvetica, sans-serif"><font color="#0000ff" size="2">private</font><font size="2"> </font><font color="#0000ff" size="2">void</font><font size="2"> OKButton_Click(</font><font color="#0000ff" size="2">object</font><font size="2"> sender, System.EventArgs e)<br>{<br></font><font color="#008000" size="2">// assign a dialog result<br></font><font size="2">OKButton.DialogResult = DialogResult.OK;<br></font><font color="#008000" size="2">// Call back to the parent passing the entire CustomerDialog Instance<br></font><font size="2">TheParentForm.ShowCustomerName(</font><font color="#0000ff" size="2">this</font><font size="2">);<br></font><font color="#008000" size="2">// Finished, close the dialog<br></font><font size="2">Close();<br>}<br><br></font></font><font face="Verdana, Arial, Helvetica, sans-serif">The
+Parent Form simply takes an instance of the CustomerDialog in the
+Parent Form's ShowCustomerName method and extracts the name from the
+instance as in Listing 4:<br><br></font><font face="Verdana, Arial, Helvetica, sans-serif"><strong><u>Listing 4 - Extracting the customer dialog's customer name into the status bar of the main form <br><br></u></strong></font><font face="Verdana, Arial, Helvetica, sans-serif"><font color="#0000ff" size="2">public</font><font size="2"> </font><font color="#0000ff" size="2">void</font><font size="2"> ShowCustomerName(CustomerDialog myCustomerDialog)<br>{<br></font><font color="#008000" size="2">// set the status bar of the main form to the customer name in the customer dialogs edit box<br></font><font size="2">statusBar1.Text = myCustomerDialog.txtName.Text;<br>}<br><br></font></font><font face="Verdana, Arial, Helvetica, sans-serif">The
+cancel button event handler of the dialog does not need to call back to
+the main form, because the user cancelled the input of
+information.&nbsp;The only thing necessary to do in the cancel event
+handler is to close the dialog.<br><br></font><font face="Verdana, Arial, Helvetica, sans-serif"><strong><u>Listing 5 - Handling the Cancel Button on the modeless dialog<br><br></u></strong><font color="#0000ff" size="2">private</font><font size="2"> </font><font color="#0000ff" size="2">void</font><font size="2"> MyCancelButton_Click(</font><font color="#0000ff" size="2">object</font><font size="2"> sender, System.EventArgs e)<br>{<br></font><font color="#008000" size="2">// user cancelled the dialog, so just close it<br></font><font size="2">Close();<br>}<br></font></font><font face="Verdana, Arial, Helvetica, sans-serif"><br>(Of
+course if the cancellation of the dialog is significant to the parent,
+you can certainly call back to a parent method in the form handling the
+cancellation.)</font><font face="Verdana, Arial, Helvetica, sans-serif"><br><br><strong>Conclusion<br><br></strong></font><font face="Verdana, Arial, Helvetica, sans-serif">Although
+not as intuitive as a window form running in the main application,
+dialogs are pretty easy to use once you get the hang of it.&nbsp;I
+believe Microsoft did us a service in having all the functionality of
+the dialog in the Windows Form, because really what is a dialog, if not
+yet another form? One thing that would be nice, however, is to have a
+Modal Dialog Wizard in the Local Project Items folder.&nbsp;This wizard
+would simply create a blank form with the OK and Cancel Button Anchored
+to the bottom of the form and all the appropriate properties
+set.&nbsp;This could easily using the template wizards in C# and by
+adding the dialog form information into the ui.vsdir file in the
+C:\Program Files\Microsoft Visual Studio .NET
+2003\VC#\CSharpProjectItems\LocalProjectItems\UI directory. You would
+also need to create an AddDialogWinForm.vsz file in the C:\Program
+Files\Microsoft Visual Studio .NET 2003\VC#\CSharpProjectItems
+directory.&nbsp;For more information on creating template wizards check
+out my article Creating Custom Project Template Wizards Using C# and
+.NET.</font></p>
+
+</font></div></td></tr></tbody></table></td>
+</tr>
+</tbody></table></div>
+
+
+<script language="javascript" src="CreatingDialogsin.NET.aspx-Dateien/MindcrackerJScript.js"></script>
+
+<script language="javascript">
+			function CheckSessionDA(sCheck, sReturnURL)
+			{
+				if(sCheck == "")
+				{
+					window.location.href('../../../UserRegistration/LoginCheck.aspx?ReturnURL='+sReturnURL);
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}									
+</script>
+
+<script language="javascript">
+	
+	/*This javascript is used to open and close the question 
+	//and answers detail in Read/Post Comment block */
+		//=======================================
+			//detect browser settings for showing and hiding Blocks
+			isNS4 = (document.layers) ? true : false;
+			isIE4 = (document.all && !document.getElementById) ? true : false;
+			isIE5 = (document.all && document.getElementById) ? true : false;
+			isNS6 = (!document.all && document.getElementById) ? true : false;
+		//========================================
+			function ShowHideBlock(BlockID)
+			{
+				objElement = document.getElementById(BlockID).style;					
+				if(objElement.display == "")
+				{
+					objElement.display = "none";
+				} 
+				else 
+				{
+					objElement.display = "";
+				}
+			}			
+</script>
+
+
+<br>
+<br>
+
+<!--Begin-Miscellaneous-->
+<table class="ArticleBG" id="Table14" border="0" cellspacing="0">
+    <tbody><tr>
+        <td class="ArticleIconControlLeftBorder">
+            &nbsp;
+            
+            &nbsp;
+            <input name="ctl00$ContentPlaceHolder1$ArticleFooter1$ImageButtonEmail" id="ctl00_ContentPlaceHolder1_ArticleFooter1_ImageButtonEmail" title="Email this article to friend" src="CreatingDialogsin.NET.aspx-Dateien/Email.gif" style="border-width: 0px;" type="image">&nbsp;
+            <input name="ctl00$ContentPlaceHolder1$ArticleFooter1$ImageButtonAddToMyBriefcase" id="ctl00_ContentPlaceHolder1_ArticleFooter1_ImageButtonAddToMyBriefcase" title="Bookmark this article" src="CreatingDialogsin.NET.aspx-Dateien/bookmark.gif" style="border-width: 0px;" type="image">&nbsp;
+            
+            <a onclick="javascript:return CheckSessionArticleNewURL('');" href="#RateTheArticle">
+                <img alt="Rate this article" src="CreatingDialogsin.NET.aspx-Dateien/rate.gif" border="0"></a>
+            <a onclick="javascript:return CheckSessionArticleNewURL('');" href="#ReadAndPostComment">
+                <img alt="Read/Post comments" src="CreatingDialogsin.NET.aspx-Dateien/readcomments.gif" border="0"></a>
+            <a onclick="javascript:return CheckSessionArticleNewURL('');" href="#SupportUs">
+                <img alt="Support Us" src="CreatingDialogsin.NET.aspx-Dateien/support-us.gif" border="0"></a>
+            <input name="ctl00$ContentPlaceHolder1$ArticleFooter1$ImageButtonSimilarArticles" id="ctl00_ContentPlaceHolder1_ArticleFooter1_ImageButtonSimilarArticles" title="View similar articles" src="CreatingDialogsin.NET.aspx-Dateien/similar.gif" style="border-width: 0px;" type="image">&nbsp;
+            <input name="ctl00$ContentPlaceHolder1$ArticleFooter1$ImageButtonAuthorArticles" id="ctl00_ContentPlaceHolder1_ArticleFooter1_ImageButtonAuthorArticles" title="Author's other articles" src="CreatingDialogsin.NET.aspx-Dateien/Author.gif" style="border-width: 0px;" type="image">
+            <a href="javascript:void(GetPrintVersion())">
+                <img alt="Printable Version" src="CreatingDialogsin.NET.aspx-Dateien/printer.gif" border="0"></a></td>
+        <td class="ArticleSideCutBottom">
+        </td>
+    </tr>
+</tbody></table>
+<table id="Table4" border="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td class="ArticleBG">
+        </td>
+    </tr>
+</tbody></table>
+<!--End-Miscellaneous-->
+<a name="ReadAndPostComment"></a>
+<table class="TableReadNPostContainer" cellpadding="5" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td>
+            <!--Begin-About Author-->
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td width="50%">
+                        <table id="TableDisplayArticleHeader" class="AuthorDetailHeader" border="0" cellpadding="0" cellspacing="0" width="99%">
+                            <tbody><tr>
+                                <td height="3">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;About the author</td>
+                            </tr>
+                        </tbody></table>
+                        <table class="AuthorDetailBorder" border="0" cellpadding="0" cellspacing="0" width="99%">
+                            <tbody><tr>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellspacing="5" height="180" width="100%">
+                                        <tbody><tr>
+                                            <td width="80">
+                                                <img id="ctl00_ContentPlaceHolder1_ArticleFooter1_ImageAuthor" src="CreatingDialogsin.NET.aspx-Dateien/DefaultAuthorImage.gif" style="border-width: 0px; height: 120px; width: 100px;"></td>
+                                            <td align="left">
+                                                <b>
+                                                    <a id="ctl00_ContentPlaceHolder1_ArticleFooter1_LinkButtonAuthorName" class="LinkNormalStyle" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$ArticleFooter1$LinkButtonAuthorName','')">Michael Gold</a></b><br>
+                                                <span id="ctl00_ContentPlaceHolder1_ArticleFooter1_LabelAuthorDescription">Michael
+Gold is President of Microgold Software Inc., makers of the WithClass
+UML Tool. His company is a Microsoft VBA Partner and Borland Partner.
+He has a BSEE and MEng EE from Cornell University and has consulted for
+Chase Manhattan Bank, Merrill Lynch. Currently he is a senior
+consultant at JP Morgan Bank. He has been involved in several .NET book
+projects, and is currently working on a book for using .NET with
+embedded systems. He can be reached at techsupport@microgold.com </span></td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                    <td>
+                        <table class="ControlMidBorderStyle" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody><tr>
+                                <td>
+                                    <table class="ControlMidHeaderBackground" id="TableReadNPostCommentsHeader" cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody><tr>
+                                            <td colspan="2">
+                                                &nbsp;Post a new question or comment about this article</td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table id="Table1" cellpadding="2" cellspacing="0" height="180" width="100%">
+                                        <tbody><tr class="Separator">
+                                            <td width="75">
+                                            </td>
+                                            <td>
+                                                </td>
+                                        </tr>
+                                        <tr style="font-weight: bold; color: rgb(0, 0, 0);">
+                                            <td align="right" width="75">
+                                                <b>Subject:</b></td>
+                                            <td align="left">
+                                                <input name="ctl00$ContentPlaceHolder1$ArticleFooter1$TextBoxSubject" id="ctl00_ContentPlaceHolder1_ArticleFooter1_TextBoxSubject" class="CommonTextBoxStyle" style="width: 80%;" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" width="75">
+                                                <b>Comment:</b></td>
+                                            <td align="left">
+                                                <textarea name="ctl00$ContentPlaceHolder1$ArticleFooter1$TextBoxComment" rows="2" cols="20" id="ctl00_ContentPlaceHolder1_ArticleFooter1_TextBoxComment" class="CommonTextBoxStyle" style="height: 100px; width: 80%;"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="75">
+                                            </td>
+                                            <td>
+                                                <input name="ctl00$ContentPlaceHolder1$ArticleFooter1$ButtonSend" value="Post comment" id="ctl00_ContentPlaceHolder1_ArticleFooter1_ButtonSend" class="CommonButtonStyle" style="width: 100px;" type="submit">
+                                                
+                                                
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr class="Separator">
+                                            <td width="75">
+                                            </td>
+                                            <td>
+                                                </td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+            <!--End-About Author-->
+            <!--Begin-Rating Article-->
+            <a name="RateTheArticle"></a>
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td bgcolor="black" height="2">
+                    </td>
+                </tr>
+            </tbody></table>
+            <table id="ctl00_ContentPlaceHolder1_ArticleFooter1_TableRatingArticle" class="YellowBG" cellpadding="2" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="VAlignMiddle">
+                        &nbsp;<a href="#Top" class="BlackBoldLink">[Top]</a></td>
+		<td class="VAlignMiddle" align="right">
+                        <a class="BlackBoldLink">
+                            <span id="ctl00_ContentPlaceHolder1_ArticleFooter1_LabelRateSideHeading">Rate this article:-</span></a></td>
+		<td id="ctl00_ContentPlaceHolder1_ArticleFooter1_td1" class="VAlignMiddle" width="16%">
+                        <table id="ctl00_ContentPlaceHolder1_ArticleFooter1_RadioButtonListRate" style="width: 170px; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td><input id="ctl00_ContentPlaceHolder1_ArticleFooter1_RadioButtonListRate_0" name="ctl00$ContentPlaceHolder1$ArticleFooter1$RadioButtonListRate" value="1" type="radio"><label for="ctl00_ContentPlaceHolder1_ArticleFooter1_RadioButtonListRate_0">1</label></td><td><input id="ctl00_ContentPlaceHolder1_ArticleFooter1_RadioButtonListRate_1" name="ctl00$ContentPlaceHolder1$ArticleFooter1$RadioButtonListRate" value="2" type="radio"><label for="ctl00_ContentPlaceHolder1_ArticleFooter1_RadioButtonListRate_1">2</label></td><td><input id="ctl00_ContentPlaceHolder1_ArticleFooter1_RadioButtonListRate_2" name="ctl00$ContentPlaceHolder1$ArticleFooter1$RadioButtonListRate" value="3" type="radio"><label for="ctl00_ContentPlaceHolder1_ArticleFooter1_RadioButtonListRate_2">3</label></td><td><input id="ctl00_ContentPlaceHolder1_ArticleFooter1_RadioButtonListRate_3" name="ctl00$ContentPlaceHolder1$ArticleFooter1$RadioButtonListRate" value="4" type="radio"><label for="ctl00_ContentPlaceHolder1_ArticleFooter1_RadioButtonListRate_3">4</label></td><td><input id="ctl00_ContentPlaceHolder1_ArticleFooter1_RadioButtonListRate_4" name="ctl00$ContentPlaceHolder1$ArticleFooter1$RadioButtonListRate" value="5" type="radio"><label for="ctl00_ContentPlaceHolder1_ArticleFooter1_RadioButtonListRate_4">5</label></td>
+			</tr>
+		</tbody></table></td>
+		<td id="ctl00_ContentPlaceHolder1_ArticleFooter1_td2" class="VAlignMiddle" align="center" width="7%">
+                        <input name="ctl00$ContentPlaceHolder1$ArticleFooter1$ButtonRate" value="Rate it" id="ctl00_ContentPlaceHolder1_ArticleFooter1_ButtonRate" class="CommonButtonStyle" style="width: 60px;" type="submit"></td>
+	</tr>
+</tbody></table>
+
+            <table class="Separator" cellpadding="0" cellspacing="0">
+                <tbody><tr>
+                    <td>
+                    </td>
+                </tr>
+            </tbody></table>
+            <!--End-Rating Article-->
+            <table align="center" width="100%">
+                <tbody><tr>
+                    <td class="VAlignMiddle" width="100%">
+                        
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td rowspan="2" width="50%">
+            <table class="FeaturedArticleContainerTableBorder" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+                <tbody><tr>
+                    <td colspan="2">
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tbody><tr>
+                                <td class="FeaturedArticleSeparator" height="5">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <table class="FeaturedArticleHeader" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody><tr>
+                                <td>
+                                    Sponsors
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+                <tr height="10">
+                    <td width="5">
+                    </td>
+                    <td>
+                        
+<table height="120" width="100%">
+<tbody><tr>
+	<td align="left" width="100%">
+	
+            <br>
+            
+	</td>
+</tr>
+</tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+        <td id="ctl00_ContentPlaceHolder1_ArticleFooter1_ArticleSponsorTraining1_tdSpace" rowspan="2" width="5">
+        </td>
+
+        <td rowspan="2" valign="top">
+            
+            
+<table class="TrainingBorderStyle" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td>
+            <table class="TrainingHeaderBackground" cellpadding="4" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td class="ValignMiddle" align="left" width="100%">
+                        <span>
+                            <span id="ctl00_ContentPlaceHolder1_ArticleFooter1_ArticleSponsorTraining1_AdConsulting1_LabelControlTitle">Looking for C# Consulting?</span>
+                        </span>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table cellpadding="2" cellspacing="2" width="100%">
+                <tbody><tr>
+                    <td>
+                        C# Consulting is founded in 2002 by the founders of C# Corner. Unlike a traditional
+                        consulting company, our consultants are well-known experts in .NET and many of them
+                        are MVPs, authors, and trainers. We specialize in Microsoft .NET development and
+                        utilize Agile Development and Extreme Programming practices to provide fast pace
+                        quick turnaround results. Our software development model is a mix of Agile Development,
+                        traditional SDLC, and Waterfall models.<b>
+                        <a id="ctl00_ContentPlaceHolder1_ArticleFooter1_ArticleSponsorTraining1_AdConsulting1_HyperLinkConsulting" class="LinkNormalStyle" href="http://www.c-sharpcorner.com/Services/">Click here to learn more about C# Consulting.</a></b></td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+        </td>
+    </tr>
+    <tr>
+    </tr>
+</tbody></table>
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <!--Begin-Read/Post comments-->
+            <table class="TableReadNPostContainer" id="TableReadNPostCommentsContainer" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td>
+                        
+                        <table id="ctl00_ContentPlaceHolder1_ArticleFooter1_DataGridDiscussion" style="border-style: none; border-width: 1px; height: 50%; width: 100%; border-collapse: collapse;" border="1" cellpadding="4" cellspacing="0" rules="all">
+	<tbody><tr style="font-weight: bold;">
+		<td>
+                                        <!--<table width="100%" cellpadding="2" cellspacing="2">
+                                            <tr>
+                                                <td class="NewThreadBG">
+                                                    <a class="BlackLink" href="/Articles/ArticleComments.aspx?ArticleID=ca39e8a5-ac3b-43fc-9e0e-820be111e3f2" onclick="javascript:return CheckSessionArticleNewURL('');">
+                                                        Post a new question or comment&nbsp;<img alt="Read/Post comments" src="/Images/Articles/readcomments.gif"
+                                                            border="0"></a>
+                                                </td>
+                                            </tr>
+                                        </table>-->
+                                        <table cellpadding="2" cellspacing="1" width="100%">
+                                            <tbody><tr>
+                                                <td class="NewThreadBG">
+                                                    Latest Comments:
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                        <table cellpadding="1" cellspacing="1" width="100%">
+                                            <tbody><tr class="MsgHeading">
+                                                <td>
+                                                    Subject</td>
+                                                <td width="72">
+                                                    Posted By</td>
+                                                <td width="72">
+                                                    Posted On</td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+	</tr>
+</tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class="Separator">
+                <tbody><tr>
+                    <td>
+                    </td>
+                </tr>
+            </tbody></table>
+            <a name="SupportUs"></a>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td>
+                        
+
+<script language="javascript" src="CreatingDialogsin.NET.aspx-Dateien/MindcrackerJScript.js"></script>
+
+<script language="javascript">
+			function CheckSessionDA(sCheck, sReturnURL)
+			{
+				if(sCheck == "")
+				{
+					window.location.href('../../../UserRegistration/LoginCheck.aspx?ReturnURL='+sReturnURL);
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}									
+</script>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td id="ctl00_ContentPlaceHolder1_ArticleFooter1_ArticleCenterBottom1_tblSimilarArticles" rowspan="2" width="50%">
+            <table id="ctl00_ContentPlaceHolder1_ArticleFooter1_ArticleCenterBottom1_TableDisplayArticleContainer" class="FeaturedArticleContainerTableBorder" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+	<tbody><tr>
+		<td colspan="2">
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tbody><tr>
+                                <td class="FeaturedArticleSeparator" height="5">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <table class="FeaturedArticleHeader" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody><tr>
+                                <td>
+                                    Similar Articles
+                                    
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+	</tr>
+	<tr height="10">
+		<td width="5">
+                    </td>
+		<td>
+                        <table id="ctl00_ContentPlaceHolder1_ArticleFooter1_ArticleCenterBottom1_DataGridDisplayArticles" style="border-width: 0px; height: 100%; width: 100%; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr valign="top">
+				<td>
+                                        
+                                        <table cellpadding="2" cellspacing="0">
+                                            <tbody><tr>
+                                                <td align="left">
+                                                    <img id="img1" src="CreatingDialogsin.NET.aspx-Dateien/bullet_red.gif" alt="" align="top" border="0">
+                                                </td>
+                                                <td align="left">
+                                                    <a href="http://www.c-sharpcorner.com/UploadFile/mgold/photoalbum11272005232641PM/photoalbum.aspx" class="LinkNormalStyle">
+                                                        A Virtual Photo Album in C# and .NET
+                                                        .</a>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+			</tr><tr valign="top">
+				<td>
+                                        
+                                        <table cellpadding="2" cellspacing="0">
+                                            <tbody><tr>
+                                                <td align="left">
+                                                    <img id="img1" src="CreatingDialogsin.NET.aspx-Dateien/bullet_red.gif" alt="" align="top" border="0">
+                                                </td>
+                                                <td align="left">
+                                                    <a href="http://www.c-sharpcorner.com/UploadFile/prasad_1/ConsoleBasedWindowsForm11292005061312AM/ConsoleBasedWindowsForm.aspx" class="LinkNormalStyle">
+                                                        Console Based Windows Form
+                                                        .</a>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+			</tr><tr valign="top">
+				<td>
+                                        
+                                        <table cellpadding="2" cellspacing="0">
+                                            <tbody><tr>
+                                                <td align="left">
+                                                    <img id="img1" src="CreatingDialogsin.NET.aspx-Dateien/bullet_red.gif" alt="" align="top" border="0">
+                                                </td>
+                                                <td align="left">
+                                                    <a href="http://www.c-sharpcorner.com/UploadFile/LivMic/Address_Control_106122006013836AM/Address_Control_1.aspx" class="LinkNormalStyle">
+                                                        Building the Address control: Part I
+                                                        .</a>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+			</tr><tr valign="top">
+				<td>
+                                        
+                                        <table cellpadding="2" cellspacing="0">
+                                            <tbody><tr>
+                                                <td align="left">
+                                                    <img id="img1" src="CreatingDialogsin.NET.aspx-Dateien/bullet_red.gif" alt="" align="top" border="0">
+                                                </td>
+                                                <td align="left">
+                                                    <a href="http://www.c-sharpcorner.com/UploadFile/DipalChoksi/PassingDataBetweenaWindowsFormandDialogBoxes11242005035025AM/PassingDataBetweenaWindowsFormandDialogBoxes.aspx" class="LinkNormalStyle">
+                                                        Passing Data Between a Windows Form and Dialog Boxes
+                                                        .</a>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+			</tr><tr valign="top">
+				<td>
+                                        
+                                        <table cellpadding="2" cellspacing="0">
+                                            <tbody><tr>
+                                                <td align="left">
+                                                    <img id="img1" src="CreatingDialogsin.NET.aspx-Dateien/bullet_red.gif" alt="" align="top" border="0">
+                                                </td>
+                                                <td align="left">
+                                                    <a href="http://www.c-sharpcorner.com/UploadFile/rolf.krane/SnowCrystal11292005003129AM/SnowCrystal.aspx" class="LinkNormalStyle">
+                                                        Snow Crystal in C#
+                                                        .</a>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+			</tr>
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td align="right" valign="baseline">
+                    </td>
+		<td align="right" valign="baseline">
+                        <a id="ctl00_ContentPlaceHolder1_ArticleFooter1_ArticleCenterBottom1_LinkButtonSimArticles" class="LinkNormalStyle" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$ArticleFooter1$ArticleCenterBottom1$LinkButtonSimArticles','')">Click here to see more similar articles</a>&nbsp;</td>
+	</tr>
+</tbody></table>
+
+        </td>
+
+        <td id="ctl00_ContentPlaceHolder1_ArticleFooter1_ArticleCenterBottom1_tdSpace" rowspan="2" width="5">
+        </td>
+
+        <td rowspan="2" valign="top">
+            
+<table class="BreakingContainerTableBorder" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td colspan="2">
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td class="BreakingNewsSeparator" height="5">
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class="BreakingNewsHeader" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td height="4">
+                        Support Us
+                        <span id="ctl00_ContentPlaceHolder1_ArticleFooter1_ArticleCenterBottom1_SupportUs1_Label1"></span>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td width="5">
+        </td>
+        <td>
+            <table cellpadding="2" cellspacing="2">
+                <tbody><tr>
+                    <td align="right">
+                        <img src="CreatingDialogsin.NET.aspx-Dateien/blueDot.gif">
+                    </td>
+                    <td>
+                        Tell your friends <a class="LinkNormalStyle" href="http://www.c-sharpcorner.com/Email.aspx">about us </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <img src="CreatingDialogsin.NET.aspx-Dateien/blueDot.gif">
+                    </td>
+                    <td>
+                        Is this article is a Bad Submission <a class="LinkNormalStyle" href="http://www.c-sharpcorner.com/ReportBadSubmission.aspx">report us here</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <img src="CreatingDialogsin.NET.aspx-Dateien/blueDot.gif">
+                    </td>
+                    <td>
+                        <a id="ctl00_ContentPlaceHolder1_ArticleFooter1_ArticleCenterBottom1_SupportUs1_LinkButtonSubmitArticle" class="LinkNormalStyle" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$ArticleFooter1$ArticleCenterBottom1$SupportUs1$LinkButtonSubmitArticle','')">Submit articles</a>, tutorials,
+                        and tips
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <img src="CreatingDialogsin.NET.aspx-Dateien/blueDot.gif">
+                    </td>
+                    <td>
+                        Help by answering questions on our <a class="LinkNormalStyle" href="http://forums.c-sharpcorner.com/">
+                            discussion forums</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <img src="CreatingDialogsin.NET.aspx-Dateien/blueDot.gif">
+                    </td>
+                    <td>
+                        Help us correct errors and <a class="LinkNormalStyle" href="http://www.c-sharpcorner.com/ContactUs.aspx">
+                            broken links</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <img src="CreatingDialogsin.NET.aspx-Dateien/blueDot.gif">
+                    </td>
+                    <td>
+                        Looking for a job? <a class="LinkNormalStyle" href="http://www.mindcracker.com/">Post
+                            your resume here</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <img src="CreatingDialogsin.NET.aspx-Dateien/blueDot.gif">
+                    </td>
+                    <td>
+                        Looking for developers? <a class="LinkNormalStyle" href="http://www.mindcracker.com/">
+                            Post your job here</a>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+		
+        </td>
+    </tr>
+    <tr>
+    </tr>
+</tbody></table>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+<br>
+
+</td></tr></tbody></table></td>
+</tr></tbody></table></td>
+</tr>
+</tbody></table>
+<input name="ctl00$ContentPlaceHolder1$txtDownloadCount" id="ctl00_ContentPlaceHolder1_txtDownloadCount" type="hidden">
+
+        <table class="DefaultTableStyle" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+            <td> 
+<!-- start Vibrant Media IntelliTXT script section -->
+<script type="text/javascript" src="CreatingDialogsin.NET.aspx-Dateien/front.js"></script>
+<!-- end Vibrant Media IntelliTXT script section -->
+<table border="0" cellpadding="1" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td colspan="14" bgcolor="#0066cc" height="1">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="1">
+        </td>
+        <td colspan="13">
+            
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td align="center">
+            
+            <br>
+        </td>
+    </tr>
+</tbody></table>
+
+        </td>
+    </tr>
+</tbody></table>
+<table class="FooterBackground" border="0" cellpadding="1" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td align="center" bgcolor="#0066cc">
+        </td>
+    </tr>
+    <tr>
+        <td valign="bottom">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody><tr>
+                                <td valign="bottom">
+                                    &nbsp;<a id="ctl00_Footer1_HyperLinkHostedBy" class="LinkNormalStyle" href="http://www.maximumasp.com/">Hosted by MaximumASP</a>&nbsp;</td>
+                                <td width="2">
+                                    <font color="#11518f">|</font></td>
+                                <td valign="bottom">
+                                    &nbsp;<a id="ctl00_Footer1_HyperLinkBrokenLink" class="LinkNormalStyle" href="http://www.c-sharpcorner.com/ContactUS.aspx">Found a broken link?</a>&nbsp;</td>
+                                <td width="2">
+                                    <font color="#11518f">|</font></td>
+                                <td align="right" valign="bottom">
+                                    &nbsp;<a id="ctl00_Footer1_HyperLinkContactUs" class="LinkNormalStyle" href="http://www.c-sharpcorner.com/ContactUS.aspx">Contact Us</a>&nbsp;</td>
+                                <td width="2">
+                                    <font color="#11518f">|</font></td>
+                                <td valign="bottom">
+                                    &nbsp;<a id="ctl00_Footer1_HyperLinkTermsConditions" class="LinkNormalStyle" href="http://www.c-sharpcorner.com/TermsConditions.aspx">Terms &amp; conditions</a>&nbsp;</td>
+                                <td width="2">
+                                    <font color="#11518f">|</font></td>
+                                <td valign="bottom">
+                                    &nbsp;<a id="ctl00_Footer1_HyperLinkPrivacyPolicy" class="LinkNormalStyle" href="http://www.c-sharpcorner.com/PrivacyPolicy.aspx">Privacy Policy</a>&nbsp;</td>
+                                <td width="2">
+                                    <font color="#11518f">|</font></td>
+                                <td valign="bottom">
+                                    &nbsp;<a id="ctl00_Footer1_HyperLinkSiteMap" class="LinkNormalStyle" href="http://www.c-sharpcorner.com/SiteMap/">Site Map</a>&nbsp;</td>
+                                <td width="2">
+                                    <font color="#11518f">|</font></td>
+                                <td valign="bottom">
+                                    &nbsp;<a id="ctl00_Footer1_HyperLinkAdvertiseWithUs" class="LinkNormalStyle" href="http://www.c-sharpcorner.com/Media/">Advertise with us</a></td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                    <td align="right">
+                        <span class="GrayText">Current Version:
+                            <span id="ctl00_Footer1_LabelVersion">3.5.2865.18582</span></span>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td valign="bottom">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td class="VAlignBaseline">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody><tr>
+                                <td>
+                                    &nbsp;© 1999 - <span id="ctl00_Footer1_lblCurrentYear">2008</span>
+                                    &nbsp;Mindcracker LLC. All Rights Reserved
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="2">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                    <td align="right">
+                        <img src="CreatingDialogsin.NET.aspx-Dateien/McnLogo.gif">
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table></td>
+        </tr>
+         </tbody></table>            
+    
+<script type="text/javascript">
+<!--
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_ValidationSummaryLeftLogin"));
+var Page_Validators =  new Array(document.getElementById("ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId"), document.getElementById("ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword"));
+// -->
+</script>
+
+<script type="text/javascript">
+<!--
+var ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId = document.all ? document.all["ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId"] : document.getElementById("ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId");
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId.controltovalidate = "ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_txtUID";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId.focusOnError = "t";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId.errormessage = "User Id can\'t be empty.";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId.display = "None";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId.validationGroup = "LeftLogin";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId.initialvalue = "";
+var ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword = document.all ? document.all["ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword"] : document.getElementById("ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword");
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword.controltovalidate = "ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_txtPWD";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword.focusOnError = "t";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword.errormessage = "Password can\'t be empty.";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword.display = "None";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword.validationGroup = "LeftLogin";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword.initialvalue = "";
+var ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_ValidationSummaryLeftLogin = document.all ? document.all["ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_ValidationSummaryLeftLogin"] : document.getElementById("ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_ValidationSummaryLeftLogin");
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_ValidationSummaryLeftLogin.headertext = "Please check following field(s).";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_ValidationSummaryLeftLogin.showmessagebox = "True";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_ValidationSummaryLeftLogin.showsummary = "False";
+ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_ValidationSummaryLeftLogin.validationGroup = "LeftLogin";
+// -->
+</script>
+
+<div>
+
+	<input name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" type="hidden">
+	<input name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" type="hidden">
+	<input name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWJgKb0qH6BwL+xNbHCgLJ4NmBCgLM4PGACgL8kYfLAwKT0NfWBAKH/9fUBAKjwaK+AgLHn/DVDQLQ3rkNAuaKipkCArKM4qwBApyzim0Crsb7sAMC1ODG4QkC6peO4A0ChYSqhwgC19nP1QMC8q+e9QwCxJyz7AICgpmPuwQC+YvBiwkC6abtwAMCmbak3gYCsfHT/A4C8IaH1wgCqajbgQYC1NLn4gEC77u/0QIC7ru/0QIC7bu/0QIC7Lu/0QIC67u/0QIC4NSVvw4CtemFjgcCm6jyNQKCnqXhAwLayoOyBpXDF4O52fbWP8/nqwt3wunTp7p3" type="hidden">
+</div>
+
+<script type="text/javascript">
+<!--
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+// -->
+</script>
+        
+<script type="text/javascript">
+<!--
+
+document.getElementById('ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_ValidationSummaryLeftLogin').dispose = function() {
+    Array.remove(Page_ValidationSummaries, document.getElementById('ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_ValidationSummaryLeftLogin'));
+}
+var ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_Data = new Object();
+ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_Data.disappearAfter = 500;
+ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_Data.horizontalOffset = 0;
+ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_Data.verticalOffset = 0;
+ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_Data.hoverClass = 'ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_11 SubMenuDynamicHoverStyle';
+ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_Data.hoverHyperLinkClass = 'ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_10 SubMenuDynamicHoverStyle';
+ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_Data.staticHoverClass = 'ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_9 StaticHoverStyle';
+ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_Data.staticHoverHyperLinkClass = 'ctl00_ContentPlaceHolder1_LeftArticleControl1_SectionMenu1_ctl00_8 StaticHoverStyle';
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+WebForm_AutoFocus('ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_txtUID');Sys.Application.initialize();
+
+document.getElementById('ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorUserId'));
+}
+
+document.getElementById('ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_ContentPlaceHolder1_LeftArticleControl1_LeftLogin1_RequiredFieldValidatorPassword'));
+}
+// -->
+</script>
+</form>
+</body></html>

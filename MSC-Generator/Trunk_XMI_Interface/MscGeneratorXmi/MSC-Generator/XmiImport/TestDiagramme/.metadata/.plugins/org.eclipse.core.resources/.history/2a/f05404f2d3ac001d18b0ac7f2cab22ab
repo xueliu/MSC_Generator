@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="__6FoMHqFEd2LS6cj6_9KIg" name="ImportTest2">
+  <packageImport xmi:id="__6FoMXqFEd2LS6cj6_9KIg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_Bjt4cHqGEd2LS6cj6_9KIg" name="Diagram2">
+    <lifeline xmi:id="_DKYUQHqGEd2LS6cj6_9KIg" name="LifelineA"/>
+    <lifeline xmi:id="_F0YcYHqGEd2LS6cj6_9KIg" name="LifelineB"/>
+    <lifeline xmi:id="_HWwOEHqGEd2LS6cj6_9KIg" name="LifelineC"/>
+  </packagedElement>
+  <profileApplication xmi:id="__6FoMnqFEd2LS6cj6_9KIg">
+    <eAnnotations xmi:id="__6FoM3qFEd2LS6cj6_9KIg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+  </profileApplication>
+</uml:Model>

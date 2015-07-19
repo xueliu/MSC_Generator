@@ -1,0 +1,89 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>mscgen</RootNamespace>
+    <AssemblyName>mscgen</AssemblyName>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E11CDC2-B66A-497F-A8FA-213AB2AC7FEA}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Arguments.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="FootLine.cs" />
+    <Compile Include="FoundMessage.cs" />
+    <Compile Include="GeneratorAdds.cs" />
+    <Compile Include="GeneratorBasic.cs" />
+    <Compile Include="HeadLine.cs" />
+    <Compile Include="InLine.cs" />
+    <Compile Include="InLineBegin.cs" />
+    <Compile Include="InLineEnd.cs" />
+    <Compile Include="InLineSeperator.cs" />
+    <Compile Include="InLineText.cs" />
+    <Compile Include="Interpreter.cs" />
+    <Compile Include="ItemVerticalLine.cs" />
+    <Compile Include="LineComment.cs" />
+    <Compile Include="LostMessage.cs" />
+    <Compile Include="MeasureBeginn.cs" />
+    <Compile Include="MeasureEnd.cs" />
+    <Compile Include="MeasureLine.cs" />
+    <Compile Include="MeasureStart.cs" />
+    <Compile Include="MeasureStop.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="MessageBeginn.cs" />
+    <Compile Include="MessageEnd.cs" />
+    <Compile Include="MessageLine.cs" />
+    <Compile Include="MSC.cs" />
+    <Compile Include="MSCEnd.cs" />
+    <Compile Include="MSCGen.cs" />
+    <Compile Include="MSCItem.cs" />
+    <Compile Include="MscMark.cs" />
+    <Compile Include="NewPage.cs" />
+    <Compile Include="OutputBasic.cs" />
+    <Compile Include="Process.cs" />
+    <Compile Include="Processes.cs" />
+    <Compile Include="ProcessLine.cs" />
+    <Compile Include="ProcessRegion.cs" />
+    <Compile Include="ProcessStop.cs" />
+    <Compile Include="Reference.cs" />
+    <Compile Include="SetTimer.cs" />
+    <Compile Include="State.cs" />
+    <Compile Include="StopTimer.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="TimeOut.cs" />
+    <Compile Include="TimeoutBeginn.cs" />
+    <Compile Include="TimeoutEnd.cs" />
+    <Compile Include="TimeoutStop.cs" />
+    <Compile Include="TimerBegin.cs" />
+    <Compile Include="TimerEnd.cs" />
+    <Compile Include="Worksheet.cs" />
+    <Compile Include="ProcessCreate.cs" />
+    <EmbeddedResource Include="strings.en.resx" />
+    <EmbeddedResource Include="strings.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>

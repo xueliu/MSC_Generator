@@ -1,0 +1,366 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>pagesize</title>
+  <link href="GeneratorBlue.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table class=command>
+      <tr>
+        <th colspan=2 align=left class=headline>
+          PAGESIZE - Formatierung
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width=* colspan=2>
+            Über den Befehl <font class='propertycommand'>pagesize</font> kann die Größe des Diagramms festgelegt werden. Der Befehl stellt zwei unterschiedliche
+            Parametersätze zur Verfügung, die je nach Bedarf des Anwenders verwendet werden können.
+            Eine direkte Eingabe der Seitengröße von A0 bis A5 kann durch den Parameter <font class='property'>size</font> erfolgen, die zugehörige Orientierung kann durch den Parameter <font class='property'>orientation</font> angepasst werden.  
+            Der zweite Parametersatz ermöglicht eine eigenständige Definition der Diagrammbreite und Diagrammhöhe durch die Parameter <font class='property'>width</font> und <font class='property'>height</font>. 
+            Eine Festlegung der Größeneinheit der beiden Parameter ist durch den optionalen Parameter <font class='property'>unit</font> möglich.
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Syntax
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='propertycommand'>pagesize</font>: <font class='property'>size</font>, <font class='property'>orientation</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          oder
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='propertycommand'>pagesize</font>: <font class='property'>width</font>, <font class='property'>height</font>, <font class='property'>unit</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Parameter 
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='property'>size</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Wert
+              </th>
+              <th width=300 class=param>
+                Bedeutung
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                A0
+              </td>
+              <td class=param>
+                Das Diagramm hat die Größe einer DIN A0 Seite (118,9cm x 84,1cm)
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                A1
+              </td>
+              <td class=param>
+                Das Diagramm hat die Größe einer DIN A1 Seite (84,1cm x 59,4cm)
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                A2
+              </td>
+              <td class=param>
+                Das Diagramm hat die Größe einer DIN A2 Seite (59,4cm x 42cm)
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                A3
+              </td>
+              <td class=param>
+                Das Diagramm hat die Größe einer DIN A3 Seite (42cm x 29,7cm)
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                A4
+              </td>
+              <td class=param>
+                Das Diagramm hat die Größe einer DIN A4 Seite (29,7cm x 21cm)
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                A5
+              </td>
+              <td class=param>
+                Das Diagramm hat die Größe einer DIN A5 Seite (21cm x 14,8cm)
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='property'>orientation</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Wert
+              </th>
+              <th width=300 class=param>
+                Bedeutung
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                h
+              </td>
+              <td class=param>
+                Querformat
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                v
+              </td>
+              <td class=param>
+                Hochformat
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Der Standardwert für den Parameter ist "h".
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='property'>width</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Dieser Parameter legt die Breite des Diagramms fest. Die Größeneinheit ist vom Parameter <font class='property'>unit</font> abhängig. 
+          Bei der Eingabe von Dezimalzahlen muss beachtet werden, dass diese in Anführungszeichen angegeben werden.
+          <br>Der Wert "auto" passt die Breite automatisch an die Anzahl der definierten Prozesse an.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='property'>height</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Dieser Parameter legt die Höhe des Diagramms fest. Die Größeneinheit ist vom Parameter <font class='property'>unit</font> abhängig. 
+          Bei der Eingabe von Dezimalzahlen muss beachtet werden, dass diese in Anführungszeichen angegeben werden.
+          <br>Der Wert "auto" passt die Höhe des Diagramms automatisch an dessen Länge an.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='property'>unit</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Dieser Parameter definiert die Größeneinheit der unter <font class='property'>width</font> und <font class='property'>height</font> angegebenen Werte.
+          Für den wert "auto" ist dieser Parameter ohne Bedeutung. 
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Wert
+              </th>
+              <th width=300 class=param>
+                Bedeutung
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                pixel
+              </td>
+              <td class=param>
+                Bildpunkte (Pixel)
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                mm
+              </td>
+              <td class=param>
+                Millimeter
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                cm
+              </td>
+              <td class=param>
+                Zentimeter
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                inch
+              </td>
+              <td class=param>
+                Zoll
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>      
+      <tr>
+        <td colspan=2 class=paramtable>
+          Der Standardwert für den Parameter ist "pixel".
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Beispiel
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>PrintAuthor</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCompany</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintVersion</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCreationDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintFileName</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Font</font>: <font class='property'>"Arial", "10", "Regular"</font><br>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Anruf</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>5, 5, 5, 5</font><br>
+                <font class='propertycommand'>PrintFootLine</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Author</font>: <font class='property'>Martin Kotowicz</font><br>
+                <font class='propertycommand'>Company</font>: <font class='property'>ITESYS GmbH</font><br>
+                <font class='propertycommand'>Version</font>: <font class='property'>1.0</font><br>
+                <font class='propertycommand'>Date</font>: <font class='property'>20.10.2006</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>700, auto</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>CLU</font>, <font class='textpara'>"Anrufer"</font><br>
+                <font class='command'>process</font>: <font class='instance'>ON</font>, <font class='textpara'>"Zentrale des Anrufers"</font><br>
+                <font class='command'>process</font>: <font class='instance'>DN</font>, <font class='textpara'>"Zentrale des Anrufempfängers"</font><br>
+                <font class='command'>process</font>: <font class='instance'>CDU</font>, <font class='textpara'>"Anrufempfänger"</font><br>
+                <br>
+                <font class='command'>stateoverall</font>: <font class='textpara'>"keine Verbindung"</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CLU</font>, <font class='instance'>ON</font>, <font class='textpara'>"Anrufanfrage"</font>;<br>
+                <font class='command'>timerbegin</font>: <font class='element'>t1</font>, <font class='instance'>ON</font>, <font class='textpara'>T Anrufanfrage</font><br>
+                <font class='command'>msg</font>: <font class='instance'>ON</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufanfrage</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Anruf wird getätigt</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>CDU</font>, <font class='textpara'>Anruf</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CDU</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufsignal</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Signal</font><br>
+                <font class='command'>timerend</font>: <font class='element'>t1</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CDU</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufannahme</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Verbunden</font>;<br>
+                <font class='command'>stateoverall</font>: <font class='textpara'>Verbunden</font>;<br>
+               </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Anruf_1.gif'>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>PrintAuthor</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCompany</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintVersion</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCreationDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintFileName</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Font</font>: <font class='property'>"Arial", "10", "Regular"</font><br>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Anruf</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>5, 5, 5, 5</font><br>
+                <font class='propertycommand'>PrintFootLine</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Author</font>: <font class='property'>Martin Kotowicz</font><br>
+                <font class='propertycommand'>Company</font>: <font class='property'>ITESYS GmbH</font><br>
+                <font class='propertycommand'>Version</font>: <font class='property'>1.0</font><br>
+                <font class='propertycommand'>Date</font>: <font class='property'>20.10.2006</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>A4, h</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>CLU</font>, <font class='textpara'>"Anrufer"</font><br>
+                <font class='command'>process</font>: <font class='instance'>ON</font>, <font class='textpara'>"Zentrale des Anrufers"</font><br>
+                <font class='command'>process</font>: <font class='instance'>DN</font>, <font class='textpara'>"Zentrale des Anrufempfängers"</font><br>
+                <font class='command'>process</font>: <font class='instance'>CDU</font>, <font class='textpara'>"Anrufempfänger"</font><br>
+                <br>
+                <font class='command'>stateoverall</font>: <font class='textpara'>"keine Verbindung"</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CLU</font>, <font class='instance'>ON</font>, <font class='textpara'>"Anrufanfrage"</font>;<br>
+                <font class='command'>timerbegin</font>: <font class='element'>t1</font>, <font class='instance'>ON</font>, <font class='textpara'>T Anrufanfrage</font><br>
+                <font class='command'>msg</font>: <font class='instance'>ON</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufanfrage</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Anruf wird getätigt</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>CDU</font>, <font class='textpara'>Anruf</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CDU</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufsignal</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Signal</font><br>
+                <font class='command'>timerend</font>: <font class='element'>t1</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CDU</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufannahme</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Verbunden</font>;<br>
+                <font class='command'>stateoverall</font>: <font class='textpara'>Verbunden</font>;<br>
+               </td>
+              <td width=70% class=pic align=center>
+                <a href='./Images/Anruf_a4_1.gif'><img border='0' src='./Images/Anruf_a4_1.gif' width=660px></a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Siehe auch
+        </td>
+      </tr>
+      <tr>
+        <td class=seealso colspan=2>
+          <a href="pagemargins.html"><font class='propertycommand'>pagemargins</font></a> 
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

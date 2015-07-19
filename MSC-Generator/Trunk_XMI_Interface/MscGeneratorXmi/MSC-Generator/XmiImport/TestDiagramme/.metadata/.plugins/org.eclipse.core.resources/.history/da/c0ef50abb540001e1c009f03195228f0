@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di2="http://www.papyrusuml.org" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML">
+  <di2:Diagram isVisible="true" fontFamily="Arial" lineStyle="solid" fontColor="255:255:255" foregroundColor="255:255:255" backgroundColor="255:255:255" borderColor="255:255:255" position="0:0" name="DefaultDiagram">
+    <owner xsi:type="di2:Uml1SemanticModelBridge">
+      <element xsi:type="uml:Model" href="AnchorTest.uml#_bd13wD_9Ed6o-cwpAYSq2g"/>
+    </owner>
+  </di2:Diagram>
+  <di2:Diagram isVisible="true" fontFamily="Arial" lineStyle="solid" fontColor="255:255:255" foregroundColor="255:255:255" backgroundColor="255:255:255" borderColor="255:255:255" position="0:0" name="Sequence diagram of AnchorTest" type="SequenceDiagram">
+    <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="15:15" size="763:304">
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="98:40" size="100:200">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.0">
+          <element xsi:type="uml:Lifeline" href="AnchorTest.uml#_eajggD_9Ed6o-cwpAYSq2g"/>
+        </semanticModel>
+        <anchorage position="50:70" graphEdge="/1/@contained.1"/>
+      </contained>
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0">
+        <element xsi:type="uml:Interaction" href="AnchorTest.uml#_drYGUD_9Ed6o-cwpAYSq2g"/>
+      </semanticModel>
+      <anchorage position="0:114" graphEdge="/1/@contained.1"/>
+    </contained>
+    <contained xsi:type="di2:GraphEdge" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="255:255:255" borderColor="0:0:0" anchor="/1/@contained.0/@anchorage.0 /1/@contained.0/@contained.0/@anchorage.0">
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.1">
+        <element xsi:type="uml:Message" href="AnchorTest.uml#_g6twID_9Ed6o-cwpAYSq2g"/>
+      </semanticModel>
+    </contained>
+    <owner xsi:type="di2:Uml1SemanticModelBridge">
+      <element xsi:type="uml:Model" href="AnchorTest.uml#_bd13wD_9Ed6o-cwpAYSq2g"/>
+    </owner>
+  </di2:Diagram>
+</xmi:XMI>

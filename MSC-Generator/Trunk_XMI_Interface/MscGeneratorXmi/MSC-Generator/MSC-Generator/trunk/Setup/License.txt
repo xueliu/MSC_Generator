@@ -1,0 +1,4 @@
+Lizenzbedingungen für den MSC/SD Generator
+======================================
+
+MSC-SD-Generator, and its components, are released under the GPL v3 license. Please refer to the licenses for the full copyright restrictions placed on this software.

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:uml="http://schema.omg.org/spec/UML/2.1/umlL0.xml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schema.omg.org/spec/UML/2.1/umlL0.xml">
+  <xsd:import namespace="http://www.omg.org/XMI" schemaLocation="../../../plugin/org.eclipse.emf.ecore/model/XMI.xsd"/>
+  <xsd:complexType name="Class">
+    <xsd:annotation>
+      <xsd:documentation>A class is a type that has objects as its instances.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Type">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="ownedAttribute" type="uml:Property">
+            <xsd:annotation>
+              <xsd:documentation>The attributes owned by a class. These do not include the inherited attributes. Attributes are represented by instances of Property.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ownedOperation" type="uml:Operation">
+            <xsd:annotation>
+              <xsd:documentation>The operations owned by a class. These do not include the inherited operations.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="superClass" type="uml:Class">
+            <xsd:annotation>
+              <xsd:documentation>The immediate superclasses of a class, from which the class inherits.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
+        <xsd:attribute name="isAbstract" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>True when a class is abstract.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="superClass" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The immediate superclasses of a class, from which the class inherits.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Class" type="uml:Class">
+    <xsd:annotation>
+      <xsd:documentation>A class is a type that has objects as its instances.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="true" name="Type">
+    <xsd:annotation>
+      <xsd:documentation>A type is a named element that is used as the type for a typed element. A type can be contained in a package.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:NamedElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="package" type="uml:Package">
+            <xsd:annotation>
+              <xsd:documentation>Specifies the owning package of this classifier, if any.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
+        <xsd:attribute name="package" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the owning package of this classifier, if any.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Type" type="uml:Type">
+    <xsd:annotation>
+      <xsd:documentation>A type is a named element that is used as the type for a typed element. A type can be contained in a package.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="true" name="NamedElement">
+    <xsd:annotation>
+      <xsd:documentation>A named element represents an element with a name.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Element">
+        <xsd:attribute name="name" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The name of the NamedElement.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="NamedElement" type="uml:NamedElement">
+    <xsd:annotation>
+      <xsd:documentation>A named element represents an element with a name.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="true" name="Element">
+    <xsd:annotation>
+      <xsd:documentation>An element is a constituent of a model.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="ownedComment" type="uml:Comment">
+        <xsd:annotation>
+          <xsd:documentation>The Comments owned by this element.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+  </xsd:complexType>
+  <xsd:element name="Element" type="uml:Element">
+    <xsd:annotation>
+      <xsd:documentation>An element is a constituent of a model.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="Comment">
+    <xsd:annotation>
+      <xsd:documentation>A comment is a textual annotation that can be attached to a set of elements.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="annotatedElement" type="uml:Element">
+            <xsd:annotation>
+              <xsd:documentation>References the Element(s) being commented.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
+        <xsd:attribute name="body" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Specifies a string that is the comment.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="annotatedElement" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>References the Element(s) being commented.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Comment" type="uml:Comment">
+    <xsd:annotation>
+      <xsd:documentation>A comment is a textual annotation that can be attached to a set of elements.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="Package">
+    <xsd:annotation>
+      <xsd:documentation>A package is a container for types and other packages.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:NamedElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="nestedPackage" type="uml:Package">
+            <xsd:annotation>
+              <xsd:documentation>The set of contained packages.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="nestingPackage" type="uml:Package">
+            <xsd:annotation>
+              <xsd:documentation>The containing package.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ownedType" type="uml:Type">
+            <xsd:annotation>
+              <xsd:documentation>The set of contained types.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
+        <xsd:attribute name="nestingPackage" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The containing package.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Package" type="uml:Package">
+    <xsd:annotation>
+      <xsd:documentation>A package is a container for types and other packages.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="Property">
+    <xsd:annotation>
+      <xsd:documentation>A property is a typed element that represents an attribute of a class.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:MultiplicityElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="type" type="uml:Type">
+            <xsd:annotation>
+              <xsd:documentation>The type of the TypedElement.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="opposite" type="uml:Property">
+            <xsd:annotation>
+              <xsd:documentation>Two attributes attr1 and attr2 of two objects o1 and o2 (which may be the same object) may be paired with each other so that o1.attr1 refers to o2 if and only if o2.attr2 refers to o1. In such a case attr1 is the opposite of attr2 and attr2 is the opposite of attr1.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="class" type="uml:Class">
+            <xsd:annotation>
+              <xsd:documentation>The class that owns the property, and of which the property is an attribute.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
+        <xsd:attribute name="name" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The name of the NamedElement.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="type" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The type of the TypedElement.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="isReadOnly" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>If isReadOnly is true, the attribute may not be written to after initialization.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="default" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>A string that is evaluated to give a default value for the attribute when an object of the owning class is instantiated.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="isComposite" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>If isComposite is true, the object containing the attribute is a container for the object or value contained in the attribute.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="isDerived" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>If isDerived is true, the value of the attribute is derived from information elsewhere.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="opposite" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Two attributes attr1 and attr2 of two objects o1 and o2 (which may be the same object) may be paired with each other so that o1.attr1 refers to o2 if and only if o2.attr2 refers to o1. In such a case attr1 is the opposite of attr2 and attr2 is the opposite of attr1.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="class" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The class that owns the property, and of which the property is an attribute.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Property" type="uml:Property">
+    <xsd:annotation>
+      <xsd:documentation>A property is a typed element that represents an attribute of a class.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="true" name="TypedElement">
+    <xsd:annotation>
+      <xsd:documentation>A typed element is a kind of named element that represents an element with a type.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:NamedElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="type" type="uml:Type">
+            <xsd:annotation>
+              <xsd:documentation>The type of the TypedElement.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
+        <xsd:attribute name="type" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The type of the TypedElement.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TypedElement" type="uml:TypedElement">
+    <xsd:annotation>
+      <xsd:documentation>A typed element is a kind of named element that represents an element with a type.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="true" name="MultiplicityElement">
+    <xsd:annotation>
+      <xsd:documentation>A multiplicity is a definition of an inclusive interval of non-negative integers beginning with a lower bound and ending with a (possibly infinite) upper bound. A multiplicity element embeds this information to specify the allowable cardinalities for an instantiation of this element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Element">
+        <xsd:attribute name="isOrdered" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>For a multivalued multiplicity, this attribute specifies whether the values in an instantiation of this element are sequentially ordered.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="isUnique" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>For a multivalued multiplicity, this attributes specifies whether the values in an instantiation of this element are unique.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="lower" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the lower bound of the multiplicity interval.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="upper" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the upper bound of the multiplicity interval.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="MultiplicityElement" type="uml:MultiplicityElement">
+    <xsd:annotation>
+      <xsd:documentation>A multiplicity is a definition of an inclusive interval of non-negative integers beginning with a lower bound and ending with a (possibly infinite) upper bound. A multiplicity element embeds this information to specify the allowable cardinalities for an instantiation of this element.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="Operation">
+    <xsd:annotation>
+      <xsd:documentation>An operation is owned by a class and may be invoked in the context of objects that are instances of that class. It is a typed element and a multiplicity element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:MultiplicityElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="type" type="uml:Type">
+            <xsd:annotation>
+              <xsd:documentation>The type of the TypedElement.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="raisedException" type="uml:Type">
+            <xsd:annotation>
+              <xsd:documentation>The exceptions that are declared as possible during an invocation of the operation.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ownedParameter" type="uml:Parameter">
+            <xsd:annotation>
+              <xsd:documentation>The parameters to the operation.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="class" type="uml:Class">
+            <xsd:annotation>
+              <xsd:documentation>The class that owns the operation.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
+        <xsd:attribute name="name" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The name of the NamedElement.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="type" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The type of the TypedElement.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="raisedException" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The exceptions that are declared as possible during an invocation of the operation.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="class" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The class that owns the operation.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Operation" type="uml:Operation">
+    <xsd:annotation>
+      <xsd:documentation>An operation is owned by a class and may be invoked in the context of objects that are instances of that class. It is a typed element and a multiplicity element.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="Parameter">
+    <xsd:annotation>
+      <xsd:documentation>A parameter is a typed element that represents a parameter of an operation.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:MultiplicityElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="type" type="uml:Type">
+            <xsd:annotation>
+              <xsd:documentation>The type of the TypedElement.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="operation" type="uml:Operation">
+            <xsd:annotation>
+              <xsd:documentation>The operation that owns the parameter.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
+        <xsd:attribute name="name" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The name of the NamedElement.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="type" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The type of the TypedElement.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="operation" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The operation that owns the parameter.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Parameter" type="uml:Parameter">
+    <xsd:annotation>
+      <xsd:documentation>A parameter is a typed element that represents a parameter of an operation.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="Enumeration">
+    <xsd:annotation>
+      <xsd:documentation>An enumeration defines a set of literals that can be used as its values.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:DataType">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="ownedLiteral" type="uml:EnumerationLiteral">
+            <xsd:annotation>
+              <xsd:documentation>The ordered set of literals for this Enumeration.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Enumeration" type="uml:Enumeration">
+    <xsd:annotation>
+      <xsd:documentation>An enumeration defines a set of literals that can be used as its values.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="true" name="DataType">
+    <xsd:annotation>
+      <xsd:documentation>DataType is an abstract class that acts as a common superclass for different kinds of data types.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Type"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="DataType" type="uml:DataType">
+    <xsd:annotation>
+      <xsd:documentation>DataType is an abstract class that acts as a common superclass for different kinds of data types.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="EnumerationLiteral">
+    <xsd:annotation>
+      <xsd:documentation>An enumeration literal is a value of an enumeration.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:NamedElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="enumeration" type="uml:Enumeration">
+            <xsd:annotation>
+              <xsd:documentation>The Enumeration that this EnumerationLiteral is a member of.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
+        <xsd:attribute name="enumeration" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>The Enumeration that this EnumerationLiteral is a member of.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="EnumerationLiteral" type="uml:EnumerationLiteral">
+    <xsd:annotation>
+      <xsd:documentation>An enumeration literal is a value of an enumeration.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="PrimitiveType">
+    <xsd:annotation>
+      <xsd:documentation>A primitive type is a data type implemented by the underlying infrastructure and made available for modeling.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:DataType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PrimitiveType" type="uml:PrimitiveType">
+    <xsd:annotation>
+      <xsd:documentation>A primitive type is a data type implemented by the underlying infrastructure and made available for modeling.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

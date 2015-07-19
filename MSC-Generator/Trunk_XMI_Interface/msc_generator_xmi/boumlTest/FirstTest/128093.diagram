@@ -1,0 +1,24 @@
+format 48
+
+classinstancecanvas 128093 classinstance_ref 128093 // ersteEigenschaft
+  xyz 39 4 2000 life_line_z 2000
+classinstancecanvas 128221 classinstance_ref 128221 // zweiteEigenschaft
+  xyz 233 4 2000 life_line_z 2000
+durationcanvas 128349 classinstance_ref 128093 // ersteEigenschaft:FirstClass
+  xyzwh 105 106 2010 11 40
+end
+durationcanvas 128477 classinstance_ref 128221 // zweiteEigenschaft:SecondClass
+  xyzwh 311 106 2010 11 35
+end
+msg 128605 synchronous
+  from durationcanvas_ref 128349
+  to durationcanvas_ref 128477
+  yz 106 2015 explicitmsg "MeineMessage (int alter,String name)"
+  show_full_operations_definition default drawing_language default
+  label_xy 177 92
+msg 128733 return
+  from durationcanvas_ref 128477
+  to durationcanvas_ref 128349
+  yz 130 2020 unspecifiedmsg
+  show_full_operations_definition default drawing_language default
+end

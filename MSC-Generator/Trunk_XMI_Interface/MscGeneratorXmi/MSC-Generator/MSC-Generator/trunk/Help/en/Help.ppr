@@ -1,0 +1,217 @@
+[Config]
+Relative path=1
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.HideOutput=0
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+[Project tree]
+Help
+	+Ordner
+		+Befehle
+			+Elemente
+				create.html
+				found.html
+				actor.html
+				lost.html
+				mark.html
+				fragmenttext.html
+				measurebegin.html
+				fragmentend.html
+				ref.html
+				measureend.html
+				settimer.html
+				msg.html
+				state.html
+				task.html
+				msgend.html
+				regionbegin.html
+				stoptimer.html
+				stop.html
+				timerbegin.html
+				timeout.html
+				timerend.html
+				msgbegin.html
+				stateoverall.html
+				process.html
+				regionend.html
+				measurestop.html
+				measurestart.html
+				linecomment.html
+				fragmentbegin.html
+				fragmentseparator.html
+				comment.html
+				dummyprocess.html
+				commentoverall.html
+				company.html
+			+Formatierung
+				author.html
+				backcolor.html
+				date.html
+				diagramname.html
+				printfilename.html
+				diagramstyle.html
+				fillcolor.html
+				font.html
+				lineoffset.html
+				pagemargins.html
+				pagesize.html
+				printauthor.html
+				printcompany.html
+				printcreationdate.html
+				printdate.html
+				printfootline.html
+				printversion.html
+				right.html
+				left.html
+				textcolor.html
+				version.html
+				nextpage.html
+			befehle.html
+			semik.html
+			dsemik.html
+			linebreak.html
+			curlybraceopen.html
+			curlybraceclose.html
+		+Dialoge
+			dlgArbeitsblatt.html
+			dlgComment.html
+			dlgEinstellung.html
+			dlgFoundMessage.html
+			dlgFragmentBegin.html
+			dlgFragmentText.html
+			dlgLineComment.html
+			dlgLostMessage.html
+			dlgMeasureBegin.html
+			dlgMeasureEnd.html
+			dlgMeasureStart.html
+			dlgMeasureStop.html
+			dlgMessage.html
+			dlgMessageBegin.html
+			dlgMark.html
+			dlgCreate.html
+			dlgInstance.html
+			dlgRegion.html
+			dlgReference.html
+			dlgSetTimer.html
+			dlgState.html
+			dlgStopTimer.html
+			dlgTask.html
+			dlgTimerBegin.html
+			dlgTimerEnd.html
+			dlgTimeout.html
+		GeneratorBlue.css
+[Open project files]
+0=..\..\..\Itesys Homepage\trunk\home\produkte\msc_generator.html
+1=dlgArbeitsblatt.html
+2=dlgComment.html
+3=dlgEinstellung.html
+4=dlgFoundMessage.html
+5=dlgFragmentBegin.html
+6=dlgFragmentText.html
+7=dlgLineComment.html
+8=dlgLostMessage.html
+9=dlgMeasureBegin.html
+10=dlgMeasureEnd.html
+11=dlgMeasureStart.html
+12=dlgMeasureStop.html
+13=dlgMessage.html
+14=dlgMessageBegin.html
+15=dlgMark.html
+16=dlgCreate.html
+17=dlgInstance.html
+18=dlgRegion.html
+19=dlgReference.html
+20=dlgSetTimer.html
+21=dlgState.html
+22=dlgStopTimer.html
+23=dlgTask.html
+24=dlgTimerBegin.html
+25=dlgTimerEnd.html
+26=dlgTimeout.html
+[Selected Project Files]
+Main=
+Selected=dlgTimeout.html
+[..\..\..\Itesys Homepage\trunk\home\produkte\msc_generator.html]
+TopLine=90
+Caret=7,135
+[dlgArbeitsblatt.html]
+TopLine=1
+Caret=1,29
+[dlgComment.html]
+TopLine=1
+Caret=1,29
+[dlgEinstellung.html]
+TopLine=1
+Caret=1,29
+[dlgFoundMessage.html]
+TopLine=1
+Caret=1,29
+[dlgFragmentBegin.html]
+TopLine=1
+Caret=1,29
+[dlgFragmentText.html]
+TopLine=1
+Caret=1,29
+[dlgLineComment.html]
+TopLine=1
+Caret=1,29
+[dlgLostMessage.html]
+TopLine=1
+Caret=1,29
+[dlgMeasureBegin.html]
+TopLine=1
+Caret=1,29
+[dlgMeasureEnd.html]
+TopLine=1
+Caret=1,29
+[dlgMeasureStart.html]
+TopLine=1
+Caret=1,29
+[dlgMeasureStop.html]
+TopLine=1
+Caret=1,29
+[dlgMessage.html]
+TopLine=1
+Caret=1,29
+[dlgMessageBegin.html]
+TopLine=1
+Caret=1,29
+[dlgMark.html]
+TopLine=1
+Caret=1,29
+[dlgCreate.html]
+TopLine=1
+Caret=1,29
+[dlgInstance.html]
+TopLine=1
+Caret=1,29
+[dlgRegion.html]
+TopLine=1
+Caret=1,30
+[dlgReference.html]
+TopLine=1
+Caret=17,28
+[dlgSetTimer.html]
+TopLine=1
+Caret=1,29
+[dlgState.html]
+TopLine=1
+Caret=1,29
+[dlgStopTimer.html]
+TopLine=1
+Caret=1,29
+[dlgTask.html]
+TopLine=1
+Caret=1,29
+[dlgTimerBegin.html]
+TopLine=1
+Caret=1,29
+[dlgTimerEnd.html]
+TopLine=1
+Caret=1,29
+[dlgTimeout.html]
+TopLine=1
+Caret=1,29

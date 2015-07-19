@@ -1,0 +1,902 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" dir="ltr" lang="de"><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+				<meta name="keywords" content="Quicksort,1960,2-3-4-Baum,AVL-Baum,Abbruchbedingung,Adaptiertes 2-Phasen-2-Band-Mischen,Algorithmus,Array,B-Baum,Best Case,Bubblesort">
+		<link rel="shortcut icon" href="http://de.wikipedia.org/favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://de.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (Deutsch)">
+		<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/rss+xml" title="RSS-Feed für Wikipedia" href="http://de.wikipedia.org/w/index.php?title=Spezial:Letzte_%C3%84nderungen&amp;feed=rss">
+<link rel="alternate" type="application/atom+xml" title="Atom-Feed für Wikipedia" href="http://de.wikipedia.org/w/index.php?title=Spezial:Letzte_%C3%84nderungen&amp;feed=atom"><title>Quicksort - Wikipedia</title>
+		
+		<style type="text/css" media="screen, projection">/*<![CDATA[*/
+			@import "/skins-1.5/common/shared.css?102";
+			@import "/skins-1.5/monobook/main.css?102";
+		/*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="Quicksort-Dateien/commonPrint.css"><!--[if lt IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE50Fixes.css?102";</style><![endif]--><!--[if IE 5.5000]><style type="text/css">@import "/skins-1.5/monobook/IE55Fixes.css?102";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins-1.5/monobook/IE60Fixes.css?102";</style><![endif]--><!--[if IE 7]><style type="text/css">@import "/skins-1.5/monobook/IE70Fixes.css?102";</style><![endif]--><!--[if lt IE 7]><script type="text/javascript" src="/skins-1.5/common/IEFixes.js?102"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		
+		
+		
+		
+		
+		<script type="text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/skins-1.5";
+var wgArticlePath = "/wiki/$1";
+var wgScriptPath = "/w";
+var wgScript = "/w/index.php";
+var wgServer = "http://de.wikipedia.org";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "Quicksort";
+var wgTitle = "Quicksort";
+var wgAction = "view";
+var wgRestrictionEdit = [];
+var wgRestrictionMove = [];
+var wgArticleId = "8873";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserGroups = null;
+var wgUserLanguage = "de";
+var wgContentLanguage = "de";
+var wgBreakFrames = false;
+var wgCurRevisionId = "40014011";
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="Quicksort-Dateien/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="Quicksort-Dateien/index_005.php"><!-- site js --></script><script type="text/javascript" src="Quicksort-Dateien/index_002.php"></script><script type="text/javascript" src="Quicksort-Dateien/index_003.php"></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=2678400";
+/*]]>*/</style><!-- Head Scripts -->
+		
+		<script type="text/javascript" src="Quicksort-Dateien/ajax.js"></script>
+<style type="text/css">/*<![CDATA[*/
+.source-pascal {line-height: normal;}
+.source-pascal li {line-height: normal;}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie (http://qbnz.com/highlighter)
+ */
+.source-pascal .de1, .source-pascal .de2 {font-family: 'Courier New', Courier, monospace; font-weight: normal;}
+.source-pascal  {}
+.source-pascal .head {}
+.source-pascal .foot {}
+.source-pascal .imp {font-weight: bold; color: red;}
+.source-pascal .ln-xtra {color: #cc0; background-color: #ffc;}
+.source-pascal li {font-family: 'Courier New', Courier, monospace; color: black; font-weight: normal; font-style: normal;}
+.source-pascal li.li2 {font-weight: bold;}
+.source-pascal .kw1 {color: #b1b100;}
+.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.source-pascal .kw3 {}
+.source-pascal .kw4 {color: #993333;}
+.source-pascal .co1 {color: #808080; font-style: italic;}
+.source-pascal .co2 {color: #339933;}
+.source-pascal .coMULTI {color: #808080; font-style: italic;}
+.source-pascal .es0 {color: #000099; font-weight: bold;}
+.source-pascal .br0 {color: #66cc66;}
+.source-pascal .st0 {color: #ff0000;}
+.source-pascal .nu0 {color: #cc66cc;}
+.source-pascal .me1 {color: #202020;}
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+/*]]>*/
+</style>	<style type="text/css">#siteNoticeSmall{display:none;}</style><style type="text/css">.siteNoticeToggle{display:none;}</style><style type="text/css">
+#siteNotice {
+	margin-top:1em;
+	text-align:left;
+	text-decoration:none;
+}
+#siteNotice table {
+	background:transparent;
+        max-width: 98%;
+}
+.rtl #siteNotice {
+	text-align:right;
+}
+.fundraiser-box,
+.fundraiser-quote-box {
+	width:51em;
+	font-style:normal;
+}
+.fundraiser-box td {
+	padding:0.25em;
+	/*valign:bottom; not changing valign, as it's not in css */
+}
+.fundraiser-meter {
+	width:22.5em;
+	height:1.5em;
+}
+.fundraiser-button {
+	width: 11.25em;
+}
+
+/* Font selections */
+.fundraiser-counter,
+.fundraiser-headline,
+.fundraiser-button {
+	font-family:'Gill Sans', Arial, sans-serif;
+	font-size:1.2em;
+}
+.fundraiser-counter strong,
+.fundraiser-headline strong {
+	font-size:1.75em;
+}
+.fundraiser-headline strong {
+	font-family:'Gill Sans Ultra Bold', 'Arial Black', sans-serif;
+}
+.fundraiser-button {
+	font-weight:bold;
+}
+.fundraiser-quote {
+	font-family:Monaco, monospace;
+	font-size:0.8em;
+}
+.fundraiser-box a {
+	text-decoration: none;
+}
+
+/* Colors */
+.fundraiser-box,
+.fundraiser-box a {
+	color:#000;
+}
+.fundraiser-counter,
+.fundraiser-counter a {
+	color:#888;
+}
+.fundraiser-headline strong,
+.fundraiser-headline a strong {
+	color:#396;
+}
+.fundraiser-button,
+.fundraiser-button a {
+	white-space:nowrap;
+	color:#FFF; /* on red bg */
+}
+/* sigh */
+.fundraiser-button,
+.fundraiser-button-pre,
+.fundraiser-button-post {
+	height:1.75em;
+}
+.fundraiser-button-post,
+.fundraiser-button-pre {
+	width:0.50em;
+}
+
+.ltr .fundraiser-button-pre,
+.rtl .fundraiser-button-post {
+	background: url('http://upload.wikimedia.org/fundraising/2007/red-button-left.png') no-repeat right center;
+}
+.fundraiser-button {
+	background:url('http://upload.wikimedia.org/fundraising/2007/red-button-center.png') repeat-x center;
+}
+.ltr .fundraiser-button-post,
+.rtl .fundraiser-button-pre {
+	background:url('http://upload.wikimedia.org/fundraising/2007/red-button-right.png') no-repeat left center;
+}
+
+/* Text layout */
+.fundraiser-counter,
+.rtl .fundraiser-headline,
+.siteNoticeToggle {
+	text-align: right;
+	white-space: nowrap;
+}
+.fundraiser-headline,
+.rtl .fundraiser-counter,
+.rtl .siteNoticeToggle {
+	text-align: left;
+}
+.fundraiser-button {
+	text-align: center;
+}
+.fundraiser-quote .fundquote {
+	padding-right: 1.5em;
+}
+</style></head><body class="mediawiki ns-0 ltr page-Quicksort">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><script type="text/javascript">
+var wgNotice = "";
+var wgNoticeLocal = "";
+var wgNoticeLang = "de";
+var wgNoticeProject = "wikipedia";
+</script>
+<script type="text/javascript" src="Quicksort-Dateien/index.php"></script><script src="Quicksort-Dateien/index_004.php"></script>
+
+
+
+<script type="text/javascript" src="Quicksort-Dateien/index_006.php"></script>
+<script type="text/javascript">
+if (wgNotice != "") {
+  document.writeln(wgNotice);
+}
+if (wgNoticeLocal != "") {
+  document.writeln(wgNoticeLocal);
+}
+</script>
+<div id="sitenotice-fundraiser">
+<div id="siteNoticeBig">
+	<table class="fundraiser-box" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td class="fundraiser-meter">
+				<a href="http://donate.wikimedia.org/de" class="hidelink"><img src="Quicksort-Dateien/people-meter-ltr.png" height="42" width="300"></a>
+			</td>
+			<td class="fundraiser-counter" valign="bottom">
+				<a href="http://donate.wikimedia.org/de" class="hidelink"><strong>36.638</strong> Personen haben gespendet</a>
+			</td>
+		</tr>
+	</tbody></table>
+	<table class="fundraiser-box" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td class="fundraiser-headline">
+				<a href="http://donate.wikimedia.org/de" class="hidelink">Wikimedia verändert die Welt und <strong>Du</strong> kannst helfen!</a>
+			</td>
+			<td class="fundraiser-button-pre">&nbsp;</td>
+			<td class="fundraiser-button">
+				<a href="http://donate.wikimedia.org/de" class="hidelink">» Jetzt spenden!</a>
+			</td>
+			<td class="fundraiser-button-post">&nbsp;</td>
+		</tr>
+	</tbody></table>
+	<table class="fundraiser-quote-box">
+		<tbody><tr>
+			<td class="fundraiser-quote">
+				<span class="fundquote">"The Global War on Ignorance-- A battle worth fighting!" — Stony S.</span>
+			</td>
+			<td class="siteNoticeToggle">
+				[<a href="#" onclick="toggleNotice()">Verkleinern</a>]
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+<div id="siteNoticeSmall" class="fundraiser-folded">
+	<a href="http://donate.wikimedia.org/de"><img src="Quicksort-Dateien/meter-de.png" height="14" width="407"></a>
+	<span class="siteNoticeToggle">[<a href="#" onclick="toggleNotice()">Zeige mehr</a>]</span>
+</div>
+</div>
+<div style="position: absolute; z-index: 100; right: 5px; top: -20px;" class="metadata" id="donate">
+<div style="text-align: right; font-size: 80%;"><a href="http://wikimediafoundation.org/wiki/Spenden" class="extiw" title="wikimedia:Spenden">Ihre <b>Spenden</b></a> helfen, Wikipedia zu betreiben. 
+</div></div>
+
+</div>		<h1 class="firstHeading">Quicksort</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">aus Wikipedia, der freien Enzyklopädie</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Wechseln zu: <a href="#column-one">Navigation</a>, <a href="#searchInput">Suche</a></div>			<!-- start content -->
+			<div class="thumb tright">
+<div class="thumbinner" style="width: 282px;"><a href="http://de.wikipedia.org/wiki/Bild:Sorting_quicksort_anim.gif" class="image" title="Eine zufällige Permutation von Integerwerten wird mit Quicksort sortiert. Die blauen Linien zeigen das Pivotelement im jeweiligen Rekursionsschritt."><img alt="Eine zufällige Permutation von Integerwerten wird mit Quicksort sortiert. Die blauen Linien zeigen das Pivotelement im jeweiligen Rekursionsschritt." src="Quicksort-Dateien/Sorting_quicksort_anim.gif" class="thumbimage" border="0" height="214" width="280"></a>
+<div class="thumbcaption">Eine zufällige Permutation von Integerwerten
+wird mit Quicksort sortiert. Die blauen Linien zeigen das Pivotelement
+im jeweiligen Rekursionsschritt.</div>
+</div>
+</div>
+<p><b>Quicksort</b> (von engl. <i>quick</i> – schnell, <i>to sort</i> – sortieren) ist ein schneller, <a href="http://de.wikipedia.org/wiki/Rekursion" title="Rekursion">rekursiver</a>, nicht-<a href="http://de.wikipedia.org/wiki/Stabil_%28Sortierverfahren%29" title="Stabil (Sortierverfahren)">stabiler</a> <a href="http://de.wikipedia.org/wiki/Sortierverfahren" title="Sortierverfahren">Sortieralgorithmus</a>, der nach dem Prinzip <i><a href="http://de.wikipedia.org/wiki/Teile_und_herrsche_%28Informatik%29" title="Teile und herrsche (Informatik)">Teile und herrsche</a></i> (lat. <i>Divide et impera!</i>, engl. <i>Divide and conquer</i>) arbeitet. Er wurde ca. <a href="http://de.wikipedia.org/wiki/1960" title="1960">1960</a> von <a href="http://de.wikipedia.org/wiki/C._A._R._Hoare" title="C. A. R. Hoare">C. Antony R. Hoare</a> in seiner Grundform entwickelt<sup id="_ref-Hoare_0" class="reference"><a href="#_note-Hoare" title="">[1]</a></sup>
+und seitdem von vielen Forschern verbessert. Der Algorithmus hat den
+Vorteil, dass er über eine sehr kurze innere Schleife verfügt (was die
+Ausführungsgeschwindigkeit stark erhöht) und ohne zusätzlichen
+Speicherplatz auskommt (abgesehen von dem für die Rekursion
+zusätzlichen benötigten Platz auf dem <a href="http://de.wikipedia.org/wiki/Stapelspeicher" title="Stapelspeicher">Aufruf-Stack</a>).</p>
+<div class="thumb tright">
+<div class="thumbinner" style="width: 182px;"><a href="http://de.wikipedia.org/wiki/Bild:QuickSort.png" class="image" title="Eine zufällige Permutation des Umfangs n, in der jedes Element von 1 bis n lediglich einmal vorkommt, wird mit Quicksort sortiert."><img alt="Eine zufällige Permutation des Umfangs n, in der jedes Element von 1 bis n lediglich einmal vorkommt, wird mit Quicksort sortiert." src="Quicksort-Dateien/180px-QuickSort.png" class="thumbimage" border="0" height="90" width="180"></a>
+<div class="thumbcaption">
+<div class="magnify" style="float: right;"><a href="http://de.wikipedia.org/wiki/Bild:QuickSort.png" class="internal" title="vergrößern"><img src="Quicksort-Dateien/magnify-clip.png" alt="" height="11" width="15"></a></div>
+Eine zufällige Permutation des Umfangs <span class="texhtml"><i>n</i></span>, in der jedes Element von 1 bis <span class="texhtml"><i>n</i></span> lediglich einmal vorkommt, wird mit Quicksort sortiert.</div>
+</div>
+</div>
+<table id="toc" class="toc" summary="Inhaltsverzeichnis">
+<tbody><tr>
+<td>
+<div id="toctitle">
+<h2>Inhaltsverzeichnis</h2>
+ <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">Verbergen</a>]</span></div>
+<ul>
+<li class="toclevel-1"><a href="#Prinzip"><span class="tocnumber">1</span> <span class="toctext">Prinzip</span></a></li>
+<li class="toclevel-1"><a href="#Allgemeine_Implementierung"><span class="tocnumber">2</span> <span class="toctext">Allgemeine Implementierung</span></a></li>
+<li class="toclevel-1"><a href="#Implementierung_in_Pascal_und_Delphi"><span class="tocnumber">3</span> <span class="toctext">Implementierung in Pascal und Delphi</span></a></li>
+<li class="toclevel-1"><a href="#Beispiel_teile.28links.2C_rechts.29"><span class="tocnumber">4</span> <span class="toctext">Beispiel teile(links, rechts)</span></a></li>
+<li class="toclevel-1"><a href="#Vollst.C3.A4ndiges_Beispiel_f.C3.BCr_alphabetische_Sortierung"><span class="tocnumber">5</span> <span class="toctext">Vollständiges Beispiel für alphabetische Sortierung</span></a></li>
+<li class="toclevel-1"><a href="#Kenngr.C3.B6.C3.9Fen"><span class="tocnumber">6</span> <span class="toctext">Kenngrößen</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Laufzeit"><span class="tocnumber">6.1</span> <span class="toctext">Laufzeit</span></a></li>
+<li class="toclevel-2"><a href="#Speicherplatz"><span class="tocnumber">6.2</span> <span class="toctext">Speicherplatz</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Varianten"><span class="tocnumber">7</span> <span class="toctext">Varianten</span></a></li>
+<li class="toclevel-1"><a href="#Weitere_Sortierverfahren"><span class="tocnumber">8</span> <span class="toctext">Weitere Sortierverfahren</span></a></li>
+<li class="toclevel-1"><a href="#Literatur"><span class="tocnumber">9</span> <span class="toctext">Literatur</span></a></li>
+<li class="toclevel-1"><a href="#Weblinks"><span class="tocnumber">10</span> <span class="toctext">Weblinks</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<script type="text/javascript">
+//<![CDATA[
+ if (window.showTocToggle) { var tocShowText = "Anzeigen"; var tocHideText = "Verbergen"; showTocToggle(); } 
+//]]>
+</script>
+<p><a name="Prinzip" id="Prinzip"></a></p>
+<h2> <span class="mw-headline">Prinzip</span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=1" title="Abschnitt bearbeiten: Prinzip">Bearbeiten</a>]</span></h2>
+<p>Zunächst wird die zu sortierende Liste in zwei Teillisten umsortiert. Dazu wählt Quicksort ein sogenanntes <a href="http://de.wikipedia.org/wiki/Pivotelement" title="Pivotelement">Pivotelement</a>
+aus der Liste aus, das die Grenze zwischen den beiden Teillisten
+festlegt. Alle Elemente die kleiner als das Pivotelement sind, kommen
+in die linke, untere Teilliste und alle die größer sind, in die rechte,
+obere Teilliste. Die Längen der Teillisten werden also nicht schon
+vorher festgelegt, sondern ergeben sich aus der Wahl des Pivotelements.
+Die Positionen der Elemente, die gleich dem Pivotelement sind, hängen
+vom verwendeten Teilungsalgorithmus ab. Sie können sich beliebig auf
+die Teillisten verteilen. Da sich die Reihenfolge von gleichwertigen
+Elementen zueinander ändern kann, ist Quicksort im Allgemeinen <a href="http://de.wikipedia.org/wiki/Stabiles_Sortierverfahren" title="Stabiles Sortierverfahren">nicht stabil</a>.</p>
+<p>Am Ende der Aufteilung sind die beiden Teillisten zueinander bereits
+sortiert: ein Element aus der unteren Teilliste ist immer kleiner
+gleich einem Element aus der oberen Teilliste. Anschließend muss man
+also nur noch jede Teilliste in sich sortieren, um die Sortierung zu
+vollenden. Dazu wird der Quicksort-Algorithmus jeweils auf der unteren
+und auf der oberen Teilliste ausgeführt. Diese Selbstaufrufe werden als
+<a href="http://de.wikipedia.org/wiki/Rekursion" title="Rekursion">Rekursion</a>
+bezeichnet. Jede Teilliste wird dann wieder in zwei Teillisten
+aufgeteilt und auf diese jeweils wieder der Quicksort-Algorithmus
+angewandt, und so fort. Wenn eine Teilliste der Länge eins oder null
+auftritt, so ist diese bereits sortiert und es erfolgt der <a href="http://de.wikipedia.org/wiki/Abbruchbedingung" title="Abbruchbedingung">Abbruch der Rekursion</a>, d.&nbsp;h. für diese Teilliste wird Quicksort nicht mehr aufgerufen.</p>
+<p>Das Verfahren muss sicherstellen, dass eine Teilliste mindestens um
+eins kürzer ist als die Gesamtliste. Dann endet die Rekursion
+garantiert nach endlich vielen Schritten. Das kann z.&nbsp;B. dadurch
+erreicht werden, dass das ursprünglich als Pivot gewählte Element auf
+einen Platz zwischen den Teillisten gesetzt wird und somit zu keiner
+Teilliste gehört.</p>
+<p><a name="Allgemeine_Implementierung" id="Allgemeine_Implementierung"></a></p>
+<h2> <span class="mw-headline">Allgemeine Implementierung</span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=2" title="Abschnitt bearbeiten: Allgemeine Implementierung">Bearbeiten</a>]</span></h2>
+<p>Die Implementierung der Teilung erfolgt als <a href="http://de.wikipedia.org/wiki/In-place" title="In-place">In-place</a>-Algorithmus:
+Die Elemente werden nicht in zusätzlichen Speicher kopiert, sondern nur
+innerhalb der Liste vertauscht. Dafür wird ein Verfahren verwendet, das
+als <i>teilen</i> oder auch <i>partitionieren</i> bezeichnet wird.
+Danach sind die beiden Teillisten gleich in der richtigen Position.
+Sobald die Teillisten in sich sortiert wurden, ist die Sortierung der
+Gesamtliste beendet.</p>
+<p>Der folgende <a href="http://de.wikipedia.org/wiki/Pseudocode" title="Pseudocode">Pseudocode</a> illustriert die Arbeitsweise des <a href="http://de.wikipedia.org/wiki/Algorithmus" title="Algorithmus">Algorithmus</a>, wobei <code>"daten"</code> das zu sortierende Feld ist. Dabei hat beim ersten Aufruf von <code>quicksort</code> (oberste Rekursionsebene) der Parameter <code>links</code> den Wert 0 (Index des ersten Feld-Elements) und <code>rechts</code> den Wert n (Index des letzten Feld-Elements). Die Bezeichnungen <code>links</code> und <code>rechts</code> beziehen sich auf die Anordnung des Felds: <code>daten[0]</code>, <code>daten[1]</code>,... , <code>daten[n]</code>.</p>
+<pre><code> <b>funktion</b> quicksort(links, rechts)
+     <b>falls</b> links &lt; rechts <b>dann</b>
+         teiler := teile(links, rechts)
+         quicksort(links, teiler-1)
+         quicksort(teiler+1, rechts)
+     <b>ende</b>
+ <b>ende</b>
+</code>
+</pre>
+<p>Die folgende Implementierung der Funktion <code>teile</code> teilt
+das Feld so, dass sich das Pivotelement an seiner endgültigen Position
+befindet und alle kleineren Elemente davor stehen, während alle
+größeren danach kommen:</p>
+<pre><code> <b>funktion</b> teile(links, rechts)
+     i := links 
+     <i><span style="color: green;">// Starte mit j links vom Pivotelement</span></i>
+     j := rechts - 1
+     pivot := daten[rechts]
+
+     <b>wiederhole</b>
+
+         <i><span style="color: green;">// Suche von links ein Element, welches größer oder gleich dem Pivotelement ist</span></i>
+         <b>wiederhole solange</b> daten[i] &lt; pivot <b>und</b> i &lt; rechts
+             i := i + 1  
+         <b>ende</b> 
+
+         <i><span style="color: green;">// Suche von rechts ein Element, welches kleiner oder gleich dem Pivotelement ist</span></i>
+         <b>wiederhole solange</b> pivot &lt; daten[j] <b>und</b> j &gt; links
+             j := j - 1 
+         <b>ende</b>  
+
+         <b>falls</b> i &lt;= j <b>dann</b> tausche daten[i] mit daten[j], erhoehe i um 1, verkleinere j um 1
+
+     <b>solange</b> i &lt;= j <i><span style="color: green;">// solange i an j nicht vorbeigelaufen ist </span></i>
+
+     <i><span style="color: green;">// Tausche Pivotelement (daten[rechts]) mit neuer endgültigen Position (daten[i])</span></i>
+
+     tausche daten[i] mit daten[rechts]
+
+     <i><span style="color: green;">// gib die Position des Pivotelements zurück</span></i>
+    
+     <b>antworte</b> i
+ <b>ende</b>
+</code>
+</pre>
+<p>Nach der Wahl des Pivotelementes wird zunächst ein Element vom
+Anfang der Liste beginnend gesucht (Index i), welches größer oder
+gleich dem Pivotelement ist. Entsprechend wird vom Ende der Liste
+beginnend ein Element kleiner oder gleich dem Pivotelement gesucht
+(Index j). Die beiden Elemente werden dann vertauscht und landen damit
+in der jeweils richtigen Teilliste. Dann werden die beiden Suchvorgänge
+von den erreichten Positionen fortgesetzt, bis sich die untere und
+obere Suche treffen; dort ist die Grenze zwischen den beiden Teillisten.</p>
+<p><a name="Implementierung_in_Pascal_und_Delphi" id="Implementierung_in_Pascal_und_Delphi"></a></p>
+<h2> <span class="mw-headline">Implementierung in <a href="http://de.wikipedia.org/wiki/Pascal_%28Programmiersprache%29" title="Pascal (Programmiersprache)">Pascal</a> und <a href="http://de.wikipedia.org/wiki/Delphi_%28Programmiersprache%29" title="Delphi (Programmiersprache)">Delphi</a></span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=3" title="Abschnitt bearbeiten: Implementierung in Pascal und Delphi">Bearbeiten</a>]</span></h2>
+<p>Hier ist eine funktionierende Implementation in Delphi (Pascal) mit
+einigen Kommentaren zu sehen, welche ein Integer-Array sortiert. Man
+kann das Integer hier auch beliebig durch den Typ Real oder Double
+ersetzen.</p>
+<div dir="ltr">
+<pre class="source-pascal"><span class="kw2">procedure</span> pQuickSort<span class="br0">(</span><span class="kw1">var</span> A: <span class="kw4">array</span> <span class="kw1">of</span> <span class="kw4">integer</span>; iLo, iHi: <span class="kw4">integer</span><span class="br0">)</span>;
+<span class="kw1">var</span> Lo, Hi, Pivot, T: <span class="kw4">Integer</span>;
+<span class="kw1">begin</span>
+  Lo := iLo; Hi := iHi;
+  Pivot := A<span class="br0">[</span>Hi<span class="br0">]</span>; <span class="coMULTI">{Element ganz rechts ist Pivot}</span>
+  <span class="kw1">repeat</span>
+    <span class="kw1">while</span> A<span class="br0">[</span>Lo<span class="br0">]</span> &lt; Pivot <span class="kw1">do</span> Inc<span class="br0">(</span>Lo<span class="br0">)</span>;
+    <span class="kw1">while</span> A<span class="br0">[</span>Hi<span class="br0">]</span> &gt; Pivot <span class="kw1">do</span> Dec<span class="br0">(</span>Hi<span class="br0">)</span>;
+    <span class="kw1">if</span> Lo &lt;= Hi <span class="kw1">then</span> <span class="kw1">begin</span>
+      T := A<span class="br0">[</span>Lo<span class="br0">]</span>; A<span class="br0">[</span>Lo<span class="br0">]</span> := A<span class="br0">[</span>Hi<span class="br0">]</span>; A<span class="br0">[</span>Hi<span class="br0">]</span> := T;
+      Inc<span class="br0">(</span>Lo<span class="br0">)</span>; Dec<span class="br0">(</span>Hi<span class="br0">)</span>;
+    <span class="kw1">end</span>;
+  <span class="kw1">until</span> Lo &gt; Hi;
+  <span class="kw1">if</span> Hi &gt; iLo <span class="kw1">then</span> pQuickSort<span class="br0">(</span>A, iLo, Hi<span class="br0">)</span>; <span class="coMULTI">{Sortieren des rechten Teils}</span>
+  <span class="kw1">if</span> Lo &lt; iHi <span class="kw1">then</span> pQuickSort<span class="br0">(</span>A, Lo, iHi<span class="br0">)</span>; <span class="coMULTI">{Sortieren des linken Teils}</span>
+<span class="kw1">end</span>;
+ 
+<span class="kw1">begin</span>
+  pQuickSort<span class="br0">(</span>A, Low<span class="br0">(</span>A<span class="br0">)</span>, High<span class="br0">(</span>A<span class="br0">)</span><span class="br0">)</span>; <span class="coMULTI">{Erster Aufruf mit gesamten Array}</span>
+  <span class="coMULTI">{Implementierung von Markus Gronotte in Pascal}</span>
+<span class="kw1">end</span>;
+</pre></div>
+<p><a name="Beispiel_teile.28links.2C_rechts.29" id="Beispiel_teile.28links.2C_rechts.29"></a></p>
+<h2> <span class="mw-headline">Beispiel <code>teile(links, rechts)</code></span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=4" title="Abschnitt bearbeiten: Beispiel teile(links, rechts)">Bearbeiten</a>]</span></h2>
+<p>Die Buchstabenfolge „einbeispiel“ soll alphabetisch sortiert werden.</p>
+<p>Ausgangssituation nach Initialisierung von <code>i</code> und <code>j</code>, das Element rechts (<code>l</code>) ist das Pivotelement:</p>
+<pre>  e i n b e i s p i e l
+^                     ^
+i                     j
+</pre>
+<p>Nach der ersten Suche in den inneren Schleifen hat <code>i</code> auf einem Element <code>&gt;= l</code> und j auf einem Element <code>&lt;= l</code> gehalten:</p>
+<pre>  e i n b e i s p i e l
+      ^             ^
+      i             j
+</pre>
+<p>Nach dem Tauschen der Elemente bei <code>i</code> und <code>j</code>:</p>
+<pre>  e i e b e i s p i n l
+      ^             ^
+      i             j
+</pre>
+<p>Nach der nächsten Suche und Tauschen:</p>
+<pre>  e i e b e i i p s n l
+              ^   ^
+              i   j
+</pre>
+<p>Nach einer weiteren Suche sind die Indizes aneinander vorbeigelaufen:</p>
+<pre>  e i e b e i i p s n l
+              ^ ^
+              j i
+</pre>
+<p>Nach dem Tauschen von <code>i</code> und Pivot bezeichnet <code>i</code> die Trennstelle der Teillisten. Bei <code>i</code> steht das Pivot-Element, links davon sind nur Elemente <code>&lt;=</code> Pivot, und rechts nur solche <code>&gt;=</code> Pivot:</p>
+<pre>  e i e b e i i l s n p
+                ^
+                i
+</pre>
+<p><a name="Vollst.C3.A4ndiges_Beispiel_f.C3.BCr_alphabetische_Sortierung" id="Vollst.C3.A4ndiges_Beispiel_f.C3.BCr_alphabetische_Sortierung"></a></p>
+<h2> <span class="mw-headline">Vollständiges Beispiel für alphabetische Sortierung</span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=5" title="Abschnitt bearbeiten: Vollständiges Beispiel für alphabetische Sortierung">Bearbeiten</a>]</span></h2>
+<p>In diesem Beispiel soll der Quicksortalgorithmus die Buchstabenfolge
+"Quicksort" sortieren. Zunächst wird das rechte Element P-&gt; als
+Pivotelement definiert. Dann laufen die Zähler g für "größer" von links
+nach rechts und k für "kleiner" von rechts nach links los,</p>
+<pre> Quicksort
+^       ^^
+g       kP
+</pre>
+<p>bis g auf ein Element trifft, welches größer als das Pivotelement
+ist und bis k auf ein element trifft, welches kleiner ist als das
+Pivotelement.</p>
+<pre> Quicksort
+  ^     ^^
+  g     kP
+</pre>
+<p>Diese beiden gefundenen Elemente r und u werden dann im folgenden Schritt getauscht.</p>
+<pre> Qricksout
+  ^     ^^
+  g     kP
+</pre>
+<p>Im folgenden Schritt laufen die Indexe k und g in der gleichen
+Richtung wie gehabt weiter und suchen Elemente die bei k kleiner und
+bei g größer sind.</p>
+<pre> Qricksout
+       ^^^
+       kgP
+</pre>
+<p>Jetzt sind k und g aneinander vorbeigelaufen. Dieses Ereignis ist
+eine Abbruchbedingung. Jetzt wird das Pivotelement mit dem durch g
+indiziertem Element getauscht.</p>
+<pre> Qricksotu
+       ^^^
+       kPg
+</pre>
+<p>Jetzt treffen folgende zwei Aussagen zu: "Links des Pivotelements
+sind alle Elemente kleiner als das Pivotelement. Rechts des
+Pivotelements sind alle Elemente größer als das Pivotelement."</p>
+<pre>    link|:|rechts
+ Qrickso|t|u
+       ^|^|^
+       k|P|g
+</pre>
+<p>Das Pivotelement "teilt" nun die Datenmenge an der stelle des
+Pivotelements in zwei Hälften Links und Rechts. Nun muss der
+Algorithmus den linken und den rechten Teil auf die Gleiche Weise wie
+im Vorangehenden schon geschehen weiterbehandeln. Hierdurch ergibt sich
+nun die Rekursion. Der Rechte Teil (Der Buchstabe u) ist nur ein
+einzelnes Element und ist somit per Definition sortiert. Also wird nun
+der linke Teil behandelt. Das Rechte Element ist wieder das
+Pivotelement und die Zähler werden passend gesetzt.</p>
+<pre> Qrickso|t|u
+^     ^^  
+g     kP 
+</pre>
+<p>Das Q ist größer als o und das k ist kleiner als das o.</p>
+<pre> Qrickso|t|u
+ ^   ^ ^  
+ g   k P 
+</pre>
+<p>Also werden das Q und das k vertauscht.</p>
+<pre> kricQso|t|u
+ ^   ^ ^  
+ g   k P 
+</pre>
+<p>Indexe g und k laufen weiter...</p>
+<pre> kricQso|t|u
+  ^ ^  ^  
+  g k  P 
+</pre>
+<p>Das r und das c werden getauscht.</p>
+<pre> kcirQso|t|u
+  ^ ^  ^  
+  g k  P 
+</pre>
+<p>Im folgenden Schritt sind die Indexe wieder aneinander vorbeigelaufen...</p>
+<pre> kcirQso|t|u
+   ^^  ^  
+   kg  P 
+</pre>
+<p>... und das Pivotelement (Buchstabe o) wird mit dem größeren Element (Buchstabe r) getauscht.</p>
+<pre> kcioQsr|t|u
+   ^^  ^  
+   kP  g 
+</pre>
+<p>Nun ergibt sich erneut ein linker und ein rechter Teil.</p>
+<pre>links:rechts
+ kci|o|Qsr  |t|u
+   ^|^|  ^  | | 
+   k|P|  g  | |
+</pre>
+<p>Zunächst wird der linke Teil behandelt.</p>
+<pre>     :
+ kci|o| Qsr|t|u
+^ ^^| |^ ^^| | 
+g kP| |g kP| |
+</pre>
+<pre>     :
+ cki|o| Qsr|t|u
+ ^^^| |^ ^^| | 
+ gkP| |g kP| |
+</pre>
+<p>Buchstabe c und k werden getauscht.</p>
+<pre>     :
+ cki|o| Qsr|t|u
+ ^^^| |^ ^^| | 
+ kgP| |g kP| |
+</pre>
+<p>Indexe sind aneinander vorbeigelaufen und Element des Indexes g wird mit dem des Indexes P vertauscht.</p>
+<pre>     :
+ cik|o| Qsr|t|u
+ ^^^| |^ ^^| | 
+ kPg| |g kP| |
+</pre>
+<p>Der jetzt entstandene neue linke und rechte Teil besteht nun nur noch aus einem einzelnen Element und gilt als Sortiert.</p>
+<pre>     :
+ cik|o| Qsr|t|u
+    | | ^^^| | 
+    | | kgP| |
+</pre>
+<p>Im ehemals rechten Teil (Buchstaben Qsr) laufen die Indexe direkt
+aneinander vorbei und element bei g wird mit Pivotelement getauscht.</p>
+<pre>     :
+ cik|o| Qrs|t|u
+    | | ^^^| | 
+    | | kPg| |
+</pre>
+<p>Damit sind alle Zeichen sortiert.</p>
+<pre> cik|o| Qrs|t|u
+</pre>
+<pre> Ergebnis:
+ cikoQrstu
+</pre>
+<p><a name="Kenngr.C3.B6.C3.9Fen" id="Kenngr.C3.B6.C3.9Fen"></a></p>
+<h2> <span class="mw-headline">Kenngrößen</span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=6" title="Abschnitt bearbeiten: Kenngrößen">Bearbeiten</a>]</span></h2>
+<p><a name="Laufzeit" id="Laufzeit"></a></p>
+<h3> <span class="mw-headline">Laufzeit</span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=7" title="Abschnitt bearbeiten: Laufzeit">Bearbeiten</a>]</span></h3>
+<p>Die Laufzeit des Algorithmus hängt im wesentlichen von der Wahl des Pivotelementes ab.</p>
+<p>Im <a href="http://de.wikipedia.org/wiki/Worst_Case" title="Worst Case">Worst Case</a>
+(schlechtesten Fall) wird das Pivotelement stets so gewählt, dass es
+das größte oder das kleinste Element der Liste ist. Dies ist etwa der
+Fall, wenn als Pivotelement stets das Element am Ende der Liste gewählt
+wird und die zu sortierende Liste bereits sortiert vorliegt. Die zu
+untersuchende Liste wird dann in jedem Rekursionsschritt nur um eins
+kleiner und die benötigte Rechenzeit ist asymptotisch genau <span class="texhtml"><i>n</i><sup>2</sup></span>.</p>
+<p>Im <a href="http://de.wikipedia.org/wiki/Best_Case" title="Best Case">Best Case</a>
+(bester Fall) wird das Pivotelement stets so gewählt, dass die
+entstehenden Teillisten beide gleich groß sind. In diesem Fall ist die
+Laufzeit des Algorithmus durch O(n·log(n)) nach oben beschränkt. Auch
+für den durchschnittlichen Fall gilt diese obere Schranke.</p>
+<p>Für die Wahl des Pivotelementes sind in der Literatur verschiedene
+Ansätze beschrieben worden. Die Wahrscheinlichkeit des Eintreffens des
+Worst Case ist bei diesen unterschiedlich groß, aber immer ungleich
+Null.</p>
+<p>Ein möglicher Ansatz ist es, immer das erste, das letzte oder das
+mittlere Element der Liste zu wählen. Dieser naive Ansatz ist aber
+relativ ineffizient. Eine andere Möglichkeit ist es den <a href="http://de.wikipedia.org/wiki/Median" title="Median">Median</a>
+dieser drei Elemente zu bestimmen und als Pivotelement zu verwenden.
+Ein anderer Ansatz ist, als Pivotelement ein zufälliges Element
+auszuwählen. Bei diesem <i>randomisierten Quicksort</i> ist die
+Wahrscheinlichkeit, dass das Pivotelement in jedem Teilungsschritt so
+gewählt wird, dass sich die Worst-Case-Laufzeit ergibt, extrem gering.
+Man kann davon ausgehen, dass er praktisch nie auftritt.</p>
+<p>Durch die geschickte Wahl des Pivotelementes kann das mittlere
+schlechteste Verhalten verbessert werden. Das Eintreten des Worst Case
+kann sogar ausgeschlossen werden, wenn als Pivotelement stets der
+Median der zu sortierenden Folge gewählt wird. Die Berechnung des
+Median ist für konstantes c in c·n Schritten möglich, wodurch auch im
+Worst Case eine Gesamtlaufzeit von O(n·log (n)) garantiert wäre.
+Allerdings führt dieser Ansatz nicht zu einem praktisch effizienten
+Sortieralgorithmus, da c zu groß ist.</p>
+<p>Es gibt Algorithmen, wie z.B. <a href="http://de.wikipedia.org/wiki/Heapsort" title="Heapsort">Heapsort</a>,
+deren Laufzeit auch im Worst Case durch O(n·log(n)) beschränkt sind. In
+der Praxis wird aber trotzdem Quicksort eingesetzt. Der Worst Case
+tritt nur sehr selten auf und im mittleren Fall ist Quicksort
+schneller, da die innerste Schleife von Quicksort nur einige wenige,
+sehr einfache Operationen enthält. Heute ist Quicksort für ein breites
+Spektrum von praktischen Anwendungen die bevorzugte Sortiermethode,
+weil er schnell ist und, sofern Rekursion zur Verfügung steht, einfach
+zu implementieren ist. In vielen Standardbibliotheken ist er bereits
+vorhanden. Mittlerweile steht jedoch mit <a href="http://de.wikipedia.org/wiki/Introsort" title="Introsort">Introsort</a>
+auch eine Alternative zur Verfügung, die bei vergleichbarer mittlerer
+Laufzeit auch für den Worst Case eine obere Schranke von O(n·log(n))
+garantiert.</p>
+<p>Quicksort setzt jedoch voraus, dass effizient (d.h. mit Aufwand
+O(1)) über einen Index auf die Elemente zugegriffen werden kann. Dies
+ist jedoch meist nur bei <a href="http://de.wikipedia.org/wiki/Array" title="Array">Arrays</a> der Fall. Für verkettete Listen sind andere Sortieralgorithmen meist effizienter, wie etwa <a href="http://de.wikipedia.org/wiki/Adaptiertes_2-Phasen-2-Band-Mischen" title="Adaptiertes 2-Phasen-2-Band-Mischen">adaptiertes 2-Phasen-2-Band-Mischen</a> oder <a href="http://de.wikipedia.org/wiki/Mergesort" title="Mergesort">Mergesort</a>. Andere dynamische Datenstrukturen wie balancierte Bäume (<a href="http://de.wikipedia.org/wiki/B-Baum" title="B-Baum">B-Bäume</a>, <a href="http://de.wikipedia.org/wiki/AVL-Baum" title="AVL-Baum">AVL-Bäume</a> oder <a href="http://de.wikipedia.org/wiki/2-3-4-Baum" title="2-3-4-Baum">2-3-4-Bäume</a>, letztere meist implementiert als <a href="http://de.wikipedia.org/wiki/Rot-Schwarz-Baum" title="Rot-Schwarz-Baum">Rot-Schwarz-Baum</a>) verteilen die Kosten des Sortierens auf die Einfügeoperationen, so dass nachträgliches Sortieren nicht notwendig ist.</p>
+<p><a name="Speicherplatz" id="Speicherplatz"></a></p>
+<h3> <span class="mw-headline">Speicherplatz</span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=8" title="Abschnitt bearbeiten: Speicherplatz">Bearbeiten</a>]</span></h3>
+<p>Quicksort ist ein <a href="http://de.wikipedia.org/wiki/In-Place" title="In-Place">in-Place</a>-Verfahren:
+Es kopiert die Elemente der zu sortierenden Liste nicht in zusätzlichen
+Speicherplatz, sondern vertauscht sie nur innerhalb der Liste. Das
+Verfahren benötigt für jede Rekursionsebene einen konstanten
+zusätzlichen Platz auf dem <a href="http://de.wikipedia.org/wiki/Stapelspeicher" title="Stapelspeicher">Stack</a>.</p>
+<p>Wie bei der Laufzeit hängt auch der Speicherverbrauch von der Wahl
+des Pivotelements und der Art der vorliegenden Daten ab. Im günstigsten
+und durchschnittlichen Fall, bei einer Rekursionstiefe in O(log(n)),
+wird auch nur eine Stapelgröße von O(log(n)) benötigt.</p>
+<p>Im ungünstigsten Fall ist die Anzahl der Rekursionen nur durch die
+Listenlänge n beschränkt, was einen Stapel der Größe O(n) erfordert.
+Dies kann bei langen Listen zu einem Stapelüberlauf führen. Es gibt
+vielfältige Modifikationen des Algorithmus um dieses Problem zu lösen
+bzw. die Wahrscheinlichkeit des Auftretens zu vermindern<sup id="_ref-0" class="reference"><a href="#_note-0" title="">[2]</a></sup>:</p>
+<ul>
+<li>Endrekursionsbeseitigung (siehe nachfolgenden Pseudocode)</li>
+<li>eine ausgewogenere Wahl des Pivotelements (Median von Drei)</li>
+<li>Wahl eines zufälligen Pivotelements, was systematische Probleme durch die ursprüngliche Anordnung der Elemente vermeidet</li>
+<li>Vermeidung von Teilisten mit weniger als zwei Elementen (ergibt,
+wenn auch das Pivotelement aus den Teillisten genommen wird, die
+maximale Rekursionstiefe n/3)</li>
+</ul>
+<p>Der folgende Pseudocode ersetzt die Endrekursion (Sortierung der
+zweiten Teilliste) durch eine Iteration derart, dass die kürzere
+Teilliste rekursiv und die längere iterativ sortiert wird. Die
+Rekursionstiefe ist dann nicht größer als log(n):</p>
+<pre> <b>funktion</b> quicksort(links, rechts)
+     <b>solange</b> rechts &gt; links <b>wiederhole</b>
+         teiler := teile (links, rechts)
+         <b>falls</b> rechts-teiler &gt; teiler-links
+            quicksort(links, teiler - 1) <i><span style="color: green;">// kleinere Teilliste rekursiv ..</span></i>
+            links := teiler + 1 <i><span style="color: green;">// .. und größere iterativ sortieren</span></i>
+         <b>sonst</b>
+            quicksort(teiler + 1, rechts)
+            rechts := teiler - 1
+         <b>ende</b>
+     <b>ende</b>
+ <b>ende</b>
+</pre>
+<p><a name="Varianten" id="Varianten"></a></p>
+<h2> <span class="mw-headline">Varianten</span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=9" title="Abschnitt bearbeiten: Varianten">Bearbeiten</a>]</span></h2>
+<p>Die Effizienz von Quicksort liegt darin, dass es Elemente aus großer
+Distanz miteinander vertauscht. Je kürzer die zu sortierende Liste
+wird, desto ineffizienter arbeitet Quicksort, da es sich einer
+Komplexität von O(n²) nähert. Die von Quicksort in Teillisten zerlegte
+Liste hat jedoch die Eigenschaft, dass der Abstand zwischen einem
+Element und seiner sortierten Position nach oben beschränkt ist. Eine
+solche Liste sortiert <a href="http://de.wikipedia.org/wiki/Insertionsort" title="Insertionsort">Insertionsort</a>
+in linearer Zeit, so dass häufig in der Implementierung unterhalb einer
+definierten Teillistenlänge der Quicksort abgebrochen wird, um mit
+Insertionsort weiter zu sortieren.</p>
+<ul>
+<li><i>Siehe auch:</i> <a href="http://de.wikipedia.org/wiki/Introsort" title="Introsort">Introsort</a></li>
+</ul>
+<p><a name="Weitere_Sortierverfahren" id="Weitere_Sortierverfahren"></a></p>
+<h2> <span class="mw-headline">Weitere Sortierverfahren</span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=10" title="Abschnitt bearbeiten: Weitere Sortierverfahren">Bearbeiten</a>]</span></h2>
+<ul>
+<li><a href="http://de.wikipedia.org/wiki/Shellsort" title="Shellsort">Shellsort</a></li>
+<li><a href="http://de.wikipedia.org/wiki/Heapsort" title="Heapsort">Heapsort</a> (siehe auch <a href="http://de.wikipedia.org/wiki/Heap_%28Datenstruktur%29" title="Heap (Datenstruktur)">Heap</a>)</li>
+<li><a href="http://de.wikipedia.org/wiki/Mergesort" title="Mergesort">Mergesort</a></li>
+<li><a href="http://de.wikipedia.org/wiki/Bubblesort" title="Bubblesort">Bubblesort</a></li>
+<li><a href="http://de.wikipedia.org/wiki/Insertionsort" title="Insertionsort">Insertionsort</a></li>
+<li><a href="http://de.wikipedia.org/wiki/Selectionsort" title="Selectionsort">Selectionsort</a></li>
+<li><a href="http://de.wikipedia.org/wiki/Shakersort" title="Shakersort">Shakersort</a></li>
+<li><a href="http://de.wikipedia.org/wiki/Countingsort" title="Countingsort">Countingsort</a></li>
+</ul>
+<p><i>Siehe auch:</i> <a href="http://de.wikipedia.org/wiki/Sortierverfahren" title="Sortierverfahren">Sortierverfahren</a></p>
+<p><a name="Literatur" id="Literatur"></a></p>
+<h2> <span class="mw-headline">Literatur</span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=11" title="Abschnitt bearbeiten: Literatur">Bearbeiten</a>]</span></h2>
+<ol class="references">
+<li id="_note-Hoare"><b><a href="#_ref-Hoare_0" title="">↑</a></b> C.A.R. Hoare: <i>Quicksort.</i> Computer Journal, Vol. 5, 1, 10-15 (1962)</li>
+<li id="_note-0"><b><a href="#_ref-0" title="">↑</a></b> <span class="cite">Ellis Horowitz, Sartaj Sahni, Susan Anderson-Freed: <i>Grundlagen von Datenstrukturen in C.</i> 1. Auflage. International Thomson Publishing, 1994, <a href="http://de.wikipedia.org/w/index.php?title=Spezial:ISBN-Suche&amp;isbn=3929821001" class="internal">ISBN 3-929821-00-1</a>, S.&nbsp;342</span>.</li>
+</ol>
+<ul>
+<li>Robert Sedgewick: <i>Algorithmen.</i> Pearson Studium 2002 <a href="http://de.wikipedia.org/w/index.php?title=Spezial:ISBN-Suche&amp;isbn=3827370329" class="internal">ISBN 3827370329</a></li>
+<li>Thomas Cormen, Charles Leiserson, Ronald Rivest, Clifford Stein: <i>Introduction to Algorithms</i> (Second Edition), <a href="http://de.wikipedia.org/w/index.php?title=Spezial:ISBN-Suche&amp;isbn=0262032937" class="internal">ISBN 0262032937</a> – ein Standardwerk zu Algorithmen</li>
+</ul>
+<p><a name="Weblinks" id="Weblinks"></a></p>
+<h2> <span class="mw-headline">Weblinks</span>  <span style="font-size: x-small; font-weight: normal; float: none; margin-left: 0px;" class="editsection">[<a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit&amp;section=12" title="Abschnitt bearbeiten: Weblinks">Bearbeiten</a>]</span></h2>
+<ul>
+<li><a href="http://www.linux-related.de/coding/sort/sort_quick.htm" class="external text" title="http://www.linux-related.de/coding/sort/sort_quick.htm" rel="nofollow">Vollständiger Quicksort-Artikel auf www.linux-related.de</a></li>
+<li><a href="http://www.tcs.ifi.lmu.de/%7Egruberh/lehre/sorting/sort.html" class="external text" title="http://www.tcs.ifi.lmu.de/~gruberh/lehre/sorting/sort.html" rel="nofollow">Visualisierung der Rekursion in Quicksort</a></li>
+<li><a href="http://www.wanginator.de/studium/applets/quicksort_de.html" class="external text" title="http://www.wanginator.de/studium/applets/quicksort_de.html" rel="nofollow">Java-Applet und Code zur Visualisierung</a></li>
+<li><a href="http://www.jensmans-welt.de/archives/000008.html" class="external text" title="http://www.jensmans-welt.de/archives/000008.html" rel="nofollow">Überblick über mögliche Geschwindigkeitsoptimierungen</a></li>
+<li><a href="http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/quick/quick.htm" class="external text" title="http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/quick/quick.htm" rel="nofollow">Verstehen durch Schritt-für-Schritt Ausprobieren</a></li>
+<li><a href="http://www.stefan-baur.de/cs.algo.quicksort.html" class="external text" title="http://www.stefan-baur.de/cs.algo.quicksort.html" rel="nofollow">Pseudocode zu Quicksort und seinen Varianten</a></li>
+<li><a href="http://www.inf.ethz.ch/personal/staerk/algorithms/SortAnimation.html" class="external text" title="http://www.inf.ethz.ch/personal/staerk/algorithms/SortAnimation.html" rel="nofollow">Robert F. Stärk: Animated Sorting Algorithms – Java-Beispiele</a></li>
+<li><a href="http://www-fs.informatik.uni-tuebingen.de/lehre/ws05-06/randomalg/Java/Quicksort/" class="external text" title="http://www-fs.informatik.uni-tuebingen.de/lehre/ws05-06/randomalg/Java/Quicksort/" rel="nofollow">Einfache graphische Darstellung und ausführliche Wahrscheinlichkeitsanalyse des randomisierten Quicksort</a></li>
+<li><a href="http://www.datastructures.info/what-is-quicksort-and-how-does-it-work-quick-sort-algorithm/" class="external text" title="http://www.datastructures.info/what-is-quicksort-and-how-does-it-work-quick-sort-algorithm/" rel="nofollow">Videoerklärung von Quicksort mit Karten und Code in C++</a>- einfach zu Verstehen</li>
+</ul>
+
+<!-- 
+Pre-expand include size: 5785/2048000 bytes
+Post-expand include size: 1454/2048000 bytes
+Template argument size: 1712/2048000 bytes
+#ifexist count: 0/500
+-->
+
+<!-- Saved in parser cache with key dewiki:pcache:idhash:8873-0!1!0!!de!2 and timestamp 20071213112734 -->
+<div class="printfooter">
+Von „<a href="http://de.wikipedia.org/wiki/Quicksort">http://de.wikipedia.org/wiki/Quicksort</a>“</div>
+			<div id="catlinks"><p class="catlinks"><a href="http://de.wikipedia.org/wiki/Spezial:Categories" title="Spezial:Categories">Kategorie</a>: <span dir="ltr"><a href="http://de.wikipedia.org/wiki/Kategorie:Sortieralgorithmus" title="Kategorie:Sortieralgorithmus">Sortieralgorithmus</a></span></p></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Ansichten</h5>
+		<div class="pBody">
+			<ul>
+					 <li id="ca-nstab-main" class="selected"><a href="http://de.wikipedia.org/wiki/Quicksort" title="Seiteninhalt anzeigen [alt-shift-c]" accesskey="c">Artikel</a></li>
+					 <li id="ca-talk"><a href="http://de.wikipedia.org/wiki/Diskussion:Quicksort" title="Diskussion zum Seiteninhalt [alt-shift-t]" accesskey="t">Diskussion</a></li>
+					 <li id="ca-edit"><a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=edit" title="Seite bearbeiten. Bitte vor dem Speichern die Vorschaufunktion benutzen. [alt-shift-e]" accesskey="e">Seite bearbeiten</a></li>
+					 <li id="ca-history"><a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;action=history" title="Frühere Versionen dieser Seite [alt-shift-h]" accesskey="h">Versionen/Autoren</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Persönliche Werkzeuge</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://de.wikipedia.org/w/index.php?title=Spezial:Anmelden&amp;returnto=Quicksort" title="Sich einzuloggen wird zwar gerne gesehen, ist aber keine Pflicht. [alt-shift-o]" accesskey="o">Anmelden</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(http://upload.wikimedia.org/wikipedia/de/b/bc/Wiki.png);" href="http://de.wikipedia.org/wiki/Hauptseite" title="Hauptseite anzeigen [alt-shift-z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class="portlet" id="p-navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage"><a href="http://de.wikipedia.org/wiki/Hauptseite" title="Hauptseite anzeigen [alt-shift-z]" accesskey="z">Hauptseite</a></li>
+				<li id="n-aboutsite"><a href="http://de.wikipedia.org/wiki/Wikipedia:%C3%9Cber_Wikipedia">Über Wikipedia</a></li>
+				<li id="n-topics"><a href="http://de.wikipedia.org/wiki/Portal:Wikipedia_nach_Themen">Themenportale</a></li>
+				<li id="n-alphindex"><a href="http://de.wikipedia.org/wiki/Spezial:Alle_Seiten">Von A bis Z</a></li>
+				<li id="n-randompage"><a href="http://de.wikipedia.org/wiki/Spezial:Zuf%C3%A4llige_Seite" title="Zufällige Seite [alt-shift-x]" accesskey="x">Zufälliger Artikel</a></li>
+			</ul>
+		</div>
+	</div>
+		<div class="portlet" id="p-Mitmachen">
+		<h5>Mitmachen</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-help"><a href="http://de.wikipedia.org/wiki/Hilfe:Hilfe" title="Hilfeseite anzeigen">Hilfe</a></li>
+				<li id="n-portal"><a href="http://de.wikipedia.org/wiki/Wikipedia:Autorenportal" title="Über das Portal, was du tun kannst, wo was zu finden ist">Autorenportal</a></li>
+				<li id="n-recentchanges"><a href="http://de.wikipedia.org/wiki/Spezial:Letzte_%C3%84nderungen" title="Liste der letzten Änderungen in Wikipedia. [alt-shift-r]" accesskey="r">Letzte Änderungen</a></li>
+				<li id="n-sitesupport"><a href="http://donate.wikimedia.org/de/campaign/dewiki" title="Unterstützen Sie uns">Spenden</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Suche</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Spezial:Suche" id="searchform"><div>
+				<input id="searchInput" name="search" title="Durchsuche die Wikipedia [alt-shift-f]" accesskey="f" value="" type="text">
+				<input name="go" class="searchButton" id="searchGoButton" value="Artikel" title="Gehe direkt zu der Seite, die exakt dem eingegebenen Namen entspricht." type="submit">&nbsp;
+				<input name="fulltext" class="searchButton" id="mw-searchButton" value="Volltext" title="Suche nach Seiten, die diesen Text enthalten" type="submit">
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Werkzeuge</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://de.wikipedia.org/wiki/Spezial:Linkliste/Quicksort" title="Liste aller Seiten, die hierher zeigen [alt-shift-j]" accesskey="j">Links auf diese Seite</a></li>
+				<li id="t-recentchangeslinked"><a href="http://de.wikipedia.org/wiki/Spezial:%C3%84nderungen_an_verlinkten_Seiten/Quicksort" title="Letzte Änderungen an Seiten, die von hier verlinkt sind [alt-shift-k]" accesskey="k">Änderungen an verlinkten Seiten</a></li>
+<li id="t-upload"><a href="http://de.wikipedia.org/wiki/Spezial:Hochladen" title="Dateien hochladen [alt-shift-u]" accesskey="u">Hochladen</a></li>
+<li id="t-specialpages"><a href="http://de.wikipedia.org/wiki/Spezial:Spezialseiten" title="Liste aller Spezialseiten [alt-shift-q]" accesskey="q">Spezialseiten</a></li>
+				<li id="t-print"><a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;printable=yes" title="Druckansicht dieser Seite [alt-shift-p]" accesskey="p">Druckversion</a></li>				<li id="t-permalink"><a href="http://de.wikipedia.org/w/index.php?title=Quicksort&amp;oldid=40014011" title="Dauerhafter Link zu dieser Seitenversion">Permanentlink</a></li><li id="t-cite"><a href="http://de.wikipedia.org/w/index.php?title=Spezial:Cite&amp;page=Quicksort&amp;id=40014011">Seite zitieren</a></li>			</ul>
+		</div>
+	</div>
+	<div id="p-lang" class="portlet">
+		<h5>Andere Sprachen</h5>
+		<div class="pBody">
+			<ul>
+				<li class="interwiki-ar"><a href="http://ar.wikipedia.org/wiki/%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8_%D8%B3%D8%B1%D9%8A%D8%B9">العربية</a></li>
+				<li class="interwiki-bn"><a href="http://bn.wikipedia.org/wiki/%E0%A6%95%E0%A7%81%E0%A6%87%E0%A6%95_%E0%A6%B8%E0%A6%B0%E0%A7%8D%E0%A6%9F">বাংলা</a></li>
+				<li class="interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Quicksort">Català</a></li>
+				<li class="interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Quicksort">Česky</a></li>
+				<li class="interwiki-en"><a href="http://en.wikipedia.org/wiki/Quicksort">English</a></li>
+				<li class="interwiki-es"><a href="http://es.wikipedia.org/wiki/Quicksort">Español</a></li>
+				<li class="interwiki-fa"><a href="http://fa.wikipedia.org/wiki/%D9%85%D8%B1%D8%AA%D8%A8%E2%80%8C%D8%B3%D8%A7%D8%B2%DB%8C_%D8%B3%D8%B1%DB%8C%D8%B9">فارسی</a></li>
+				<li class="interwiki-fi"><a href="http://fi.wikipedia.org/wiki/Pikalajittelu">Suomi</a></li>
+				<li class="interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Tri_rapide">Français</a></li>
+				<li class="interwiki-he"><a href="http://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%95%D7%9F_%D7%9E%D7%94%D7%99%D7%A8">עברית</a></li>
+				<li class="interwiki-it"><a href="http://it.wikipedia.org/wiki/Quicksort">Italiano</a></li>
+				<li class="interwiki-ja"><a href="http://ja.wikipedia.org/wiki/%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF%E3%82%BD%E3%83%BC%E3%83%88">日本語</a></li>
+				<li class="interwiki-ko"><a href="http://ko.wikipedia.org/wiki/%ED%80%B5_%EC%A0%95%EB%A0%AC">한국어</a></li>
+				<li class="interwiki-lt"><a href="http://lt.wikipedia.org/wiki/Greitojo_rikiavimo_algoritmas">Lietuvių</a></li>
+				<li class="interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Quicksort">Nederlands</a></li>
+				<li class="interwiki-no"><a href="http://no.wikipedia.org/wiki/Quicksort">‪Norsk (bokmål)‬</a></li>
+				<li class="interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Sortowanie_szybkie">Polski</a></li>
+				<li class="interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Quicksort">Português</a></li>
+				<li class="interwiki-ru"><a href="http://ru.wikipedia.org/wiki/%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%B0%D1%8F_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0">Русский</a></li>
+				<li class="interwiki-sk"><a href="http://sk.wikipedia.org/wiki/Quicksort">Slovenčina</a></li>
+				<li class="interwiki-sl"><a href="http://sl.wikipedia.org/wiki/Hitro_urejanje">Slovenščina</a></li>
+				<li class="interwiki-sv"><a href="http://sv.wikipedia.org/wiki/Quicksort">Svenska</a></li>
+				<li class="interwiki-uk"><a href="http://uk.wikipedia.org/wiki/%D0%A8%D0%B2%D0%B8%D0%B4%D0%BA%D0%B5_%D1%81%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F">Українська</a></li>
+				<li class="interwiki-uz"><a href="http://uz.wikipedia.org/wiki/Quicksort">O'zbek</a></li>
+				<li class="interwiki-vi"><a href="http://vi.wikipedia.org/wiki/S%E1%BA%AFp_x%E1%BA%BFp_nhanh">Tiếng Việt</a></li>
+				<li class="interwiki-zh"><a href="http://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F">中文</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="Quicksort-Dateien/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki"></a></div>
+				<div id="f-copyrightico"><a href="http://wikimediafoundation.org/"><img src="Quicksort-Dateien/wikimedia-button.png" alt="Wikimedia Foundation" border="0"></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> Diese Seite wurde zuletzt am 11. Dezember 2007 um 13:24 Uhr geändert.</li>
+				<li id="copyright">Ihr Inhalt steht unter der <a class="internal" href="http://de.wikipedia.org/wiki/Wikipedia:GNU_Free_Documentation_License">GNU-Lizenz für freie Dokumentation</a>.<br>
+Wikipedia® ist eine eingetragene Marke der Wikimedia Foundation Inc.<br></li>
+				<li id="privacy"><a href="http://de.wikipedia.org/wiki/Wikipedia:Datenschutz" title="Wikipedia:Datenschutz">Datenschutz</a></li>
+				<li id="about"><a href="http://de.wikipedia.org/wiki/Wikipedia:%C3%9Cber_Wikipedia" title="Wikipedia:Über Wikipedia">Über Wikipedia</a></li>
+				<li id="disclaimer"><a href="http://de.wikipedia.org/wiki/Wikipedia:Impressum" title="Wikipedia:Impressum">Impressum</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+<!-- Served by srv167 in 0.062 secs. --></body></html>

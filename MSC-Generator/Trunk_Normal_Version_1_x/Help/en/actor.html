@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>actor</title>
+  <link href="GeneratorBlue.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table class=command>
+      <tr>
+        <th colspan=2 align=left class=headline>
+          ACTOR - Diagram element
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width=* colspan=2>
+            The command <font class='command'>actor</font> adds an actor to the diagram. 
+            An actor represents a role in the context of the system you are modeling. The actor can influence the system and can be influenced by the system.
+            An actor could stand for a person, group of people, a sensor, another system, etc. 
+            The parameter <font class='instance'>id</font> is used to assign a unique ID for the lifeline of the actor. 
+			The parameters <font class='textpara'>name</font> and <font class='textpara'>description</font> define the name and an optional description of the actor.
+			By default actors and processes are equally distributed horizontally in a diagram. Sometimes it might be necessary to have more than the default space between an actor and its neighbors. The space to the left and to the right can be control with the arguments <font class='formatpara'>left</font> und <font class='formatpara'>right</font>.
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Syntax
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='command'>actor</font>: <font class='instance'>id</font>, <font class='textpara'>name</font>, <font class='textpara'>description</font>, <font class='formatpara'>left</font>, <font class='formatpara'>right</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Parameters 
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='instance'>id</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The ID of the lifeline. Could be any alphanumeric identifier, which uniquely identifies the lifeline of the actor. This ID is not visible in the diagram.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='textpara'>name</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The name of the actor. Some text that defines the actor's name. The name is displayed in the diagram right below the actor symbol.
+          If your text contains punctuation, you must put the complete text in quotes ("").
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='textpara'>description</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The description of the actor. Some text that describes the actor. This text appears in the diagram right above the actor symbol.
+          If your text contains punctuation, you must put the complete text in quotes ("").
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='formatpara'>left</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Additional place to the left of the actor. The value is always in pixel.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='formatpara'>right</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Additional place to the right of the actor. The value is always in pixel.
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Example
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Instances</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>600,<font class='property'>auto</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font><br>
+                <br>
+                <font class='command'>actor</font>: <font class='instance'>actor1</font>, <font class='textpara'>Actor 1</font>, <font class='textpara'>Actor Description</font><br>
+                <font class='command'>process</font>: <font class='instance'>process1</font>, <font class='textpara'>Process 1</font>, <font class='textpara'>Description</font>, <font class='formatpara'>70</font>, <font class='formatpara'>0</font><br>
+                <font class='command'>actor</font>: <font class='instance'>actor2</font>, <font class='textpara'>Actor 2</font>
+              </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Instanzen_1.gif'>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> See also
+        </td>
+      </tr>
+      <tr>
+        <td class=seealso colspan=2>
+          <a href="process.html"><font class='command'>process</font></a> 
+          <a href="dummyprocess.html"><font class='command'>dummyprocess</font></a> 
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

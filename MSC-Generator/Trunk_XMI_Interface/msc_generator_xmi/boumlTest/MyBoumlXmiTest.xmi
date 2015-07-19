@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.0" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="Bouml" exporterVersion="1.5.3"/>
+	<uml:Model xmi:type="uml:Model" xmi:id="themodel" name="FirstTest">
+		<ownedMember xmi:type="uml:Package" xmi:id="BOUML_0xb20360" name ="FirstTest">
+			<ownedMember xmi:type="uml:Package" xmi:id="BOUML_0xb201c0" name ="FirstClassView">
+				<ownedMember xmi:type="uml:Class" name="FirstClass" xmi:id="BOUML_0xb21f50" visibility="package" isAbstract="false" >
+				</ownedMember>
+				<ownedMember xmi:type="uml:InstanceSpecification" xmi:id="BOUML_0xb21ee0" name="ersteEigenschaft">
+					<classifier  xmi:idref="BOUML_0xb21f50"/>
+				</ownedMember>
+				<ownedMember xmi:type="uml:Class" name="SecondClass" xmi:id="BOUML_0xb21dd0" visibility="package" isAbstract="false" >
+				</ownedMember>
+				<ownedMember xmi:type="uml:InstanceSpecification" xmi:id="BOUML_0xb21d00" name="zweiteEigenschaft">
+					<classifier  xmi:idref="BOUML_0xb21dd0"/>
+				</ownedMember>
+			</ownedMember>
+		</ownedMember>
+	</uml:Model>
+</xmi:XMI>

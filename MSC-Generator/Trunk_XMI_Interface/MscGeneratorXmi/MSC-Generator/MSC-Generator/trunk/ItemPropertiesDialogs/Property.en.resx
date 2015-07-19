@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chkAutosizeExport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkAutosizeExport.Text" xml:space="preserve">
+    <value>Export diagram on a single page.</value>
+  </data>
+  <data name="chkAutosizeExport.ToolTip" xml:space="preserve">
+    <value>When exporting the diagram will be created on a single page ignoring all manual or automatic page breaks.</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Export Options</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtDiagramName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 20</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optStyleUML.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optStyleUML.ToolTip" xml:space="preserve">
+    <value>Create UML 2.0 conform diagram.</value>
+  </data>
+  <data name="optStyleSDL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="optStyleSDL.ToolTip" xml:space="preserve">
+    <value>Create a SDL conform diagram.</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Diagram Options</value>
+  </data>
+  <data name="tabProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 447</value>
+  </data>
+  <data name="tabProperties.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="txtWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 20</value>
+  </data>
+  <data name="txtWidth.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 20</value>
+  </data>
+  <data name="txtHeight.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkAutoWidth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkAutoHeight.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tabPageWorksheet.Text" xml:space="preserve">
+    <value>Worksheet</value>
+  </data>
+  <data name="txtAuthor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 20</value>
+  </data>
+  <data name="txtCompany.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 20</value>
+  </data>
+  <data name="txtVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 20</value>
+  </data>
+  <data name="txtDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 20</value>
+  </data>
+  <data name="txtLeftMargin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 19</value>
+  </data>
+  <data name="txtLeftMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 20</value>
+  </data>
+  <data name="txtTopMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 20</value>
+  </data>
+  <data name="txtRightMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 20</value>
+  </data>
+  <data name="txtBottomMargin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 20</value>
+  </data>
+  <data name="txtToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 20</value>
+  </data>
+  <data name="txtFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 20</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAAAAAABMLAAATCwAAAAAAAAAA
+        AACXwfr/l8H6/5fB+v+WwPr/lb/6/5S++v+Svfr/j7z5/426+f+JuPn/hrb5/4K0+f9+svn/eq/4/3Ws
+        +P9xqfj/bKf4/2ek9/9ioff/XZ33/1ia9/9Sl/b/TZT2/0iR9v9Djvb/Pov1/zqI9f81hvX/MYP1/y2B
+        9f8pfvT/JXz0/5/F+v+fxfr/n8X6/57F+v+dxPr/m8P6/5nC+v+XwPr/lL76/5C9+v+Nuvn/ibj5/4W1
+        +f+As/n/e7D5/3at+P9xqvj/bKf4/2ek9/9hoPf/XJ33/1ea9/9Rl/b/TJP2/0eQ9v9Cjfb/PYr1/ziH
+        9f8zhfX/L4L1/yuA9f8nffT/psr7/6fK+/+myvv/psn7/6TJ+/+jx/r/oMb6/57F+v+bw/r/l8H6/5O+
+        +v+PvPn/i7n5/4a2+f+Bs/n/fLD5/3et+P9xqvj/bKf4/2aj9/9hoPf/W5z3/1WZ9/9Qlvb/SpL2/0WP
+        9v9AjPb/O4n1/zaG9f8xg/X/LYH1/yl+9P+uzvv/rs77/67O+/+tzvv/rM37/6rM+/+oy/v/pcn7/6LH
+        +v+exfr/msL6/5bA+v+Rvfr/jLr5/4e3+f+CtPn/fLD5/3at+P9xqfj/a6b4/2Wi9/9fn/f/WZv3/1SY
+        9/9Olfb/SJH2/0OO9v8+i/X/OYj1/zSF9f8vgvX/K4D1/7XT+/+20/v/tdP7/7XS+/+z0fv/sdD7/6/P
+        +/+szfv/qMv7/6XJ+/+gxvr/nMP6/5fB+v+Svfr/jbr5/4e3+f+Bs/n/e7D5/3Ws+P9vqfj/aaX4/2Oh
+        9/9dnvf/V5r3/1GX9v9Lk/b/RpD2/0CM9v87ifX/Nob1/zGD9f8tgfX/vdf8/73X/P+91/z/vNf8/7rW
+        /P+41Pz/ttP7/7PR+/+vz/v/q837/6fK+/+ix/r/ncT6/5jB+v+Svfr/jLr5/4a2+f+As/n/eq/4/3Sr
+        +P9tp/j/Z6T4/2Gg9/9bnPf/VJn3/06V9v9Jkfb/Q472/z2L9f84iPX/M4X1/y+C9f/E2/z/xNz8/8Tb
+        /P/D2/z/wdr8/7/Z/P+81/z/udX8/7XT+/+x0Pv/rc37/6jL+/+ix/r/ncT6/5fB+v+Rvfr/i7n5/4W1
+        +f9+svn/eK74/3Gq+P9rpvj/ZKL3/16e9/9Ymvf/UZf2/0uT9v9Fj/b/QIz2/zqJ9f81hvX/MIP1/8vg
+        /P/L4Pz/y+D8/8rf/P/I3vz/xt38/8Pb/P+/2fz/u9b8/7fU+/+y0fv/rc77/6jL+/+ix/r/nMP6/5bA
+        +v+PvPn/ibj5/4K0+f98sPn/daz4/26o+P9npPj/YaD3/1qc9/9UmPf/TpX2/0iR9v9Cjfb/PIr1/zeH
+        9f8yhPX/0eT9/9Lk/f/R5P3/0OP9/87i/f/M4Pz/yd/8/8Xc/P/B2vz/vdf8/7jU+/+y0fv/rc37/6fK
+        +/+gxvr/msL6/5O++v+Nuvn/hrb5/3+y+f94rvj/car4/2um+P9kovf/XZ73/1ea9/9Qlvb/SpL2/0SP
+        9v8+i/X/OYj1/zSF9f/Y5/3/2Oj9/9jn/f/X5/3/1eb9/9Lk/f/P4v3/y+D8/8fd/P/C2vz/vdf8/7fU
+        +/+x0Pv/q837/6XJ+/+exfr/l8H6/5C9+v+JuPn/grT5/3uw+f90rPj/baf4/2aj9/9gn/f/WZv3/1KX
+        9v9Mk/b/RpD2/0CM9v86ifX/NYb1/97r/f/e6/3/3uv9/93q/f/b6f3/2Of9/9Tl/f/Q4/3/zOD8/8fd
+        /P/B2vz/u9b8/7XT+/+vz/v/qMv7/6LH+v+bw/r/lL76/426+f+Ftvn/frL5/3et+P9wqfj/aaX4/2Kh
+        9/9bnPf/VJj3/06V9v9Ikfb/Qo32/zyK9f82hvX/5O/+/+Tv/v/k7/7/4u7+/+Ds/f/d6/3/2ej9/9Xm
+        /f/Q4/3/y+D8/8Xc/P+/2fz/udX8/7PR+/+szfv/pcn7/3SQt/9vjbf/ha/o/4i4+f+Bs/n/ea/4/3Kq
+        +P9rpvj/XZfn/0R0tf9Fesb/T5b2/0mS9v9Djvb/PYr1/ziH9f/p8v7/AAAA/3yBh//o8f7/5e/+/+Lt
+        /v8AAAD/dHyH/9Tl/f/P4v3/yd/8/wAAAP9kc4b/ttP7/4CYuP8LDhH/AAAA/wAAAP8AAAD/QFZ0/4O0
+        +f97sPn/dKv4/zpZhP8AAAD/AAAA/wAAAP8QHjH/O3XF/0SP9v8+i/X/OYj1/+71/v8AAAD/f4OH/+z0
+        /v/q8v7/5vD+/wAAAP92fYf/2Of9/9Lk/f/M4Pz/AAAA/2Z0hv+41Pz/DA4R/yIpMv+NrNn/m8P6/09l
+        hf8AAAD/YoW3/32x+f9HZ5X/AAAA/zdXhP9gn/f/TYbW/xAeMf8PHTH/RY/2/z+M9v85iPX/8/j+/wAA
+        AP+ChIf/8fb+/+71/v/q8v7/AAAA/3d+h//b6f3/1eb9/87i/f8AAAD/Z3SG/6G52v9IVGT/fpa4/6TJ
+        +/+dxPr/i7Lp/wAAAP9HYYX/frL5/xgjMv8WIjL/aKT4/2Gg9/9anPf/MluU/woUIf89fdX/QIz2/zqJ
+        9f/3+v//AAAA/4SFiP/0+f7/8fb+/+z0/v8AAAD/eX+H/93q/f/X5/3/0OP9/wAAAP9odYb/vNf8/7XS
+        +/+tzvv/haHJ/0pcdf8UGiH/AAAA/2OGt/9/svn/AAAA/zxahP9ppfj/YaD3/1qc9/9UmPf/TZT2/0aQ
+        9v9AjPb/O4n1//r8//8AAAD/hYaI//f6///z+P7/7vX+/wAAAP96f4f/3uv9/9jn/f/R5P3/AAAA/2l1
+        hv+91/z/kanJ/xcbIf8AAAD/AAAA/zJAU/9pirf/iLf5/4Cz+f8AAAD/PFqE/2ml+P9ioff/W5z3/1SY
+        9/9NlPb/R5D2/0GN9v87ifX//P3//wAAAP+Gh4j/+Pv///T4/v/v9f7/AAAA/3p/h//e6/3/2Oj9/9Lk
+        /f8AAAD/aXWG/73X/P8YHCH/DA4R/2R5l/+UuOn/l8H6/5C8+v+It/n/gLP5/xAXIf8tRGP/aaX4/2Kh
+        9/9bnPf/SYTW/0iK5v9HkPb/QY32/zuJ9f/6/P//AAAA/yEiIv/3+v//8/j+/87U3P8AAAD/LjAz/97r
+        /f/Y5/3/tcbb/wAAAP9pdYb/vdf8/wAAAP9dbob/psr7/5/F+v88TWT/JjJC/4i3+f+As/n/MEZj/wgL
+        Ef9imuf/YqH3/1uc9/8WKUL/ChQh/0eQ9v9Bjfb/O4n1//f6//8AAAD/MTIz/0FCRP+Bg4f/LzEz/wAA
+        AP9LT1X/Oz5D/3N7h/8qLTP/AAAA/5yvyv+81/z/SFRk/wwOEf9NXnX/Slx1/wAAAP9DWHT/h7f5/3+y
+        +f9ol9f/BwsR/w4WIf80VYT/HjRS/wAAAP8uWZT/RpD2/0CM9v87ifX/8/j+/4KEh/+ytrr/oaSp/z9B
+        RP8+QUT/mZ+p/+Ds/f+DjJj/OT1D/0VLVP+FlKj/wdr8/7rW/P+nw+r/XG2G/yw2Q/8qNEP/T2aF/467
+        +f+Gtvn/frL5/3et+P9gktf/MU10/xorQv8eNFL/N2Wl/0yU9v9GkPb/QIz2/zqJ9f/u9f7/7/X+/+71
+        /v/s9P7/6vL+/+bw/v/i7f7/3ev9/9jn/f/S5P3/zOD8/8bd/P+/2fz/uNT8/7HQ+/+qzPv/o8f6/5vD
+        +v+Uvvr/jLr5/4W1+f99sfn/dqz4/26o+P9npPf/YJ/3/1mb9/9Sl/b/S5P2/0WP9v8/jPb/OYj1/+ny
+        /v/q8v7/6fL+/+jx/v/l7/7/4u3+/97r/f/Z6P3/1OX9/8/i/f/J3/z/w9v8/7zX/P+20/v/r8/7/6jL
+        +/+gxvr/mcL6/5K9+v+Kufn/g7T5/3uw+f90q/j/baf4/2Wj9/9envf/WJr3/1GW9v9Kkvb/RI/2/z6L
+        9f85iPX/5O/+/+Tv/v/k7/7/4u7+/+Ds/f/d6/3/2ej9/9Xm/f/Q4/3/y+D8/8Xc/P+/2fz/udX8/7PR
+        +/+szfv/pcn7/57F+v+XwPr/j7z5/4i4+f+Bs/n/ea/4/3Kq+P9rpvj/ZKL3/12e9/9Wmff/T5b2/0mS
+        9v9Djvb/PYr1/ziH9f/e6/3/3uv9/97r/f/d6v3/2+n9/9jn/f/U5f3/0OP9/8zg/P/H3fz/wdr8/7vW
+        /P+10/v/r8/7/6jL+/+ix/r/m8P6/5S++v+Nuvn/hbb5/36y+f93rfj/cKn4/2ml+P9ioff/W5z3/1SY
+        9/9Olfb/SJH2/0KN9v88ivX/Nob1/9jn/f/Y6P3/2Of9/9fn/f/V5v3/0uT9/8/i/f/L4Pz/x938/8La
+        /P+91/z/t9T7/7HQ+/+rzfv/pcn7/57F+v+Xwfr/kL36/4m4+f+CtPn/e7D5/3Ss+P9tp/j/ZqP3/2Cf
+        9/9Zm/f/Upf2/0yT9v9GkPb/QIz2/zqJ9f81hvX/0eT9/9Lk/f/R5P3/0OP9/87i/f/M4Pz/yd/8/8Xc
+        /P/B2vz/vdf8/7jU+/+y0fv/rc37/6fK+/+gxvr/msL6/5O++v+Nuvn/hrb5/3+y+f94rvj/car4/2um
+        +P9kovf/XZ73/1ea9/9Qlvb/SpL2/0SP9v8+i/X/OYj1/zSF9f/L4Pz/y+D8/8vg/P/K3/z/yN78/8bd
+        /P/D2/z/v9n8/7vW/P+31Pv/stH7/63O+/+oy/v/osf6/5zD+v+WwPr/j7z5/4m4+f+CtPn/fLD5/3Ws
+        +P9uqPj/Z6T4/2Gg9/9anPf/VJj3/06V9v9Ikfb/Qo32/zyK9f83h/X/MoT1/8Tb/P/E3Pz/xNv8/8Pb
+        /P/B2vz/v9n8/7zX/P+51fz/tdP7/7HQ+/+tzfv/qMv7/6LH+v+dxPr/l8H6/5G9+v+Lufn/hbX5/36y
+        +f94rvj/car4/2um+P9kovf/Xp73/1ia9/9Rl/b/S5P2/0WP9v9AjPb/Oon1/zWG9f8wg/X/vdf8/73X
+        /P+91/z/vNf8/7rW/P+41Pz/ttP7/7PR+/+vz/v/q837/6fK+/+ix/r/ncT6/5jB+v+Svfr/jLr5/4a2
+        +f+As/n/eq/4/3Sr+P9tp/j/Z6T4/2Gg9/9bnPf/VJn3/06V9v9Jkfb/Q472/z2L9f84iPX/M4X1/y+C
+        9f+10/v/ttP7/7XT+/+10vv/s9H7/7HQ+/+vz/v/rM37/6jL+/+lyfv/oMb6/5zD+v+Xwfr/kr36/426
+        +f+Ht/n/gbP5/3uw+f91rPj/b6n4/2ml+P9joff/XZ73/1ea9/9Rl/b/S5P2/0aQ9v9AjPb/O4n1/zaG
+        9f8xg/X/LYH1/67O+/+uzvv/rs77/63O+/+szfv/qsz7/6jL+/+lyfv/osf6/57F+v+awvr/lsD6/5G9
+        +v+Muvn/h7f5/4K0+f98sPn/dq34/3Gp+P9rpvj/ZaL3/1+f9/9Zm/f/VJj3/06V9v9Ikfb/Q472/z6L
+        9f85iPX/NIX1/y+C9f8rgPX/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+</root>

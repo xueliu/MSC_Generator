@@ -1,0 +1,7 @@
+Getrennte Entwickliung 2006-11-30 beendet (r692)
+
+Freie Version liegt unter /MSC-Generator/trunk/mscgen
+bzw:
+intern/Grafik-Generatoren/MSC-Generator/Trunk_Normal_Version_1_x/mscgen
+
+Verzeichnis nach Revision 1044 entfernt.

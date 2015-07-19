@@ -1,0 +1,1175 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ClassDiagram Zoom="1" MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="mscElements.InLineSeparator" Collapsed="False">
+    <Position X="0.5" Y="22.4" Width="2.191881" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="nGenerator.Output" Collapsed="False">
+    <Position X="0.5" Y="95.5" Width="2.431969" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.InLineText" Collapsed="False">
+    <Position X="3" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.HeadLine" Collapsed="False">
+    <Position X="5.3" Y="22.4" Width="1.549606" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="nGenerator.Generator" Collapsed="False">
+    <Position X="0.5" Y="107.2" Width="3.076505" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Nested Types" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.LineComment" Collapsed="False">
+    <Position X="7.3" Y="22.4" Width="1.990036" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.TimerBeginProp" Collapsed="False">
+    <Position X="0.5" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="nGenerator.Process" Collapsed="False">
+    <Position X="0.5" Y="5.7" Width="1.597438" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="nGenerator.Processes" Collapsed="False">
+    <Position X="0.5" Y="0.5" Width="2.208263" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="nGenerator.RepertoryAddTextMethodsIndex" Collapsed="False">
+    <Position X="0.5" Y="139.9" Width="3.642077" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="mscElements.ProcessStyle" Collapsed="False">
+    <Position X="0.5" Y="144.7" Width="2.032877" />
+    <Compartments />
+  </Enum>
+  <Enum Name="mscElements.ProcessType" Collapsed="False">
+    <Position X="0.5" Y="146.5" Width="1.829689" />
+    <Compartments />
+  </Enum>
+  <Class Name="mscElements.ProcessLine" Collapsed="False">
+    <Position X="9.7" Y="22.4" Width="2.260041" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.ProcessRegion" Collapsed="False">
+    <Position X="12.3" Y="22.4" Width="2.116149" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="nGenerator.Start" Collapsed="False">
+    <Position X="0.5" Y="148" Width="1.95883" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.ItemVerticalLine" Collapsed="False">
+    <Position X="14.8" Y="22.4" Width="2.206813" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.LostMessage" Collapsed="False">
+    <Position X="17.5" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="nGenerator.Info" Collapsed="False">
+    <Position X="0.5" Y="151.4" Width="1.78443" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.ProcessStop" Collapsed="False">
+    <Position X="19.8" Y="22.4" Width="1.862956" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.SetTimer" Collapsed="False">
+    <Position X="22.1" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="nGenerator.OutputExt" Collapsed="False">
+    <Position X="0.5" Y="155" Width="1.585915" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.Reference" Collapsed="False">
+    <Position X="24.4" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.MeasureBeginn" Collapsed="False">
+    <Position X="26.7" Y="22.4" Width="2.166637" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.MeasureEnd" Collapsed="False">
+    <Position X="29.3" Y="22.4" Width="1.969762" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="mscElements.CapStyle" Collapsed="False">
+    <Position X="0.5" Y="156.3" Width="1.521979" />
+    <Compartments />
+  </Enum>
+  <Enum Name="mscElements.MeasurePos" Collapsed="False">
+    <Position X="0.5" Y="157.7" Width="1.679406" />
+    <Compartments />
+  </Enum>
+  <Class Name="mscElements.MeasureLine" Collapsed="False">
+    <Position X="31.7" Y="22.4" Width="2.220968" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.StopTimer" Collapsed="False">
+    <Position X="34.3" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="mscElements.StateStyle" Collapsed="False">
+    <Position X="0.5" Y="159.1" Width="1.67946" />
+    <Compartments />
+  </Enum>
+  <Class Name="mscElements.State" Collapsed="False">
+    <Position X="36.6" Y="22.4" Width="2.2609" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscEditor.Editor" Collapsed="False">
+    <Position X="0.5" Y="160.4" Width="2.227975" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.MeasureStart" Collapsed="False">
+    <Position X="39.3" Y="22.4" Width="1.969762" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.MeasureStop" Collapsed="False">
+    <Position X="41.7" Y="22.4" Width="1.969762" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="mscElements.MessageStyle" Collapsed="False">
+    <Position X="0.5" Y="167.4" Width="1.969176" />
+    <Compartments />
+  </Enum>
+  <Class Name="mscElements.Message" Collapsed="False">
+    <Position X="44" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.MessageBegin" Collapsed="False">
+    <Position X="46.4" Y="22.4" Width="2.078551" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.MessageEnd" Collapsed="False">
+    <Position X="48.9" Y="22.4" Width="1.900876" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.MessageLine" Collapsed="False">
+    <Position X="51.2" Y="22.4" Width="2.032819" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="mscEditor.ParamType" Collapsed="False">
+    <Position X="0.5" Y="169" Width="1.905421" />
+    <Compartments />
+  </Enum>
+  <Enum Name="mscEditor.CommandType" Collapsed="False">
+    <Position X="0.5" Y="171" Width="2.075309" />
+    <Compartments />
+  </Enum>
+  <Delegate Name="mscEditor.RunCommandFunction" Collapsed="False">
+    <Position X="0.5" Y="172.3" Width="1.741994" />
+    <Compartments />
+  </Delegate>
+  <Class Name="mscEditor.MSCCommandSyntax" Collapsed="False">
+    <Position X="0.5" Y="173.5" Width="2.819655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.Task" Collapsed="False">
+    <Position X="53.6" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscPreview.FastPreviewList" Collapsed="False">
+    <Position X="0.5" Y="178.9" Width="1.427629" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.MSCEnd" Collapsed="False">
+    <Position X="55.9" Y="22.4" Width="1.484938" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="mscElements.ItemStyle" Collapsed="False">
+    <Position X="0.5" Y="180.8" Width="2.013219" />
+    <Compartments />
+  </Enum>
+  <Enum Name="mscElements.ItemPos" Collapsed="False">
+    <Position X="0.5" Y="182.3" Width="1.552755" />
+    <Compartments />
+  </Enum>
+  <Struct Name="mscElements.ItemDrawingAttributes" Collapsed="False">
+    <Position X="0.5" Y="183.9" Width="2.809665" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Struct>
+  <Class Name="mscElements.MSCItem" Collapsed="False">
+    <Position X="0.5" Y="12.6" Width="2.032145" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="mscElements.MarkPos" Collapsed="False">
+    <Position X="0.5" Y="186.6" Width="1.849293" />
+    <Compartments />
+  </Enum>
+  <Class Name="mscElements.Mark" Collapsed="False">
+    <Position X="57.8" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="nGenerator.Interpreter" Collapsed="False">
+    <Position X="0.5" Y="188.2" Width="2.632257" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="CommandLine.Utility.Arguments" Collapsed="False">
+    <Position X="0.5" Y="191.3" Width="1.965382" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.TimeOut" Collapsed="False">
+    <Position X="60.1" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="nGenerator.MscStyle" Collapsed="False">
+    <Position X="0.5" Y="194" Width="1.710827" />
+    <Compartments />
+  </Enum>
+  <Class Name="nGenerator.MSC" Collapsed="False">
+    <Position X="0.5" Y="9.2" Width="1.681252" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.ProcessCreate" Collapsed="False">
+    <Position X="62.5" Y="22.4" Width="2.076833" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.TimeoutBegin" Collapsed="False">
+    <Position X="65" Y="22.4" Width="1.978971" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.TimeoutEnd" Collapsed="False">
+    <Position X="67.3" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Struct Name="nGenerator.InLineSize" Collapsed="False">
+    <Position X="0.5" Y="195.6" Width="1.089084" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Struct>
+  <Struct Name="nGenerator.DiagramLine" Collapsed="False">
+    <Position X="0.5" Y="197.1" Width="1.204562" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Struct>
+  <Enum Name="nGenerator.InterpretResult" Collapsed="False">
+    <Position X="0.5" Y="198.6" Width="2.787301" />
+    <Compartments />
+  </Enum>
+  <Struct Name="nGenerator.InterpretException" Collapsed="False">
+    <Position X="0.5" Y="201" Width="2.418434" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Struct>
+  <Class Name="mscElements.NewPage" Collapsed="False">
+    <Position X="69.7" Y="22.4" Width="1.56067" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.TimeoutStop" Collapsed="False">
+    <Position X="71.6" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.TimerBegin" Collapsed="False">
+    <Position X="74" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.ProcessCreateProp" Collapsed="False">
+    <Position X="3.4" Y="8.7" Width="2.555397" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.CommentProp" Collapsed="False">
+    <Position X="6.3" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="mscElements.TimerStyle" Collapsed="False">
+    <Position X="0.5" Y="203.9" Width="1.61694" />
+    <Compartments />
+  </Enum>
+  <Class Name="mscElements.TimerEnd" Collapsed="False">
+    <Position X="76.3" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.ProcessLineProp" Collapsed="False">
+    <Position X="9.3" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.FoundMessageProp" Collapsed="False">
+    <Position X="12.2" Y="8.7" Width="2.618776" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.ProcessRegionProp" Collapsed="False">
+    <Position X="15.2" Y="8.7" Width="2.594713" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.TimerEndProp" Collapsed="False">
+    <Position X="18.2" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.InLineBeginProp" Collapsed="False">
+    <Position X="21.2" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmi.ErrorMessages" Collapsed="False">
+    <Position X="0.5" Y="205.3" Width="4.517028" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.ReferenceProp" Collapsed="False">
+    <Position X="24.1" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="sequenceChartModel.ExecutionOccurrenceSpecKind" Collapsed="False">
+    <Position X="0.5" Y="206.9" Width="2.719142" />
+    <Compartments />
+  </Enum>
+  <Class Name="sequenceChartModel.ExecutionOccurrenceSpecification" Collapsed="False">
+    <Position X="0.5" Y="48.7" Width="4.034596" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.Property" Collapsed="False">
+    <Position X="0.5" Y="0.5" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Events" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.InLineTextProp" Collapsed="False">
+    <Position X="27.1" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.SetTimerProp" Collapsed="False">
+    <Position X="30" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="sequenceChartModel.FormalGateType" Collapsed="False">
+    <Position X="0.5" Y="208.3" Width="2.276886" />
+    <Compartments />
+  </Enum>
+  <Class Name="sequenceChartModel.FormalGate" Collapsed="False">
+    <Position X="17.4" Y="52.3" Width="2.285153" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.LostMessageProp" Collapsed="False">
+    <Position X="33" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmi.XmiElementInterpreter" Collapsed="False">
+    <Position X="0.5" Y="64.9" Width="2.858488" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiPapyrus.PapyrusXmiDiNamespaceManager" Collapsed="False">
+    <Position X="0.5" Y="209.7" Width="4.119567" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiPapyrus.PapyrusXmiModelNamespaceManager" Collapsed="False">
+    <Position X="0.5" Y="212.4" Width="4.522721" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.LineCommentProp" Collapsed="False">
+    <Position X="35.9" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.StateProp" Collapsed="False">
+    <Position X="38.9" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.MeasureEndProp" Collapsed="False">
+    <Position X="41.8" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.StopTimerProp" Collapsed="False">
+    <Position X="44.8" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.MeasureBeginProp" Collapsed="False">
+    <Position X="47.7" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.TaskProp" Collapsed="False">
+    <Position X="50.7" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.MeasureStartProp" Collapsed="False">
+    <Position X="53.6" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.TimeoutBeginProp" Collapsed="False">
+    <Position X="56.6" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.MeasureStopProp" Collapsed="False">
+    <Position X="59.5" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.TimeoutEndProp" Collapsed="False">
+    <Position X="62.5" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.MessageBeginProp" Collapsed="False">
+    <Position X="65.5" Y="8.7" Width="2.557116" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.TimeOutProp" Collapsed="False">
+    <Position X="68.4" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.MessageProp" Collapsed="False">
+    <Position X="71.4" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.TimeoutStopProp" Collapsed="False">
+    <Position X="74.3" Y="8.7" Width="2.342809" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="sequenceChartModel.ExecutionSpecification" Collapsed="False">
+    <Position X="4.8" Y="48.7" Width="2.863483" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="sequenceChartModel.Interaction" Collapsed="False">
+    <Position X="8.1" Y="48.7" Width="2.454611" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="MscItemProp.MscMarkProp" Collapsed="False">
+    <Position X="77.1" Y="8.7" Width="2.551691" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="mscElements.CommentPos" Collapsed="False">
+    <Position X="0.5" Y="214.9" Width="1.837316" />
+    <Compartments />
+  </Enum>
+  <Class Name="mscElements.Comment" Collapsed="False">
+    <Position X="78.7" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="sequenceChartModel.Lifeline" Collapsed="False">
+    <Position X="11" Y="48.7" Width="3.042555" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="mscElements.MessagePos" Collapsed="False">
+    <Position X="0.5" Y="216.4" Width="1.698366" />
+    <Compartments />
+  </Enum>
+  <Class Name="mscElements.FoundMessage" Collapsed="False">
+    <Position X="81" Y="22.4" Width="2.140212" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="sequenceChartModel.MessageSort" Collapsed="False">
+    <Position X="0.5" Y="217.8" Width="2.220329" />
+    <Compartments />
+  </Enum>
+  <Enum Name="sequenceChartModel.MessageEventKind" Collapsed="False">
+    <Position X="0.5" Y="219.8" Width="2.818615" />
+    <Compartments />
+  </Enum>
+  <Class Name="sequenceChartModel.Message" Collapsed="False">
+    <Position X="14.4" Y="48.7" Width="2.537619" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="sequenceChartModel.MessageEndKind" Collapsed="False">
+    <Position X="0.5" Y="221.1" Width="2.417877" />
+    <Compartments />
+  </Enum>
+  <Enum Name="sequenceChartModel.EventKind" Collapsed="False">
+    <Position X="0.5" Y="222.5" Width="2.449191" />
+    <Compartments />
+  </Enum>
+  <Class Name="sequenceChartModel.MessageEnd" Collapsed="False">
+    <Position X="17.3" Y="48.7" Width="3.321666" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="sequenceChartModel.SequenceChartElement" Collapsed="False">
+    <Position X="0.5" Y="45.3" Width="2.985299" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="mscElements.InLineType" Collapsed="False">
+    <Position X="0.5" Y="224" Width="1.862184" />
+    <Compartments />
+  </Enum>
+  <Class Name="mscElements.InLine" Collapsed="False">
+    <Position X="83.5" Y="22.4" Width="1.555675" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.InLineBeginn" Collapsed="False">
+    <Position X="85.5" Y="22.4" Width="1.939655" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="sequenceChartModel.SequenceChartElementListSorter" Collapsed="False">
+    <Position X="0.5" Y="225.4" Width="3.56151" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="mscElements.InLineEnd" Collapsed="False">
+    <Position X="87.8" Y="22.4" Width="1.600094" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmi.UmlModel" Collapsed="False">
+    <Position X="0.5" Y="228.8" Width="3.599054" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmi.XmiElementValidator" Collapsed="False">
+    <Position X="0.5" Y="242.6" Width="2.521237" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.MessageElementCreator" Collapsed="False">
+    <Position X="0.5" Y="83.3" Width="3.250094" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.BehaviorExecutionSpecificationElementCreator" Collapsed="False">
+    <Position X="4.1" Y="83.3" Width="5.346969" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.ClassElementCreator" Collapsed="False">
+    <Position X="9.8" Y="83.3" Width="2.734147" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImport.SequenceChartModelCreator" Collapsed="False">
+    <Position X="0.5" Y="245.5" Width="3.526598" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Enum Name="xmiExport.EventKind" Collapsed="False">
+    <Position X="0.5" Y="251" Width="1.995119" />
+    <Compartments />
+  </Enum>
+  <Class Name="xmiExport.MessageOccurrenceSpecElementCreator" Collapsed="False">
+    <Position X="12.9" Y="83.3" Width="4.773229" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.CollaborationElementCreator" Collapsed="False">
+    <Position X="18.1" Y="83.3" Width="3.505221" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Struct Name="xmiImport.LifelineIdProcessEntryIdPair" Collapsed="False">
+    <Position X="0.5" Y="252.3" Width="3.429811" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Struct>
+  <Class Name="xmiImport.SequenceChartModelInterpreter" Collapsed="False">
+    <Position X="0.5" Y="254.2" Width="3.816315" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.DiagramElementCreator" Collapsed="False">
+    <Position X="46.7" Y="85.5" Width="3.023649" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.EventElementCreator" Collapsed="False">
+    <Position X="22" Y="83.3" Width="2.745641" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.MscDiagramInterpreter" Collapsed="False">
+    <Position X="0.5" Y="261" Width="3.136198" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+      <Compartment Name="Nested Types" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImport.XmiDIDocumentInterpreter" Collapsed="False">
+    <Position X="0.5" Y="54.5" Width="3.313366" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.OccurenceSpecificationElementCreator" Collapsed="False">
+    <Position X="25.2" Y="83.3" Width="4.550651" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.ExecutionOccurrenceSpecElementCreator" Collapsed="False">
+    <Position X="30.1" Y="83.3" Width="4.850251" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.PropertyElementCreator" Collapsed="False">
+    <Position X="35.4" Y="83.3" Width="3.022467" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImport.XmiDocumentImport" Collapsed="False">
+    <Position X="0.5" Y="87.9" Width="3.059074" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImport.XmiDocumentRootElementInterpreter" Collapsed="False">
+    <Position X="0.5" Y="267.4" Width="2.499801" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.GraphConnectorElementCreator" Collapsed="False">
+    <Position X="38.8" Y="83.3" Width="3.841237" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.UmlModelElementCreator" Collapsed="False">
+    <Position X="43" Y="83.3" Width="3.188649" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.GraphEdgeElementCreator" Collapsed="False">
+    <Position X="50" Y="85.5" Width="3.820021" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImport.XmiElementTypes" Collapsed="False">
+    <Position X="0.5" Y="268.9" Width="2.083224" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.XmiConstant" Collapsed="False">
+    <Position X="0.5" Y="271.1" Width="1.210148" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.GraphElementElementCreator" Collapsed="False">
+    <Position X="46.6" Y="83.3" Width="3.628434" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.XmiDocumentElementCreator" Collapsed="False">
+    <Position X="58.9" Y="83.3" Width="3.590407" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImportPapyrus.EmfQueryConverter" Collapsed="False">
+    <Position X="0.5" Y="272.4" Width="3.101906" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.GraphNodeElementCreator" Collapsed="False">
+    <Position X="54.2" Y="85.5" Width="3.889255" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImportPapyrus.PapyrusNamespaces" Collapsed="False">
+    <Position X="0.5" Y="276.4" Width="2.818903" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.InteractionElementCreator" Collapsed="False">
+    <Position X="62.9" Y="83.3" Width="3.225495" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExportPapyrus.PapyrusModelElementCreator" Collapsed="False">
+    <Position X="66.6" Y="83.3" Width="3.615866" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImportPapyrus.PapyrusXmiDIDocumentInterpreter" Collapsed="False">
+    <Position X="0.5" Y="59.6" Width="4.560802" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExportPapyrus.PapyrusNamespaces" Collapsed="False">
+    <Position X="0.5" Y="278.8" Width="2.510656" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.LifelineElementCreator" Collapsed="False">
+    <Position X="70.6" Y="83.3" Width="2.929601" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImportPapyrus.PapyrusXmiModelElementInterpreter" Collapsed="False">
+    <Position X="0.5" Y="66.6" Width="3.617477" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExportPapyrus.PapyrusXmiDocumentBuilder" Collapsed="False">
+    <Position X="0.5" Y="75.7" Width="3.541637" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.XmiExportTypes" Collapsed="False">
+    <Position X="0.5" Y="280.7" Width="2.114108" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.XmlDeclarationElementCreator" Collapsed="False">
+    <Position X="73.9" Y="83.3" Width="3.706422" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImportPapyrus.PapyrusXmiXmiElementInterpreter" Collapsed="False">
+    <Position X="4.4" Y="66.6" Width="2.843986" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.XmlDocumentBuilder" Collapsed="False">
+    <Position X="0.5" Y="70.2" Width="3.53632" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiExport.XmlElementCreator" Collapsed="False">
+    <Position X="0.5" Y="77.5" Width="3.089499" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImport.EditorEntryCreator" Collapsed="False">
+    <Position X="0.5" Y="282.2" Width="3.193107" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImport.XmiModelDocumentInterpreter" Collapsed="False">
+    <Position X="0.5" Y="291.7" Width="5.25942" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="False" />
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+  <Class Name="xmiImportPapyrus.PapyrusXmiDocumentImport" Collapsed="False">
+    <Position X="0.5" Y="91.9" Width="3.685744" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="False" />
+      <Compartment Name="Fields" Collapsed="False" />
+    </Compartments>
+  </Class>
+</ClassDiagram>

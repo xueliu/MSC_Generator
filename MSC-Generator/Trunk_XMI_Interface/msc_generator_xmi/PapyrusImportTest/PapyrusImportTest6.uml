@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_4SiSysqWEdywHoHpq6V9iA" name="PapyrusImportTest6">
+  <packageImport xmi:id="_4SiSy8qWEdywHoHpq6V9iA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_5Z3uMMqWEdywHoHpq6V9iA" name="MyInteractionTest">
+    <lifeline xmi:id="_7OrTsMqWEdywHoHpq6V9iA" name="FirstLifeline" coveredBy="_BcQ3UsqXEdywHoHpq6V9iA _BcQ3UcqXEdywHoHpq6V9iA __2pkYcqWEdywHoHpq6V9iA _Cx1jIcqXEdywHoHpq6V9iA __2pkYMqWEdywHoHpq6V9iA _Cx1jIsqXEdywHoHpq6V9iA _ZUnzkMqXEdywHoHpq6V9iA _ZUnzkcqXEdywHoHpq6V9iA"/>
+    <lifeline xmi:id="_FPzaYMqXEdywHoHpq6V9iA" name="SecondLifeline" coveredBy="_4zBesMqYEdywHoHpq6V9iA _4zBescqYEdywHoHpq6V9iA"/>
+    <lifeline xmi:id="_HpRzMMqXEdywHoHpq6V9iA" name="ThirdLifeline" coveredBy="_KG9WkMqXEdywHoHpq6V9iA _KG9WkcqXEdywHoHpq6V9iA _L93N0MqXEdywHoHpq6V9iA _L93N0cqXEdywHoHpq6V9iA _V57OUMqXEdywHoHpq6V9iA _V57OUcqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="__2pkYMqWEdywHoHpq6V9iA" name="StartEO_1" covered="_7OrTsMqWEdywHoHpq6V9iA" event="__0oyMMqWEdywHoHpq6V9iA" execution="__2pkYsqWEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="__2pkYcqWEdywHoHpq6V9iA" name="FinishEO_1" covered="_7OrTsMqWEdywHoHpq6V9iA" event="__14vYMqWEdywHoHpq6V9iA" execution="__2pkYsqWEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="__2pkYsqWEdywHoHpq6V9iA" name="ExecSpec_1" start="__2pkYMqWEdywHoHpq6V9iA" finish="__2pkYcqWEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_BcQ3UcqXEdywHoHpq6V9iA" name="StartEO_2" covered="_7OrTsMqWEdywHoHpq6V9iA" event="_BcKwsMqXEdywHoHpq6V9iA" execution="_BcQ3U8qXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_BcQ3UsqXEdywHoHpq6V9iA" name="FinishEO_2" covered="_7OrTsMqWEdywHoHpq6V9iA" event="_BcQ3UMqXEdywHoHpq6V9iA" execution="_BcQ3U8qXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_BcQ3U8qXEdywHoHpq6V9iA" name="ExecSpec_2" start="_BcQ3UcqXEdywHoHpq6V9iA" finish="_BcQ3UsqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_Cx1jIcqXEdywHoHpq6V9iA" name="StartEO_3" covered="_7OrTsMqWEdywHoHpq6V9iA" event="_CxvcgMqXEdywHoHpq6V9iA" execution="_Cx1jI8qXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_Cx1jIsqXEdywHoHpq6V9iA" name="FinishEO_3" covered="_7OrTsMqWEdywHoHpq6V9iA" event="_Cx1jIMqXEdywHoHpq6V9iA" execution="_Cx1jI8qXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_Cx1jI8qXEdywHoHpq6V9iA" name="ExecSpec_3" start="_Cx1jIcqXEdywHoHpq6V9iA" finish="_Cx1jIsqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_KG9WkMqXEdywHoHpq6V9iA" name="StartEO_4" covered="_HpRzMMqXEdywHoHpq6V9iA" event="_KGrCsMqXEdywHoHpq6V9iA" execution="_KG9WksqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_KG9WkcqXEdywHoHpq6V9iA" name="FinishEO_4" covered="_HpRzMMqXEdywHoHpq6V9iA" event="_KGxJUMqXEdywHoHpq6V9iA" execution="_KG9WksqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_KG9WksqXEdywHoHpq6V9iA" name="ExecSpec_4" start="_KG9WkMqXEdywHoHpq6V9iA" finish="_KG9WkcqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_L93N0MqXEdywHoHpq6V9iA" name="StartEO_5" covered="_HpRzMMqXEdywHoHpq6V9iA" event="_L9rAkMqXEdywHoHpq6V9iA" execution="_L93N0sqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_L93N0cqXEdywHoHpq6V9iA" name="FinishEO_5" covered="_HpRzMMqXEdywHoHpq6V9iA" event="_L9xHMMqXEdywHoHpq6V9iA" execution="_L93N0sqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_L93N0sqXEdywHoHpq6V9iA" name="ExecSpec_5" start="_L93N0MqXEdywHoHpq6V9iA" finish="_L93N0cqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_V57OUMqXEdywHoHpq6V9iA" name="StartEO_7" covered="_HpRzMMqXEdywHoHpq6V9iA" event="_V5oTYMqXEdywHoHpq6V9iA" execution="_V57OUsqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_V57OUcqXEdywHoHpq6V9iA" name="FinishEO_7" covered="_HpRzMMqXEdywHoHpq6V9iA" event="_V5uaAMqXEdywHoHpq6V9iA" execution="_V57OUsqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_V57OUsqXEdywHoHpq6V9iA" name="ExecSpec_7" start="_V57OUMqXEdywHoHpq6V9iA" finish="_V57OUcqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_ZUnzkMqXEdywHoHpq6V9iA" name="StartEO_8" covered="_7OrTsMqWEdywHoHpq6V9iA" event="_ZUbmUMqXEdywHoHpq6V9iA" execution="_ZUnzksqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_ZUnzkcqXEdywHoHpq6V9iA" name="FinishEO_8" covered="_7OrTsMqWEdywHoHpq6V9iA" event="_ZUhs8MqXEdywHoHpq6V9iA" execution="_ZUnzksqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_ZUnzksqXEdywHoHpq6V9iA" name="ExecSpec_8" start="_ZUnzkMqXEdywHoHpq6V9iA" finish="_ZUnzkcqXEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_4zBesMqYEdywHoHpq6V9iA" name="StartEO_6" covered="_FPzaYMqXEdywHoHpq6V9iA" event="_4yvK0MqYEdywHoHpq6V9iA" execution="_4zBessqYEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_4zBescqYEdywHoHpq6V9iA" name="FinishEO_6" covered="_FPzaYMqXEdywHoHpq6V9iA" event="_4y1RcMqYEdywHoHpq6V9iA" execution="_4zBessqYEdywHoHpq6V9iA"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_4zBessqYEdywHoHpq6V9iA" name="ExecSpec_6" start="_4zBesMqYEdywHoHpq6V9iA" finish="_4zBescqYEdywHoHpq6V9iA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="__0oyMMqWEdywHoHpq6V9iA" name="StartExecEvt_1"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="__14vYMqWEdywHoHpq6V9iA" name="FinishExecEvt_1"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_BcKwsMqXEdywHoHpq6V9iA" name="StartExecEvt_2"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_BcQ3UMqXEdywHoHpq6V9iA" name="FinishExecEvt_2"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_CxvcgMqXEdywHoHpq6V9iA" name="StartExecEvt_3"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_Cx1jIMqXEdywHoHpq6V9iA" name="FinishExecEvt_3"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_KGrCsMqXEdywHoHpq6V9iA" name="StartExecEvt_4"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_KGxJUMqXEdywHoHpq6V9iA" name="FinishExecEvt_4"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_L9rAkMqXEdywHoHpq6V9iA" name="StartExecEvt_5"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_L9xHMMqXEdywHoHpq6V9iA" name="FinishExecEvt_5"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_V5oTYMqXEdywHoHpq6V9iA" name="StartExecEvt_7"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_V5uaAMqXEdywHoHpq6V9iA" name="FinishExecEvt_7"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_ZUbmUMqXEdywHoHpq6V9iA" name="StartExecEvt_8"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_ZUhs8MqXEdywHoHpq6V9iA" name="FinishExecEvt_8"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_4yvK0MqYEdywHoHpq6V9iA" name="StartExecEvt_6"/>
+  <packagedElement xmi:type="uml:ExecutionEvent" xmi:id="_4y1RcMqYEdywHoHpq6V9iA" name="FinishExecEvt_6"/>
+  <profileApplication xmi:id="_4SiSzMqWEdywHoHpq6V9iA">
+    <eAnnotations xmi:id="_4SiSzcqWEdywHoHpq6V9iA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+  </profileApplication>
+</uml:Model>

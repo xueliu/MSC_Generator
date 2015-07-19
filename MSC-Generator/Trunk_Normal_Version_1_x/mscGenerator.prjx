@@ -1,0 +1,129 @@
+<Project name="mscGenerator" standardNamespace="mscGenerator" description="" newfilesearch="None" enableviewstate="True" version="1.1" projecttype="C#">
+  <Contents>
+    <File name=".\AssemblyInfo.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Process.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Processes.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\mscGenerator.MainForm.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Output.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\mscGenerator.Output.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Generator.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\State.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MSCItem.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Task.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Comment.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Message.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\mscGenerator.WorkSheetOptions.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\TimeoutBeginn.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Loopline.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\TimeoutEnd.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\LoopBeginn.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\LoopEnd.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MSCEnd.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Start.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\mscGenerator.Start.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Info.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\mscGenerator.Info.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\HeadLine.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\SetTimer.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\TimeOut.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\TimeoutStop.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\StopTimer.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscMark.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MeasureLine.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MeasureBeginn.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MeasureEnd.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MeasureStart.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MeasureStop.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\FoundMessage.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\LostMessage.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ProcessLine.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ProcessStop.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ProcessCreate.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ProcessRegion.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\InLine.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\InLineBeginn.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\InLineEnd.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\InLineSeperator.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MessageBeginn.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MessageLine.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MessageEnd.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Interpreter.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Log.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Reference.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\OutputExt.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\mscGenerator.Log.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Comment2.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\LineComment.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Editor.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MSCCommandSyntax.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\PreviewWindow.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\NewPage.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\CommentProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.IPropComment.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Property.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\mscGenerator.Property.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\MscItemProp.Property.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\MscItemProp.CommentProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\Comment2Prop.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.Comment2Prop.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\FoundMessageProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.FoundMessageProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\InLineBeginnProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\LineCommentProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.LineCommentProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\LostMessageProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MeasureBeginProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MeasureEndProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MeasureStartProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.MeasureBeginProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\MscItemProp.MeasureStartProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\MeasureStopProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MessageProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.MessageProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\MessageBeginProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.MessageBeginProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\MscMarkProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.MscMarkProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\ProcessCreateProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.ProcessCreateProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\ProcessLineProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.ProcessLineProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\ProcessRegionProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.ProcessRegionProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\SetTimerProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.SetTimerProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\StateProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.StateProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\StopTimerProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\TaskProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\TimeOutProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\TimeoutBeginProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MscItemProp.TimeoutBeginProp.resources" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name=".\TimeoutEndProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\TimeoutStopProp.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\MSC.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+  </Contents>
+  <References>
+    <Reference type="Gac" refto="nunit.framework, Version=2.2.0.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" localcopy="True" />
+    <Reference type="Assembly" refto="..\..\Intern\GeneratorGUI\bin\Debug\GeneratorGUI.dll" localcopy="True" />
+    <Reference type="Assembly" refto="..\..\Intern\NumberingRichTextBoxControl\bin\Debug\NumberingRichTextBoxControl.dll" localcopy="True" />
+  </References>
+  <DeploymentInformation target="" script="" strategy="File" />
+  <Configuration runwithwarnings="True" name="Debug">
+    <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="v1.1.4322" warninglevel="4" nowarn="" includedebuginformation="True" optimize="False" unsafecodeallowed="True" generateoverflowchecks="True" mainclass="" target="WinExe" definesymbols="" generatexmldocumentation="False" win32Icon=".\Icons\Icon2.ico" noconfig="False" nostdlib="False" />
+    <Execution commandlineparameters="" consolepause="True" />
+    <Output directory=".\bin\Debug" assembly="mscGenerator" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+  </Configuration>
+  <Configurations active="Debug">
+    <Configuration runwithwarnings="True" name="Debug">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="v1.1.4322" warninglevel="4" nowarn="" includedebuginformation="True" optimize="False" unsafecodeallowed="True" generateoverflowchecks="True" mainclass="" target="WinExe" definesymbols="" generatexmldocumentation="False" win32Icon=".\Icons\Icon2.ico" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory=".\bin\Debug" assembly="mscGenerator" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+    <Configuration runwithwarnings="True" name="Release">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="v1.1.4322" warninglevel="4" nowarn="" includedebuginformation="False" optimize="True" unsafecodeallowed="False" generateoverflowchecks="False" mainclass="" target="WinExe" definesymbols="" generatexmldocumentation="False" win32Icon=".\Icons\msc1.ico" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="False" />
+      <Output directory=".\bin\Release" assembly="mscGenerator" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+  </Configurations>
+</Project>

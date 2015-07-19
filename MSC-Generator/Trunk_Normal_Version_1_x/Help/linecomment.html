@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>linecomment</title>
+  <link href="GeneratorBlue.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table class=command>
+      <tr>
+        <th colspan=2 align=left class=headline>
+          LINECOMMENT - Diagrammelement
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width=* colspan=2>
+            Über den Befehl <font class='command'>linecomment</font> können im Diagramm rahmenlose Kommentare hinzugefügt werden. 
+            Die Kommentare werden an einer Lebenslinie eines Prozesses oder Akteurs eingefügt.  
+            Um die Position des Kommentars festzulegen dienen die Parameter <font class='instance'>instanceid</font> und <font class='formatpara'>orientation</font>
+            Der Kommentartext wird in dem Parameter <font class='textpara'>text</font> definiert. 
+            Die Darstellung kann optional ohne die waagerechte Linie, die den Kommentar mit der Lebenslinie verbindet, erfolgen.
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Syntax
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='command'>linecomment</font>: <font class='instance'>instanceid</font>, <font class='textpara'>text</font>, <font class='formatpara'>orientation</font>, <font class='formatpara'>format</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Parameter 
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='instance'>instanceid</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Der Identifikator der Lebenslinie, an der der Kommentar erscheinen soll.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='textpara'>text</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Ein beliebiger Text, der als Kommentar erscheinen soll.
+          Sollen im Kommentar Satzzeichen verwendet werden, muss der Text in Anführungszeichen angegeben werden.        
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='formatpara'>orientation</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Legt die Position des Kommentars an der durch den Parameter <font class='instance'>instanceid</font> definierten Lebenslinie.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Wert
+              </th>
+              <th width=300 class=param>
+                Bedeutung
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                l
+              </td>
+              <td class=param>
+                Der Kommentar wird links von der Lebenslinie dargestellt
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                r
+              </td>
+              <td class=param>
+                Der Kommentar wird rechts von der Lebenslinie dargestellt
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Der Standardwert für den Parameter ist "l".
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='formatpara'>format</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Legt fest, ob der Kommentar durch eine waagerechte Linie mit der Lebenslinie verbunden werden soll.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Wert
+              </th>
+              <th width=300 class=param>
+                Bedeutung
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                *
+              </td>
+              <td class=param>
+                Der Kommentar wird ohne die waagerechte Linie dargestellt
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                -
+              </td>
+              <td class=param>
+                Der Kommentar wird mit einer waagerechten Linie dargestellt
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Der Standardwert für den Parameter ist "-".
+        </td>
+      </tr>
+      <tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Beispiel
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Kommentare</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>auto</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font><br>
+                <font class='propertycommand'>left</font>: <font class='property'>100</font><br>
+                <font class='propertycommand'>right</font>: <font class='property'>50</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>p1</font>, <font class='textpara'>Prozess 1</font><br>
+                <font class='command'>process</font>: <font class='instance'>p2</font>, <font class='textpara'>Prozess 2</font><br>
+                <br>
+                <font class='command'>comment</font>: <font class='instance'>p1</font>, <font class='textpara'>Kommentar 1</font>, <font class='formatpara'>r</font>;<br>
+                <font class='command'>comment</font>: <font class='instance'>p2</font>, <font class='textpara'>Kommentar 2</font>, <font class='formatpara'>l</font>;<br>
+                <font class='command'>comment</font>: <font class='instance'>ENV_RIGHT</font>, <font class='textpara'>Kommentar 3</font><br>
+                <font class='command'>comment</font>: <font class='instance'>ENV_LEFT</font>, <font class='textpara'>Kommentar 4</font>;<br>
+                <font class='command'>linecomment</font>: <font class='instance'>p2</font>, <font class='textpara'>Kommentar 5</font>;<br>
+                <font class='command'>linecomment</font>: <font class='instance'>p1</font>, <font class='textpara'>Kommentar 6</font>, <font class='formatpara'>r</font>, <font class='formatpara'>*</font>;<br>
+                <font class='command'>commentoverall</font>: <font class='textpara'>Kommentar 7</font>;
+              </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Kommentare_1.gif'>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Siehe auch
+        </td>
+      </tr>
+      <tr>
+        <td class=seealso colspan=2>
+          <a href="comment.html"><font class='command'>comment</font></a> 
+          <a href="commentoverall.html"><font class='command'>commentoverall</font></a> 
+          <a href="mark.html"><font class='command'>mark</font></a> 
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

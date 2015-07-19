@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>textcolor</title>
+  <link href="GeneratorBlue.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table class=command>
+      <tr>
+        <th colspan=2 align=left class=headline>
+          TEXTCOLOR - Formatting
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width=* colspan=2>
+            Use the command <font class='propertycommand'>textcolor</font> to set the text color of the following text diagram elements.  
+            The color is specified by the parameter <font class='property'>color</font> and will be used until the next <font class='propertycommand'>textcolor</font> command changes it.
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Syntax
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='propertycommand'>textcolor</font>: <font class='property'>color</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Parameters 
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='property'>color</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The color in which text in diagram elements will be drawn. The color must be specified in the HTML format, for example: "red", "darkgreen", "#FF22A0".
+          If "none" is specified, then the standard value for "white" will be used.
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Example
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>PrintAuthor</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCompany</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintVersion</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCreationDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintFileName</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Font</font>: <font class='property'>"Arial", "10", "Regular"</font><br>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Colors</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>5, 5, 5, 5</font><br>
+                <font class='propertycommand'>PrintFootLine</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Author</font>: <font class='property'>Martin Kotowicz</font><br>
+                <font class='propertycommand'>Company</font>: <font class='property'>ITESYS GmbH</font><br>
+                <font class='propertycommand'>Version</font>: <font class='property'>1.0</font><br>
+                <font class='propertycommand'>Date</font>: <font class='property'>20.10.2006</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>auto, auto</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>P1</font>, <font class='textpara'>"Process 1"</font><br>
+                <font class='command'>process</font>: <font class='instance'>P2</font>, <font class='textpara'>"Process 2"</font><br>
+                <font class='command'>process</font>: <font class='instance'>P3</font>, <font class='textpara'>"Process 3"</font><br>
+                <br>
+                <font class='propertycommand'>backcolor</font>: <font class='property'>yellow</font><br>
+                <font class='propertycommand'>fillcolor</font>: <font class='property'>#A0A0FF</font><br>
+                <font class='command'>msg</font>: <font class='instance'>P1</font>,<font class='instance'>P2</font>, <font class='textpara'>backcolor</font><br>
+                <font class='command'>state</font>: <font class='instance'>P3</font>, <font class='textpara'>fillcolor</font>;<br>
+                <br>
+                <font class='propertycommand'>backcolor</font>: <font class='property'>none</font><br>
+                <font class='propertycommand'>fillcolor</font>: <font class='property'>none</font><br>
+                <font class='propertycommand'>textcolor</font>: <font class='property'>red</font><br>
+                <br>
+                <font class='command'>state</font>: <font class='instance'>P2</font>, <font class='textpara'>textcolor</font>;<br>
+              </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Colors_1.gif'>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> See also
+        </td>
+      </tr>
+      <tr>
+        <td class=seealso colspan=2>
+          <a href="backcolor.html"><font class='propertycommand'>backcolor</font></a> 
+          <a href="fillcolor.html"><font class='propertycommand'>fillcolor</font></a> 
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

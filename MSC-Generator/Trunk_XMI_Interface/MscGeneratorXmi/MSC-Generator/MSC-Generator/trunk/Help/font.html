@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>font</title>
+  <link href="GeneratorBlue.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table class=command>
+      <tr>
+        <th colspan=2 align=left class=headline>
+          FONT - Formatierung
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width=* colspan=2>
+            Über den Befehl <font class='propertycommand'>font</font> kann die Schriftart und die Schriftgröße für das Diagramm definiert werden. 
+            Die Schrift wird durch die Parameter <font class='property'>fontname</font>, <font class='property'>fontsize</font> und <font class='property'>fontstyle</font> definiert. 
+            Die Parameter <font class='property'>fontsize</font> und <font class='property'>fontstyle</font> sind optionale Parameter und müssen nicht angegeben werden. 
+            In diesem Fall werden die Standardwerte verwendet. Die definierte Schrift wird für alle Texte innerhalb des Diagramms verwendet.
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Syntax
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='propertycommand'>font</font>: <font class='property'>fontname</font>, <font class='property'>fontsize</font>, <font class='property'>fontstyle</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Parameter 
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='property'>fontname</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Der Wert dieses Parameters muss der Name einer auf dem System vorhandenen Schriftarten sein.
+          <br>Der Standardwert für den Parameter ist "Arial".
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='property'>fontsize</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Dieser Parameter definiert die Größe der Schrift in Pixel. Die Schriftgröße kann zwischen 6 und 20 Pixel betragen. 
+          Bei der Eingabe von Kommazahlen muss beachtet werden, dass diese in Anführungszeichen angegeben werden müssen.
+          <br>Der Standardwert für den Parameter ist "10".
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='property'>fontstyle</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Dieser Parameter definiert den Schnitt der Schrift. Es können mehrere Werte angegeben werden, diese müssen dann durch ein Leerzeichen 
+          voneinander getrennt sein.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Wert
+              </th>
+              <th width=300 class=param>
+                Bedeutung
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                regular
+              </td>
+              <td class=param>
+                Standard
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                bold
+              </td>
+              <td class=param>
+                Fett
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                italic
+              </td>
+              <td class=param>
+                Kursiv
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                strikeout
+              </td>
+              <td class=param>
+                Durchgestrichen
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                underline
+              </td>
+              <td class=param>
+                Unterstrichen
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Bitte beachten Sie, dass nicht alle Schriftarten alle Schnitte unterstützen.<br>
+          Der Standardwert für den Parameter ist "regular".
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Beispiel
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>PrintAuthor</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCompany</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintVersion</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCreationDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintFileName</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Font</font>: <font class='property'>"Arial", "10", "Regular"</font><br>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Anruf</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>5, 5, 5, 5</font><br>
+                <font class='propertycommand'>PrintFootLine</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Author</font>: <font class='property'>Martin Kotowicz</font><br>
+                <font class='propertycommand'>Company</font>: <font class='property'>ITESYS GmbH</font><br>
+                <font class='propertycommand'>Version</font>: <font class='property'>1.0</font><br>
+                <font class='propertycommand'>Date</font>: <font class='property'>20.10.2006</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>700, auto</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>CLU</font>, <font class='textpara'>"Anrufer"</font><br>
+                <font class='command'>process</font>: <font class='instance'>ON</font>, <font class='textpara'>"Zentrale des Anrufers"</font><br>
+                <font class='command'>process</font>: <font class='instance'>DN</font>, <font class='textpara'>"Zentrale des Anrufempfängers"</font><br>
+                <font class='command'>process</font>: <font class='instance'>CDU</font>, <font class='textpara'>"Anrufempfänger"</font><br>
+                <br>
+                <font class='command'>stateoverall</font>: <font class='textpara'>"keine Verbindung"</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CLU</font>, <font class='instance'>ON</font>, <font class='textpara'>"Anrufanfrage"</font>;<br>
+                <font class='command'>timeoutbegin</font>: <font class='instance'>ON</font>, <font class='textpara'>T Anrufanfrage</font><br>
+                <font class='command'>msg</font>: <font class='instance'>ON</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufanfrage</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Anruf wird getätigt</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>CDU</font>, <font class='textpara'>Anruf</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CDU</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufsignal</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Signal</font><br>
+                <font class='command'>timeoutend</font>: <font class='instance'>ON</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CDU</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufannahme</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Verbunden</font>;<br>
+                <font class='command'>stateoverall</font>: <font class='textpara'>Verbunden</font>;<br>
+              </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Anruf_1.gif'>
+              </td>
+            </tr>
+          </table>
+          <br>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>PrintAuthor</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCompany</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintVersion</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCreationDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintFileName</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Font</font>: <font class='property'>"Times New Roman", "10,5", "bold italic"</font><br>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Anruf</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>5, 5, 5, 5</font><br>
+                <font class='propertycommand'>PrintFootLine</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Author</font>: <font class='property'>Martin Kotowicz</font><br>
+                <font class='propertycommand'>Company</font>: <font class='property'>ITESYS GmbH</font><br>
+                <font class='propertycommand'>Version</font>: <font class='property'>1.0</font><br>
+                <font class='propertycommand'>Date</font>: <font class='property'>20.10.2006</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>700, auto</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>CLU</font>, <font class='textpara'>"Anrufer"</font><br>
+                <font class='command'>process</font>: <font class='instance'>ON</font>, <font class='textpara'>"Zentrale des Anrufers"</font><br>
+                <font class='command'>process</font>: <font class='instance'>DN</font>, <font class='textpara'>"Zentrale des Anrufempfängers"</font><br>
+                <font class='command'>process</font>: <font class='instance'>CDU</font>, <font class='textpara'>"Anrufempfänger"</font><br>
+                <br>
+                <font class='command'>stateoverall</font>: <font class='textpara'>"keine Verbindung"</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CLU</font>, <font class='instance'>ON</font>, <font class='textpara'>"Anrufanfrage"</font>;<br>
+                <font class='command'>timeoutbegin</font>: <font class='instance'>ON</font>, <font class='textpara'>T Anrufanfrage</font><br>
+                <font class='command'>msg</font>: <font class='instance'>ON</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufanfrage</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Anruf wird getätigt</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>CDU</font>, <font class='textpara'>Anruf</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CDU</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufsignal</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Signal</font><br>
+                <font class='command'>timeoutend</font>: <font class='instance'>ON</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CDU</font>, <font class='instance'>DN</font>, <font class='textpara'>Anrufannahme</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Verbunden</font>;<br>
+                <font class='command'>stateoverall</font>: <font class='textpara'>Verbunden</font>;<br>
+              </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Anruf_font_1.gif'>
+              </td>
+            <tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Siehe auch
+        </td>
+      </tr>
+      <tr>
+        <td class=seealso colspan=2>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

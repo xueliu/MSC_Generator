@@ -1,0 +1,87 @@
+/************/
+/*  GLOBAL  */
+/************/
+
+/* NON-HEADER */
+*{padding:0; margin:0;}
+ body {font-size:62.5%; background-color:rgb(255,255,255);} /*Font-size: 1.0em = 10px when browser default size is 16px*/
+.page-container {width:900px; margin:0px auto; margin-top:10px; margin-bottom:10px; border:solid 1px rgb(150,150,150); font-size:1.0em; font-family:arial, helvetica, sans-serif;}
+.footer {clear:both; width:900px; padding:1.0em 0 1.0em 0; background:#e0e7ed; font-size:1.0em; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+
+/* --- For alternative headers START PASTE here --- */
+
+/* HEADER */
+.header {width:900px; font-family:arial, helvetica, sans-serif;}
+.header-middle {width:900px; height:150px; background:#ffffff url(../img/trace_modeler_header.gif); overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+.header-bottom {width:900px;}
+.header-breadcrumbs {clear:both; width:900px; padding:0.3em 0 0.3em 0; background:rgb(255,255,255);}
+
+/*******************/
+/*  HEADER SECTION */
+/*******************/
+.nav1 {width:350px; position:absolute; z-index:3; margin:0px 0 0 550px;}
+.nav1 ul {float:right; padding:0 15px 0 0; font-weight:bold;}	
+.nav1 li {display:inline; list-style:none;}
+.nav1 li a {display:block; float:left; padding:2px 5px 2px 5px; color:#568DAD; text-decoration:none; font-size:120%;}
+.nav1 li a img {border:0px;}
+.nav1 a:hover {text-decoration:underline; color:#006699;}
+
+.sitemessage {width:400px; /*height:120px; */position:absolute; z-index:1; margin:40px 0 0 480px; color:#FF6600; /*overflow:visible !important /*Activate if Firefox print problems*/; overflow:hidden /*IE6*/;}
+.sitemessage h1 {width:400px; text-align:right; font-size:230%;}
+.sitemessage h2 {float:right; width:320px; margin:8px 0 0 0; text-align:right; line-height:100%; font-size:160%; color:#FF9933;}
+.sitemessage h3 {float:right; width:320px; margin:20px 0 0 0; text-align:right; font-size:140%;}
+.sitemessage h3 a {text-decoration:none; color:#568DAD;}
+.sitemessage h3 a:hover {text-decoration:underline; color:#006699;}
+
+/*Drop-down menu*/
+.nav2 {white-space:nowrap /*IE hack*/; text-align:center; float:left; width:900px; border:none; background:#006699; color:#ffffff; font-size:130%;} /*Color navigation bar normal mode*/
+.nav2 ul {list-style-type:none;}
+.nav2 ul li {width:149px; float:left; z-index:auto !important /*Non-IE6*/; z-index:1000 /*IE6*/;}
+.nav2 ul li a {float:none !important /*Non-IE6*/; float:left /*IE-6*/; display:block; height:2.1em; line-height:2.1em; padding:0 16px 0 16px; text-decoration:none; font-weight:bold; color:#ffffff;}
+.nav2 ul li ul {display:none; border:none}
+
+/*Non-IE6 hovering*/
+.nav2 ul li:hover {position:relative;} /*Sylvain IE hack*/
+.nav2 ul li:hover a {background-color:#568DAD; color:#ffffff; text-decoration:none;} /*Color main cells hovering mode*/
+.nav2 ul li:hover ul {display:block; position:absolute; z-index:999; top:2.0em; margin-top:0.1em; left:0;}
+.nav2 ul li:hover ul li a {white-space:normal; text-align:left; display:block; width:117px; height:auto; line-height:1.3em; margin-left:-1px; padding:4px 16px 4px 16px; border-left:solid 1px #ffffff; border-bottom: solid 1px #ffffff; border-right: solid 1px #ffffff; background-color:#e0e7ed; font-weight:normal; color:#568DAD;} /*Color subcells normal mode*/
+.nav2 ul li:hover ul li a:hover {background-color:#568DAD; text-decoration:none; color:#ffffff;} /*Color subcells hovering mode*/
+
+/*IE6 hovering*/
+.nav2 table {position:absolute; top:0; left:0; border-collapse:collapse;}
+.nav2 ul li a:hover {position:relative /*Sylvain IE hack*/; z-index:1000 /*Sylvain IE hack*/; background-color:#568DAD; color:#ffffff; text-decoration:none;} /*Color main cells hovering mode*/
+.nav2 ul li a:hover ul {display:block; position:absolute; z-index:999; top:2.1em; t\op:2.0em; left:0; marg\in-top:0.1em;}
+.nav2 ul li a:hover ul li a {white-space:normal; text-align:left; display:block; w\idth:117px; height:1px; line-height:1.3em; padding:4px 16px 4px 16px; border-left:solid 1px #ffffff; border-bottom: solid 1px #ffffff; border-right: solid 1px #ffffff; background-color:#e0e7ed; font-weight:normal; color:#568DAD;} /*Color subcells normal mode*/
+.nav2 ul li a:hover ul li a:hover {background-color:#568DAD; text-decoration:none; color:#ffffff;} /*Color subcells hovering mode*/
+
+.header-breadcrumbs ul {float:left; width:560px; list-style:none; padding:0 0 0 15px; font-family:arial, helvetica, sans-serif;}
+.header-breadcrumbs ul li {display:inline; padding:0 0 0 10px; background:transparent url(../img/bg_bullet_arrow.gif) no-repeat 0 50%; font-weight:bold; color:rgb(125,125,125); font-size:100%;}
+.header-breadcrumbs ul a {color:rgb(70,122,167); text-decoration:none;}
+.header-breadcrumbs ul a:hover {color:rgb(42,90,138); text-decoration:underline;}
+
+.header-breadcrumbs .searchform {float:right; width:285px; padding:0 17px 0px 0px !important /*Non-IE6*/; padding:0 12px 0px 0px /*IE6*/;}
+.header-breadcrumbs .searchform form fieldset {float:right; border:none;}
+.header-breadcrumbs .searchform input.field {width:10.0em; padding:0.2em 0 0.2em 0; border:1px solid rgb(200,200,200); font-family:arial, helvetica, sans-serif; font-size:120%; }
+.header-breadcrumbs .searchform input.button {width:3.0em; padding:1px !important /*Non-IE6*/; padding:0 /*IE6*/; background:rgb(230,230,230); border:solid 1px rgb(150,150,150); text-align:center; font-family:arial, helvetica, sans-serif; color:rgb(150,150,150); font-size:120%;}
+.header-breadcrumbs .searchform input.button:hover {cursor:pointer; border:solid 1px rgb(80,80,80); background:rgb(220,220,220); color:rgb(80,80,80);}
+
+/* --- For alternative headers END PASTE here --- */
+
+/********************/
+/*  FOOTER SECTION  */
+/********************/
+.footer p {line-height:1.3em; text-align:center; color:#568DAD; font-weight:bold; font-size:110%;}
+.footer p.credits {font-weight:normal;}
+.footer a {text-decoration:none; color:#568DAD;}
+.footer a:hover {text-decoration:underline; color:#006699;}
+.footer a:visited {color:#006699;}
+
+/********************************/
+/*  PRINTING and MISCELLANEOUS  */
+/********************************/
+@media print {.header-top {width:900px; height:80px; background:rgb(240,240,240); overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}}
+@media print {.header-breadcrumbs {width:900px; background:transparent;}}
+@media print {.nav2 {float:left; width:900px; border:none; background:rgb(240,240,240); color:rgb(75,75,75); font-size:1.0em; font-size:130%;}} /*Color navigation bar normal mode*/
+@media print {.main {clear:both; width:900px; padding-bottom:30px; background:transparent;}}
+@media print {.main-navigation {display:inline /*Fix IE floating margin bug*/; float:left; width:199px; border-right:solid 1px rgb(200,200,200); border-bottom:solid 1px rgb(200,200,200); background-color:rgb(240,240,240); overflow:visible !important /*Firefox*/; overflow:hidden /*IE*/;}}
+@media print {.footer {clear:both; width:900px; height:3.7em; padding:1.1em 0 0; background:rgb(240,240,240); font-size:1.0em; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}}

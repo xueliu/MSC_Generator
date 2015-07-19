@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_YfQtYKzqEd2Bi9vGIjZOvA" name="ImportTest8">
+  <packageImport xmi:id="_YfQtYazqEd2Bi9vGIjZOvA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_bZlwgKzqEd2Bi9vGIjZOvA" name="Diagram8">
+    <lifeline xmi:id="_dBN1oKzqEd2Bi9vGIjZOvA" name="LifelineA" coveredBy="_f-sTYKzqEd2Bi9vGIjZOvA _hCsuEazqEd2Bi9vGIjZOvA _iCZQgKzqEd2Bi9vGIjZOvA"/>
+    <lifeline xmi:id="_eEvIIKzqEd2Bi9vGIjZOvA" name="LifelineB" coveredBy="_f-sTYazqEd2Bi9vGIjZOvA _hCsuEKzqEd2Bi9vGIjZOvA _iCZQgazqEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_f-sTYKzqEd2Bi9vGIjZOvA" name="Send1" covered="_dBN1oKzqEd2Bi9vGIjZOvA" event="_f-sTYqzqEd2Bi9vGIjZOvA" message="_f-yaAKzqEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_f-sTYazqEd2Bi9vGIjZOvA" name="Receive_1" covered="_eEvIIKzqEd2Bi9vGIjZOvA" event="_f-sTY6zqEd2Bi9vGIjZOvA" message="_f-yaAKzqEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hCsuEKzqEd2Bi9vGIjZOvA" name="Send2" covered="_eEvIIKzqEd2Bi9vGIjZOvA" event="_hCsuEqzqEd2Bi9vGIjZOvA" message="_hC47UKzqEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hCsuEazqEd2Bi9vGIjZOvA" name="Receive_2" covered="_dBN1oKzqEd2Bi9vGIjZOvA" event="_hCy0sKzqEd2Bi9vGIjZOvA" message="_hC47UKzqEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_iCZQgKzqEd2Bi9vGIjZOvA" name="Send3" covered="_dBN1oKzqEd2Bi9vGIjZOvA" event="_iCZQgqzqEd2Bi9vGIjZOvA" message="_iCfXIazqEd2Bi9vGIjZOvA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_iCZQgazqEd2Bi9vGIjZOvA" name="Receive_3" covered="_eEvIIKzqEd2Bi9vGIjZOvA" event="_iCfXIKzqEd2Bi9vGIjZOvA" message="_iCfXIazqEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_f-yaAKzqEd2Bi9vGIjZOvA" name="Message1" messageSort="asynchSignal" receiveEvent="_f-sTYazqEd2Bi9vGIjZOvA" sendEvent="_f-sTYKzqEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_hC47UKzqEd2Bi9vGIjZOvA" name="Message2" messageSort="asynchSignal" receiveEvent="_hCsuEazqEd2Bi9vGIjZOvA" sendEvent="_hCsuEKzqEd2Bi9vGIjZOvA"/>
+    <message xmi:id="_iCfXIazqEd2Bi9vGIjZOvA" name="Message3" messageSort="asynchSignal" receiveEvent="_iCZQgazqEd2Bi9vGIjZOvA" sendEvent="_iCZQgKzqEd2Bi9vGIjZOvA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SendSignalEvent" xmi:id="_f-sTYqzqEd2Bi9vGIjZOvA" name="SendEvt1"/>
+  <packagedElement xmi:type="uml:ReceiveSignalEvent" xmi:id="_f-sTY6zqEd2Bi9vGIjZOvA" name="RecvEvt1"/>
+  <packagedElement xmi:type="uml:SendSignalEvent" xmi:id="_hCsuEqzqEd2Bi9vGIjZOvA" name="SendEvt2"/>
+  <packagedElement xmi:type="uml:ReceiveSignalEvent" xmi:id="_hCy0sKzqEd2Bi9vGIjZOvA" name="RecvEvt2"/>
+  <packagedElement xmi:type="uml:SendSignalEvent" xmi:id="_iCZQgqzqEd2Bi9vGIjZOvA" name="SendEvt3"/>
+  <packagedElement xmi:type="uml:ReceiveSignalEvent" xmi:id="_iCfXIKzqEd2Bi9vGIjZOvA" name="RecvEvt3"/>
+  <profileApplication xmi:id="_YfQtYqzqEd2Bi9vGIjZOvA">
+    <eAnnotations xmi:id="_YfQtY6zqEd2Bi9vGIjZOvA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+  </profileApplication>
+</uml:Model>

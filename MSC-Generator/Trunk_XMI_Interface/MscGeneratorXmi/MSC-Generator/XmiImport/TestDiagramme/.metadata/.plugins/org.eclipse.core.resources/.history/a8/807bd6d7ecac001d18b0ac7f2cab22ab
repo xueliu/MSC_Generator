@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di2="http://www.papyrusuml.org" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML">
+  <di2:Diagram isVisible="true" fontFamily="Arial" lineStyle="solid" fontColor="255:255:255" foregroundColor="255:255:255" backgroundColor="255:255:255" borderColor="255:255:255" position="0:0" name="DefaultDiagram">
+    <owner xsi:type="di2:Uml1SemanticModelBridge">
+      <element xsi:type="uml:Model" href="ImportTest9.uml#_t862J6wzEd2LS6cj6_9KIg"/>
+    </owner>
+  </di2:Diagram>
+  <di2:Diagram isVisible="true" fontFamily="Arial" lineStyle="solid" fontColor="255:255:255" foregroundColor="255:255:255" backgroundColor="255:255:255" borderColor="255:255:255" position="0:0" name="Sequence diagram of ImportTest9" type="SequenceDiagram">
+    <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="6:-3" size="591:539">
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="451:40" size="100:484">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.0">
+          <element xsi:type="uml:Lifeline" href="ImportTest9.uml#_y6F6kKwzEd2LS6cj6_9KIg"/>
+        </semanticModel>
+        <anchorage position="45:145" graphEdge="/1/@contained.4"/>
+        <anchorage position="45:105" graphEdge="/1/@contained.5"/>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="501:145" size="1:41">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.1">
+          <element xsi:type="uml:BehaviorExecutionSpecification" href="ImportTest9.uml#_37YDIqwzEd2LS6cj6_9KIg"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="293:40" size="100:444">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.2">
+          <element xsi:type="uml:Lifeline" href="ImportTest9.uml#_ycA3cKwzEd2LS6cj6_9KIg"/>
+        </semanticModel>
+        <anchorage position="45:260" graphEdge="/1/@contained.1"/>
+        <anchorage position="45:225" graphEdge="/1/@contained.2"/>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="343:265" size="1:36">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.3">
+          <element xsi:type="uml:BehaviorExecutionSpecification" href="ImportTest9.uml#_82D0c6wzEd2LS6cj6_9KIg"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="164:40" size="100:484">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.4">
+          <element xsi:type="uml:Lifeline" href="ImportTest9.uml#_yEIi8KwzEd2LS6cj6_9KIg"/>
+        </semanticModel>
+        <anchorage position="45:165" graphEdge="/1/@contained.3"/>
+        <anchorage position="45:300" graphEdge="/1/@contained.6"/>
+        <anchorage position="45:325" graphEdge="/1/@contained.7"/>
+        <anchorage position="45:195" graphEdge="/1/@contained.8"/>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="214:335" size="1:36">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.5">
+          <element xsi:type="uml:BehaviorExecutionSpecification" href="ImportTest9.uml#_AMj2M6w0Ed2LS6cj6_9KIg"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="214:205" size="1:36">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.6">
+          <element xsi:type="uml:BehaviorExecutionSpecification" href="ImportTest9.uml#_5Py4YqwzEd2LS6cj6_9KIg"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="30:40" size="100:484">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.7">
+          <element xsi:type="uml:Lifeline" href="ImportTest9.uml#_xlkXoKwzEd2LS6cj6_9KIg"/>
+        </semanticModel>
+        <anchorage position="55:260" graphEdge="/1/@contained.1"/>
+        <anchorage position="55:225" graphEdge="/1/@contained.2"/>
+        <anchorage position="55:165" graphEdge="/1/@contained.3"/>
+        <anchorage position="55:145" graphEdge="/1/@contained.4"/>
+        <anchorage position="55:105" graphEdge="/1/@contained.5"/>
+        <anchorage position="55:300" graphEdge="/1/@contained.6"/>
+        <anchorage position="55:325" graphEdge="/1/@contained.7"/>
+        <anchorage position="55:195" graphEdge="/1/@contained.8"/>
+      </contained>
+      <contained xsi:type="di2:GraphNode" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="248:249:214" borderColor="157:124:47" position="80:120" size="1:281">
+        <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0/@contained.8">
+          <element xsi:type="uml:BehaviorExecutionSpecification" href="ImportTest9.uml#_2WCdBKwzEd2LS6cj6_9KIg"/>
+        </semanticModel>
+      </contained>
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.0">
+        <element xsi:type="uml:Interaction" href="ImportTest9.uml#_vZ8NkKwzEd2LS6cj6_9KIg"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di2:GraphEdge" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="255:255:255" borderColor="0:0:0" anchor="/1/@contained.0/@contained.2/@anchorage.0 /1/@contained.0/@contained.7/@anchorage.0">
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.1">
+        <element xsi:type="uml:Message" href="ImportTest9.uml#_Lf6Zwaw0Ed2LS6cj6_9KIg"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di2:GraphEdge" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="255:255:255" borderColor="0:0:0" anchor="/1/@contained.0/@contained.7/@anchorage.1 /1/@contained.0/@contained.2/@anchorage.1">
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.2">
+        <element xsi:type="uml:Message" href="ImportTest9.uml#_JkVd4Kw0Ed2LS6cj6_9KIg"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di2:GraphEdge" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="255:255:255" borderColor="0:0:0" anchor="/1/@contained.0/@contained.7/@anchorage.2 /1/@contained.0/@contained.4/@anchorage.0">
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.3">
+        <element xsi:type="uml:Message" href="ImportTest9.uml#_EQiB8Kw0Ed2LS6cj6_9KIg"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di2:GraphEdge" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="255:255:255" borderColor="0:0:0" anchor="/1/@contained.0/@contained.0/@anchorage.0 /1/@contained.0/@contained.7/@anchorage.3">
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.4">
+        <element xsi:type="uml:Message" href="ImportTest9.uml#_DOQFkKw0Ed2LS6cj6_9KIg"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di2:GraphEdge" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="255:255:255" borderColor="0:0:0" anchor="/1/@contained.0/@contained.7/@anchorage.4 /1/@contained.0/@contained.0/@anchorage.1">
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.5">
+        <element xsi:type="uml:Message" href="ImportTest9.uml#_B7QMoaw0Ed2LS6cj6_9KIg"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di2:GraphEdge" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="255:255:255" borderColor="0:0:0" anchor="/1/@contained.0/@contained.7/@anchorage.5 /1/@contained.0/@contained.4/@anchorage.1">
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.6">
+        <element xsi:type="uml:Message" href="ImportTest9.uml#_45v6cKw0Ed2LS6cj6_9KIg"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di2:GraphEdge" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="255:255:255" borderColor="0:0:0" anchor="/1/@contained.0/@contained.4/@anchorage.2 /1/@contained.0/@contained.7/@anchorage.6">
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.7">
+        <element xsi:type="uml:Message" href="ImportTest9.uml#_BZREcKw1Ed2LS6cj6_9KIg"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di2:GraphEdge" fontFamily="Arial" fontColor="0:0:0" foregroundColor="0:0:0" backgroundColor="255:255:255" borderColor="0:0:0" anchor="/1/@contained.0/@contained.4/@anchorage.3 /1/@contained.0/@contained.7/@anchorage.7">
+      <semanticModel xsi:type="di2:Uml1SemanticModelBridge" presentation="HorizontalStereo" graphElement="/1/@contained.8">
+        <element xsi:type="uml:Message" href="ImportTest9.uml#_MPY5cKw1Ed2LS6cj6_9KIg"/>
+      </semanticModel>
+    </contained>
+    <owner xsi:type="di2:Uml1SemanticModelBridge">
+      <element xsi:type="uml:Model" href="ImportTest9.uml#_t862J6wzEd2LS6cj6_9KIg"/>
+    </owner>
+  </di2:Diagram>
+</xmi:XMI>

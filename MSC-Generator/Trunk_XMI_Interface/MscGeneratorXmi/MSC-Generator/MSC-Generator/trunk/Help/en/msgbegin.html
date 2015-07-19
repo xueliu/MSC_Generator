@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>msgbegin</title>
+  <link href="GeneratorBlue.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table class=command>
+      <tr>
+        <th colspan=2 align=left class=headline>
+          MSGBEGIN - Diagram Element
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width=* colspan=2>
+            Use the commands <a href="msgbegin.html"><font class='command'>msgbegin</font></a> and <a href="msgend.html"><font class='command'>msgend</font></a> if you want the message to span over a longer time interval (vertical offset) between sending and reception. A message represents communication from one actor or process to another one. There are three types of messages: asynchronous, synchronous and response messages. In SDL mode there is no difference between synchronous and asynchronous. Use the command <font class='command'>msg</font> if you want to display a message with no vertical offset in the diagram. 
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Syntax
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='command'>msgbegin</font>: <font class='element'>messageid</font>, <font class='instance'>sourceid</font>, <font class='instance'>destinationid</font>, <font class='textpara'>message</font>, <font class='formatpara'>style</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Parameters 
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='element'>messageid</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The ID of this message. Specify this ID in the command <a href='msgend.html'><font class='command'>msgend</font></a>.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='instance'>sourceid</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The ID of the lifeline which should send the message, or one of the following constants.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Value
+              </th>
+              <th width=300 class=param>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                ENV_LEFT
+              </td>
+              <td class=param>
+                The message comes from the left border of the diagram.  
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                ENV_RIGHT
+              </td>
+              <td class=param>
+                The message comes from the right border of the diagram.  
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='instance'>destinationid</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The ID of the lifeline which should receive the message, or one of the following constants.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Value
+              </th>
+              <th width=300 class=param>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                ENV_LEFT
+              </td>
+              <td class=param>
+                The message goes to the left border of the diagram.  
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                ENV_RIGHT
+              </td>
+              <td class=param>
+                The message goes to the right border of the diagram.  
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='textpara'>message</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The text that should appear as the message. 
+          If your text contains punctuation, you must put the complete text in quotes ("").  
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='formatpara'>style</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Sets the type of message.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Value
+              </th>
+              <th width=300 class=param>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                +
+              </td>
+              <td class=param>
+                asynchronous message
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                !
+              </td>
+              <td class=param>
+                synchronous message <br>(not supported in SDL diagrams)
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                *
+              </td>
+              <td class=param>
+                response
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The default value for this parameter is "+".
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Example
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Messages</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>600</font>,<font class='property'>auto</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>p1</font>, <font class='textpara'>Process 1</font><br>
+                <font class='command'>process</font>: <font class='instance'>p2</font>, <font class='textpara'>Process 2</font><br>
+                <br>
+                <font class='command'>found</font>: <font class='instance'>p1</font>, <font class='textpara'>"found message"</font>,<font class='textpara'>"g1"</font>,<font class='formatpara'>l</font>;<br>
+                <font class='command'>msgbegin</font>: <font class='element'>m1</font>, <font class='instance'>p2</font>, <font class='instance'>p1</font>,  <font class='textpara'>"long transmission of a message"</font><br>
+                <font class='command'>linecomment</font>: <font class='instance'>p2</font>, <font class='textpara'>"{t=now}"</font>,<font class='formatpara'>r</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>p1</font>,<font class='instance'>p2</font>, <font class='textpara'>"asynchronous message"</font>;<br>
+                <font class='command'>msgend</font>: <font class='element'>m1</font><br>
+                <font class='command'>linecomment</font>:<font class='instance'>p1</font>, <font class='textpara'>"{t+1s}"</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>p1</font>,<font class='instance'>p2</font>, <font class='textpara'>"synchronous message"</font>,<font class='formatpara'>!</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>p2</font>, <font class='instance'>p1</font>, <font class='textpara'>"response"</font>,<font class='formatpara'>*</font>;<br>
+                <font class='command'>lost</font>: <font class='instance'>p2</font>, <font class='textpara'>"lost message"</font>, ,<font class='formatpara'>r</font><br>
+              </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Nachrichten_1.gif'>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> See also
+        </td>
+      </tr>
+      <tr>
+        <td class=seealso colspan=2>
+          <a href="found.html"><font class='command'>found</font></a> 
+          <a href="lost.html"><font class='command'>lost</font></a> 
+          <a href="msg.html"><font class='command'>msg</font></a> 
+          <a href="msgend.html"><font class='command'>msgend</font></a> 
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

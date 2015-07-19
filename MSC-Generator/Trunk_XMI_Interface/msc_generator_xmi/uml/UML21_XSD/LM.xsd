@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://schema.omg.org/spec/UML/2.1/umlLM.xml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ecore:nsPrefix="uml" ecore:package="LM" targetNamespace="http://schema.omg.org/spec/UML/2.1/umlLM.xml">
+  <xsd:import namespace="http://www.eclipse.org/emf/2002/Ecore" schemaLocation="../../../plugin/org.eclipse.emf.ecore/model/Ecore.xsd"/>
+  <xsd:element ecore:ignore="true" name="Classifier" type="uml:Classifier"/>
+  <xsd:element ecore:ignore="true" name="Namespace" type="uml:Namespace"/>
+  <xsd:element ecore:ignore="true" name="NamedElement" type="uml:NamedElement"/>
+  <xsd:element ecore:ignore="true" name="Element" type="uml:Element"/>
+  <xsd:element ecore:ignore="true" name="Comment" type="uml:Comment"/>
+  <xsd:element ecore:ignore="true" name="PackageableElement" type="uml:PackageableElement"/>
+  <xsd:element ecore:ignore="true" name="ElementImport" type="uml:ElementImport"/>
+  <xsd:element ecore:ignore="true" name="DirectedRelationship" type="uml:DirectedRelationship"/>
+  <xsd:element ecore:ignore="true" name="Relationship" type="uml:Relationship"/>
+  <xsd:element ecore:ignore="true" name="PackageImport" type="uml:PackageImport"/>
+  <xsd:element ecore:ignore="true" name="Package" type="uml:Package"/>
+  <xsd:element ecore:ignore="true" name="Type" type="uml:Type"/>
+  <xsd:element ecore:ignore="true" name="PackageMerge" type="uml:PackageMerge"/>
+  <xsd:element ecore:ignore="true" name="Constraint" type="uml:Constraint"/>
+  <xsd:element ecore:ignore="true" name="ValueSpecification" type="uml:ValueSpecification"/>
+  <xsd:element ecore:ignore="true" name="TypedElement" type="uml:TypedElement"/>
+  <xsd:element ecore:ignore="true" name="Property" type="uml:Property"/>
+  <xsd:element ecore:ignore="true" name="StructuralFeature" type="uml:StructuralFeature"/>
+  <xsd:element ecore:ignore="true" name="Feature" type="uml:Feature"/>
+  <xsd:element ecore:ignore="true" name="RedefinableElement" type="uml:RedefinableElement"/>
+  <xsd:element ecore:ignore="true" name="MultiplicityElement" type="uml:MultiplicityElement"/>
+  <xsd:element ecore:ignore="true" name="Class" type="uml:Class"/>
+  <xsd:element ecore:ignore="true" name="Operation" type="uml:Operation"/>
+  <xsd:element ecore:ignore="true" name="BehavioralFeature" type="uml:BehavioralFeature"/>
+  <xsd:element ecore:ignore="true" name="Parameter" type="uml:Parameter"/>
+  <xsd:element ecore:ignore="true" name="DataType" type="uml:DataType"/>
+  <xsd:element ecore:ignore="true" name="Association" type="uml:Association"/>
+  <xsd:element ecore:ignore="true" name="Enumeration" type="uml:Enumeration"/>
+  <xsd:element ecore:ignore="true" name="EnumerationLiteral" type="uml:EnumerationLiteral"/>
+  <xsd:element ecore:ignore="true" name="PrimitiveType" type="uml:PrimitiveType"/>
+  <xsd:element ecore:ignore="true" name="OpaqueExpression" type="uml:OpaqueExpression"/>
+  <xsd:element ecore:ignore="true" name="Expression" type="uml:Expression"/>
+  <xsd:complexType abstract="true" ecore:implements="uml:Type" name="Classifier">
+    <xsd:annotation>
+      <xsd:documentation>A classifier is a classification of instances - it describes a set of instances that have features in common. A classifier can specify a generalization hierarchy by referencing its general classifiers.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Namespace">
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:ordered="false" ecore:reference="uml:Property" ecore:transient="true" ecore:volatile="true" name="attribute">
+          <xsd:annotation>
+            <xsd:documentation>Refers to all of the Properties that are direct (i.e. not inherited or imported) attributes of the classifier.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:opposite="featuringClassifier" ecore:ordered="false" ecore:reference="uml:Feature" ecore:transient="true" ecore:volatile="true" name="feature">
+          <xsd:annotation>
+            <xsd:documentation>Note that there may be members of the Classifier that are of the type Feature but are not included in this association, e.g. inherited features.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:ordered="false" ecore:reference="uml:Classifier" name="general">
+          <xsd:annotation>
+            <xsd:documentation>References the general classifier in the Generalization relationship.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:ordered="false" ecore:reference="uml:NamedElement" ecore:transient="true" ecore:volatile="true" name="inheritedMember">
+          <xsd:annotation>
+            <xsd:documentation>Specifies all elements inherited by this classifier from the general classifiers.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Namespace">
+    <xsd:annotation>
+      <xsd:documentation>A namespace is an element in a model that contains a set of named elements that can be identified by name.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:NamedElement">
+        <xsd:sequence>
+          <xsd:element ecore:opposite="importingNamespace" ecore:ordered="false" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="elementImport" type="uml:ElementImport">
+            <xsd:annotation>
+              <xsd:documentation>References the ElementImports owned by the Namespace.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element ecore:opposite="importingNamespace" ecore:ordered="false" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="packageImport" type="uml:PackageImport">
+            <xsd:annotation>
+              <xsd:documentation>References the PackageImports owned by the Namespace.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element ecore:opposite="context" ecore:ordered="false" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="ownedRule" type="uml:Constraint"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:opposite="namespace" ecore:ordered="false" ecore:reference="uml:NamedElement" ecore:transient="true" ecore:volatile="true" name="ownedMember">
+          <xsd:annotation>
+            <xsd:documentation>A collection of NamedElements owned by the Namespace.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:ordered="false" ecore:reference="uml:PackageableElement" ecore:transient="true" ecore:volatile="true" name="importedMember">
+          <xsd:annotation>
+            <xsd:documentation>References the PackageableElements that are members of this Namespace as a result of either PackageImports or ElementImports.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:ordered="false" ecore:reference="uml:NamedElement" ecore:transient="true" ecore:volatile="true" name="member">
+          <xsd:annotation>
+            <xsd:documentation>A collection of NamedElements identifiable within the Namespace, either by being owned or by being introduced by importing or inheritance.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="NamedElement">
+    <xsd:annotation>
+      <xsd:documentation>A named element is an element in a model that may have a name.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Element">
+        <xsd:attribute ecore:unsettable="true" name="name" type="uml:String">
+          <xsd:annotation>
+            <xsd:documentation>The name of the NamedElement.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="visibility" type="uml:VisibilityKind">
+          <xsd:annotation>
+            <xsd:documentation>Determines where the NamedElement appears within different Namespaces within the overall model, and its accessibility.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:opposite="ownedMember" ecore:reference="uml:Namespace" ecore:transient="true" ecore:volatile="true" name="namespace" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the namespace that owns the NamedElement.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:transient="true" ecore:volatile="true" name="qualifiedName" type="uml:String">
+          <xsd:annotation>
+            <xsd:documentation>A name which allows the NamedElement to be identified within a hierarchy of nested Namespaces. It is constructed from the names of the containing namespaces starting at the root of the hierarchy and ending with the name of the NamedElement itself.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Element">
+    <xsd:annotation>
+      <xsd:documentation>An element is a constituent of a model. As such, it has the capability of owning other elements.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:ordered="false" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="ownedComment" type="uml:Comment">
+        <xsd:annotation>
+          <xsd:documentation>The Comments owned by this element.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:opposite="owner" ecore:ordered="false" ecore:reference="uml:Element" ecore:transient="true" ecore:volatile="true" name="ownedElement">
+      <xsd:annotation>
+        <xsd:documentation>The Elements owned by this element.</xsd:documentation>
+      </xsd:annotation>
+      <xsd:simpleType>
+        <xsd:list itemType="xsd:anyURI"/>
+      </xsd:simpleType>
+    </xsd:attribute>
+    <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:opposite="ownedElement" ecore:reference="uml:Element" ecore:transient="true" ecore:volatile="true" name="owner" type="xsd:anyURI">
+      <xsd:annotation>
+        <xsd:documentation>The Element that owns this element.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="Comment">
+    <xsd:annotation>
+      <xsd:documentation>A comment is a textual annotation that can be attached to a set of elements.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Element">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="body" nillable="true" type="uml:String">
+            <xsd:annotation>
+              <xsd:documentation>Specifies a string that is the comment.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute ecore:ordered="false" ecore:reference="uml:Element" name="annotatedElement">
+          <xsd:annotation>
+            <xsd:documentation>References the Element(s) being commented.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType ecore:instanceClass="java.lang.String" name="String">
+    <xsd:annotation>
+      <xsd:documentation>A string is a sequence of characters in some suitable character set used to display information about the model. Character sets may include non-Roman alphabets and characters.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction/>
+  </xsd:simpleType>
+  <xsd:simpleType ecore:instanceClass="boolean" name="Boolean">
+    <xsd:annotation>
+      <xsd:documentation>A Boolean type is used for logical expression, consisting of the predefined values true and false.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction/>
+  </xsd:simpleType>
+  <xsd:simpleType name="VisibilityKind">
+    <xsd:annotation>
+      <xsd:documentation>VisibilityKind is an enumeration type that defines literals to determine the visibility of elements in a model.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="public"/>
+      <xsd:enumeration value="private"/>
+      <xsd:enumeration value="protected"/>
+      <xsd:enumeration value="package"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType abstract="true" name="PackageableElement">
+    <xsd:annotation>
+      <xsd:documentation>A packageable element indicates a named element that may be owned directly by a package.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:NamedElement"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ElementImport">
+    <xsd:annotation>
+      <xsd:documentation>An element import identifies an element in another package, and allows the element to be referenced using its name without a qualifier.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:DirectedRelationship">
+        <xsd:attribute ecore:default="public" ecore:unsettable="false" name="visibility" type="uml:VisibilityKind" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the visibility of the imported PackageableElement within the importing Package. The default visibility is the same as that of the imported element. If the imported element does not have a visibility, it is possible to add visibility to the element import.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:unsettable="true" name="alias" type="uml:String">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the name that should be added to the namespace of the importing package in lieu of the name of the imported packagable element. The aliased name must not clash with any other member name in the importing package. By default, no alias is used.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:reference="uml:PackageableElement" name="importedElement" type="xsd:anyURI" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the PackageableElement whose name is to be added to a Namespace.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:opposite="elementImport" ecore:reference="uml:Namespace" name="importingNamespace" type="xsd:anyURI" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the Namespace that imports a PackageableElement from another Package.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="DirectedRelationship">
+    <xsd:annotation>
+      <xsd:documentation>A directed relationship represents a relationship between a collection of source model elements and a collection of target model elements.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Relationship">
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:lowerBound="1" ecore:ordered="false" ecore:reference="uml:Element" ecore:transient="true" ecore:volatile="true" name="source">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the sources of the DirectedRelationship.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:lowerBound="1" ecore:ordered="false" ecore:reference="uml:Element" ecore:transient="true" ecore:volatile="true" name="target">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the targets of the DirectedRelationship.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Relationship">
+    <xsd:annotation>
+      <xsd:documentation>Relationship is an abstract concept that specifies some kind of relationship between elements.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Element">
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:lowerBound="1" ecore:ordered="false" ecore:reference="uml:Element" ecore:transient="true" ecore:volatile="true" name="relatedElement">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the elements related by the Relationship.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PackageImport">
+    <xsd:annotation>
+      <xsd:documentation>A package import is a relationship that allows the use of unqualified names to refer to package members from other namespaces.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:DirectedRelationship">
+        <xsd:attribute ecore:default="public" ecore:unsettable="false" name="visibility" type="uml:VisibilityKind" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the visibility of the imported PackageableElements within the importing Namespace, i.e., whether imported elements will in turn be visible to other packages that use that importingPackage as an importedPackage. If the PackageImport is public, the imported elements will be visible outside the package, while if it is private they will not.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:reference="uml:Package" name="importedPackage" type="xsd:anyURI" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the Package whose members are imported into a Namespace.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:opposite="packageImport" ecore:reference="uml:Namespace" name="importingNamespace" type="xsd:anyURI" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the Namespace that imports the members from a Package.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:implements="uml:PackageableElement" name="Package">
+    <xsd:annotation>
+      <xsd:documentation>A package is used to group elements, and provides a namespace for the grouped elements.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Namespace">
+        <xsd:sequence>
+          <xsd:element ecore:ordered="false" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="packagedElement" type="uml:PackageableElement">
+            <xsd:annotation>
+              <xsd:documentation>Specifies the packageable elements that are owned by this Package.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element ecore:opposite="receivingPackage" ecore:ordered="false" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="packageMerge" type="uml:PackageMerge">
+            <xsd:annotation>
+              <xsd:documentation>References the PackageMerges that are owned by this Package.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute ecore:derived="true" ecore:opposite="package" ecore:ordered="false" ecore:reference="uml:Type" ecore:transient="true" ecore:volatile="true" name="ownedType">
+          <xsd:annotation>
+            <xsd:documentation>References the packaged elements that are Types.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:derived="true" ecore:opposite="nestingPackage" ecore:ordered="false" ecore:reference="uml:Package" ecore:transient="true" ecore:volatile="true" name="nestedPackage">
+          <xsd:annotation>
+            <xsd:documentation>References the packaged elements that are Packages.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:derived="true" ecore:opposite="nestedPackage" ecore:reference="uml:Package" ecore:transient="true" ecore:volatile="true" name="nestingPackage" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>References the Package that owns this Package.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Type">
+    <xsd:annotation>
+      <xsd:documentation>A type is a named element that is used as the type for a typed element. A type can be contained in a package.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:PackageableElement">
+        <xsd:attribute ecore:derived="true" ecore:opposite="ownedType" ecore:reference="uml:Package" ecore:transient="true" ecore:volatile="true" name="package" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the owning package of this classifier, if any.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PackageMerge">
+    <xsd:annotation>
+      <xsd:documentation>A package merge defines how the contents of one package are extended by the contents of another package.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:DirectedRelationship">
+        <xsd:attribute ecore:reference="uml:Package" name="mergedPackage" type="xsd:anyURI" use="required">
+          <xsd:annotation>
+            <xsd:documentation>References the Package that is to be merged with the receiving package of the PackageMerge.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:opposite="packageMerge" ecore:reference="uml:Package" name="receivingPackage" type="xsd:anyURI" use="required">
+          <xsd:annotation>
+            <xsd:documentation>References the Package that is being extended with the contents of the merged package of the PackageMerge.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Constraint">
+    <xsd:annotation>
+      <xsd:documentation>A constraint is a condition or restriction expressed in natural language text or in a machine readable language for the purpose of declaring some of the semantics of an element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:PackageableElement">
+        <xsd:sequence>
+          <xsd:element ecore:resolveProxies="true" name="specification" type="uml:ValueSpecification">
+            <xsd:annotation>
+              <xsd:documentation>A condition that must be true when evaluated in order for the constraint to be satisfied.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute ecore:reference="uml:Element" name="constrainedElement">
+          <xsd:annotation>
+            <xsd:documentation>The ordered set of Elements referenced by this Constraint.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:opposite="ownedRule" ecore:reference="uml:Namespace" name="context" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" ecore:implements="uml:PackageableElement" name="ValueSpecification">
+    <xsd:annotation>
+      <xsd:documentation>A value specification is the specification of a (possibly empty) set of instances, including both objects and data values.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:TypedElement"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="TypedElement">
+    <xsd:annotation>
+      <xsd:documentation>A typed element is a kind of named element that represents an element with a type.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:NamedElement">
+        <xsd:attribute ecore:reference="uml:Type" name="type" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>This information is derived from the return result for this Operation.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType ecore:instanceClass="int" name="Integer">
+    <xsd:annotation>
+      <xsd:documentation>An integer is a primitive type representing integer values.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction/>
+  </xsd:simpleType>
+  <xsd:simpleType ecore:instanceClass="int" name="UnlimitedNatural">
+    <xsd:annotation>
+      <xsd:documentation>An unlimited natural is a primitive type representing unlimited natural values.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction/>
+  </xsd:simpleType>
+  <xsd:complexType name="Property">
+    <xsd:annotation>
+      <xsd:documentation>A property is a structural feature of a classifier that characterizes instances of the classifier. A property related by ownedAttribute to a classifier (other than an association) represents an attribute and might also represent an association end. It relates an instance of the class to a value or set of values of the type of the attribute. A property related by memberEnd or its specializations to an association represents an end of the association. The type of the property is the type of the end of the association.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:StructuralFeature">
+        <xsd:attribute ecore:default="false" ecore:unsettable="false" name="isReadOnly" type="uml:Boolean" use="required">
+          <xsd:annotation>
+            <xsd:documentation>If isReadOnly is true, the attribute may not be written to after initialization.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:unsettable="true" name="default" type="uml:String">
+          <xsd:annotation>
+            <xsd:documentation>Specifies a String that represents a value to be used when no argument is supplied for the Property.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:default="false" ecore:unsettable="false" name="isComposite" type="uml:Boolean" use="required">
+          <xsd:annotation>
+            <xsd:documentation>If isComposite is true, the object containing the attribute is a container for the object or value contained in the attribute.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:default="false" ecore:unsettable="false" name="isDerived" type="uml:Boolean" use="required">
+          <xsd:annotation>
+            <xsd:documentation>If isDerived is true, the value of the attribute is derived from information elsewhere.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:default="false" ecore:unsettable="false" name="isDerivedUnion" type="uml:Boolean" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Specifies whether the property is derived as the union of all of the properties that are constrained to subset it.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:opposite="ownedAttribute" ecore:reference="uml:Class" name="class" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>References the Class that owns the Property.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:opposite="ownedAttribute" ecore:reference="uml:DataType" name="datatype" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>The DataType that owns this Property.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:opposite="ownedEnd" ecore:reference="uml:Association" name="owningAssociation" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>References the owning association of this property, if any.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:opposite="memberEnd" ecore:reference="uml:Association" name="association" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>References the association of which this property is a member, if any.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:ordered="false" ecore:reference="uml:Property" name="redefinedProperty">
+          <xsd:annotation>
+            <xsd:documentation>References the properties that are redefined by this property.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:ordered="false" ecore:reference="uml:Property" name="subsettedProperty">
+          <xsd:annotation>
+            <xsd:documentation>References the properties of which this property is constrained to be a subset.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:derived="true" ecore:reference="uml:Property" ecore:transient="true" ecore:volatile="true" name="opposite" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>In the case where the property is one navigable end of a binary association with both ends navigable, this gives the other end.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" ecore:implements="uml:TypedElement uml:MultiplicityElement" name="StructuralFeature">
+    <xsd:annotation>
+      <xsd:documentation>A structural feature is a typed feature of a classifier that specifies the structure of instances of the classifier.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Feature"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="Feature">
+    <xsd:annotation>
+      <xsd:documentation>A feature declares a behavioral or structural characteristic of instances of classifiers.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:RedefinableElement">
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:opposite="feature" ecore:ordered="false" ecore:reference="uml:Classifier" ecore:transient="true" ecore:volatile="true" name="featuringClassifier">
+          <xsd:annotation>
+            <xsd:documentation>The Classifiers that have this Feature as a feature.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="RedefinableElement">
+    <xsd:annotation>
+      <xsd:documentation>A redefinable element is an element that, when defined in the context of a classifier, can be redefined more specifically or differently in the context of another classifier that specializes (directly or indirectly) the context classifier.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:NamedElement">
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:ordered="false" ecore:reference="uml:Classifier" ecore:transient="true" ecore:volatile="true" name="redefinitionContext">
+          <xsd:annotation>
+            <xsd:documentation>References the contexts that this element may be redefined from.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:ordered="false" ecore:reference="uml:RedefinableElement" ecore:transient="true" ecore:volatile="true" name="redefinedElement">
+          <xsd:annotation>
+            <xsd:documentation>The redefinable element that is being redefined by this element.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="MultiplicityElement">
+    <xsd:annotation>
+      <xsd:documentation>A multiplicity is a definition of an inclusive interval of non-negative integers beginning with a lower bound and ending with a (possibly infinite) upper bound. A multiplicity element embeds this information to specify the allowable cardinalities for an instantiation of this element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Element">
+        <xsd:attribute ecore:default="false" ecore:unsettable="false" name="isOrdered" type="uml:Boolean" use="required">
+          <xsd:annotation>
+            <xsd:documentation>For a multivalued multiplicity, this attribute specifies whether the values in an instantiation of this element are sequentially ordered.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:default="true" ecore:unsettable="false" name="isUnique" type="uml:Boolean" use="required">
+          <xsd:annotation>
+            <xsd:documentation>For a multivalued multiplicity, this attributes specifies whether the values in an instantiation of this element are unique.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:unsettable="false" name="lower" type="uml:Integer">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the lower bound of the multiplicity interval.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:unsettable="false" name="upper" type="uml:UnlimitedNatural">
+          <xsd:annotation>
+            <xsd:documentation>Specifies the upper bound of the multiplicity interval.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Class">
+    <xsd:annotation>
+      <xsd:documentation>A class describes a set of objects that share the same specifications of features, constraints, and semantics.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Classifier">
+        <xsd:sequence>
+          <xsd:element ecore:opposite="class" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="ownedOperation" type="uml:Operation">
+            <xsd:annotation>
+              <xsd:documentation>The operations owned by the class.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element ecore:opposite="class" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="ownedAttribute" type="uml:Property">
+            <xsd:annotation>
+              <xsd:documentation>The attributes (i.e. the properties) owned by the class.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute ecore:default="false" ecore:unsettable="false" name="isAbstract" type="uml:Boolean" use="required">
+          <xsd:annotation>
+            <xsd:documentation>True when a class is abstract.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:ordered="false" ecore:reference="uml:Class" name="superClass">
+          <xsd:annotation>
+            <xsd:documentation>This gives the superclasses of a class.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Operation">
+    <xsd:annotation>
+      <xsd:documentation>An operation is a behavioral feature of a classifier that specifies the name, type, parameters, and constraints for invoking an associated behavior.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:BehavioralFeature">
+        <xsd:attribute ecore:default="false" ecore:unsettable="false" name="isQuery" type="uml:Boolean" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Specifies whether an execution of the BehavioralFeature leaves the state of the system unchanged (isQuery=true) or whether side effects may occur (isQuery=false).</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:derived="true" ecore:lowerBound="1" ecore:transient="true" ecore:unsettable="false" ecore:volatile="true" name="isOrdered" type="uml:Boolean">
+          <xsd:annotation>
+            <xsd:documentation>This information is derived from the return result for this Operation.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:derived="true" ecore:lowerBound="1" ecore:transient="true" ecore:unsettable="false" ecore:volatile="true" name="isUnique" type="uml:Boolean">
+          <xsd:annotation>
+            <xsd:documentation>This information is derived from the return result for this Operation.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:derived="true" ecore:transient="true" ecore:unsettable="false" ecore:volatile="true" name="lower" type="uml:Integer">
+          <xsd:annotation>
+            <xsd:documentation>This information is derived from the return result for this Operation.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:derived="true" ecore:transient="true" ecore:unsettable="false" ecore:volatile="true" name="upper" type="uml:UnlimitedNatural">
+          <xsd:annotation>
+            <xsd:documentation>This information is derived from the return result for this Operation.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:opposite="ownedOperation" ecore:reference="uml:DataType" name="datatype" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>The DataType that owns this Operation.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:ordered="false" ecore:reference="uml:Operation" name="redefinedOperation">
+          <xsd:annotation>
+            <xsd:documentation>References the Operations that are redefined by this Operation.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:derived="true" ecore:reference="uml:Type" ecore:transient="true" ecore:volatile="true" name="type" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>This information is derived from the return result for this Operation.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:ordered="false" ecore:reference="uml:Constraint" name="precondition">
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:ordered="false" ecore:reference="uml:Constraint" name="postcondition">
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:reference="uml:Constraint" name="bodyCondition" type="xsd:anyURI"/>
+        <xsd:attribute ecore:opposite="ownedOperation" ecore:reference="uml:Class" name="class" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>The class that owns the operation.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" ecore:implements="uml:Feature" name="BehavioralFeature">
+    <xsd:annotation>
+      <xsd:documentation>A behavioral feature is a feature of a classifier that specifies an aspect of the behavior of its instances.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Namespace">
+        <xsd:sequence>
+          <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="ownedParameter" type="uml:Parameter">
+            <xsd:annotation>
+              <xsd:documentation>Specifies the ordered set of formal parameters of this BehavioralFeature.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute ecore:ordered="false" ecore:reference="uml:Type" name="raisedException">
+          <xsd:annotation>
+            <xsd:documentation>References the Types representing exceptions that may be raised during an invocation of this feature.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:implements="uml:MultiplicityElement" name="Parameter">
+    <xsd:annotation>
+      <xsd:documentation>A parameter is a specification of an argument used to pass information into or out of an invocation of a behavioral feature.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:TypedElement">
+        <xsd:attribute ecore:unsettable="true" name="default" type="uml:String">
+          <xsd:annotation>
+            <xsd:documentation>Specifies a String that represents a value to be used when no argument is supplied for the Parameter.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:default="in" ecore:unsettable="false" name="direction" type="uml:ParameterDirectionKind" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Indicates whether a parameter is being sent into or out of a behavioral element.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:changeable="false" ecore:reference="uml:Operation" ecore:transient="true" ecore:volatile="true" name="operation" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>References the Operation owning this parameter.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="ParameterDirectionKind">
+    <xsd:annotation>
+      <xsd:documentation>Parameter direction kind is an enumeration type that defines literals used to specify direction of parameters.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="in"/>
+      <xsd:enumeration value="inout"/>
+      <xsd:enumeration value="out"/>
+      <xsd:enumeration value="return"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DataType">
+    <xsd:annotation>
+      <xsd:documentation>A data type is a type whose instances are identified only by their value. A data type may contain attributes to support the modeling of structured data types.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Classifier">
+        <xsd:sequence>
+          <xsd:element ecore:opposite="datatype" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="ownedAttribute" type="uml:Property">
+            <xsd:annotation>
+              <xsd:documentation>The Attributes owned by the DataType.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element ecore:opposite="datatype" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="ownedOperation" type="uml:Operation">
+            <xsd:annotation>
+              <xsd:documentation>The Operations owned by the DataType.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:implements="uml:Relationship" name="Association">
+    <xsd:annotation>
+      <xsd:documentation>An association describes a set of tuples whose values refer to typed instances. An instance of an association is called a link.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:Classifier">
+        <xsd:sequence>
+          <xsd:element ecore:opposite="owningAssociation" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="ownedEnd" type="uml:Property">
+            <xsd:annotation>
+              <xsd:documentation>The ends that are owned by the association itself.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute ecore:default="false" ecore:unsettable="false" name="isDerived" type="uml:Boolean" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Specifies whether the association is derived from other model elements such as other associations or constraints.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:lowerBound="1" ecore:ordered="false" ecore:reference="uml:Type" ecore:transient="true" ecore:volatile="true" name="endType">
+          <xsd:annotation>
+            <xsd:documentation>References the classifiers that are used as types of the ends of the association.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:opposite="association" ecore:reference="uml:Property" name="memberEnd" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Each end represents participation of instances of the classifier connected to the end in links of the association.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction>
+              <xsd:simpleType>
+                <xsd:list itemType="xsd:anyURI"/>
+              </xsd:simpleType>
+              <xsd:minLength value="2"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute ecore:ordered="false" ecore:reference="uml:Property" name="navigableOwnedEnd">
+          <xsd:annotation>
+            <xsd:documentation>The navigable ends that are owned by the association itself.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:list itemType="xsd:anyURI"/>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Enumeration">
+    <xsd:annotation>
+      <xsd:documentation>An enumeration is a data type whose values are enumerated in the model as enumeration literals.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:DataType">
+        <xsd:sequence>
+          <xsd:element ecore:opposite="enumeration" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="ownedLiteral" type="uml:EnumerationLiteral">
+            <xsd:annotation>
+              <xsd:documentation>The ordered set of literals for this Enumeration.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EnumerationLiteral">
+    <xsd:annotation>
+      <xsd:documentation>An enumeration literal is a user-defined data value for an enumeration.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:NamedElement">
+        <xsd:attribute ecore:opposite="ownedLiteral" ecore:reference="uml:Enumeration" name="enumeration" type="xsd:anyURI">
+          <xsd:annotation>
+            <xsd:documentation>The Enumeration that this EnumerationLiteral is a member of.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PrimitiveType">
+    <xsd:annotation>
+      <xsd:documentation>A primitive type defines a predefined data type, without any relevant substructure (i.e., it has no parts in the context of UML). A primitive datatype may have an algebra and operations defined outside of UML, for example, mathematically.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:DataType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="OpaqueExpression">
+    <xsd:annotation>
+      <xsd:documentation>An opaque expression is an uninterpreted textual statement that denotes a (possibly empty) set of values when evaluated in a context.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:ValueSpecification">
+        <xsd:sequence>
+          <xsd:element ecore:unique="true" ecore:unsettable="true" maxOccurs="unbounded" minOccurs="0" name="body" nillable="true" type="uml:String">
+            <xsd:annotation>
+              <xsd:documentation>The text of the expression, possibly in multiple languages.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element ecore:unique="true" ecore:unsettable="true" maxOccurs="unbounded" minOccurs="0" name="language" nillable="true" type="uml:String">
+            <xsd:annotation>
+              <xsd:documentation>Specifies the languages in which the expression is stated. The interpretation of the expression body depends on the languages. If the languages are unspecified, they might be implicit from the expression body or the context. Languages are matched to body strings by order.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Expression">
+    <xsd:annotation>
+      <xsd:documentation>An expression is a structured tree of symbols that denotes a (possibly empty) set of values when evaluated in a context.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="uml:ValueSpecification">
+        <xsd:sequence>
+          <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="operand" type="uml:ValueSpecification">
+            <xsd:annotation>
+              <xsd:documentation>Specifies a sequence of operands.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

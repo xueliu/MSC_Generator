@@ -1,0 +1,1186 @@
+
+(object Petal
+    version    	46
+    _written   	"Rose 7.7.0204.3001"
+    charSet    	0)
+
+(object Class_Category "CMOFReflection"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"3E9EFD85010D"
+    visible_categories 	(list visibility_relationship_list
+	(object Visibility_Relationship
+	    quid       	"3E942BF70126"
+	    stereotype 	"combine"
+	    supplier   	"Logical View::MOF::Identity"
+	    quidu      	"3E1979A002CD")
+	(object Visibility_Relationship
+	    quid       	"3E942C280097"
+	    stereotype 	"combine"
+	    supplier   	"Logical View::MOF::Reflection"
+	    quidu      	"3E197A32029B")
+	(object Visibility_Relationship
+	    quid       	"3EA04C8A00C3"
+	    stereotype 	"import"
+	    supplier   	"Logical View::InfrastructureLibrary::Core::Constructs"
+	    quidu      	"3DE692AD00C7"))
+    exportControl 	"Public"
+    logical_models 	(list unit_reference_list
+	(object Class "NewClass"
+	    quid       	"3E80EE8402DB")
+	(object Class "Link"
+	    quid       	"3E80EE99001E"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3E80EEB200ED"
+		    supplier   	"Logical View::InfrastructureLibrary::Core::Abstractions::Elements::Element"
+		    quidu      	"3DF78BA701E1"))
+	    operations 	(list Operations
+		(object Operation "equals"
+		    quid       	"3E80F16D0323"
+		    parameters 	(list Parameters
+			(object Parameter "otherLink"
+			    quid       	"3E93F3F60370"
+			    type       	"Link"
+			    quidu      	"3E80EE99001E"))
+		    result     	"Boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3CA010AC0090")
+		(object Operation "delete"
+		    quid       	"3E94312A00BF"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)))
+	(object Class "Argument"
+	    quid       	"3E93E7F60171"
+	    stereotype 	"datatype"
+	    class_attributes 	(list class_attribute_list
+		(object ClassAttribute "name"
+		    quid       	"3E93E808028E"
+		    type       	"String"
+		    quidu      	"3CA010B103C3"
+		    exportControl 	"Public")
+		(object ClassAttribute "value"
+		    quid       	"3E93E80E026E"
+		    type       	"Element"
+		    quidu      	"3E7231BD00FA"
+		    exportControl 	"Public")))
+	(object Class "Object"
+	    quid       	"3E93EA5F0153"
+	    operations 	(list Operations
+		(object Operation "delete"
+		    quid       	"3E93EB830219"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "invoke"
+		    quid       	"3E93EC680259"
+		    parameters 	(list Parameters
+			(object Parameter "op"
+			    quid       	"3E9A493802B4"
+			    type       	"Operation"
+			    quidu      	"3E5C15F2016D")
+			(object Parameter "arguments"
+			    attributes 	(list Attribute_Set
+				(object Attribute
+				    tool       	"MOF"
+				    name       	"uml2mof.multiplicity"
+				    value      	(value Text "0..*")))
+			    quid       	"3E93F369020B"
+			    type       	"Argument"
+			    quidu      	"3E93E7F60171"))
+		    result     	"Element"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3E7231BD00FA")
+		(object Operation "isInstanceOfType"
+		    quid       	"3E9A58500131"
+		    parameters 	(list Parameters
+			(object Parameter "type"
+			    quid       	"3E9A5884017D"
+			    type       	"Class")
+			(object Parameter "includeSubtypes"
+			    quid       	"3E9A58840191"
+			    type       	"Boolean"
+			    quidu      	"3CA010AC0090"))
+		    result     	"Boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3CA010AC0090")
+		(object Operation "verify"
+		    quid       	"3E9F06C10288"
+		    parameters 	(list Parameters
+			(object Parameter "deepVerify"
+			    quid       	"3E9F06E1018A"
+			    type       	"Boolean"
+			    quidu      	"3CA010AC0090"))
+		    result     	"ReflectiveCollection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3E9EF4A80395")))
+	(object Class "Extent"
+	    quid       	"3E93EB9303DD"
+	    operations 	(list Operations
+		(object Operation "objectsOfType"
+		    attributes 	(list Attribute_Set
+			(object Attribute
+			    tool       	"MOF"
+			    name       	"rose2mof.return.multiplicity"
+			    value      	(value Text "0..*")))
+		    quid       	"3E93EBAC0296"
+		    parameters 	(list Parameters
+			(object Parameter "type"
+			    quid       	"3E93EBCE03E5"
+			    type       	"Class")
+			(object Parameter "includeSubtypes"
+			    quid       	"3E942FF900DE"
+			    type       	"Boolean"
+			    quidu      	"3CA010AC0090"))
+		    result     	"Object"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "linksOfType"
+		    attributes 	(list Attribute_Set
+			(object Attribute
+			    tool       	"MOF"
+			    name       	"rose2mof.return.multiplicity"
+			    value      	(value Text "0..*")))
+		    quid       	"3E93EBB302BD"
+		    parameters 	(list Parameters
+			(object Parameter "type"
+			    quid       	"3E93EBF0032C"
+			    type       	"Association"
+			    quidu      	"3DE6E15D033A"))
+		    result     	"Link"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3E80EE99001E")
+		(object Operation "linkedObjects"
+		    attributes 	(list Attribute_Set
+			(object Attribute
+			    tool       	"MOF"
+			    name       	"rose2mof.return.multiplicity"
+			    value      	(value Text "0..*")))
+		    quid       	"3E94307402A9"
+		    parameters 	(list Parameters
+			(object Parameter "association"
+			    quid       	"3E9430A70287"
+			    type       	"Association"
+			    quidu      	"3DE6E15D033A")
+			(object Parameter "endObject"
+			    quid       	"3E9430B40269"
+			    type       	"Object")
+			(object Parameter "end1ToEnd2Direction"
+			    quid       	"3E9430C80132"
+			    type       	"Boolean"
+			    quidu      	"3CA010AC0090"))
+		    result     	"Object"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "linkExists"
+		    quid       	"3E9A566F0086"
+		    parameters 	(list Parameters
+			(object Parameter "association"
+			    quid       	"3E9A56BB02DF"
+			    type       	"Association"
+			    quidu      	"3DE6E15D033A")
+			(object Parameter "firstObject"
+			    quid       	"3E9A56BB02F3"
+			    type       	"Object")
+			(object Parameter "secondObject"
+			    quid       	"3E9A56BB0307"
+			    type       	"Object"))
+		    result     	"Boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3CA010AC0090")))
+	(object Class "Factory"
+	    quid       	"3E942B950301"
+	    operations 	(list Operations
+		(object Operation "createObject"
+		    quid       	"3E942C84035A"
+		    parameters 	(list Parameters
+			(object Parameter "class"
+			    quid       	"3E942CF503BE"
+			    type       	"Class")
+			(object Parameter "arguments"
+			    attributes 	(list Attribute_Set
+				(object Attribute
+				    tool       	"MOF"
+				    name       	"uml2mof.multiplicity"
+				    value      	(value Text "0..*")))
+			    quid       	"3E942EB20388"
+			    type       	"Argument"
+			    quidu      	"3E93E7F60171"))
+		    result     	"Object"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "createLink"
+		    quid       	"3E942EFA00F7"
+		    parameters 	(list Parameters
+			(object Parameter "association"
+			    quid       	"3E942F2103AC"
+			    type       	"Association"
+			    quidu      	"3DE6E15D033A")
+			(object Parameter "firstObject"
+			    quid       	"3E9A441401F8"
+			    type       	"Object")
+			(object Parameter "secondObject"
+			    quid       	"3E9A4414020C"
+			    type       	"Object"))
+		    result     	"Link"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3E80EE99001E")))
+	(object Class "Exception"
+	    quid       	"3E9F073E01D4"
+	    class_attributes 	(list class_attribute_list
+		(object ClassAttribute "objectInError"
+		    quid       	"3E9F07460262"
+		    type       	"Object"
+		    exportControl 	"Public")
+		(object ClassAttribute "elementInError"
+		    quid       	"3E9F107B036F"
+		    type       	"Object"
+		    exportControl 	"Public")
+		(object ClassAttribute "description"
+		    quid       	"3E9F109500A6"
+		    type       	"String"
+		    quidu      	"3CA010B103C3"
+		    exportControl 	"Public")))
+	(object Association "$UNNAMED$0"
+	    quid       	"3E80EEB901A1"
+	    roles      	(list role_list
+		(object Role "secondObject"
+		    quid       	"3E80EEBA004E"
+		    label      	"secondObject"
+		    supplier   	"Logical View::MOF::CMOFReflection::Object"
+		    quidu      	"3E93EA5F0153"
+		    client_cardinality 	(value cardinality "1")
+		    is_navigable 	TRUE)
+		(object Role "$UNNAMED$1"
+		    quid       	"3E80EEBA0058"
+		    supplier   	"Logical View::MOF::CMOFReflection::Link"
+		    quidu      	"3E80EE99001E"
+		    is_navigable 	TRUE)))
+	(object Association "$UNNAMED$2"
+	    quid       	"3E80EEBD0161"
+	    roles      	(list role_list
+		(object Role "firstObject"
+		    quid       	"3E80EEBE007C"
+		    label      	"firstObject"
+		    supplier   	"Logical View::MOF::CMOFReflection::Object"
+		    quidu      	"3E93EA5F0153"
+		    client_cardinality 	(value cardinality "1")
+		    is_navigable 	TRUE)
+		(object Role "$UNNAMED$3"
+		    quid       	"3E80EEBE0086"
+		    supplier   	"Logical View::MOF::CMOFReflection::Link"
+		    quidu      	"3E80EE99001E"
+		    is_navigable 	TRUE)))
+	(object Association "$UNNAMED$4"
+	    quid       	"3E86BF300274"
+	    roles      	(list role_list
+		(object Role "association"
+		    quid       	"3E86BF3100EF"
+		    label      	"association"
+		    supplier   	"Logical View::InfrastructureLibrary::Core::Constructs::Association"
+		    quidu      	"3DE6E15D033A"
+		    client_cardinality 	(value cardinality "1")
+		    is_navigable 	TRUE)
+		(object Role "$UNNAMED$5"
+		    quid       	"3E86BF310103"
+		    supplier   	"Logical View::MOF::CMOFReflection::Link"
+		    quidu      	"3E80EE99001E"))))
+    logical_presentations 	(list unit_reference_list
+	(object ClassDiagram "deltaCMOFReflection"
+	    quid       	"3E7EC9B200B6"
+	    title      	"deltaCMOFReflection"
+	    zoom       	100
+	    max_height 	28350
+	    max_width  	21600
+	    origin_x   	0
+	    origin_y   	712
+	    items      	(list diagram_item_list
+		(object ClassView "Class" "Logical View::InfrastructureLibrary::Core::Abstractions::Elements::Element" @1
+		    ShowCompartmentStereotypes 	TRUE
+		    SuppressAttribute 	TRUE
+		    SuppressOperation 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(366, 96)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	TRUE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@1
+			location   	(269, 55)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	194
+			justify    	0
+			label      	"Element")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3DF78BA701E1"
+		    width      	212
+		    height     	102
+		    annotation 	8
+		    autoResize 	TRUE)
+		(object ClassView "Class" "Logical View::MOF::CMOFReflection::Argument" @2
+		    ShowCompartmentStereotypes 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(1770, 1026)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@2
+			location   	(1476, 962)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	588
+			justify    	0
+			label      	"Argument")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@2
+			location   	(1476, 921)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	588
+			justify    	0
+			label      	"<<datatype>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3E93E7F60171"
+		    compartment 	(object Compartment
+			Parent_View 	@2
+			location   	(1476, 1014)
+			font       	(object Font
+			    size       	8
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	2
+			max_width  	243)
+		    width      	606
+		    height     	231)
+		(object ClassView "Class" "Logical View::MOF::CMOFReflection::Extent" @3
+		    ShowCompartmentStereotypes 	TRUE
+		    SuppressAttribute 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    ShowOperationSignature 	TRUE
+		    location   	(870, 1374)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@3
+			location   	(64, 1225)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	1613
+			justify    	0
+			label      	"Extent")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3E93EB9303DD"
+		    compartment 	(object Compartment
+			Parent_View 	@3
+			location   	(64, 1277)
+			font       	(object Font
+			    size       	8
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	4
+			max_width  	1500)
+		    width      	1631
+		    height     	319)
+		(object ClassView "Class" "Logical View::MOF::CMOFReflection::Factory" @4
+		    ShowCompartmentStereotypes 	TRUE
+		    SuppressAttribute 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    ShowOperationSignature 	TRUE
+		    location   	(720, 1014)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@4
+			location   	(55, 924)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	1331
+			justify    	0
+			label      	"Factory")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3E942B950301"
+		    compartment 	(object Compartment
+			Parent_View 	@4
+			location   	(55, 976)
+			font       	(object Font
+			    size       	8
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	2
+			max_width  	1256)
+		    width      	1349
+		    height     	200)
+		(object ClassView "Class" "Logical View::MOF::CMOFReflection::Object" @5
+		    ShowCompartmentStereotypes 	TRUE
+		    SuppressAttribute 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    ShowOperationSignature 	TRUE
+		    location   	(1308, 714)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@5
+			location   	(761, 590)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	1094
+			justify    	0
+			label      	"Object")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3E93EA5F0153"
+		    compartment 	(object Compartment
+			Parent_View 	@5
+			location   	(761, 642)
+			font       	(object Font
+			    size       	8
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	4
+			max_width  	1015)
+		    width      	1112
+		    height     	269)
+		(object ClassView "Class" "Logical View::MOF::CMOFReflection::Link" @6
+		    ShowCompartmentStereotypes 	TRUE
+		    SuppressAttribute 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    ShowOperationSignature 	TRUE
+		    location   	(366, 444)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@6
+			location   	(85, 358)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	563
+			justify    	0
+			label      	"Link")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3E80EE99001E"
+		    compartment 	(object Compartment
+			Parent_View 	@6
+			location   	(85, 410)
+			font       	(object Font
+			    size       	8
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	2
+			max_width  	500)
+		    width      	581
+		    height     	193)
+		(object InheritView "" @7
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"3E80EEB200ED"
+		    client     	@6
+		    supplier   	@1
+		    line_style 	0)
+		(object AssociationViewNew "$UNNAMED$2" @8
+		    location   	(414, 692)
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"3E80EEBD0161"
+		    roleview_list 	(list RoleViews
+			(object RoleView "firstObject" @9
+			    Parent_View 	@8
+			    location   	(-1332, 494)
+			    font       	(object Font
+				size       	8
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @10
+				Parent_View 	@9
+				location   	(607, 669)
+				font       	(object Font
+				    size       	8
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor     	1
+				anchor_loc 	1
+				nlines     	1
+				max_width  	174
+				justify    	0
+				label      	"+firstObject"
+				pctDist    	0.572271
+				height     	24
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"3E80EEBE007C"
+			    client     	@8
+			    supplier   	@5
+			    line_style 	3
+			    origin_attachment 	(414, 692)
+			    terminal_attachment 	(752, 692)
+			    label      	(object SegLabel @11
+				Parent_View 	@9
+				location   	(711, 670)
+				font       	(object Font
+				    size       	8
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor     	2
+				anchor_loc 	1
+				nlines     	1
+				max_width  	15
+				justify    	0
+				label      	"1"
+				pctDist    	0.880126
+				height     	23
+				orientation 	0))
+			(object RoleView "$UNNAMED$3" @12
+			    Parent_View 	@8
+			    location   	(-1332, 494)
+			    font       	(object Font
+				size       	8
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"3E80EEBE0086"
+			    client     	@8
+			    supplier   	@6
+			    vertices   	(list Points
+				(414, 692)
+				(229, 692)
+				(229, 540))
+			    line_style 	3
+			    origin_attachment 	(414, 692)
+			    terminal_attachment 	(229, 540))))
+		(object AssociationViewNew "$UNNAMED$0" @13
+		    location   	(312, 764)
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"3E80EEB901A1"
+		    roleview_list 	(list RoleViews
+			(object RoleView "secondObject" @14
+			    Parent_View 	@13
+			    location   	(-1434, 566)
+			    font       	(object Font
+				size       	8
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @15
+				Parent_View 	@14
+				location   	(580, 814)
+				font       	(object Font
+				    size       	8
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor     	1
+				anchor_loc 	1
+				nlines     	1
+				max_width  	223
+				justify    	0
+				label      	"+secondObject"
+				pctDist    	0.609091
+				height     	50
+				orientation 	1)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"3E80EEBA004E"
+			    client     	@13
+			    supplier   	@5
+			    line_style 	3
+			    origin_attachment 	(312, 764)
+			    terminal_attachment 	(752, 764)
+			    label      	(object SegLabel @16
+				Parent_View 	@14
+				location   	(707, 818)
+				font       	(object Font
+				    size       	8
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor     	2
+				anchor_loc 	1
+				nlines     	1
+				max_width  	15
+				justify    	0
+				label      	"1"
+				pctDist    	0.900000
+				height     	54
+				orientation 	1))
+			(object RoleView "$UNNAMED$1" @17
+			    Parent_View 	@13
+			    location   	(-1434, 566)
+			    font       	(object Font
+				size       	8
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"3E80EEBA0058"
+			    client     	@13
+			    supplier   	@6
+			    vertices   	(list Points
+				(312, 764)
+				(97, 764)
+				(97, 540))
+			    line_style 	3
+			    origin_attachment 	(312, 764)
+			    terminal_attachment 	(97, 540))))
+		(object ClassView "Class" "Logical View::MOF::CMOFReflection::Exception" @18
+		    ShowCompartmentStereotypes 	TRUE
+		    SuppressOperation 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(1656, 354)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@18
+			location   	(1425, 245)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	463
+			justify    	0
+			label      	"Exception")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3E9F073E01D4"
+		    compartment 	(object Compartment
+			Parent_View 	@18
+			location   	(1425, 297)
+			font       	(object Font
+			    size       	8
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	3
+			max_width  	353)
+		    width      	481
+		    height     	238)
+		(object ClassView "Class" "Logical View::InfrastructureLibrary::Core::Constructs::Association" @19
+		    ShowCompartmentStereotypes 	TRUE
+		    SuppressAttribute 	TRUE
+		    SuppressOperation 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(1152, 402)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@19
+			location   	(993, 356)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	319
+			justify    	0
+			label      	"Association")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3DE6E15D033A"
+		    width      	337
+		    height     	113
+		    annotation 	8)
+		(object AssociationViewNew "$UNNAMED$4" @20
+		    location   	(820, 406)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    stereotype 	TRUE
+		    line_color 	3342489
+		    quidu      	"3E86BF300274"
+		    roleview_list 	(list RoleViews
+			(object RoleView "association" @21
+			    Parent_View 	@20
+			    location   	(646, 136)
+			    font       	(object Font
+				size       	8
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @22
+				Parent_View 	@21
+				location   	(881, 365)
+				font       	(object Font
+				    size       	8
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor     	1
+				anchor_loc 	1
+				nlines     	1
+				max_width  	195
+				justify    	0
+				label      	"+association"
+				pctDist    	0.373626
+				height     	42
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"3E86BF3100EF"
+			    client     	@20
+			    supplier   	@19
+			    line_style 	3
+			    origin_attachment 	(820, 406)
+			    terminal_attachment 	(984, 406)
+			    label      	(object SegLabel @23
+				Parent_View 	@21
+				location   	(967, 460)
+				font       	(object Font
+				    size       	8
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor     	2
+				anchor_loc 	1
+				nlines     	1
+				max_width  	15
+				justify    	0
+				label      	"1"
+				pctDist    	0.900000
+				height     	54
+				orientation 	1))
+			(object RoleView "$UNNAMED$5" @24
+			    Parent_View 	@20
+			    location   	(646, 136)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"3E86BF310103"
+			    client     	@20
+			    supplier   	@6
+			    line_style 	3
+			    origin_attachment 	(820, 406)
+			    terminal_attachment 	(656, 406))))))
+	(object ClassDiagram "CMOFReflection"
+	    quid       	"3E7ECA26035D"
+	    title      	"CMOFReflection"
+	    zoom       	100
+	    max_height 	28350
+	    max_width  	21600
+	    origin_x   	0
+	    origin_y   	0
+	    items      	(list diagram_item_list
+		(object CategoryView "Logical View::MOF::Identity" @25
+		    location   	(756, 276)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@25
+			location   	(612, 192)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	288
+			justify    	0
+			label      	"Identity")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3E1979A002CD"
+		    width      	300
+		    height     	180)
+		(object CategoryView "Logical View::MOF::Reflection" @26
+		    location   	(1170, 288)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@26
+			location   	(1026, 204)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	288
+			justify    	0
+			label      	"Reflection")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3E197A32029B"
+		    width      	300
+		    height     	180)
+		(object CategoryView "Logical View::MOF::CMOFReflection" @27
+		    location   	(756, 744)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@27
+			location   	(612, 660)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	288
+			justify    	0
+			label      	"CMOFReflection")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3E9EFD85010D"
+		    width      	300
+		    height     	180)
+		(object ImportView "" @28
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@28
+			location   	(986, 489)
+			anchor_loc 	1
+			nlines     	1
+			max_width  	450
+			justify    	0
+			label      	"")
+		    stereotype 	(object SegLabel @29
+			Parent_View 	@28
+			location   	(1033, 476)
+			font       	(object Font
+			    size       	8
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			anchor     	10
+			anchor_loc 	1
+			nlines     	1
+			max_width  	450
+			justify    	0
+			label      	"<<combine>>"
+			pctDist    	0.636902
+			height     	27
+			orientation 	1)
+		    line_color 	3342489
+		    quidu      	"3E942C280097"
+		    client     	@27
+		    supplier   	@26
+		    line_style 	0)
+		(object ImportView "" @30
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@30
+			location   	(756, 482)
+			anchor_loc 	1
+			nlines     	1
+			max_width  	450
+			justify    	0
+			label      	"")
+		    stereotype 	(object SegLabel @31
+			Parent_View 	@30
+			location   	(734, 475)
+			font       	(object Font
+			    size       	8
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			anchor     	10
+			anchor_loc 	1
+			nlines     	1
+			max_width  	450
+			justify    	0
+			label      	"<<combine>>"
+			pctDist    	0.532189
+			height     	22
+			orientation 	0)
+		    line_color 	3342489
+		    quidu      	"3E942BF70126"
+		    client     	@27
+		    supplier   	@25
+		    line_style 	0)
+		(object CategoryView "Logical View::InfrastructureLibrary::Core::Constructs" @32
+		    location   	(312, 252)
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@32
+			location   	(168, 168)
+			fill_color 	13434879
+			nlines     	2
+			max_width  	288
+			justify    	0
+			label      	"Constructs")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3DE692AD00C7"
+		    width      	300
+		    height     	180)
+		(object ImportView "" @33
+		    font       	(object Font
+			size       	8
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@33
+			location   	(509, 471)
+			anchor_loc 	1
+			nlines     	1
+			max_width  	450
+			justify    	0
+			label      	"")
+		    stereotype 	(object SegLabel @34
+			Parent_View 	@33
+			location   	(484, 464)
+			font       	(object Font
+			    size       	8
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			anchor     	10
+			anchor_loc 	1
+			nlines     	1
+			max_width  	450
+			justify    	0
+			label      	"<<import>>"
+			pctDist    	0.562320
+			height     	15
+			orientation 	0)
+		    line_color 	3342489
+		    quidu      	"3EA04C8A00C3"
+		    client     	@27
+		    supplier   	@32
+		    line_style 	0)))))

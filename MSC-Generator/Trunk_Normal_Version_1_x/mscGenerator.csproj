@@ -1,0 +1,458 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1A543348-9454-4400-B166-D57B8903CC7B}</ProjectGuid>
+    <RootNamespace>nGenerator</RootNamespace>
+    <AssemblyName>mscGenerator</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <ApplicationIcon>Icons\msc1.ico</ApplicationIcon>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>False</NoStdLib>
+    <NoConfig>False</NoConfig>
+    <RunPostBuildEvent>OnSuccessfulBuild</RunPostBuildEvent>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+    <StartProgram>..\..\..\..\..\..\Programme\Microsoft.NET\SDK\v2.0\GuiDebug\DbgCLR.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>False</Optimize>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <OutputPath>bin\Debug\</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>False</DebugSymbols>
+    <Optimize>True</Optimize>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <OutputPath>bin\Release\</OutputPath>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="NumberingEditor">
+      <HintPath>..\..\Generator Editor\NumberingEditor\bin\Debug\NumberingEditor.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="GeneratorGUI">
+      <HintPath>..\..\GeneratorGUI 2.0\bin\Debug\GeneratorGUI.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Output.cs" />
+    <Compile Include="Generator.cs" />
+    <Compile Include="Start.cs" />
+    <Compile Include="Info.cs" />
+    <Compile Include="Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutputExt.cs" />
+    <Compile Include="Editor.cs" />
+    <Compile Include="MSCCommandSyntax.cs" />
+    <Compile Include="PreviewWindow.cs" />
+    <Compile Include="Property.cs" />
+    <Compile Include="MscMarkProp.cs" />
+    <Compile Include="ProcessCreateProp.cs" />
+    <Compile Include="ProcessLineProp.cs" />
+    <Compile Include="ProcessRegionProp.cs" />
+    <Compile Include="SetTimerProp.cs" />
+    <Compile Include="StateProp.cs" />
+    <Compile Include="StopTimerProp.cs" />
+    <Compile Include="TaskProp.cs" />
+    <Compile Include="TimeOutProp.cs" />
+    <Compile Include="TimeoutBeginProp.cs" />
+    <Compile Include="TimeoutEndProp.cs" />
+    <Compile Include="TimeoutStopProp.cs" />
+    <EmbeddedResource Include="MscMarkProp.resx">
+      <DependentUpon>MscMarkProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessCreateProp.resx">
+      <DependentUpon>ProcessCreateProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessLineProp.resx">
+      <DependentUpon>ProcessLineProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessRegionProp.resx">
+      <DependentUpon>ProcessRegionProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetTimerProp.resx">
+      <DependentUpon>SetTimerProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StateProp.resx">
+      <DependentUpon>StateProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StopTimerProp.resx">
+      <DependentUpon>StopTimerProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskProp.resx">
+      <DependentUpon>TaskProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeOutProp.resx">
+      <DependentUpon>TimeOutProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeoutBeginProp.resx">
+      <DependentUpon>TimeoutBeginProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeoutEndProp.resx">
+      <DependentUpon>TimeoutEndProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="ReferenceProp.cs" />
+    <EmbeddedResource Include="ReferenceProp.resx">
+      <DependentUpon>ReferenceProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeoutStopProp.resx">
+      <DependentUpon>TimeoutStopProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="FoundMessageExtension.cs" />
+    <Compile Include="InLineBeginExtension.cs" />
+    <Compile Include="InLineSeperatorExtension.cs" />
+    <Compile Include="LineCommentExtension.cs" />
+    <Compile Include="LostMessageExtension.cs" />
+    <Compile Include="MeasureBeginExtension.cs" />
+    <Compile Include="MeasureEndExtension.cs" />
+    <Compile Include="MeasureStartExtension.cs" />
+    <Compile Include="MeasureStopExtension.cs" />
+    <Compile Include="MessageExtension.cs" />
+    <Compile Include="MessageBeginExtension.cs" />
+    <Compile Include="MscMarkExtension.cs" />
+    <Compile Include="ProcessCreateExtension.cs" />
+    <Compile Include="ProcessLineExtension.cs" />
+    <Compile Include="ProcessRegionExtension.cs" />
+    <Compile Include="ProcessStopExtension.cs" />
+    <Compile Include="ReferenceExtension.cs" />
+    <Compile Include="SetTimerExtension.cs" />
+    <Compile Include="StateExtension.cs" />
+    <Compile Include="StopTimerExtension.cs" />
+    <Compile Include="TaskExtension.cs" />
+    <Compile Include="TimeOutExtension.cs" />
+    <Compile Include="TimeoutBeginExtension.cs" />
+    <Compile Include="TimeoutEndExtension.cs" />
+    <Compile Include="TimeoutStopExtension.cs" />
+    <Compile Include="InterpreterExtension.cs" />
+    <Compile Include="CommentExtension.cs" />
+    <Compile Include="MSCItemExtension.cs" />
+    <Compile Include="TimerBeginExtension.cs" />
+    <Compile Include="TimerEndExtension.cs" />
+    <Compile Include="TimerBeginProp.cs" />
+    <EmbeddedResource Include="TimerBeginProp.resx">
+      <DependentUpon>TimerBeginProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="TimerEndProp.cs" />
+    <EmbeddedResource Include="TimerEndProp.resx">
+      <DependentUpon>TimerEndProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="InLineTextExtension.cs" />
+    <EmbeddedResource Include="Property.resx">
+      <DependentUpon>Property.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="CommentProp.cs" />
+    <EmbeddedResource Include="CommentProp.resx">
+      <DependentUpon>CommentProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="MessageProp.cs" />
+    <EmbeddedResource Include="MessageProp.resx">
+      <DependentUpon>MessageProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="FoundMessageProp.cs" />
+    <EmbeddedResource Include="FoundMessageProp.resx">
+      <DependentUpon>FoundMessageProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="MessageBeginProp.cs" />
+    <EmbeddedResource Include="MessageBeginProp.resx">
+      <DependentUpon>MessageBeginProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="MeasureStopProp.cs" />
+    <EmbeddedResource Include="MeasureStopProp.resx">
+      <DependentUpon>MeasureStopProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="MeasureStartProp.cs" />
+    <EmbeddedResource Include="MeasureStartProp.resx">
+      <DependentUpon>MeasureStartProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="MeasureBeginProp.cs" />
+    <EmbeddedResource Include="MeasureBeginProp.resx">
+      <DependentUpon>MeasureBeginProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="MeasureEndProp.cs" />
+    <EmbeddedResource Include="MeasureEndProp.resx">
+      <DependentUpon>MeasureEndProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="LostMessageProp.cs" />
+    <EmbeddedResource Include="LostMessageProp.resx">
+      <DependentUpon>LostMessageProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="LineCommentProp.cs" />
+    <EmbeddedResource Include="LineCommentProp.resx">
+      <DependentUpon>LineCommentProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="InLineTextProp.cs" />
+    <EmbeddedResource Include="InLineTextProp.resx">
+      <DependentUpon>InLineTextProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="InLineBeginProp.cs" />
+    <EmbeddedResource Include="InLineBeginProp.resx">
+      <DependentUpon>InLineBeginProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="mscgen\Arguments.cs">
+      <Link>Arguments.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\Comment.cs">
+      <Link>Comment.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\FoundMessage.cs">
+      <Link>FoundMessage.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\GeneratorAdds.cs">
+      <Link>GeneratorAdds.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\GeneratorBasic.cs">
+      <Link>GeneratorBasic.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\HeadLine.cs">
+      <Link>HeadLine.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\InLine.cs">
+      <Link>InLine.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\InLineBegin.cs">
+      <Link>InLineBegin.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\InLineEnd.cs">
+      <Link>InLineEnd.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\InLineSeperator.cs">
+      <Link>InLineSeperator.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\InLineText.cs">
+      <Link>InLineText.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\Interpreter.cs">
+      <Link>Interpreter.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\ItemVerticalLine.cs">
+      <Link>ItemVerticalLine.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\LineComment.cs">
+      <Link>LineComment.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\LostMessage.cs">
+      <Link>LostMessage.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MeasureBeginn.cs">
+      <Link>MeasureBeginn.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MeasureEnd.cs">
+      <Link>MeasureEnd.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MeasureLine.cs">
+      <Link>MeasureLine.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MeasureStart.cs">
+      <Link>MeasureStart.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MeasureStop.cs">
+      <Link>MeasureStop.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\Message.cs">
+      <Link>Message.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MessageBeginn.cs">
+      <Link>MessageBeginn.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MessageEnd.cs">
+      <Link>MessageEnd.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MessageLine.cs">
+      <Link>MessageLine.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MSC.cs">
+      <Link>MSC.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MSCEnd.cs">
+      <Link>MSCEnd.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MSCItem.cs">
+      <Link>MSCItem.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\MscMark.cs">
+      <Link>MscMark.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\NewPage.cs">
+      <Link>NewPage.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\OutputBasic.cs">
+      <Link>OutputBasic.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\Process.cs">
+      <Link>Process.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\Processes.cs">
+      <Link>Processes.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\ProcessLine.cs">
+      <Link>ProcessLine.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\ProcessRegion.cs">
+      <Link>ProcessRegion.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\ProcessStop.cs">
+      <Link>ProcessStop.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\Reference.cs">
+      <Link>Reference.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\SetTimer.cs">
+      <Link>SetTimer.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\State.cs">
+      <Link>State.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\StopTimer.cs">
+      <Link>StopTimer.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\Task.cs">
+      <Link>Task.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\TimeOut.cs">
+      <Link>TimeOut.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\TimeoutBeginn.cs">
+      <Link>TimeoutBeginn.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\TimeoutEnd.cs">
+      <Link>TimeoutEnd.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\TimeoutStop.cs">
+      <Link>TimeoutStop.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\TimerBegin.cs">
+      <Link>TimerBegin.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\TimerEnd.cs">
+      <Link>TimerEnd.cs</Link>
+    </Compile>
+    <Compile Include="mscgen\ProcessCreate.cs">
+      <Link>ProcessCreate.cs</Link>
+    </Compile>
+    <EmbeddedResource Include="Property.en.resx">
+      <DependentUpon>Property.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessCreateProp.en.resx">
+      <DependentUpon>ProcessCreateProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommentProp.en.resx">
+      <DependentUpon>CommentProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoundMessageProp.en.resx">
+      <DependentUpon>FoundMessageProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InLineBeginProp.en.resx">
+      <DependentUpon>InLineBeginProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InLineTextProp.en.resx">
+      <DependentUpon>InLineTextProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LineCommentProp.en.resx">
+      <DependentUpon>LineCommentProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LostMessageProp.en.resx">
+      <DependentUpon>LostMessageProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeasureBeginProp.en.resx">
+      <DependentUpon>MeasureBeginProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeasureEndProp.en.resx">
+      <DependentUpon>MeasureEndProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeasureStartProp.en.resx">
+      <DependentUpon>MeasureStartProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeasureStopProp.en.resx">
+      <DependentUpon>MeasureStopProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBeginProp.en.resx">
+      <DependentUpon>MessageBeginProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageProp.en.resx">
+      <DependentUpon>MessageProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MscMarkProp.en.resx">
+      <DependentUpon>MscMarkProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessLineProp.en.resx">
+      <DependentUpon>ProcessLineProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessRegionProp.en.resx">
+      <DependentUpon>ProcessRegionProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReferenceProp.en.resx">
+      <DependentUpon>ReferenceProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetTimerProp.en.resx">
+      <DependentUpon>SetTimerProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StateProp.en.resx">
+      <DependentUpon>StateProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StopTimerProp.en.resx">
+      <DependentUpon>StopTimerProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskProp.en.resx">
+      <DependentUpon>TaskProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeoutBeginProp.en.resx">
+      <DependentUpon>TimeoutBeginProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeoutEndProp.en.resx">
+      <DependentUpon>TimeoutEndProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeOutProp.en.resx">
+      <DependentUpon>TimeOutProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeoutStopProp.en.resx">
+      <DependentUpon>TimeoutStopProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimerBeginProp.en.resx">
+      <DependentUpon>TimerBeginProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimerEndProp.en.resx">
+      <DependentUpon>TimerEndProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Output.resx">
+      <DependentUpon>Output.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Output.en.resx">
+      <DependentUpon>Output.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info.en.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start.resx">
+      <DependentUpon>Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mscgen\strings.en.resx">
+      <Link>strings.en.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mscgen\strings.resx">
+      <Link>strings.resx</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>

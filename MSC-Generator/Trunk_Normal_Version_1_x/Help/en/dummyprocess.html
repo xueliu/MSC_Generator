@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>dummyprocess</title>
+  <link href="GeneratorBlue.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table class=command>
+      <tr>
+        <th colspan=2 align=left class=headline>
+          DUMMYPROCESS - Diagram Element
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width=* colspan=2>
+            The command <font class='command'>dummyprocess</font> adds a placeholder for a process (or object) to the diagram. A dummy process is invisible until it is created using the command <a href="create.html"><font class='command'>create</font></a>.
+            The parameter <font class='instance'>id</font> is used to assign a unique ID for the lifeline of the process. 
+			The parameters <font class='textpara'>name</font> and <font class='textpara'>description</font> define the name and an optional description of the process.
+			By default actors and processes are equally distributed horizontally in a diagram. Sometimes it might be necessary to have more than the default space between an actor and its neighbors. The space to the left and to the right can be control with the arguments <font class='formatpara'>left</font> und <font class='formatpara'>right</font>.
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Syntax
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='command'>dummyprocess</font>: <font class='instance'>id</font>, <font class='formatpara'>left</font>, <font class='formatpara'>right</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Parameters 
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='instance'>id</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The ID of the lifeline. Could be any alphanumeric identifier, which uniquely identifies the lifeline of the process. This ID is not visible in the diagram.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='formatpara'>left</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Additional place to the left of the process. The value is always in pixel.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='formatpara'>right</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Additional place to the right of the process. The value is always in pixel.
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Example
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Instances</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>auto<br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>p1</font>, <font class='textpara'>Process 1</font><br>
+                <font class='command'>dummyprocess</font>: <font class='instance'>p2</font>, <font class='formatpara'>50</font>,<font class='formatpara'>0</font><br>
+                <font class='command'>process</font>: <font class='instance'>p3</font>, <font class='textpara'>"Process 3"</font><br>
+                <br>
+                <font class='command'>create</font>: <font class='instance'>p1</font>, <font class='instance'>p2</font>, <font class='textpara'>neu</font>, <font class='textpara'>Process 2</font>, <font class='textpara'>new Process</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>p2</font>, <font class='instance'>p3</font>, <font class='textpara'>end</font>;<br>
+                <font class='command'>stop</font>: <font class='instance'>p3</font>;       
+              </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Prozesse_1.gif'>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> See also
+        </td>
+      </tr>
+      <tr>
+        <td class=seealso colspan=2>
+          <a href="actor.html"><font class='command'>actor</font></a> 
+          <a href="process.html"><font class='command'>process</font></a> 
+          <a href="create.html"><font class='command'>create</font></a> 
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

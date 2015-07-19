@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>measurebegin</title>
+  <link href="GeneratorBlue.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table class=command>
+      <tr>
+        <th colspan=2 align=left class=headline>
+          MEASUREBEGIN - Diagram Element
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width=* colspan=2>
+            Use the commands <font class='command'>measurebegin</font> and <a href='measureend.html'><font class='command'>measureend</font></a> to model a measurement. 
+            The command <font class='command'>measurebegin</font> defines the start of the measurement.
+            The beginning and the end of a measurement are connected with a line on the generated diagram.
+            It is not possible to nest multiple measurements on the same lifeline.
+            For this purpose use the commands <a href="measurestart.html"><font class='command'>measurestart</font></a> und <a href="measurestop.html"><font class='command'>measurestop</font></a> which are displayed without a line connecting the start and the end.             
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Syntax
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='command'>measurebegin</font>: <font class='instance'>instanceid</font>, <font class='textpara'>text</font>, <font class='formatpara'>orientation</font>, <font class='formatpara'>style</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Parameters 
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='instance'>instanceid</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The ID of the lifeline on which the measurement should be displayed.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='textpara'>text</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The text that should be displayed at the beginning of the measurement. 
+          If your text contains punctuation, you must put the complete text in quotes ("").  
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='formatpara'>orientation</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Sets the position of the measurement in respect to the lifeline specified in the parameter <font class='instance'>instanceid</font>.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Value
+              </th>
+              <th width=300 class=param>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                l
+              </td>
+              <td class=param>
+                The measurement will be displayed to the left of the lifeline
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                r
+              </td>
+              <td class=param>
+                The measurement will be displayed to the right of the lifeline
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The default value for this parameter is "l".
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='formatpara'>style</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Sets the display mode for the measurement.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Value
+              </th>
+              <th width=300 class=param>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                -
+              </td>
+              <td class=param>
+                The measurement arrows will be displayed below the horizontal measurement lines.
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                *
+              </td>
+              <td class=param>
+                The measurement arrows will be displayed above the horizontal measurement lines.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The default parameter for this parameter is "-".
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Example
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Measurements</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>550</font>,<font class='property'>auto</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font><br>
+                <font class='propertycommand'>Left</font>: <font class='property'>50</font><br>
+                <font class='propertycommand'>Right</font>: <font class='property'>50</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>p1</font>, <font class='textpara'>"Process 1"</font><br>
+                <font class='command'>process</font>: <font class='instance'>p2</font>, <font class='textpara'>"Process 2"</font><br>
+                <br>
+                <font class='command'>measurebegin</font>: <font class='instance'>p1</font>, <font class='textpara'>M1</font><br>
+                <font class='command'>measurebegin</font>: <font class='instance'>p2</font>, <font class='textpara'>M2</font>, <font class='formatpara'>r</font>, <font class='formatpara'>*</font><br>
+                <font class='command'>msg</font>: <font class='instance'>p1</font>, <font class='instance'>p2</font>, <font class='textpara'>Message 1</font>;<br>
+                ;<br>
+                ;<br>
+                <font class='command'>msg</font>: <font class='instance'>p2</font>, <font class='instance'>p1</font>, <font class='textpara'>Message 2</font><br>
+                <font class='command'>measureend</font>: <font class='instance'>p1</font><br>
+                <font class='command'>measureend</font>: <font class='instance'>p2</font>, <font class='textpara'>end</font>;<br>
+              </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Messungen1_1.gif'>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> See also
+        </td>
+      </tr>
+      <tr>
+        <td class=seealso colspan=2>
+          <a href='measureend.html'><font class='command'>measureend</font></a>
+          <a href='measurestart.html'><font class='command'>measurestart</font></a>
+          <a href='measurestop.html'><font class='command'>measurestop</font></a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

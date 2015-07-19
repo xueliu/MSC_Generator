@@ -1,0 +1,214 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GeneratorGUI</RootNamespace>
+    <AssemblyName>GeneratorGUI</AssemblyName>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46AC51BF-66E4-4D8B-BE2F-12DE5D25211B}</ProjectGuid>
+    <SourceAnalysisOverrideSettingsFile>C:\Dokumente und Einstellungen\admin\Anwendungsdaten\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MSC-SD-Generator">
+      <HintPath>..\..\MSC-Generator\MSC-Generator\trunk\bin\Debug\MSC-SD-Generator.exe</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="sharpPDF">
+      <HintPath>..\MSC-Generator\trunk\LIB\sharpPDF.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="NumberingEditor">
+      <HintPath>..\Generator Editor\NumberingEditor\bin\Debug\NumberingEditor.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Icons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Icons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <EmbeddedResource Include="Icons.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="ModalDialogOk.cs" />
+    <Compile Include="ModalDialogOk.Designer.cs">
+      <DependentUpon>ModalDialogOk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsDialog.Designer.cs">
+      <DependentUpon>OptionsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worksheet.cs" />
+    <Compile Include="FootLine.cs" />
+    <Compile Include="InfoTemplate.Designer.cs">
+      <DependentUpon>InfoTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="InfoTemplate.resx">
+      <DependentUpon>InfoTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="License.cs" />
+    <Compile Include="Log.Designer.cs">
+      <DependentUpon>Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Log.resx">
+      <DependentUpon>Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="PreviewImage.cs" />
+    <Compile Include="RepertoryItem.cs" />
+    <Compile Include="Replace.Designer.cs">
+      <DependentUpon>Replace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Replace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="ModalDialogOk.resx">
+      <DependentUpon>ModalDialogOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Replace.resx">
+      <DependentUpon>Replace.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI.Designer.cs">
+      <DependentUpon>GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="GUI.resx">
+      <DependentUpon>GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI.en.resx">
+      <DependentUpon>GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="icons\cleanmgr_exe_Ico11_ico_Ico1.png" />
+    <None Include="icons\export.png" />
+    <None Include="icons\font.png" />
+    <None Include="icons\new.png" />
+    <None Include="icons\open.png" />
+    <None Include="icons\preferences.png" />
+    <None Include="icons\preview.png" />
+    <None Include="icons\print.png" />
+    <None Include="icons\refresh.png" />
+    <None Include="icons\save.png" />
+    <None Include="icons\zoom-.png" />
+    <None Include="icons\zoom+.png" />
+    <None Include="icons\GEN.ico" />
+    <None Include="icons\Info.ico" />
+    <None Include="icons\Log 1.ico" />
+    <None Include="icons\Log 2.ico" />
+    <None Include="icons\Log 3.ico" />
+    <None Include="icons\Shut Down.ico" />
+    <Compile Include="OutputPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutputPicturePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XmiImportChoiceDialog.cs" />
+    <Compile Include="XmiImportChoiceDialog.Designer.cs">
+      <DependentUpon>XmiImportChoiceDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="OptionsDialog.resx">
+      <DependentUpon>OptionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionsDialog.en.resx">
+      <DependentUpon>OptionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoTemplate.en.resx">
+      <DependentUpon>InfoTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.en.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log.en.resx">
+      <DependentUpon>Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Replace.en.resx">
+      <DependentUpon>Replace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search.en.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.resx" />
+    <EmbeddedResource Include="Strings.en.resx" />
+    <EmbeddedResource Include="XmiImportChoiceDialog.resx">
+      <DependentUpon>XmiImportChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Tools.Designer.cs">
+      <DependentUpon>Tools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools.cs" />
+    <EmbeddedResource Include="Tools.resx">
+      <DependentUpon>Tools.Designer.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons\comment.ico" />
+    <Content Include="icons\seitenbreite.ico" />
+    <Content Include="icons\seitengröße.ico" />
+    <Content Include="icons\seitenhöhe.ico" />
+    <Content Include="icons\zoom+2.png" />
+    <Content Include="icons\zoom-2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>

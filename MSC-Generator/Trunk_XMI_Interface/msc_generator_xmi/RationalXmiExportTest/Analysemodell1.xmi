@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/1" xmlns:RUPAnalysis="http:///schemas/RUPAnalysis/3" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://schema.omg.org/spec/UML/2.1.1" xsi:schemaLocation="http:///schemas/Default/1 Default.profile.xmi#_0l84apLQEdyjY9_GdI40aQ http:///schemas/RUPAnalysis/3 RUPAnalysis.profile.xmi#_0mC8DpLQEdyjY9_GdI40aQ http://schema.omg.org/spec/UML/2.1.1 http://www.eclipse.org/uml2/2.0.0/UML">
+  <uml:Model xmi:id="_0mC8f5LQEdyjY9_GdI40aQ" name="Analysemodell6">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_0mC8gJLQEdyjY9_GdI40aQ">
+      <importedPackage xmi:type="uml:Model" href="http://schema.omg.org/spec/UML/2.1.1/uml.xml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_0mC8gZLQEdyjY9_GdI40aQ" name="Analysis Building Blocks">
+      <packagedElement xmi:type="uml:Package" xmi:id="_0mC8gpLQEdyjY9_GdI40aQ" name="${functional.area}">
+        <packagedElement xmi:type="uml:Package" xmi:id="_0mC8g5LQEdyjY9_GdI40aQ" name="${functional.area} Analysis Elements"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Collaboration" xmi:id="_0mC8hJLQEdyjY9_GdI40aQ" name="${use.case}">
+        <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0mC8hZLQEdyjY9_GdI40aQ" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+        </xmi:Extension>
+        <ownedBehavior xmi:type="uml:Interaction" xmi:id="_0mC8hpLQEdyjY9_GdI40aQ" name="${use.case} - Basic Flow"/>
+        <ownedBehavior xmi:type="uml:Interaction" xmi:id="_0mC8h5LQEdyjY9_GdI40aQ" name="${use.case} - Alternative Flow n"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0mC8iJLQEdyjY9_GdI40aQ" name="${boundary}"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0mC8iZLQEdyjY9_GdI40aQ" name="${entity}"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0mC8ipLQEdyjY9_GdI40aQ" name="${control}"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_0mC8i5LQEdyjY9_GdI40aQ" name="Overviews"/>
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="_0mC8jJLQEdyjY9_GdI40aQ" name="Collaboration1">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_0mC8jZLQEdyjY9_GdI40aQ" name="Interaktion1">
+        <ownedConnector xmi:type="uml:Connector" xmi:id="_0mC8jpLQEdyjY9_GdI40aQ">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_0mC8j5LQEdyjY9_GdI40aQ" role="_0mC8mJLQEdyjY9_GdI40aQ"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_0mC8kJLQEdyjY9_GdI40aQ" role="_0mC8mZLQEdyjY9_GdI40aQ"/>
+        </ownedConnector>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_0mC8kZLQEdyjY9_GdI40aQ" name="Eigenschaft" represents="_0mC8mJLQEdyjY9_GdI40aQ" coveredBy="_0mC8k5LQEdyjY9_GdI40aQ"/>
+        <lifeline xmi:type="uml:Lifeline" xmi:id="_0mC8kpLQEdyjY9_GdI40aQ" name="Eigenschaft2" represents="_0mC8mZLQEdyjY9_GdI40aQ" coveredBy="_0mC8lJLQEdyjY9_GdI40aQ _0mC8lZLQEdyjY9_GdI40aQ _0mC8lpLQEdyjY9_GdI40aQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_0mC8k5LQEdyjY9_GdI40aQ" covered="_0mC8kZLQEdyjY9_GdI40aQ" event="_0mC8nJLQEdyjY9_GdI40aQ" message="_0mC8l5LQEdyjY9_GdI40aQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_0mC8lJLQEdyjY9_GdI40aQ" covered="_0mC8kpLQEdyjY9_GdI40aQ" event="_0mC8nZLQEdyjY9_GdI40aQ" message="_0mC8l5LQEdyjY9_GdI40aQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_0mC8lZLQEdyjY9_GdI40aQ" covered="_0mC8kpLQEdyjY9_GdI40aQ" start="_0mC8lJLQEdyjY9_GdI40aQ" finish="_0mC8lpLQEdyjY9_GdI40aQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_0mC8lpLQEdyjY9_GdI40aQ" covered="_0mC8kpLQEdyjY9_GdI40aQ" event="_0mC8mpLQEdyjY9_GdI40aQ"/>
+        <message xmi:type="uml:Message" xmi:id="_0mC8l5LQEdyjY9_GdI40aQ" name="mySignal" messageSort="asynchSignal" receiveEvent="_0mC8lJLQEdyjY9_GdI40aQ" sendEvent="_0mC8k5LQEdyjY9_GdI40aQ" connector="_0mC8jpLQEdyjY9_GdI40aQ"/>
+      </ownedBehavior>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_0mC8mJLQEdyjY9_GdI40aQ" name="Eigenschaft" end="_0mC8j5LQEdyjY9_GdI40aQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_0mC8mZLQEdyjY9_GdI40aQ" name="Eigenschaft2" end="_0mC8kJLQEdyjY9_GdI40aQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:SendOperationEvent" xmi:id="_0mC8mpLQEdyjY9_GdI40aQ" name="Sendeoperationsereignis1"/>
+    <packagedElement xmi:type="uml:ReceiveOperationEvent" xmi:id="_0mC8m5LQEdyjY9_GdI40aQ" name="Empfangsoperationsereignis1"/>
+    <packagedElement xmi:type="uml:SendSignalEvent" xmi:id="_0mC8nJLQEdyjY9_GdI40aQ" name="Sendesignalereignis1"/>
+    <packagedElement xmi:type="uml:ReceiveSignalEvent" xmi:id="_0mC8nZLQEdyjY9_GdI40aQ" name="Empfangssignalereignis1"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0mC8npLQEdyjY9_GdI40aQ">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0mC8n5LQEdyjY9_GdI40aQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="http://schema.omg.org/spec/UML/2.1.1/StandardProfileL2.xmi#_yzU58YinEdqtvbnfB2L_5w"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <appliedProfile xmi:type="uml:Profile" href="http://schema.omg.org/spec/UML/2.1.1/StandardProfileL2.xmi#_0"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0mC8oJLQEdyjY9_GdI40aQ">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0mC8oZLQEdyjY9_GdI40aQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="Default.profile.xmi#_0l84apLQEdyjY9_GdI40aQ"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <appliedProfile xmi:type="uml:Profile" href="Default.profile.xmi#_0l84aJLQEdyjY9_GdI40aQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0mC8opLQEdyjY9_GdI40aQ">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0mC8o5LQEdyjY9_GdI40aQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="Deployment.profile.xmi#_0l823pLQEdyjY9_GdI40aQ"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <appliedProfile xmi:type="uml:Profile" href="Deployment.profile.xmi#_0l823JLQEdyjY9_GdI40aQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_0mC8pJLQEdyjY9_GdI40aQ">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0mC8pZLQEdyjY9_GdI40aQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <references xmi:type="ecore:EPackage" href="RUPAnalysis.profile.xmi#_0mC8DpLQEdyjY9_GdI40aQ"/>
+        </eAnnotations>
+      </xmi:Extension>
+      <appliedProfile xmi:type="uml:Profile" href="RUPAnalysis.profile.xmi#_0mC8DJLQEdyjY9_GdI40aQ"/>
+    </profileApplication>
+  </uml:Model>
+  <RUPAnalysis:Boundary xmi:id="_0mC8ppLQEdyjY9_GdI40aQ" base_Class="_0mC8iJLQEdyjY9_GdI40aQ"/>
+  <RUPAnalysis:Entity xmi:id="_0mC8p5LQEdyjY9_GdI40aQ" base_Class="_0mC8iZLQEdyjY9_GdI40aQ"/>
+  <RUPAnalysis:Control xmi:id="_0mC8qJLQEdyjY9_GdI40aQ" base_Class="_0mC8ipLQEdyjY9_GdI40aQ"/>
+  <Default:Perspective xmi:id="_0mC8qZLQEdyjY9_GdI40aQ" base_Package="_0mC8i5LQEdyjY9_GdI40aQ"/>
+</xmi:XMI>

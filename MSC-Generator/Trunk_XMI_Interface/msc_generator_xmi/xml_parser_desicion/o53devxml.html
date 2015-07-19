@@ -1,0 +1,1118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr" lang="en"><head><title>Parsing XML Efficiently - Dev xml</title>
+
+
+
+<style type="text/css">.GroupHeaderid1siteid0{Background-Color:#336699;Height:20;Text-Align:Left;}
+.GroupHeaderLinkid1siteid0{Color:#FFFFFF;Font-Family:Arial, Helvetica;Font-Size:9pt;Font-Weight:Bold;}
+.GroupHeaderTextid1siteid0{Color:#FFFFFF;Font-Family:Arial, Helvetica;Font-Size:9pt;Font-Weight:Bold;}
+.RegionHeaderid1siteid0{Background-Color:#336699;Height:20;Text-Align:Left;}
+.RegionHeaderTextid1siteid0{Color:#FFFFFF;Font-Family:Arial, Helvetica;Font-Size:9pt;Font-Weight:Bold;}
+.Bodyid1siteid0{Background-Color:#FFFFFF;}
+.Collateral_Typeid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.Elogger_Trackableid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_AUTHENTICATIONid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_COUNTRYid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_COUNTRY_REGIONid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_DISPLAYABLEid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_INITIATIVES_INVOLVEMENTid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_LANGUAGEid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_MASTERid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_OPN_ACCESS_LEVELid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_OPP_LEVELid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_PARTNER_TYPEid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_PRIORITYid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_REGIONid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_SEARCHABLEid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_SUMMARYid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PPG_TECH_TRACKid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PRSubHeadingid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:10pt;Font-Weight:Bold;}
+.PR_Approvalid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PR_Category1id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PR_Category2id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PR_Category3id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PR_Category4id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PR_Category5id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PR_Category6id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PR_Category7id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PR_Company1id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;}
+.PR_Company2id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;}
+.PR_Contact_Name1id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;Font-Weight:Bold;}
+.PR_Contact_Name2id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;Font-Weight:Bold;}
+.PR_Email1id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;}
+.PR_Email2id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;}
+.PR_Headingid1siteid0{Color:#000000;Text-Decoration:none;Font-Family:Arial, Helvetica;Font-Size:12pt;Font-Weight:Bold;}
+.PR_Locationid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;Font-Weight:Bold;}
+.PR_Phone1id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;}
+.PR_Phone2id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;}
+.Searchableid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.authorid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.createdateid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.creatorid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.defaultattributeid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.descriptionid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.documentsizeid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.expiredateid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.inplacedisplayid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;}
+.itemfunctionid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.keywordsid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.perspectivesid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.scoreid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.subpagetitleid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.titleid1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;Font-Weight:Bold;}
+.titleorimageid1siteid0{Color:#336699;Text-Decoration:Underline;Font-Family:Arial, Helvetica;Font-Size:9pt;Font-Weight:Bold;}
+.wwsbr_category_id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.wwsbr_charset_id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.wwsbr_itemtype_id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.wwsbr_mime_type_id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.wwsbr_page_id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.wwsbr_pagegroup_id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.wwsbr_publishdate_id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;Font-Weight:Bold;}
+.wwsbr_updatedate_id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;}
+.wwsbr_updator_id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.wwsbr_version_number_id1siteid0{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.LeftCurve{Background-Attachment:scroll;Background-Image:url(http://www.oracle.com/portalimages/FFFFFFl.gif);Background-Position:left top;Background-Repeat:no-repeat;}
+.PortletBodyColor{}
+.PortletHeaderColor{Background-Color:#999999;}
+.PortletHeaderLink{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PortletHeaderStyle{}
+.PortletHeaderText{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:10pt;Font-Weight:Bold;}
+.PortletHeading1{Color:#333333;Font-Family:Arial, Helvetica;Font-Size:9pt;Font-Weight:Bold;}
+.PortletHeading2{Color:#666666;Font-Family:Arial, Helvetica;Font-Size:8pt;Font-Weight:Bold;}
+.PortletHeading3{Color:#333333;Font-Family:Arial, Helvetica;Font-Size:7pt;Font-Weight:Bold;}
+.PortletHeading4{Color:#333333;Font-Family:Arial, Helvetica;Font-Size:7pt;Font-Weight:Bold;}
+.PortletSubHeaderColor{Background-Color:#CCCCCC;}
+.PortletSubHeaderLink{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;}
+.PortletSubHeaderText{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:9pt;}
+.PortletText1{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PortletText2{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:8pt;}
+.PortletText3{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:7pt;}
+.PortletText4{Color:#000000;Font-Family:Arial, Helvetica;Font-Size:7pt;}
+.RightCurve{Background-Attachment:scroll;Background-Image:url(http://www.oracle.com/portalimages/FFFFFFr.gif);Background-Position:right top;Background-Repeat:no-repeat;}
+.LeftSubTabid1siteid0{Background-Attachment:scroll;Background-Color:#336699;Background-Image:url(http://www.oracle.com/portalimages/FFFFFFsl.gif);Background-Position:left top;Background-Repeat:no-repeat;}
+.LeftTabBgSlantid1siteid0{Background-Attachment:scroll;Background-Color:#CCCC99;Background-Image:url(http://www.oracle.com/portalimages/FFFFFFtl.gif);Background-Position:left top;Background-Repeat:no-repeat;}
+.LeftTabForeSlantid1siteid0{Background-Attachment:scroll;Background-Color:#336699;Background-Image:url(http://www.oracle.com/portalimages/FFFFFFtl.gif);Background-Position:left top;Background-Repeat:no-repeat;}
+.RightSubTabid1siteid0{Background-Attachment:scroll;Background-Color:#336699;Background-Image:url(http://www.oracle.com/portalimages/FFFFFFsr.gif);Background-Position:right top;Background-Repeat:no-repeat;}
+.RightTabBgCurveid1siteid0{Background-Attachment:scroll;Background-Color:#CCCC99;Background-Image:url(http://www.oracle.com/portalimages/FFFFFFtr.gif);Background-Position:right top;Background-Repeat:no-repeat;}
+.RightTabForeCurveid1siteid0{Background-Attachment:scroll;Background-Color:#336699;Background-Image:url(http://www.oracle.com/portalimages/FFFFFFtr.gif);Background-Position:right top;Background-Repeat:no-repeat;}
+.SubTabBgTextid1siteid0{Color:#CCCC99;Text-Decoration:none;Font-Family:Arial, Helvetica;Font-Size:11pt;Font-Weight:Bold;}
+.TabBackgroundColorid1siteid0{Background-Color:#CCCC99;}
+.TabBackgroundTextid1siteid0{Color:#003366;Text-Decoration:none;Font-Family:Arial, Helvetica;Font-Size:10pt;}
+.TabForegroundColorid1siteid0{Background-Color:#336699;}
+.TabForegroundTextid1siteid0{Color:#FFFFFF;Text-Decoration:none;Font-Family:Arial, Helvetica;Font-Size:10pt;Font-Weight:Bold;}
+.portlet-font{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-font-dim{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-msg-status{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-msg-info{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-msg-error{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-msg-alert{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-msg-success{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-section-header{Color:#333333;    Font-Family:Arial, Helvetica;    Font-Size:9pt;    Font-Weight:Bold;    }
+.portlet-section-body{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-section-alternate{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-section-selected{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-section-subheader{Color:#666666;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    Font-Weight:Bold;    }
+.portlet-section-footer{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-section-text{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-table-header{Color:#333333;    Font-Family:Arial, Helvetica;    Font-Size:9pt;    Font-Weight:Bold;    Background-Color:#CCCCCC;    }
+.portlet-table-body{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-table-alternate{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-table-selected{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-table-subheader{Color:#666666;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    Font-Weight:Bold;    }
+.portlet-table-footer{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-table-text{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-form-label{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-form-input-field{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-form-button{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-icon-label{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-dlg-icon-label{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-form-field-label{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.portlet-form-field{Color:#000000;    Font-Family:Arial, Helvetica;    Font-Size:8pt;    }
+.RegionNoBorder{}
+.RegionBorder { border:#999999  1px solid; }
+.RegionHeaderColor { background-color:; border:#999999 0px solid }
+.PageColor { background-color:#FFFFFF}
+ </style>
+<!-- base href="http://www.oracle.com/technology/oramag/oracle/03-sep/o53devxml.html" -->
+<meta name="title" content="Parsing XML Efficiently - Dev xml">
+<meta name="description" content="Choose the right XML parsing technique for your Java applications. ">
+<meta name="keywords" content="">
+<meta name="author" content="jeff.spicer@oracle.com">
+<link rel="stylesheet" href="o53devxml-Dateien/otn_new.css" type="text/css"></head><body style="margin: 0px;" class="Bodyid1siteid0">
+<noscript></noscript>
+<iframe id="portalIFrame" title="" src="o53devxml-Dateien/pobtrans.htm" frameborder="0" height="0" width="0"></iframe><script type="text/javascript" src="o53devxml-Dateien/WOCPROD.js">
+<!-- Comment out script for old browsers
+//-->
+</script>
+<table id="rg5235" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><div id="p33_1960547_33_786765_786765"><table class="RegionNoBorder" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td class="RegionHeaderColor" width="100%"><div id="pcnt33_1960547_33_786765_786765"><div class="Bodyid1siteid0">
+<table id="rg9714" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><font class="inplacedisplayid1siteid0">
+<script language="Javascript" src="o53devxml-Dateien/portal_lib.js"></script>
+<script language="Javascript" src="o53devxml-Dateien/lib.js"></script><noscript></noscript>
+<script language="JavaScript1.2" src="o53devxml-Dateien/otn_nav1.js"></script>
+<script language="JavaScript1.2" src="o53devxml-Dateien/mm_menu.js"></script>
+<script language="JavaScript1.2">mmLoadMenus();</script><span id="menuContainer"><div id="menuLayer0" style="position: absolute; z-index: 1; left: -300px; top: -300px; visibility: hidden; color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); width: 139px; height: 220px;">
+  <div id="menuLite0" style="position: absolute; z-index: 1; left: 1px; top: 1px; height: 218px; width: 137px; background-color: rgb(204, 204, 204);" onmouseout="mouseoutMenu();">
+	 <div id="menuFg0" style="position: absolute; left: 1px; top: 1px; height: 217px; width: 136px; background-color: rgb(204, 204, 204);">
+<div id="menuItem0" style="position: absolute; left: 0px; top: 0px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText0" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Downloads Index&nbsp;</div>
+<div id="menuItemHilite0" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Downloads Index&nbsp;</div></div><div id="menuItem1" style="position: absolute; left: 0px; top: 31px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText1" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Database&nbsp;</div>
+<div id="menuItemHilite1" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Database&nbsp;</div></div><div id="menuItem2" style="position: absolute; left: 0px; top: 62px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText2" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Application Server&nbsp;</div>
+<div id="menuItemHilite2" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Application Server&nbsp;</div></div><div id="menuItem3" style="position: absolute; left: 0px; top: 93px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText3" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Enterprise Manager&nbsp;</div>
+<div id="menuItemHilite3" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Enterprise Manager&nbsp;</div></div><div id="menuItem4" style="position: absolute; left: 0px; top: 124px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText4" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">JDeveloper&nbsp;</div>
+<div id="menuItemHilite4" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">JDeveloper&nbsp;</div></div><div id="menuItem5" style="position: absolute; left: 0px; top: 155px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText5" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Secure Enterprise Search&nbsp;</div>
+<div id="menuItemHilite5" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Secure Enterprise Search&nbsp;</div></div><div id="menuItem6" style="position: absolute; left: 0px; top: 186px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText6" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">More...&nbsp;</div>
+<div id="menuItemHilite6" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">More...&nbsp;</div></div>	  <div id="focusItem0" style="position: absolute; left: 0px; top: -30px;" onclick="onMenuItemAction(null,this);">&nbsp;</div>
+   </div>
+  </div>
+</div>
+<div id="menuLayer1" style="position: absolute; z-index: 1; left: -300px; top: -300px; visibility: hidden; color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); width: 119px; height: 282px;">
+  <div id="menuLite1" style="position: absolute; z-index: 1; left: 1px; top: 1px; height: 280px; width: 117px; background-color: rgb(204, 204, 204);" onmouseout="mouseoutMenu();">
+	 <div id="menuFg1" style="position: absolute; left: 1px; top: 1px; height: 279px; width: 116px; background-color: rgb(204, 204, 204);">
+<div id="menuItem7" style="position: absolute; left: 0px; top: 0px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText7" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Documentation Index&nbsp;</div>
+<div id="menuItemHilite7" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Documentation Index&nbsp;</div></div><div id="menuItem8" style="position: absolute; left: 0px; top: 31px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText8" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Database&nbsp;</div>
+<div id="menuItemHilite8" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Database&nbsp;</div></div><div id="menuItem9" style="position: absolute; left: 0px; top: 62px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText9" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Application Server&nbsp;</div>
+<div id="menuItemHilite9" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Application Server&nbsp;</div></div><div id="menuItem10" style="position: absolute; left: 0px; top: 93px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText10" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Enterprise Manager&nbsp;</div>
+<div id="menuItemHilite10" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Enterprise Manager&nbsp;</div></div><div id="menuItem11" style="position: absolute; left: 0px; top: 124px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText11" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Developer Suite&nbsp;</div>
+<div id="menuItemHilite11" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Developer Suite&nbsp;</div></div><div id="menuItem12" style="position: absolute; left: 0px; top: 155px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText12" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">JDeveloper&nbsp;</div>
+<div id="menuItemHilite12" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">JDeveloper&nbsp;</div></div><div id="menuItem13" style="position: absolute; left: 0px; top: 186px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText13" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Collaboration Suite&nbsp;</div>
+<div id="menuItemHilite13" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Collaboration Suite&nbsp;</div></div><div id="menuItem14" style="position: absolute; left: 0px; top: 217px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText14" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Applications&nbsp;</div>
+<div id="menuItemHilite14" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Applications&nbsp;</div></div><div id="menuItem15" style="position: absolute; left: 0px; top: 248px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText15" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">More...&nbsp;</div>
+<div id="menuItemHilite15" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">More...&nbsp;</div></div>	  <div id="focusItem1" style="position: absolute; left: 0px; top: -30px;" onclick="onMenuItemAction(null,this);">&nbsp;</div>
+   </div>
+  </div>
+</div>
+<div id="menuLayer2" style="position: absolute; z-index: 1; left: -300px; top: -300px; visibility: hidden; color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); width: 179px; height: 313px;">
+  <div id="menuLite2" style="position: absolute; z-index: 1; left: 1px; top: 1px; height: 311px; width: 177px; background-color: rgb(204, 204, 204);" onmouseout="mouseoutMenu();">
+	 <div id="menuFg2" style="position: absolute; left: 1px; top: 1px; height: 310px; width: 176px; background-color: rgb(204, 204, 204);">
+<div id="menuItem16" style="position: absolute; left: 0px; top: 0px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 175px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText16" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Discussion Forums Index&nbsp;</div>
+<div id="menuItemHilite16" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Discussion Forums Index&nbsp;</div></div><div id="menuItem17" style="position: absolute; left: 0px; top: 31px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 175px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText17" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Technology Network Community&nbsp;</div>
+<div id="menuItemHilite17" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Technology Network Community&nbsp;</div></div><div id="menuItem18" style="position: absolute; left: 0px; top: 62px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 175px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText18" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Database&nbsp;</div>
+<div id="menuItemHilite18" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Database&nbsp;</div></div><div id="menuItem19" style="position: absolute; left: 0px; top: 93px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 175px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText19" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Fusion Middleware&nbsp;</div>
+<div id="menuItemHilite19" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Fusion Middleware&nbsp;</div></div><div id="menuItem20" style="position: absolute; left: 0px; top: 124px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 175px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText20" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Developer Tools&nbsp;</div>
+<div id="menuItemHilite20" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Developer Tools&nbsp;</div></div><div id="menuItem21" style="position: absolute; left: 0px; top: 155px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 175px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText21" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Enterprise Manager&nbsp;</div>
+<div id="menuItemHilite21" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Enterprise Manager&nbsp;</div></div><div id="menuItem22" style="position: absolute; left: 0px; top: 186px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 175px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText22" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Business Intelligence&nbsp;</div>
+<div id="menuItemHilite22" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Business Intelligence&nbsp;</div></div><div id="menuItem23" style="position: absolute; left: 0px; top: 217px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 175px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText23" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Embedded&nbsp;</div>
+<div id="menuItemHilite23" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Embedded&nbsp;</div></div><div id="menuItem24" style="position: absolute; left: 0px; top: 248px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 175px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText24" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Technologies&nbsp;</div>
+<div id="menuItemHilite24" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Technologies&nbsp;</div></div><div id="menuItem25" style="position: absolute; left: 0px; top: 279px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 175px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText25" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">More...&nbsp;</div>
+<div id="menuItemHilite25" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">More...&nbsp;</div></div>	  <div id="focusItem2" style="position: absolute; left: 0px; top: -30px;" onclick="onMenuItemAction(null,this);">&nbsp;</div>
+   </div>
+  </div>
+</div>
+<div id="menuLayer3" style="position: absolute; z-index: 1; left: -300px; top: -300px; visibility: hidden; color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); width: 119px; height: 189px;">
+  <div id="menuLite3" style="position: absolute; z-index: 1; left: 1px; top: 1px; height: 187px; width: 117px; background-color: rgb(204, 204, 204);" onmouseout="mouseoutMenu();">
+	 <div id="menuFg3" style="position: absolute; left: 1px; top: 1px; height: 186px; width: 116px; background-color: rgb(204, 204, 204);">
+<div id="menuItem26" style="position: absolute; left: 0px; top: 0px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText26" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Articles Index&nbsp;</div>
+<div id="menuItemHilite26" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Articles Index&nbsp;</div></div><div id="menuItem27" style="position: absolute; left: 0px; top: 31px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText27" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">For Developers&nbsp;</div>
+<div id="menuItemHilite27" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">For Developers&nbsp;</div></div><div id="menuItem28" style="position: absolute; left: 0px; top: 62px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText28" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">For DBAs&nbsp;</div>
+<div id="menuItemHilite28" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">For DBAs&nbsp;</div></div><div id="menuItem29" style="position: absolute; left: 0px; top: 93px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText29" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Oracle Mag. Current&nbsp;</div>
+<div id="menuItemHilite29" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Oracle Mag. Current&nbsp;</div></div><div id="menuItem30" style="position: absolute; left: 0px; top: 124px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText30" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Oracle Mag. Archives&nbsp;</div>
+<div id="menuItemHilite30" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Oracle Mag. Archives&nbsp;</div></div><div id="menuItem31" style="position: absolute; left: 0px; top: 155px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText31" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Oracle Publishing&nbsp;</div>
+<div id="menuItemHilite31" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Oracle Publishing&nbsp;</div></div>	  <div id="focusItem3" style="position: absolute; left: 0px; top: -30px;" onclick="onMenuItemAction(null,this);">&nbsp;</div>
+   </div>
+  </div>
+</div>
+<div id="menuLayer4" style="position: absolute; z-index: 1; left: -300px; top: -300px; visibility: hidden; color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); width: 119px; height: 251px;">
+  <div id="menuLite4" style="position: absolute; z-index: 1; left: 1px; top: 1px; height: 249px; width: 117px; background-color: rgb(204, 204, 204);" onmouseout="mouseoutMenu();">
+	 <div id="menuFg4" style="position: absolute; left: 1px; top: 1px; height: 248px; width: 116px; background-color: rgb(204, 204, 204);">
+<div id="menuItem32" style="position: absolute; left: 0px; top: 0px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText32" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Sample Code Index&nbsp;</div>
+<div id="menuItemHilite32" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Sample Code Index&nbsp;</div></div><div id="menuItem33" style="position: absolute; left: 0px; top: 31px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText33" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Ajax&nbsp;</div>
+<div id="menuItemHilite33" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Ajax&nbsp;</div></div><div id="menuItem34" style="position: absolute; left: 0px; top: 62px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText34" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">EJB&nbsp;</div>
+<div id="menuItemHilite34" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">EJB&nbsp;</div></div><div id="menuItem35" style="position: absolute; left: 0px; top: 93px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText35" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">J2EE&nbsp;</div>
+<div id="menuItemHilite35" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">J2EE&nbsp;</div></div><div id="menuItem36" style="position: absolute; left: 0px; top: 124px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText36" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">JavaServer Faces&nbsp;</div>
+<div id="menuItemHilite36" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">JavaServer Faces&nbsp;</div></div><div id="menuItem37" style="position: absolute; left: 0px; top: 155px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText37" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">JDBC&nbsp;</div>
+<div id="menuItemHilite37" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">JDBC&nbsp;</div></div><div id="menuItem38" style="position: absolute; left: 0px; top: 186px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText38" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">PL/SQL&nbsp;</div>
+<div id="menuItemHilite38" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">PL/SQL&nbsp;</div></div><div id="menuItem39" style="position: absolute; left: 0px; top: 217px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 115px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText39" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">More...&nbsp;</div>
+<div id="menuItemHilite39" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">More...&nbsp;</div></div>	  <div id="focusItem4" style="position: absolute; left: 0px; top: -30px;" onclick="onMenuItemAction(null,this);">&nbsp;</div>
+   </div>
+  </div>
+</div>
+<div id="menuLayer5" style="position: absolute; z-index: 1; left: -300px; top: -300px; visibility: hidden; color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); width: 124px; height: 220px;">
+  <div id="menuLite5" style="position: absolute; z-index: 1; left: 1px; top: 1px; height: 218px; width: 122px; background-color: rgb(204, 204, 204);" onmouseout="mouseoutMenu();">
+	 <div id="menuFg5" style="position: absolute; left: 1px; top: 1px; height: 217px; width: 121px; background-color: rgb(204, 204, 204);">
+<div id="menuItem40" style="position: absolute; left: 0px; top: 0px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 120px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText40" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Getting Started Index&nbsp;</div>
+<div id="menuItemHilite40" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Getting Started Index&nbsp;</div></div><div id="menuItem41" style="position: absolute; left: 0px; top: 31px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 120px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText41" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">New OTN Users&nbsp;</div>
+<div id="menuItemHilite41" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">New OTN Users&nbsp;</div></div><div id="menuItem42" style="position: absolute; left: 0px; top: 62px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 120px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText42" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Developers&nbsp;</div>
+<div id="menuItemHilite42" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Developers&nbsp;</div></div><div id="menuItem43" style="position: absolute; left: 0px; top: 93px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 120px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText43" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">DBAs&nbsp;</div>
+<div id="menuItemHilite43" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">DBAs&nbsp;</div></div><div id="menuItem44" style="position: absolute; left: 0px; top: 124px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 120px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText44" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">ISVs&nbsp;</div>
+<div id="menuItemHilite44" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">ISVs&nbsp;</div></div><div id="menuItem45" style="position: absolute; left: 0px; top: 155px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 120px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText45" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">SMBs&nbsp;</div>
+<div id="menuItemHilite45" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">SMBs&nbsp;</div></div><div id="menuItem46" style="position: absolute; left: 0px; top: 186px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 120px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText46" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">More...&nbsp;</div>
+<div id="menuItemHilite46" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">More...&nbsp;</div></div>	  <div id="focusItem5" style="position: absolute; left: 0px; top: -30px;" onclick="onMenuItemAction(null,this);">&nbsp;</div>
+   </div>
+  </div>
+</div>
+<div id="menuLayer6" style="position: absolute; z-index: 1; left: -300px; top: -300px; visibility: hidden; color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); width: 139px; height: 282px;">
+  <div id="menuLite6" style="position: absolute; z-index: 1; left: 1px; top: 1px; height: 280px; width: 137px; background-color: rgb(204, 204, 204);" onmouseout="mouseoutMenu();">
+	 <div id="menuFg6" style="position: absolute; left: 1px; top: 1px; height: 279px; width: 136px; background-color: rgb(204, 204, 204);">
+<div id="menuItem47" style="position: absolute; left: 0px; top: 0px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText47" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Tutorials Index&nbsp;</div>
+<div id="menuItemHilite47" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Tutorials Index&nbsp;</div></div><div id="menuItem48" style="position: absolute; left: 0px; top: 31px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText48" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Database&nbsp;</div>
+<div id="menuItemHilite48" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Database&nbsp;</div></div><div id="menuItem49" style="position: absolute; left: 0px; top: 62px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText49" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Real Application Clusters&nbsp;</div>
+<div id="menuItemHilite49" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Real Application Clusters&nbsp;</div></div><div id="menuItem50" style="position: absolute; left: 0px; top: 93px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText50" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Application Server&nbsp;</div>
+<div id="menuItemHilite50" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Application Server&nbsp;</div></div><div id="menuItem51" style="position: absolute; left: 0px; top: 124px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText51" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Enterprise Manager&nbsp;</div>
+<div id="menuItemHilite51" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Enterprise Manager&nbsp;</div></div><div id="menuItem52" style="position: absolute; left: 0px; top: 155px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText52" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">JDeveloper&nbsp;</div>
+<div id="menuItemHilite52" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">JDeveloper&nbsp;</div></div><div id="menuItem53" style="position: absolute; left: 0px; top: 186px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText53" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Business Intelligence&nbsp;</div>
+<div id="menuItemHilite53" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Business Intelligence&nbsp;</div></div><div id="menuItem54" style="position: absolute; left: 0px; top: 217px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText54" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Collaboration Suite&nbsp;</div>
+<div id="menuItemHilite54" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Collaboration Suite&nbsp;</div></div><div id="menuItem55" style="position: absolute; left: 0px; top: 248px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 135px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText55" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">More...&nbsp;</div>
+<div id="menuItemHilite55" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">More...&nbsp;</div></div>	  <div id="focusItem6" style="position: absolute; left: 0px; top: -30px;" onclick="onMenuItemAction(null,this);">&nbsp;</div>
+   </div>
+  </div>
+</div>
+<div id="menuLayer7" style="position: absolute; z-index: 1; left: -300px; top: -300px; visibility: hidden; color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); width: 146px; height: 96px;">
+  <div id="menuLite7" style="position: absolute; z-index: 1; left: 1px; top: 1px; height: 94px; width: 144px; background-color: rgb(204, 204, 204);" onmouseout="mouseoutMenu();">
+	 <div id="menuFg7" style="position: absolute; left: 1px; top: 1px; height: 93px; width: 143px; background-color: rgb(204, 204, 204);">
+<div id="menuItem56" style="position: absolute; left: 0px; top: 0px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 142px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText56" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">blogs.oracle.com&nbsp;</div>
+<div id="menuItemHilite56" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">blogs.oracle.com&nbsp;</div></div><div id="menuItem57" style="position: absolute; left: 0px; top: 31px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 142px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText57" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Oracle's OTN TechBlog&nbsp;</div>
+<div id="menuItemHilite57" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Oracle's OTN TechBlog&nbsp;</div></div><div id="menuItem58" style="position: absolute; left: 0px; top: 62px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; width: 142px; height: 30px; background-color: rgb(246, 246, 246); visibility: inherit;"><div id="menuItemText58" style="position: absolute; left: 6px; top: 8.5px; color: rgb(0, 0, 0);">Podcasts&nbsp;</div>
+<div id="menuItemHilite58" style="position: absolute; left: 6px; top: 8.5px; color: rgb(255, 0, 0); visibility: hidden;">Podcasts&nbsp;</div></div>	  <div id="focusItem7" style="position: absolute; left: 0px; top: -30px;" onclick="onMenuItemAction(null,this);">&nbsp;</div>
+   </div>
+  </div>
+</div>
+</span>
+
+<script type="text/javascript">
+//var OTNDocsNodeId= "1_374" ;
+//var OTNDocsFId= "-1" ;
+function setFormValues (form,groupname) {
+if(groupname == "Video and Multimedia")
+{
+form.showSimilarDoc.value = "false";
+}else{
+form.showSimilarDoc.value = "true";
+}
+//The following code can be used when a node level search needs to be done. Not used now
+//if(groupname == "OTNDocsNode")
+//{
+// form.nodeid.value = OTNDocsNodeId;
+// form.fid.value = OTNDocsFId;
+//}
+}
+function callSubmit (keyword,formName,keycode) {
+if (keycode==13){
+if(isNotNull(keyword) == true){
+formName.submit();
+}
+}
+}
+</script>
+</font><div id="banner">
+<table border="0" cellpadding="0" cellspacing="0" width="100%"> 
+  <tbody><tr> 
+    <td align="left" height="75" valign="middle" width="169"><a href="http://www.oracle.com/technology/index.html"><img src="o53devxml-Dateien/otn_logo_small.gif" alt="Oracle Technology Network" border="0" hspace="10"></a></td> 
+    <td align="left" valign="bottom" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td>&nbsp;</td></tr>
+	    <tr>
+          <td align="right" nowrap="nowrap" valign="middle"> </td>
+          <td valign="top"> </td>
+          <td align="right" nowrap="nowrap" valign="bottom"><script language="JavaScript" type="text/javascript">printWelcome()</script><span class="profile"><a href="http://www.oracle.com/admin/account/index.html">(Sign In / Register for a free Oracle Web account)</a></span></td>
+        </tr>
+	   <tr>
+          <td colspan="3" nowrap="nowrap"><img alt="" src="o53devxml-Dateien/hp_spacer.gif" border="0" height="10"></td>
+        </tr>
+        <tr>
+          <td align="right" nowrap="nowrap" valign="middle" width="75%"> </td>
+		  <td valign="top" width="1%"><img alt="" src="o53devxml-Dateien/hp_spacer.gif" border="0" width="8"></td>
+		  <td align="left" valign="bottom" width="24%"><!-- SEARCH - START //-->
+    <form name="searchForm" onsubmit="javascript: return isNotNull(this.keyword.value)" action="http://search.oracle.com/search/search" method="get" target="_top">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td>
+<input name="default" value="true" type="hidden">
+<input class="textA" id="Search" value="&nbsp;secure search" size="30" name="keyword" onclick="javascript: if(!isUserInput) {document.searchForm.keyword.value ='';}" onkeydown="javascript:isUserInput=true;">
+<input name="start" value="1" type="hidden">
+</td>
+<td>&nbsp;&nbsp;</td>
+<td>
+<input name="nodeid" value="" type="hidden">
+<input name="fid" value="" type="hidden">
+<input name="showSimilarDoc" value="true" type="hidden">
+<select onkeydown="javascript:callSubmit(document.searchForm.keyword.value,searchForm,event.keyCode)" name="group" onchange="javascript: setFormValues(document.searchForm,document.searchForm.group.value)" class="textA" size="1">
+<option value="All">All</option>
+<option value="Blogs">Blogs</option>
+<option value="Oracle.com">Corporate Site</option>
+<option value="Discussion Forums">Discussion Forums</option>
+<option value="Documentation">Documentation</option>
+<option value="Education">Education</option>
+<option value="Oracle PartnerNetwork (Public)">PartnerNetwork (Public Only)</option>
+<option value="Oracle Technology Network" selected="selected">Technology Network</option>
+<option value="Video and Multimedia">Video and Multimedia</option>
+</select>
+</td>
+<td>&nbsp;</td>
+<td><a onclick="javascript: return isNotNull(document.searchForm.keyword.value)" href="javascript:document.searchForm.submit()">
+<img src="o53devxml-Dateien/20px_search.jpg" alt="" title="Search" border="0" height="20" hspace="1" vspace="1" width="21"></a></td>
+
+</tr>
+</tbody></table>
+</form><!-- SEARCH - END //--></td>
+	    </tr>
+      </tbody></table>
+    </td> 
+  </tr> 
+</tbody></table></div>
+</td></tr>
+</tbody></table></div>
+</div></td></tr>
+</tbody></table>
+</div></td></tr>
+</tbody></table><table summary="" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td valign="top" width="200">
+<table id="rg9997" style="height: 0px;" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><div id="p33_1960351_33_786765_786765"><table class="RegionNoBorder" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td class="RegionHeaderColor" width="100%"><div id="pcnt33_1960351_33_786765_786765"><div class="Bodyid1siteid0">
+<table id="rg9701" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><font class="inplacedisplayid1siteid0"><div id="marginTop">
+<table border="0" cellpadding="0" cellspacing="0" width="180">
+<tbody><tr>
+<td id="navBottomTop"><img alt="" src="o53devxml-Dateien/spacer.gif" border="0" height="7" width="1"></td></tr>
+        <tr>
+          <td id="navBottomTop" bgcolor="#ffffff"><a href="http://www.oracle.com/technology/products/index.html" title="Oracle Products A-Z" target="_top" class="navtitle">PRODUCTS</a></td>
+        </tr>
+ 
+          <tr>
+            <td id="navBottomTop" width="96%"><a class="subnavlink" href="http://www.oracle.com/technology/database/index.html" target="_top">Database</a><br>
+<a class="subnavlink" href="http://www.oracle.com/technology/products/middleware/index.html" target="_top">Middleware</a><br>          <a class="subnavlink" href="http://www.oracle.com/technology/products/developer-tools/index.html" target="_top">Developer Tools</a><br>
+<a class="subnavlink" href="http://www.oracle.com/technology/products/oem/index.html" target="_top">Enterprise
+              Management</a> <br> <a class="subnavlink" href="http://www.oracle.com/technology/products/applications/index.html" target="_top">Applications
+              Technology</a><br> <a class="subnavlink" href="http://www.oracle.com/technology/products/exchanges.html" target="_top">Extensions and Plugins</a><br>
+<a class="subnavlink" href="http://www.oracle.com/technology/products/index.html" target="_top">Products A-Z</a></td>
+          </tr>
+<tr>
+<td id="navBottomTop"><img alt="" src="o53devxml-Dateien/spacer.gif" border="0" height="7" width="1"></td></tr>
+
+          <tr>
+            <td id="navBottomTop" bgcolor="#ffffff" height="15"><a href="http://www.oracle.com/technology/tech/index.html" title="Downloads, Articles, Discussions, and More" target="_top" class="navtitle">TECHNOLOGIES</a></td>
+          </tr>
+          <tr>
+            <td id="navBottomTop"><a class="subnavlink" href="http://www.oracle.com/technology/tech/bi/index.html">BI &amp; Data Warehousing</a><br>
+<a class="subnavlink" href="http://www.oracle.com/technology/tech/embedded/index.html">Embedded</a><br>
+            <a class="subnavlink" href="http://www.oracle.com/technology/tech/java/index.html">Java</a><br>
+              <a class="subnavlink" href="http://www.oracle.com/technology/tech/linux/index.html">Linux</a><br>
+              <a class="subnavlink" href="http://www.oracle.com/technology/tech/dotnet/index.html">.NET</a><br>
+              <a class="subnavlink" href="http://www.oracle.com/technology/tech/php/index.html">PHP</a><br>
+<a class="subnavlink" href="http://www.oracle.com/technology/deploy/security/index.html">Security</a><br>
+			  <a class="subnavlink" href="http://www.oracle.com/technology/tech/soa/index.html">Service-Oriented Architecture</a><br>
+<a class="subnavlink" href="http://www.oracle.com/technology/tech/windows/index.html">Windows Server System</a><br>
+              <a class="subnavlink" href="http://www.oracle.com/technology/tech/index.html">Technologies A-Z</a></td>
+          </tr>
+<tr>
+<td id="navBottomTop"><img alt="" src="o53devxml-Dateien/spacer.gif" border="0" height="7" width="1"></td></tr>
+
+          <tr>
+            <td id="navBottomTop" bgcolor="#ffffff" height="15"><a href="http://www.oracle.com/technology/community/index.html" title="Interact with the Oracle Community" target="_top" class="navtitle">COMMUNITY</a></td>
+          </tr>
+          <tr>
+            <td id="navBottomTop"><a class="subnavlink" href="http://www.oracle.com/technology/contact/welcome.html">About OTN</a><br>
+<a class="subnavlink" href="http://www.oracle.com/technology/community/oracle_ace/index.html">Oracle
+                ACEs </a><br>
+<a class="subnavlink" href="http://blogs.oracle.com/">Blogs</a><br>
+<a class="subnavlink" href="http://www.oracle.com/podcasts/index.html">Podcasts</a><br>
+<a class="subnavlink" href="http://www.oracle.com/technology/events/index.html">Events</a><br>
+                <a class="subnavlink" href="http://www.oracle.com/newsletters/index.html">Newsletters</a><br>
+                <a class="subnavlink" href="http://www.oracle.com/technology/oramag/oracle/current.html">Oracle
+                Magazine</a><br>
+<a class="subnavlink" href="http://www.oracle.com/technology/bookstore/index.html">Oracle Books</a><br><a class="subnavlink" href="http://www.oracle.com/education/index.html">Certification</a><br>
+                <a class="subnavlink" href="http://www.oracle.com/technology/community/user_groups/index.html">User
+                Groups</a><br>
+                <a class="subnavlink" href="http://www.oracle.com/technology/partners/partner_wps.html">Partner
+                White Papers</a>  </td>
+          </tr>
+				
+				<tr>
+<td id="navBottomTop"><img alt="" src="o53devxml-Dateien/spacer.gif" border="0" height="7" width="1"></td></tr>
+	<tr>
+<td id="rssTop">&nbsp;</td>
+</tr>
+
+              
+		  <tr>
+ 
+			                  <td id="navBottomTop" class="subnavlink" align="left" height="27" nowrap="nowrap" valign="bottom" width="30%"> 
+                                <select class="textA" onchange="location.href=this.options[selectedIndex].value" size="1" name="Select Country" id="Select Country">
+              <option selected="selected">SELECT COUNTRY</option>
+              <option value="http://oracle.com/technology/global/cn/index.html">China</option>
+              <option value="http://otn.oracle.co.jp/">Japan</option>
+              <option value="http://www.oracle.com/technology/global/kr/index.html">Korea</option>
+            </select></td>
+ 
+          </tr>
+<tr>
+<td id="navOTNBottom"><img alt="" src="o53devxml-Dateien/spacer.gif" border="0" height="7" width="1"></td></tr>
+      </tbody></table>
+</div>
+<img alt="" src="o53devxml-Dateien/spacer.gif" border="0" height="10"></font>
+</td></tr>
+</tbody></table></div>
+</div></td></tr>
+</tbody></table>
+</div></td></tr>
+</tbody></table></td>
+<td valign="top" width="100%">
+<table id="rg11773" style="height: 0px;" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><div id="p33_2473070_33_786765_786765"><table class="RegionNoBorder" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td class="RegionHeaderColor" width="100%"><div id="pcnt33_2473070_33_786765_786765"><div class="Bodyid1siteid0">
+<table id="rg10214" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><font class="inplacedisplayid1siteid0"><table border="0" cellpadding="0" cellspacing="0" width="88%">
+<tbody><tr>
+<td class="navborder1" align="center" height="30" width="12%"><a href="#" onmouseout="MM_swapImgRestore();MM_startTimeout()" onmouseover="MM_showMenu(window.mm_menu_0526145207_5,0,23,null,'nav_sup');MM_swapImage('nav_sup','','http://oracleimg.com/admin/images/spacer.gif',1)" name="nav_sup" class="navbodylink">Getting Started</a></td>
+                <td class="navborder1" align="center" height="30" width="12%"><a href="http://www.oracle.com/technology/software/index.html" onmouseout="MM_swapImgRestore();MM_startTimeout()" onmouseover="MM_showMenu(window.mm_menu_0526141046_0,0,23,null,'nav_com');MM_swapImage('nav_com','','http://oracleimg.com/admin/images/spacer.gif',1)" name="nav_com" class="navbodylink">Downloads</a></td>
+                <td class="navborder1" align="center" height="30" width="12%"><a href="http://www.oracle.com/technology/documentation/index.html" onmouseout="MM_swapImgRestore();MM_startTimeout()" onmouseover="MM_showMenu(window.mm_menu_0526141428_1,0,23,null,'nav_pro');MM_swapImage('nav_pro','','http://oracleimg.com/admin/images/spacer.gif',1)" name="nav_pro" class="navbodylink">Documentation</a></td>
+                <td class="navborder1" align="center" height="30" width="10%"><a href="http://forums.oracle.com/forums/index.jspa?cat=1" onmouseout="MM_swapImgRestore();MM_startTimeout()" onmouseover="MM_showMenu(window.mm_menu_0526142449_2,0,23,null,'nav_sol');MM_swapImage('nav_sol','','http://oracleimg.com/admin/images/spacer.gif',1)" name="nav_sol" class="navbodylink">Forums</a></td>
+                <td class="navborder1" align="center" height="30" width="10%"><a href="http://www.oracle.com/technology/pub/articles/index.html" onmouseout="MM_swapImgRestore();MM_startTimeout()" onmouseover="MM_showMenu(window.mm_menu_0526143126_3,0,23,null,'nav_lib');MM_swapImage('nav_lib','','http://oracleimg.com/admin/images/spacer.gif',1)" name="nav_lib" class="navbodylink">Articles</a></td>
+                <td class="navborder1" align="center" height="30" width="12%"><a href="http://www.oracle.com/technology/sample_code/index.html" onmouseout="MM_swapImgRestore();MM_startTimeout()" onmouseover="MM_showMenu(window.mm_menu_0526145024_4,0,23,null,'nav_new');MM_swapImage('nav_new','','http://oracleimg.com/admin/images/spacer.gif',1)" name="nav_new" class="navbodylink">Sample Code</a></td>
+                <td class="navborder1" align="center" height="30" width="10%"><a href="http://www.oracle.com/technology/training/index.html" onmouseout="MM_swapImgRestore();MM_startTimeout()" onmouseover="MM_showMenu(window.mm_menu_0526151414_6,0,23,null,'nav_cu');MM_swapImage('nav_cu','','http://oracleimg.com/admin/images/spacer.gif',1)" name="nav_cu" class="navbodylink">Tutorials</a></td>
+               <!-- <td class="navborder1" width="10%" align="center" height="30"><a href="http://blogs.oracle.com" onMouseOut="MM_swapImgRestore();MM_startTimeout()" onMouseOver="MM_showMenu(window.mm_menu_0526151414_7,0,23,null,'nav_rf');MM_swapImage('nav_rf','','http://oracleimg.com/admin/images/spacer.gif',1)" name="nav_rf" class="navbodylink">Blogs</a></td> -->
+              </tr>
+</tbody></table></font>
+</td></tr>
+</tbody></table></div>
+</div></td></tr>
+</tbody></table>
+</div></td></tr>
+</tbody></table><table id="rg5236" style="height: 0px;" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr>
+<td colspan="1" width="100%"><img src="o53devxml-Dateien/pobtrans.htm" alt="" height="1" width="1"></td>
+</tr>
+</tbody></table><table summary="" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td valign="top" width="100%">
+<table id="rg9999" style="height: 0px;" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%">﻿
+
+<table border="0" cellpadding="5" cellspacing="0" width="98%">
+<tbody><tr><td>
+<table align="right" border="0" cellpadding="3" hspace="5" vspace="5" width="20%"><tbody><tr><td>
+<center>
+<span class="boldbodycopy"><font color="#666666">As Published In</font><br><br>
+<a href="http://www.oracle.com/technology/oramag/oracle/index.html"><img src="o53devxml-Dateien/omag_logo_100.gif" alt="Oracle Magazine" border="0" height="53" width="100"></a>
+<br><!--link to issue in which the story appears--><a href="http://www.oracle.com/technology/oramag/oracle/03-sep/index.html"><font color="#666666">September/October 2003</font></a></span>
+</center>
+</td></tr></tbody></table>
+
+<span class="bodycopy">Developer<span class="boldbodycopy"> XML</span>
+<p>
+<span class="topstoryhead">Parsing XML Efficiently</span>
+</p>
+
+<p>
+<span class="italicbodycopy">By Ping Guo, Julie Basu, Mark Scardina, and K. Karun
+</span>
+
+</p>
+
+<p>
+<span class="boldbodycopy"><i>Choose the right XML parsing technique for your Java applications.</i></span>
+</p>
+<p>
+<span class="bodycopy">Efficient parsing of XML documents is more and
+more critical as XML gets adopted more widely. It is very important to
+have an efficient way to parse XML data, especially in applications
+that are intended to handle large volumes. Improper parsing can result
+in excessive memory usage and processing times that can hurt
+scalability. </span>
+
+</p>
+<p>
+<span class="bodycopy">Several types of XML parsers are available. Which one is right for your 
+situation? This article examines three popular XML parsing techniques for 
+Java and shows you how to choose the correct method, based on the requirements of your application.</span>
+</p>
+<p>
+
+<span class="bodycopy">An XML parser takes as input a raw serialized
+string and performs certain operations on it. First it checks the
+syntactic well-formedness of the XML data, making sure that the start
+tags have matching end tags and that there are no overlapping elements.
+Most parsers also implement validation against the Document Type
+Definition (DTD) or the XML Schema to verify that the structure and
+content are as you specified. Finally, the parsing output provides
+access to the content of the XML document via programmatic APIs. </span>
+</p>
+<p>
+<span class="bodycopy">There are three popular XML parsing techniques for Java: </span>
+</p><ul>
+<li><span class="bulletbodycopy">	Document Object Model (DOM), a mature standard from W3C</span></li>
+<p></p>
+<p>
+
+</p><li><span class="bulletbodycopy">	Simple API for XML (SAX), the first widely adopted API for XML in Java and a de facto standard </span></li>
+<p></p>
+<p>
+</p><li><span class="bulletbodycopy">	Streaming API for XML (StAX), a promising new parsing model introduced in JSR-173 </span></li>
+</ul>
+<p></p>
+<p>
+<span class="bodycopy">Each of these techniques has benefits and drawbacks. </span>
+</p>
+
+<p>
+<span class="bodycopy">The following XML document, books.xml, describes a book catalog and is used in the examples in this article:</span>
+</p>
+<p>
+</p><pre>&lt;catalog&gt;
+&lt;!—Sample —&gt;
+  &lt;book id="101"&gt;
+    &lt;title&gt;XML in a Nutshell&lt;/title&gt;
+    &lt;author&gt;Elliotte Rusty Harold, W. Scott Means&lt;/author&gt;
+
+    &lt;price&gt;39.95&lt;/price&gt;
+  &lt;/book&gt;
+  &lt;book id="121"&gt;
+    &lt;title&gt;Who Moved My Cheese&lt;/title&gt;
+    &lt;author&gt;Spencer, M.D. Johnson, Kenneth H. Blanchard&lt;/author&gt;
+    &lt;price&gt;19.95&lt;/price&gt;
+  &lt;/book&gt;
+&lt;/catalog&gt;
+</pre>
+<p></p>
+<p>
+
+<span class="parahead1">DOM Parsing</span>
+</p>
+<p>
+<span class="bodycopy">DOM is a tree-based parsing technique that
+builds up an entire parse tree in memory. It allows complete, dynamic
+access to a whole XML document.</span>
+</p>
+<p>
+<span class="bodycopy"><a href="#f1"><span class="bodylink">Figure 1</span></a>shows
+the treelike structure of the DOM parsing model. Document is the root
+for all the DOM trees, and the root has at least one child node, the
+root element, which is the catalog element in the sample code. Another
+node is DocumentType, for the DTD declaration, which is not defined in
+our sample. The catalog element has child nodes, and so do its child
+nodes. Child nodes can be elements, text, comments, processing
+instructions, and the like. </span>
+</p>
+<p>
+<a name="f1"></a><table align="center" width="100%">
+<tbody><tr><td align="center">
+
+<img src="o53devxml-Dateien/o53xml_f1.gif" alt="A DOM tree" border="0" height="298" width="427">
+</td></tr>
+<tr><td align="center"><span class="bodycopy">Figure 1: A DOM tree</span></td></tr></tbody></table>
+</p>
+<p>
+<span class="bodycopy">The following example illustrates how the DOM
+API works. This sample code prints out the titles of all the books from
+the previous XML document for a catalog.</span>
+</p>
+<p>
+</p><pre>DOMParser parser = new DOMParser();
+parser.parse("books.xml");
+Document document = parser.getDocument();
+NodeList nodes = 
+
+  document.getElementsByTagName("title");
+while(int i = 0; 
+  i &lt; nodes.length(); i ++) {
+ 	Element titleElem =
+   (Element)nodes.item(i);
+	Node childNode = 
+   titleElem.getFirstChild();
+	if (childNode instanceof Text) {
+	  System.out.println("Book title is: " 
++ childNode.getNodeValue());
+	}
+}
+</pre>
+<p></p>
+
+<p>
+<span class="bodycopy">This program takes the XML filename, creates the
+DOM tree, and finds all the DOM element nodes for the title elements by
+using the </span><tt>getElementsByTagName()</tt><span class="bodycopy">
+method. Finally, it prints the text information associated with each of
+the title elements, by iterating over the list of title elements and
+examining the first child that has the text contained between the start
+and end tags of the element, by using the </span><tt>getFirstChild()</tt><span class="bodycopy"> method. </span>
+</p>
+<p>
+<span class="bodycopy">As you see, using DOM is straightforward. You
+can access the XML document randomly because the entire tree is built
+in memory. The DOM APIs allow modification of the nodes, such as
+appending a child or updating or deleting a node. </span>
+</p>
+<p>
+<span class="bodycopy">Although the memory tree structure provides good
+navigation support, there are parsing strategy issues to consider.
+First, the entire XML document has to be parsed at one time—partial
+parsing is not possible. Second, loading the whole document and
+building the entire tree structure in memory can be expensive,
+especially when the document is large. Typically, the DOM tree is an
+order of magnitude larger than the document, so it can consume a lot of
+memory. Third, the generic DOM node type is an interoperability
+advantage but may not be the best when you do object type binding.</span>
+</p>
+<p>
+<span class="bodycopy">Certain kinds of applications are better suited
+for DOM parsing than others. DOM parsing is appropriate when the
+application needs to have random access to the XML document. A good
+example is an XSL processor that needs to navigate through an entire
+file repeatedly as it processes templates. Because DOM enables you to
+update the document, it is also convenient for applications, such as
+XML editors, that need to modify data. </span>
+</p>
+<p>
+
+<span class="parahead1">SAX Parsing</span>
+</p>
+<p>
+<span class="bodycopy">SAX is an event-driven push model for processing
+XML. It is not a W3C standard, but it is a very well-recognized API
+that most SAX parsers implement in a compliant way. Rather than
+building a tree representation of an entire document as DOM does, a SAX
+parser fires off a series of events as it reads through the document.
+These events are pushed to event handlers, which provide access to the
+contents of the document. There are three basic types of event handlers:</span>
+</p><ul>
+<li><tt>	DTDHandler</tt><span class="bulletbodycopy">, for accessing the contents of XML DTDs</span></li>
+<p></p>
+<p>
+</p><li><tt>	ErrorHandler</tt><span class="bulletbodycopy">, for low-level access to parsing errors</span></li>
+<p></p>
+<p>
+</p><li><tt>	ContentHandler</tt><span class="bulletbodycopy">, the prevalent type, for accessing the contents of the document </span></li>
+</ul>
+<p></p>
+<p>
+<span class="bodycopy"><a href="#f2"><span class="bodylink">Figure 2</span></a> shows how the SAX
+
+parser reports events through a callback mechanism. The parser reads the input document and pushes each event to </span><tt>MyContentHandler</tt><span class="bodycopy"> while processing the document.</span>
+</p>
+<p>
+<a name="f2"></a><table align="center" width="100%">
+<tbody><tr><td align="center">
+<img src="o53devxml-Dateien/o53xml_f2.gif" alt="SAX reports a document to an application" border="0" height="170" width="443">
+</td></tr>
+<tr><td align="center"><span class="bodycopy">Figure 2: SAX reports a document to an application as a series of events.</span></td></tr></tbody></table>
+</p>
+<p>
+<span class="bodycopy">The following sample does the same thing as the previous DOM example: It prints out a book's title information.</span>
+</p>
+<p>
+<span class="bodycopy">First, write a </span><tt>ContentHandler</tt><span class="bodycopy"> implementation class, which is based on the </span><tt>DefaultHandler</tt><span class="bodycopy"> class and replaces the methods for the type of events in which you are interested. The code throws 
+away any remaining events from the </span><tt>DefaultHandler</tt><span class="bodycopy"> class. The customized </span><tt>ContentHandler</tt><span class="bodycopy">
+class provides the callback methods and must handle state management,
+dealing with start element events, end element events, and character
+events—for all the elements, not only for the title element.</span>
+</p>
+<p>
+
+</p><pre>public class MyContentHandler extends DefaultHandler {
+	 boolean isTitle;
+	 public void startElement(String uri, String localName, 
+String qName, Attributes atts) {
+    if (localName.equals("title")) 
+		              isTitle = true; 
+	 }
+	 public void endElement(String uri, String localName, 
+String qName) {
+	   if(localName.equals("title")) 
+                       isTitle = false;
+	 }
+	 public void characters(char[ ] chars, int start, int length) {
+     if(isTitle) 
+
+     System.out.println(new String(chars, start, length));
+	 }
+
+}
+</pre>
+<p></p>
+<p>
+<span class="bodycopy">Second, set your customized </span><tt>ContentHandler</tt><span class="bodycopy">
+to the SAX parser, and then the parser begins to process the XML
+document. The parser generates the events and pushes them into the </span><tt>ContentHandler</tt><span class="bodycopy"> while reading the documents from beginning to end.</span>
+</p>
+<p>  
+</p><pre>SAXParser saxParser = new SAXParser();
+MyContentHandler myHandler = new
+  MyContentHandler();
+saxParser.setContentHandler(myHandler);
+saxParser.parse(new File("books.xml"));
+</pre>
+<p></p>
+<p>
+<span class="bodycopy">In comparison to DOM, the SAX parser offers a
+great performance benefit. It provides efficient low-level access to
+the content of the XML document. The SAX model has the major advantage
+of low memory consumption, because the entire document does not need to
+be loaded into memory at one time, which enables a SAX parser to parse
+a document larger than the system memory. Additionally, you do not have
+to create objects for all the nodes, as you need to do in DOM. Finally,
+the SAX "push" model can be used in a broadcast context, where multiple
+</span><tt>ContentHandlers</tt><span class="bodycopy"> can be registered and receive events in parallel, instead of in a pipeline, where one hands off to another. </span>
+</p>
+<p>
+
+<span class="bodycopy">The disadvantage of SAX is that you have to
+implement the event handlers to handle all incoming events. You must
+maintain this event state in your application code. Because the SAX
+parser does not communicate meta-information such as DOM's parent/child
+support, you have to keep track of where the parser is in the document
+hierarchy. Thus, the more complex your documents are, the more complex
+your application logic becomes. Even though there is no need to load
+the entire document into memory at one time, a SAX parser still needs
+to parse the whole document, as with DOM. </span>
+</p>
+<p>
+<span class="bodycopy">Probably the biggest problem facing SAX is that
+it does not have built-in document navigation support such as that
+provided by XPath. This, coupled with its one-pass parsing, means there
+is no random access support. This limitation also shows up in
+namespaces: Elements that have inherited namespaces will not be
+annotated. These limitations make SAX a poor choice for manipulating or
+modifying a document. </span>
+<table align="right" bgcolor="#f7f7e7" border="1" cellpadding="5" hspace="5" vspace="5" width="35%">
+<tbody><tr><td>
+<center>
+<span class="parahead1">Oracle and XML</span>
+</center>
+<p>
+<span class="bodycopy">The Oracle XML Developer's Kit provides XML
+parsers for Java, C, and C++ development. Each of these provides DOM
+and SAX interfaces implemented for the enterprise. A technology preview
+of the StAX parser for Java is also available. These components can be
+downloaded from the Oracle Technology Network's XML Technology Center,
+at <a href="http://www.oracle.com/technology/tech/xml" target="_top"><span class="bodylink">/tech/xml</span></a>.</span>
+</p></td></tr></tbody></table>
+</p>
+<p>
+<span class="bodycopy">Applications that need only to read the content
+in a single pass can benefit greatly from SAX parsing. Many B2B and EAI
+applications use XML just as an encapsulation format in which the
+receiving end simply retrieves all the data. This is where SAX has the
+clear advantage over DOM, due to the former's efficiency and resulting
+high throughput. SAX 2.0 has a built-in filtering mechanism that makes
+it easy to output a document subset or do simple document
+transformation. Finally, SAX parsing is very useful for validation
+against DTDs and XML schemas. In fact, Oracle uses the SAX parser
+internally to do this validation, gaining greater efficiency while
+using less memory than using DOM.</span>
+</p>
+<p>
+<span class="parahead1">StAX Parsing</span>
+</p>
+
+<p>
+<span class="bodycopy">StAX is an exciting new parsing technique that,
+like SAX, uses an event-driven model. However, instead of using SAX's
+push model, StAX uses a pull model for event processing. Instead of
+using a callback mechanism, a StAX parser returns events as requested
+by the application. StAX also provides user-friendly APIs for read-in
+and write-out.</span>
+</p>
+<p>
+<span class="bodycopy">Whereas SAX returns different types of events to the </span><tt>ContentHandler</tt><span class="bodycopy">, StAX returns its events to the application and can even provide the events as objects. </span>
+</p>
+<p>
+<span class="bodycopy"><a href="#f3"><span class="bodylink">Figure 3</span></a>
+shows that when an application requests an event, a StAX parser reads
+on demand from the XML document and returns the event to the
+application.</span>
+</p>
+<p>
+<a name="f3"></a><table align="center" width="100%">
+<tbody><tr><td align="center">
+<img src="o53devxml-Dateien/o53xml_f3.gif" alt="An application requests StAX to report an event" border="0" height="170" width="442">
+</td></tr>
+<tr><td align="center"><span class="bodycopy">Figure 3: An application requests StAX to report an event</span></td></tr></tbody></table>
+</p>
+<p>
+<span class="bodycopy">StAX includes factories for creating the StAX
+reader and writer, so applications can use the StAX interfaces without
+reference to the details of a particular implementation.</span>
+</p>
+<p> 
+<span class="bodycopy">Unlike DOM and SAX, StAX specifies two parsing
+models: The cursor model, like SAX, simply returns events. The iterator
+model returns events as objects, which provides a more natural
+interface but has the additional overhead of object creation. The
+following illustrations of StAX parsing APIs give examples of each
+model. </span>
+
+</p>
+<p>
+<span class="bodycopy">The following example prints the book title information from the XML book catalog above, using the cursor model. </span>
+</p>
+<p>
+</p><pre> 
+XMLStreamReader reader = XMLInputFactory
+  .newInstance().createXMLStreamReader(
+    new FileInputStream("books.xml"));
+while(reader.hasNext()) {
+	 int eventType = reader.next();
+	 if (eventType == XMLEvent
+.START_ELEMENT &amp;&amp; reader.getLocalName()
+.equals("title")) {
+    reader.next();
+    System.out.println(reader.getText());
+	 }
+} 
+</pre>
+<p></p>
+<p>
+<span class="bodycopy">In this example, after the reader has been set up, the application requests the next event, using the </span><tt>reader.next()</tt><span class="bodycopy">
+method call. This makes the StAX parser move the cursor to the next
+event position. If this event indicates the start of an element named
+"title", the application code will call </span><tt>reader.next()</tt><span class="bodycopy"> one more time, to advance the cursor, and will then obtain the text for the title element, using the </span><tt>reader.getText()</tt><span class="bodycopy"> method call. </span>
+
+</p>
+<p>
+<span class="bodycopy">The following example uses the iterator model, in which the events are returned as objects.</span>
+</p>
+<p>
+</p><pre> 
+XMLEventReader eventReader =
+  XMLInputFactory.newInstance()
+    .createXMLEventReader(
+       new FileInputStream("books.xml"));
+while(eventReader.hasNext()) {
+	 XMLEvent event = eventReader.next();
+	 if (event instanceof StartElement &amp;&amp; 	 
+  ((StartElement)event).getLocalName()
+.equals("title")) 
+  {
+  System.out.println( ((Characters)eventReader.next())
+  .getData());
+	}
+}
+</pre>
+<p></p>
+<p>
+
+<span class="bodycopy">In this example, the application requests the
+next event, which makes the StAX parser advance to the next event
+position and return the corresponding event object. The application can
+access the contents through the event object, using the </span><tt>getData()</tt><span class="bodycopy"> method, which returns the book 
+title information.</span>
+<table align="right" bgcolor="#f7f7e7" border="1" cellpadding="5" hspace="5" vspace="5" width="35%">
+<tbody><tr><td>
+<center>
+<span class="parahead1"><a name="next">Next Steps</a></span>
+</center>
+<p>
+<span class="boldbodycopy">VISIT the XML Center on OTN</span><br>
+<a href="http://www.oracle.com/technology/tech/xml" target="_top"><span class="bodylink">/tech/xml</span></a>
+</p>
+<p>
+
+<span class="boldbodycopy">DOWNLOAD the Oracle XDK</span><br>
+<a href="http://www.oracle.com/technology/tech/xml" target="_top"><span class="bodylink">/tech/xml</span>
+</a></p>
+<p>
+
+<span class="boldbodycopy"><a href="http://www.oracle.com/technology/tech/xml" target="_top">LEARN about XML from Oracle University</a></span><a href="http://www.oracle.com/technology/tech/xml" target="_top"><br>
+</a><a href="http://education.oracle.com/web_prod-plq-dad/plsql/show_desc.redirect?redir_type=18" target="_top"><span class="bodylink">oracle.com/education/om Keyword: XML</span></a>
+
+</p></td></tr></tbody></table>
+</p>
+
+<p>
+<span class="bodycopy">The performance of the StAX cursor model is
+comparable to that of SAX parsing. However, with StAX, the application
+has control of the parsing, which makes the code easier to write and
+maintain. StAX also provides the iterator model for ease of use, but in
+this case, creating event objects has a performance cost. Unlike SAX,
+which requires the application to keep track of where it is in the
+document, StAX—by virtue of its ability to return only requested
+events—frees the application of that task. What the examples do not
+show is the filtering capabilities of StAX, which are much more
+powerful than SAX's. </span>
+</p>
+<p>
+<span class="bodycopy">In comparison to DOM, StAX has the same
+disadvantage as SAX in terms of lack of full navigational support.
+Forward navigation through a document is easier with StAX than with
+SAX, in that the application has control over which events it gets and
+when.</span>
+</p>
+<p>
+<span class="bodycopy">StAX's ability to modify a document is similar
+to SAX's, in that a new document is created. Write-out APIs are
+provided in both the cursor and iterator models of StAX, but document
+modification is still quite difficult if you want to do anything beyond
+simple one-pass transformations. </span>
+</p>
+<p>
+<span class="bodycopy">StAX parsing satisfies the majority of a SAX
+application's requirements, so if an application is well suited for SAX
+parsing, it can also benefit from the use of StAX. In addition, when
+applications need to take advantage of the streaming model for
+performance while maintaining full support for namespaces, StAX parsing
+is the optimum choice. Finally, for processing multiple inputs, as in a
+set of imported schemas, an application can easily request events from
+multiple StAX parsers and put them into a single context, without the
+need for the complexity of multiple threads. StAX is especially useful
+in the new areas of Web services and JAX-RPC, in which all of these
+features are required.</span>
+</p>
+<p>
+<span class="parahead1">Select the Correct Parsing Model</span>
+</p>
+<p>
+<span class="bodycopy">This article has presented the three standard
+parsing techniques for Java, describing how they work and their
+individual advantages, disadvantages, and appropriate applications. The
+points of this article can be distilled into a few simple rules:</span>
+</p><ul>
+<li><span class="bulletbodycopy"> Use DOM parsing only when your
+application needs to recursively navigate, alter, or have random access
+to an entire document at one time.</span></li>
+<p></p>
+<p>
+</p><li><span class="bulletbodycopy">	Use SAX parsing when you need simple read-only streaming and want a robust implementation that reflects a mature standard.</span></li>
+<p></p>
+<p>
+
+</p><li><span class="bulletbodycopy">	Use StAX for streaming applications when you require full namespace or multiple-document support or need an object interface.</span></li>
+</ul>
+<p></p>
+<p>
+<span class="bodycopy">The various parsing modes exist for a reason,
+and as distributed-service-based applications proliferate, optimized
+performance will become an essential ingredient for success.</span>
+</p>
+<p>
+<span class="italicbodycopy"><b>Ping Guo</b> (<a href="mailto:ping.guo@oracle.com"><span class="bodylink">ping.guo@oracle.com</span></a>) and <b>Julie Basu</b> (<a href="mailto:julie.basu@oracle.com"><span class="bodylink">julie.basu@oracle.com</span></a>) are members of the Oracle Java and XML technology group. <b>Mark Scardina</b> (<a href="mailto:mark.scardina@oracle.com"><span class="bodylink">mark.scardina@oracle.com</span></a>) and <b>K. Karun</b> (<a href="mailto:k.karun@oracle.com"><span class="bodylink">k.karun@oracle.com</span></a>) are members of the Oracle CORE and XML Development group.
+</span>
+</p>
+<p>
+<span class="parahead1">XML Parsing Techniques at a Glance</span>
+<table align="center" bgcolor="#f7f7e7" border="1" cellpadding="5" hspace="5" vspace="5" width="100%">
+<tbody><tr><td><span class="boldbodycopy">TECHNIQUE</span></td><td><span class="boldbodycopy">PROS</span></td><td><span class="boldbodycopy">CONS</span></td><td><span class="boldbodycopy">BEST FOR...</span></td></tr>
+
+<tr bgcolor="#ffffff"><td><span class="bodycopy">DOM Parsing</span></td><td valign="top"><ul><li><span class="bulletbodycopy">	Easy to use</span></li>
+<li><span class="bulletbodycopy">	Rich set of APIs for easy navigation</span></li>
+<li><span class="bulletbodycopy">	Entire tree loaded into memory, allowing random access to XML document</span></li></ul></td><td valign="top"><ul><li><span class="bulletbodycopy">	Entire XML document must be parsed at one time</span></li>
+<li><span class="bulletbodycopy">	Expensive to load entire tree into memory</span></li>
+<li><span class="bulletbodycopy">	Generic DOM node not ideal for object-type bindingÑmust create objects for all nodes </span></li></ul></td><td valign="top"><ul><li><span class="bulletbodycopy">Applications that need to modify XML documents or for XSLT (don't use for read-only XML applications) </span></li></ul></td></tr>
+
+<tr><td><span class="bodycopy">SAX Parsing</span></td><td valign="top"><ul><li><span class="bulletbodycopy">	Entire document not loaded into memory, resulting in low memory consumption</span></li>
+<li><span class="bulletbodycopy">	Push model allows for registration of multiple ContentHandlers</span></li></ul></td><td valign="top"><ul><li><span class="bulletbodycopy">	No built-in document navigation support</span></li>
+<li><span class="bulletbodycopy">	No random access to XML document</span></li>
+<li><span class="bulletbodycopy">	No support for modifying XML in place</span></li>
+
+<li><span class="bulletbodycopy">	No support for namespace scoping </span></li></ul></td><td valign="top"><ul><li><span class="bulletbodycopy">	Applications that only read from XML (don't use for manipulating or modifying an XML document) </span></li></ul></td></tr>
+
+
+<tr bgcolor="#ffffff"><td><span class="bodycopy">StAX Parsing</span></td><td valign="top"><ul><li><span class="bulletbodycopy">	Contains two parsing models, for ease or performance</span></li>
+<li><span class="bulletbodycopy">	Application controls parsing, easily supporting multiple inputs</span></li>
+<li><span class="bulletbodycopy">	Powerful filtering capabilities provide efficient data retrieval</span></li></ul></td><td valign="top"><ul><li><span class="bulletbodycopy">	No built-in document navigation support</span></li>
+<li><span class="bulletbodycopy">	No random access to XML document</span></li>
+<li><span class="bulletbodycopy">	No support for modifying XML in place</span></li></ul></td><td valign="top"><ul><li><span class="bulletbodycopy">	Applications that need a streaming model and support for namespaces (don't use for manipulating or modifying an XML document)</span></li></ul></td></tr></tbody></table>
+
+
+
+
+
+
+
+</p></span></td></tr>
+</tbody></table>
+
+
+
+
+
+
+ 
+
+ 
+</td></tr>
+</tbody></table></td>
+<td valign="top" width="10">
+<table id="rg10001" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><font class="inplacedisplayid1siteid0"><img src="o53devxml-Dateien/spacer_002.gif" border="0" width="10"></font>
+</td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<table summary="" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td valign="top" width="20">
+<table id="rg5239" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"></table></td>
+<td valign="top" width="188">
+<table id="rg5240" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"></table></td>
+<td valign="top" width="100%">
+<table id="rg5238" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"></table></td>
+<td valign="top" width="20">
+<table id="rg5360" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"></table></td>
+</tr>
+</tbody></table>
+<table id="rg5241" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><div id="p33_1958580_33_786765_786765"><table class="RegionNoBorder" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td class="RegionHeaderColor" width="100%"><div id="pcnt33_1958580_33_786765_786765"><div class="Bodyid1siteid0">
+<table summary="" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td valign="top" width="20">
+<table id="rg9911" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><font class="inplacedisplayid1siteid0"><img alt="" src="o53devxml-Dateien/spacer.gif" border="0" width="10"></font>
+</td></tr>
+</tbody></table></td>
+<td valign="top" width="100%">
+<table id="rg9914" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><font class="inplacedisplayid1siteid0"><table align="right"><tbody><tr><td><script language="javascript">
+function mailpage()
+{
+mail_str = "mailto:?subject=Thought this might interest you: " + document.title;
+mail_str += "&body=I thought you might be interested in this: " + document.title;
+mail_str += ". %0A%0AYou can view it at, " + location.href; 
+location.href = mail_str;
+}
+</script>
+<a href="javascript:mailpage()"><img src="o53devxml-Dateien/email.gif" border="0" height="15" width="17"></a> <a class="navlink" href="javascript:mailpage()">E-mail this page</a>
+</td>
+</tr><tr><td><script type="text/javascript">
+function printerFriendly(template) {
+    top.location = location.protocol 
+      + '//' + location.host 
+      + location.pathname 
+      + '?_template=' + template;
+}
+</script>
+<a href="javascript: printerFriendly('/ocom/print')" target=""><img alt="Printer View" src="o53devxml-Dateien/print_17x15.gif" border="0" height="15" width="17"></a> <a class="navlink" href="javascript: printerFriendly('/ocom/print')" target="">Printer 
+View</a> 
+</td></tr></tbody></table></font>
+</td></tr>
+</tbody></table><table id="rg9706" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><font class="inplacedisplayid1siteid0"><!-- FOOTER -->
+</font><div class="greybarhomebot"><!--footer--></div>
+<font class="inplacedisplayid1siteid0">	<table border="0" cellpadding="10" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="46%">
+				<a href="http://www.oracle.com/corporate/index.html"><img src="o53devxml-Dateien/info_company.gif" alt="Oracle Is The Information Company" border="0" height="11" width="234"></a></td>
+				
+      <td align="right" valign="middle" width="54%"><a href="http://www.oracle.com/corporate/index.html" class="legalese">About 
+        Oracle</a> <span class="legalese">|</span> <a href="http://www.oracle.com/rss/index.html"> <img src="o53devxml-Dateien/rss_button.gif" alt="Oracle RSS Feeds" style="margin-bottom: 1px;" align="absmiddle" border="0" height="10" width="25"></a> 
+        <span class="legalese">|</span> <a href="http://www.oracle.com/corporate/employment/index.html" class="legalese">Careers</a> <span class="legalese">|</span> <a href="http://www.oracle.com/corporate/contact/index.html" class="legalese">Contact 
+        Us</a> <span class="legalese">|</span> <a href="http://www.oracle.com/sitemaps/sitemaps.html" class="legalese">Site Maps</a> <span class="legalese">|</span> <a href="http://www.oracle.com/html/copyright.html" class="legalese">Legal 
+        Notices</a> <span class="legalese">|</span> <a href="http://www.oracle.com/html/terms.html" class="legalese">Terms of Use</a> <span class="legalese">|</span> <a href="http://www.oracle.com/html/privacy.html" class="legalese">Privacy</a></td>
+			</tr>
+			<tr><td colspan="2">
+</td></tr>
+	</tbody></table>
+	
+	<!--/Footer-->
+	
+	<!-- SiteCatalyst code version: G.7.Copyright 1997-2004 Omniture, Inc. More info available athttp://www.omniture.com --><script language="JavaScript" src="o53devxml-Dateien/s_code_remote.js"></script><img src="o53devxml-Dateien/s06429339758222.gif" name="s_i_oracleotnlive" alt="" border="0" height="1" width="1"><!-- End SiteCatalyst code version: G.7. --></font>
+</td></tr>
+</tbody></table></td>
+<td valign="top" width="20">
+<table id="rg9912" summary="" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr align="left">
+<td style="padding: 0px;" valign="top" width="100%"><font class="inplacedisplayid1siteid0"><img alt="" src="o53devxml-Dateien/spacer.gif" border="0" width="10"></font>
+</td></tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+</div>
+</div></td></tr>
+</tbody></table>
+</div></td></tr>
+</tbody></table><!-- Page Metadata Generated On: 24-SEP-2007:23:27:41  Time Taken: 110 msecs -->
+</body></html>

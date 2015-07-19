@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model name="MyProject" xmi:id="ASd75miGAqACiAOJ" xmi:version="2.1" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation xmi:Exporter="Visual Paradigm for UML" xmi:ExporterVersion="6.1.0"/>
+	<packagedElement xmi:type="uml:Collaboration">
+		<ownedBehavior name="Sequence Diagram1" xmi:id="D5D75miGAqACiAOY" xmi:type="uml:Interaction">
+			<lifeline coveredBy="HGr75miGAqACiAQB" name="LifeLine" represents="edT75miGAqACiAOc_represents" xmi:id="edT75miGAqACiAOc" xmi:type="uml:Lifeline">
+				<xmi:Extension xmi:Extender="Visual Paradigm for UML">
+					<active xmi:value="false"/>
+					<stopped xmi:value="false"/>
+					<multiObject xmi:value="false"/>
+					<activation name="Activation" type="false" xmi:id="P6r75miGAqACiAP3" xmi:type="activation"/>
+					<lifeline/>
+				</xmi:Extension>
+			</lifeline>
+			<message messageSort="synchCall" name="MeineMessage" receiveEvent="HGr75miGAqACiAQC" sendEvent="HGr75miGAqACiAQB" xmi:id="JGr75miGAqACiAP_" xmi:type="uml:Message">
+				<xmi:Extension xmi:Extender="Visual Paradigm for UML">
+					<number xmi:value="1"/>
+					<asynshronous xmi:value="false"/>
+					<fromActivation>
+						<activation xmi:value="P6r75miGAqACiAP3"/>
+					</fromActivation>
+					<toActivation>
+						<activation xmi:value="YGr75miGAqACiAP8"/>
+					</toActivation>
+				</xmi:Extension>
+			</message>
+			<fragment covered="edT75miGAqACiAOc" event="defaultEventOfMessageOccurrency" message="JGr75miGAqACiAP_" xmi:id="HGr75miGAqACiAQB" xmi:type="uml:MessageOccurrenceSpecification"/>
+			<fragment covered="1ez75miGAqACiAPI" event="defaultEventOfMessageOccurrency" message="JGr75miGAqACiAP_" xmi:id="HGr75miGAqACiAQC" xmi:type="uml:MessageOccurrenceSpecification"/>
+			<ownedAttribute name="LifeLine" xmi:id="edT75miGAqACiAOc_represents"/>
+			<lifeline coveredBy="HGr75miGAqACiAQC" name="LifeLine2" represents="1ez75miGAqACiAPI_represents" xmi:id="1ez75miGAqACiAPI" xmi:type="uml:Lifeline">
+				<xmi:Extension xmi:Extender="Visual Paradigm for UML">
+					<active xmi:value="false"/>
+					<stopped xmi:value="false"/>
+					<multiObject xmi:value="false"/>
+					<activation name="Activation" type="false" xmi:id="YGr75miGAqACiAP8" xmi:type="activation"/>
+					<lifeline/>
+				</xmi:Extension>
+			</lifeline>
+			<ownedAttribute name="LifeLine2" xmi:id="1ez75miGAqACiAPI_represents"/>
+		</ownedBehavior>
+	</packagedElement>
+	<packagedElement xmi:id="defaultEventOfMessageOccurrency" xmi:type="uml:AnyReceiveEvent"/>
+	<uml:Diagram diagramType="InteractionDiagram" name="Sequence Diagram1" toolName="Visual Paradigm for UML" xmi:id="M8D75miGAqACiAOU">
+		<xmi:Extension xmi:Extender="Visual Paradigm for UML">
+			<properties>
+				<ashowPackageNameStyle value="0"/>
+				<ashowActivityStateNodeCaption value="0"/>
+				<aeditable value="true"/>
+				<afollowDiagramParentElement value="true"/>
+				<aautoFitShapesSize value="false"/>
+				<ashowTaggedValues value="false"/>
+				<ashowStereotypes value="true"/>
+				<aalignToGrid value="true"/>
+				<agridVisible value="false"/>
+				<agridWidth value="10"/>
+				<agridHeight value="10"/>
+				<agridColor value="Cr:192,192,192,255"/>
+				<adiagramBackground value="Cr:255,255,255,255"/>
+				<aconnectorStyle value="1"/>
+				<aconnectionPointStyle value="0"/>
+				<azoomRatio value="1.0"/>
+				<amaximized value="true"/>
+				<ax value="0"/>
+				<ay value="0"/>
+				<awidth value="1075"/>
+				<aheight value="544"/>
+				<a_globalPaletteOption value="true"/>
+				<a_alwaysShowReferenceAndSubdiagramResource value="false"/>
+				<alocked value="false"/>
+				<ashowDefaultPackage value="false"/>
+				<ashowParameterNamesInMessageOperationSignature value="true"/>
+				<ashowArgumentsInMessagesOperationSignature value="true"/>
+				<ashowMessagesOperationSignature value="false"/>
+				<ainteractionLifeLinePresentationOption value="0"/>
+				<a_rootFrame value="D5D75miGAqACiAOY"/>
+				<ashowSequenceNumbers value="true"/>
+				<ashowActivations value="true"/>
+				<ashowMessageStereotype value="true"/>
+				<asequenceNumberHandling value="0"/>
+			</properties>
+		</xmi:Extension>
+		<uml:Diagram.element>
+			<uml:DiagramElement geometry="90,40,60,150" preferredShapeType="InteractionLifeLine" subject="edT75miGAqACiAOc" xmi:id="UdT75miGAqACiAOb">
+				<xmi:Extension xmi:Extender="Visual Paradigm for UML">
+					<captionBounds value="90,40,60,15"/>
+					<captionVisible value="true"/>
+					<captionSide value="12"/>
+					<properties>
+						<abackground value="Cr:122,207,245,255"/>
+						<aforeground value="Cr:0,0,0,255"/>
+						<azOrder value="6"/>
+						<aselectable value="true"/>
+						<arequestResetCaption value="false"/>
+						<arequestResetCaptionSize value="false"/>
+						<adisplayStereotypeIcon value="false"/>
+						<aparentConnectorHeaderLength value="40"/>
+						<aparentConnectorLineLength value="10"/>
+						<aconnectToPoint value="true"/>
+						<aparentConnectorDTheta value="0.0"/>
+						<aconnectionPointType value="2"/>
+						<arequestDefaultSize value="false"/>
+						<arequestFitSize value="false"/>
+						<aparentFrame value="D5D75miGAqACiAOY"/>
+						<ashowClassifier value="true"/>
+					</properties>
+				</xmi:Extension>
+				<elementFill color1="Cr:122,207,245,255" color2="" style="1" transparency="0" type="1"/>
+				<elementFont bold="false" color="Cr:0,0,0,255" italic="false" name="Dialog" size="11" style="0"/>
+				<elementLine color="Cr:0,0,0,255" style="1" transparency="0" weight="1.0"/>
+			</uml:DiagramElement>
+			<uml:DiagramElement geometry="380,40,60,150" preferredShapeType="InteractionLifeLine" subject="1ez75miGAqACiAPI" xmi:id="1ez75miGAqACiAPH">
+				<xmi:Extension xmi:Extender="Visual Paradigm for UML">
+					<captionBounds value="380,40,60,15"/>
+					<captionVisible value="true"/>
+					<captionSide value="12"/>
+					<properties>
+						<abackground value="Cr:122,207,245,255"/>
+						<aforeground value="Cr:0,0,0,255"/>
+						<azOrder value="4"/>
+						<aselectable value="true"/>
+						<arequestResetCaption value="false"/>
+						<arequestResetCaptionSize value="false"/>
+						<adisplayStereotypeIcon value="false"/>
+						<aparentConnectorHeaderLength value="40"/>
+						<aparentConnectorLineLength value="10"/>
+						<aconnectToPoint value="true"/>
+						<aparentConnectorDTheta value="0.0"/>
+						<aconnectionPointType value="2"/>
+						<arequestDefaultSize value="false"/>
+						<arequestFitSize value="false"/>
+						<aparentFrame value="D5D75miGAqACiAOY"/>
+						<ashowClassifier value="true"/>
+					</properties>
+				</xmi:Extension>
+				<elementFill color1="Cr:122,207,245,255" color2="" style="1" transparency="0" type="1"/>
+				<elementFont bold="false" color="Cr:0,0,0,255" italic="false" name="Dialog" size="11" style="0"/>
+				<elementLine color="Cr:0,0,0,255" style="1" transparency="0" weight="1.0"/>
+			</uml:DiagramElement>
+			<uml:DiagramElement geometry="116,130,8,24" preferredShapeType="Activation" subject="P6r75miGAqACiAP3" xmi:id="P6r75miGAqACiAP2">
+				<xmi:Extension xmi:Extender="Visual Paradigm for UML">
+					<captionBounds value="0,0,8,12"/>
+					<captionVisible value="false"/>
+					<captionSide value="7"/>
+					<properties>
+						<abackground value="Cr:122,207,245,255"/>
+						<aforeground value="Cr:0,0,0,255"/>
+						<azOrder value="2"/>
+						<aselectable value="true"/>
+						<arequestResetCaption value="false"/>
+						<arequestResetCaptionSize value="false"/>
+						<adisplayStereotypeIcon value="false"/>
+						<aparentConnectorHeaderLength value="40"/>
+						<aparentConnectorLineLength value="10"/>
+						<aconnectToPoint value="true"/>
+						<aparentConnectorDTheta value="0.0"/>
+						<aconnectionPointType value="2"/>
+						<arequestDefaultSize value="false"/>
+						<arequestFitSize value="false"/>
+					</properties>
+				</xmi:Extension>
+				<elementFill color1="Cr:122,207,245,255" color2="" style="1" transparency="0" type="1"/>
+				<elementFont bold="false" color="Cr:0,0,0,255" italic="false" name="Dialog" size="11" style="0"/>
+				<elementLine color="Cr:0,0,0,255" style="1" transparency="0" weight="1.0"/>
+			</uml:DiagramElement>
+			<uml:DiagramElement geometry="406,130,8,12" preferredShapeType="Activation" subject="YGr75miGAqACiAP8" xmi:id="YGr75miGAqACiAP7">
+				<xmi:Extension xmi:Extender="Visual Paradigm for UML">
+					<captionBounds value="0,0,8,12"/>
+					<captionVisible value="false"/>
+					<captionSide value="7"/>
+					<properties>
+						<abackground value="Cr:122,207,245,255"/>
+						<aforeground value="Cr:0,0,0,255"/>
+						<azOrder value="0"/>
+						<aselectable value="true"/>
+						<arequestResetCaption value="false"/>
+						<arequestResetCaptionSize value="false"/>
+						<adisplayStereotypeIcon value="false"/>
+						<aparentConnectorHeaderLength value="40"/>
+						<aparentConnectorLineLength value="10"/>
+						<aconnectToPoint value="true"/>
+						<aparentConnectorDTheta value="0.0"/>
+						<aconnectionPointType value="2"/>
+						<arequestDefaultSize value="false"/>
+						<arequestFitSize value="false"/>
+					</properties>
+				</xmi:Extension>
+				<elementFill color1="Cr:122,207,245,255" color2="" style="1" transparency="0" type="1"/>
+				<elementFont bold="false" color="Cr:0,0,0,255" italic="false" name="Dialog" size="11" style="0"/>
+				<elementLine color="Cr:0,0,0,255" style="1" transparency="0" weight="1.0"/>
+			</uml:DiagramElement>
+			<uml:DiagramElement geometry="124,130;406,130;" preferredShapeType="Message" subject="JGr75miGAqACiAP_" xmi:id="HGr75miGAqACiAQD">
+				<xmi:Extension xmi:Extender="Visual Paradigm for UML">
+					<captionBounds value="211,108,107,15"/>
+					<captionVisible value="true"/>
+					<captionSide value="1"/>
+					<properties>
+						<abackground value="Cr:122,207,245,255"/>
+						<aforeground value="Cr:0,0,0,255"/>
+						<azOrder value="-1"/>
+						<aselectable value="true"/>
+						<arequestResetCaption value="false"/>
+						<arequestResetCaptionSize value="false"/>
+						<aconnectorStyle value="3"/>
+						<afromShapeXDiff value="0"/>
+						<afromShapeYDiff value="0"/>
+						<atoShapeXDiff value="0"/>
+						<atoShapeYDiff value="0"/>
+						<afromConnectType value="0"/>
+						<atoConnectType value="0"/>
+						<auseFromShapeCenter value="true"/>
+						<auseToShapeCenter value="true"/>
+						<afromPinType value="1"/>
+						<atoPinType value="1"/>
+						<afolded value="false"/>
+					</properties>
+				</xmi:Extension>
+				<elementFont bold="false" color="Cr:0,0,0,255" italic="false" name="Dialog" size="11" style="0"/>
+				<elementLine color="Cr:0,0,0,255" style="1" transparency="0" weight="1.0"/>
+			</uml:DiagramElement>
+		</uml:Diagram.element>
+	</uml:Diagram>
+</uml:Model>

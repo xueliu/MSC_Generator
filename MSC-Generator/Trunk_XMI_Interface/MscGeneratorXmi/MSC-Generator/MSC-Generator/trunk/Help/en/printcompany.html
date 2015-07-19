@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>printcompany</title>
+  <link href="GeneratorBlue.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table class=command>
+      <tr>
+        <th colspan=2 align=left class=headline>
+          PRINTCOMPANY - Formatting
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width=* colspan=2>
+            Use the command <font class='propertycommand'>printcompany</font> to enable the display of the author's company name defined by the command <a href="company.html"><font class='propertycommand'>company</font></a> in the footer when printing or exporting a diagram.
+            The value of the parameter <font class='property'>option</font> determines whether the date will be displayed.<br><br>
+            Important: The command <a href="printfootline.html"><font class='propertycommand'>printfootline</font></a> determines whether the footer will be displayed at all.
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Syntax
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='propertycommand'>printcompany</font>: <font class='property'>option</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Parameters
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='property'>option</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Value
+              </th>
+              <th width=300 class=param>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                yes
+              </td>
+              <td class=param>
+                The company name will be displayed.
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                no
+              </td>
+              <td class=param>
+                The company name will not be displayed.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          The default value for the parameter is "yes".
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Example
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>PrintAuthor</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCompany</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintVersion</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintCreationDate</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>PrintFileName</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Font</font>: <font class='property'>"Arial", "10", "Regular"</font><br>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Call</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>5, 5, 5, 5</font><br>
+                <font class='propertycommand'>PrintFootLine</font>: <font class='property'>yes</font><br>
+                <font class='propertycommand'>Author</font>: <font class='property'>Martin Kotowicz</font><br>
+                <font class='propertycommand'>Company</font>: <font class='property'>ITESYS GmbH</font><br>
+                <font class='propertycommand'>Version</font>: <font class='property'>1.0</font><br>
+                <font class='propertycommand'>Date</font>: <font class='property'>20.10.2006</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>700, auto</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>CLU</font>, <font class='textpara'>"Caller"</font><br>
+                <font class='command'>process</font>: <font class='instance'>ON</font>, <font class='textpara'>"Caller's Switchboard"</font><br>
+                <font class='command'>process</font>: <font class='instance'>DN</font>, <font class='textpara'>"Recipient's switchboard"</font><br>
+                <font class='command'>process</font>: <font class='instance'>CDU</font>, <font class='textpara'>"Recipient"</font><br>
+                <br>
+                <font class='command'>stateoverall</font>: <font class='textpara'>"no connection"</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CLU</font>, <font class='instance'>ON</font>, <font class='textpara'>"Establish Call"</font>;<br>
+                <font class='command'>timerbegin</font>: <font class='element'>t1</font>, <font class='instance'>ON</font>, <font class='textpara'>T Calling</font><br>
+                <font class='command'>msg</font>: <font class='instance'>ON</font>, <font class='instance'>DN</font>, <font class='textpara'>Establish Call</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Establishing Call</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>CDU</font>, <font class='textpara'>Incoming Call</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CDU</font>, <font class='instance'>DN</font>, <font class='textpara'>Ringing</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Ring signal</font><br>
+                <font class='command'>timerend</font>: <font class='element'>t1</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>CDU</font>, <font class='instance'>DN</font>, <font class='textpara'>Answer Call</font>;<br>
+                <font class='command'>msg</font>: <font class='instance'>DN</font>, <font class='instance'>ON</font>, <font class='textpara'>Connected</font>;<br>
+                <font class='command'>stateoverall</font>: <font class='textpara'>connected</font>;<br>
+               </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Anruf_1.gif'>
+              </td>
+            <tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> See also
+        </td>
+      </tr>
+      <tr>
+        <td class=seealso colspan=2>
+          <a href="company.html"><font class='propertycommand'>company</font></a> 
+          <a href="printauthor.html"><font class='propertycommand'>printauthor</font></a> 
+          <a href="printversion.html"><font class='propertycommand'>printversion</font></a> 
+          <a href="printdate.html"><font class='propertycommand'>printdate</font></a> 
+          <a href="printcreationdate.html"><font class='propertycommand'>printcreationdate</font></a> 
+          <a href="printfilename.html"><font class='propertycommand'>printfilename</font></a>
+          
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

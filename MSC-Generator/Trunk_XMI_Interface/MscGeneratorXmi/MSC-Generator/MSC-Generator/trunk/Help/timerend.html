@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>timerend</title>
+  <link href="GeneratorBlue.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <table class=command>
+      <tr>
+        <th colspan=2 align=left class=headline>
+          TIMEREND - Diagrammelement
+        </th>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width=* colspan=2>
+            Über die Befehle <a href='timerbegin.html'><font class='command'>timerbegin</font></a> und <font class='command'>timerend</font> kann im Diagramm eine Zeitangabe modelliert werden. 
+            Dabei wird durch den Befehl <font class='command'>timerend</font> das Ende der Zeitangabe definiert.
+            Die Darstellung der Zeitangabe ist zwischen dem Startpunkt und dem Endpunkt mit einer Linie verbunden. 
+            Soll eine Darstellung ohne die Linie erfolgen, so können hierfür die Befehle <a href="settimer.html"><font class='command'>settimer</font></a>, <a href="stoptimer.html"><font class='command'>stoptimer</font></a> und <a href="timeout.html"><font class='command'>timeout</font></a> verwendet werden.             
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Syntax
+        </td>
+      </tr>
+      <tr>
+        <td class=syntax>
+          <font class='command'>timerend</font>: <font class='element'>timerid</font>, <font class='textpara'>text</font>, <font class='formatpara'>style</font>
+        </td>
+        <td width=300>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Parameter 
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='element'>timerid</font>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Der Identifikator der Zeitangabe für die der Endpunkt definiert wird.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='textpara'>text</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Ein beliebiger Text, der am Ende der Zeitangebe erscheinen soll.      
+          Sollen im Text Satzzeichen verwendet werden, muss der Text in Anführungszeichen angegeben werden.  
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=parameter>
+          <img border='0' src='./sdot.gif'> <font class='formatpara'>style</font> (optional)
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Legt die Darstellung des Zeitangabeendpunkts fest.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          <table class=param width=350>
+            <tr>
+              <th width=50 class=param>
+                Wert
+              </th>
+              <th width=300 class=param>
+                Bedeutung
+              </th>
+            </tr>
+            <tr>
+              <td class=param>
+                -
+              </td>
+              <td class=param>
+                Die Zeitangabe wird ordnungsmäßig terminiert
+              </td>
+            </tr>
+            <tr>
+              <td class=param>
+                *
+              </td>
+              <td class=param>
+                Die Zeitangabe wird abgebrochen
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=paramtable>
+          Der Standardwert für den Parameter ist "-".
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Beispiel
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Zeitangaben 1</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>uml</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>620</font>,<font class='property'>auto</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>p1</font>, <font class='textpara'>"Prozess 1"</font>,,<font class='formatpara'>70</font><br>
+                <font class='command'>process</font>: <font class='instance'>p2</font>, <font class='textpara'>"Prozess 2"</font>,,<font class='formatpara'>0</font>,<font class='formatpara'>20</font><br>
+                <br>
+                <font class='command'>timerbegin</font>: <font class='element'>t1</font>, <font class='instance'>p1</font>, <font class='textpara'>t1=now</font>,<font class='formatpara'>l</font>,<font class='formatpara'>o</font><br>
+                <font class='command'>msg</font>: <font class='instance'>p1</font>, <font class='instance'>p2</font>, <font class='textpara'>Nachricht 1</font>;<br>
+                <font class='command'>timerbegin</font>: <font class='element'>t2</font>, <font class='instance'>p1</font>, <font class='textpara'>t2=now</font>,<font class='formatpara'>l</font>,<font class='formatpara'>n</font><br>
+                <font class='command'>timerbegin</font>: <font class='element'>t3</font>, <font class='instance'>p2</font>, <font class='textpara'>t3</font>,<font class='formatpara'>r</font>,<font class='formatpara'>i</font><br>
+                <font class='command'>msg</font>: <font class='instance'>p1</font>, <font class='instance'>p2</font>, <font class='textpara'>Nachrich 2</font>;<br>
+                ;<br>
+                <font class='command'>timerbegin</font>: <font class='element'>t4</font>, <font class='instance'>p2</font>,,<font class='formatpara'>r</font>,<font class='formatpara'>n</font><br>
+                <font class='command'>msg</font>: <font class='instance'>p2</font>, <font class='instance'>p1</font>, <font class='textpara'>Nachricht 3</font><br>
+                <font class='command'>timerend</font>: <font class='element'>t1</font>, <font class='textpara'>tmax=t1+3s</font><br>
+                <font class='command'>timerend</font>: <font class='element'>t2</font>, <font class='textpara'>tmax=t2+4s</font>;<br>
+                ;<br>
+                <font class='command'>timerbegin</font>: <font class='element'>t5</font>, <font class='instance'>p1</font><br>
+                <font class='command'>msg</font>: <font class='instance'>p1</font>, <font class='instance'>p2</font>, <font class='textpara'>Nachricht 4</font><br>
+                <font class='command'>timerend</font>: <font class='element'>t4</font>,<font class='textpara'>{0...4s}</font>;<br>
+                ;<br>
+                <font class='command'>msg</font>: <font class='instance'>p2</font>, <font class='instance'>p1</font>, <font class='textpara'>Nachricht 5</font><br>
+                <font class='command'>timerend</font>: <font class='element'>p5</font><br>
+                <font class='command'>timerend</font>: <font class='element'>p3</font>, <font class='textpara'>{0...5s}</font>,<font class='formatpara'>*</font>;<br>
+              </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Zeiten1_UML_1.gif'>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 class=example>
+          <table class=example>
+            <tr>
+              <td class=code valign=top>
+                <font class='propertycommand'>DiagramName</font>: <font class='property'>Zeitangaben 1</font><br>
+                <font class='propertycommand'>DiagramStyle</font>: <font class='property'>sdl</font><br>
+                <font class='propertycommand'>PageSize</font>: <font class='property'>620</font>,<font class='property'>auto</font><br>
+                <font class='propertycommand'>PageMargins</font>: <font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font>,<font class='property'>10</font><br>
+                <br>
+                <font class='command'>process</font>: <font class='instance'>p1</font>, <font class='textpara'>"Prozess 1"</font>,,<font class='formatpara'>70</font><br>
+                <font class='command'>process</font>: <font class='instance'>p2</font>, <font class='textpara'>"Prozess 2"</font>,,<font class='formatpara'>0</font>,<font class='formatpara'>20</font><br>
+                <br>
+                <font class='command'>timerbegin</font>: <font class='element'>t1</font>, <font class='instance'>p1</font>, <font class='textpara'>t1=now</font>,<font class='formatpara'>l</font>,<font class='formatpara'>o</font><br>
+                <font class='command'>msg</font>: <font class='instance'>p1</font>, <font class='instance'>p2</font>, <font class='textpara'>Nachricht 1</font>;<br>
+                <font class='command'>timerbegin</font>: <font class='element'>t2</font>, <font class='instance'>p1</font>, <font class='textpara'>t2=now</font>,<font class='formatpara'>l</font>,<font class='formatpara'>n</font><br>
+                <font class='command'>timerbegin</font>: <font class='element'>t3</font>, <font class='instance'>p2</font>, <font class='textpara'>t3</font>,<font class='formatpara'>r</font>,<font class='formatpara'>i</font><br>
+                <font class='command'>msg</font>: <font class='instance'>p1</font>, <font class='instance'>p2</font>, <font class='textpara'>Nachrich 2</font>;<br>
+                ;<br>
+                <font class='command'>timerbegin</font>: <font class='element'>t4</font>, <font class='instance'>p2</font>,,<font class='formatpara'>r</font>,<font class='formatpara'>n</font><br>
+                <font class='command'>msg</font>: <font class='instance'>p2</font>, <font class='instance'>p1</font>, <font class='textpara'>Nachricht 3</font><br>
+                <font class='command'>timerend</font>: <font class='element'>t1</font>, <font class='textpara'>tmax=t1+3s</font><br>
+                <font class='command'>timerend</font>: <font class='element'>t2</font>, <font class='textpara'>tmax=t2+4s</font>;<br>
+                ;<br>
+                <font class='command'>timerbegin</font>: <font class='element'>t5</font>, <font class='instance'>p1</font><br>
+                <font class='command'>msg</font>: <font class='instance'>p1</font>, <font class='instance'>p2</font>, <font class='textpara'>Nachricht 4</font><br>
+                <font class='command'>timerend</font>: <font class='element'>t4</font>,<font class='textpara'>{0...4s}</font>;<br>
+                ;<br>
+                <font class='command'>msg</font>: <font class='instance'>p2</font>, <font class='instance'>p1</font>, <font class='textpara'>Nachricht 5</font><br>
+                <font class='command'>timerend</font>: <font class='element'>p5</font><br>
+                <font class='command'>timerend</font>: <font class='element'>p3</font>, <font class='textpara'>{0...5s}</font>,<font class='formatpara'>*</font>;<br>
+              </td>
+              <td width=70% class=pic align=center>
+                <img border='0' src='./Images/Zeiten1_SDL_1.gif'>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=headline colspan=2 >
+          <img border='0' src='./dot.gif'> Siehe auch
+        </td>
+      </tr>
+      <tr>
+        <td class=seealso colspan=2>
+          <a href='timerbegin.html'><font class='command'>timerbegin</font></a>
+          <a href='settimer.html'><font class='command'>settimer</font></a>
+          <a href='stoptimer.html'><font class='command'>stoptimer</font></a>
+          <a href='timeout.html'><font class='command'>timeout</font></a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
