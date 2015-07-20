@@ -66,9 +66,8 @@ namespace nGenerator
 		[STAThread]
 		public static void Main(string[] args)
 		{
-			Application.Run(new Output(args));
 			Application.EnableVisualStyles();
-
+			Application.Run(new Output(args));
 		}
 		
 		public Output(string[] args)
