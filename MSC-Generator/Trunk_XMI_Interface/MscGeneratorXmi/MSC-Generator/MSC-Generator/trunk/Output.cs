@@ -41,7 +41,7 @@ namespace nGenerator
 	/// Description of Output.
 	/// </summary>
 	
-	public partial class Output : GUI
+	public sealed partial class Output : GUI
 	{
 		//TODO: Refaktorisieren (Umbenennen von Prozessen) 
 		//TODO: Propertyfenster einrasten
