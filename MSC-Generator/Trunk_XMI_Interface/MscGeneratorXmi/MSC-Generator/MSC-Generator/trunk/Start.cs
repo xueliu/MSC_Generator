@@ -27,22 +27,22 @@ namespace nGenerator
 		private System.Windows.Forms.Timer tmrTimeout;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		
-		private string mCompany1 = string.Empty;
-		private string mCompany2 = string.Empty;
-		private LicenseType mLicenseType = LicenseType.Commercial;
-		private ulong mLicenseNumber = 0;
-		private ValidResult mValidResult;
+//		private string mCompany1 = string.Empty;
+//		private string mCompany2 = string.Empty;
+//		private LicenseType mLicenseType = LicenseType.Commercial;
+//		private ulong mLicenseNumber = 0;
+//		private ValidResult mValidResult;
 		
-		public Start(string company1, string company2, LicenseType licenseType, ulong licenseNumber, ValidResult validResult)
+		public Start()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
-			mCompany1 = company1;
-			mCompany2 = company2;
-			mLicenseType = LicenseType.Commercial;//licenseType;
-			mLicenseNumber = licenseNumber;
-			mValidResult = validResult;
+//			mCompany1 = company1;
+//			mCompany2 = company2;
+//			mLicenseType = LicenseType.Commercial;//licenseType;
+//			mLicenseNumber = licenseNumber;
+//			mValidResult = validResult;
 			InitializeComponent();
 			
 		}
@@ -139,32 +139,6 @@ namespace nGenerator
 			e.Graphics.DrawString("Version 1.1",new Font("Arial",16,FontStyle.Bold,GraphicsUnit.Point),Brushes.Black,itemBox);
 			itemBox = new RectangleF(490, 0, 500, 400);
 			e.Graphics.DrawString("Build " + Application.ProductVersion,new Font("Arial",8,FontStyle.Regular,GraphicsUnit.Point),Brushes.Black,itemBox);
-			if ((mValidResult == ValidResult.NoLicensed)||(mLicenseType == LicenseType.Demo)){
-				itemBox = new RectangleF(2, 330, 400, 400);
-				e.Graphics.DrawString(strings.GetString("Demoversion"),new Font("Arial",8,FontStyle.Regular,GraphicsUnit.Point),Brushes.Black,itemBox);
-			}
-			else{
-				float yPos = 345.0f;	
-				if (mLicenseType == LicenseType.NonCommercial){
-					itemBox = new RectangleF(2, yPos, 400, 400);
-					e.Graphics.DrawString(strings.GetString("NotCommercialUse"),new Font("Arial",8,FontStyle.Regular,GraphicsUnit.Point),Brushes.Black,itemBox);
-					yPos -=15.0f;
-				}
-				if (mCompany2.Length > 0){
-					itemBox = new RectangleF(80, yPos, 400, 400);					
-					e.Graphics.DrawString(mCompany2,new Font("Arial",8,FontStyle.Regular,GraphicsUnit.Point),Brushes.Black,itemBox);
-					yPos -=15.0f;
-				}
-				itemBox = new RectangleF(2, yPos, 400, 400);
-				e.Graphics.DrawString(strings.GetString("LicensedTo"),new Font("Arial",8,FontStyle.Regular,GraphicsUnit.Point),Brushes.Black,itemBox);
-				itemBox = new RectangleF(80, yPos, 400, 400);
-				e.Graphics.DrawString(mCompany1,new Font("Arial",8,FontStyle.Regular,GraphicsUnit.Point),Brushes.Black,itemBox);
-				yPos -=15.0f;				
-				itemBox = new RectangleF(2, yPos, 400, 400);
-				e.Graphics.DrawString(strings.GetString("LicenseNr"),new Font("Arial",8,FontStyle.Regular,GraphicsUnit.Point),Brushes.Black,itemBox);
-				itemBox = new RectangleF(80, yPos, 400, 400);
-				e.Graphics.DrawString(mLicenseNumber.ToString().Substring(0,4) + "-" + mLicenseNumber.ToString().Substring(4,4) + "-" + mLicenseNumber.ToString().Substring(8,4),new Font("Arial",8,FontStyle.Regular,GraphicsUnit.Point),Brushes.Black,itemBox);
-			}
 		}
 	}
 }
