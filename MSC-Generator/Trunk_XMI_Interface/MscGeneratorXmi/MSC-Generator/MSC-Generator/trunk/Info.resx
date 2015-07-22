@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblName.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 32</value>
@@ -128,14 +124,9 @@
   <data name="lblFirma1.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 16</value>
   </data>
-  <data name="lnkItesys.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="pictureBox1.ImageLocation" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblName.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
-  </data>
-  <data name="lblLizenztyp.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
   </data>
   <data name="lblName.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -153,23 +144,29 @@
   <data name="&gt;&gt;lblFirma2.Name" xml:space="preserve">
     <value>lblFirma2</value>
   </data>
-  <data name="lblFirma2.ImageIndex" type="System.Int32, mscorlib">
-    <value>-1</value>
+  <data name="lblCopyright.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
-  <data name="lblName.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="lnkItesys.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="lblVersion.ImageKey" xml:space="preserve">
-    <value />
+  <data name="lblLizenztyp.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="lblLizenzNr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="lblCopyright.Text" xml:space="preserve">
+    <value>Copyright (c) 2006 ITESYS Institut für technische Systeme GmbH</value>
+  </data>
   <data name="&gt;&gt;lnkItesys.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="pictureBox1.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="lblFirma2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Inherit</value>
@@ -180,11 +177,20 @@
   <data name="&gt;&gt;lblCopyright.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="lblLizenzNr.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
   <data name="lblName.ImageKey" xml:space="preserve">
     <value />
   </data>
   <data name="lblAllRights.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left</value>
+  </data>
+  <data name="lblCopyright.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 134</value>
+  </data>
+  <data name="lblFirma2.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
   </data>
   <data name="lblFirma2.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -198,14 +204,11 @@
   <data name="lblVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomLeft</value>
   </data>
-  <data name="lblVersion.ImageIndex" type="System.Int32, mscorlib">
-    <value>-1</value>
+  <data name="pictureBox1.WaitOnLoad" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="lblFirma1.ImageKey" xml:space="preserve">
     <value />
-  </data>
-  <data name="lblFirma2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 88</value>
   </data>
   <data name="&gt;&gt;lblVersion.Parent" xml:space="preserve">
     <value>$this</value>
@@ -231,9 +234,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Über das Programm</value>
   </data>
-  <data name="lblCopyright.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
   <data name="lnkItesys.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
@@ -252,23 +252,20 @@
   <data name="&gt;&gt;lnkItesys.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblCopyright.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblFirma1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
     <value>pictureBox1</value>
+  </data>
+  <data name="lblLizenzNr.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="lblCopyright.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="$this.Icon" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="&gt;&gt;lblLizenztyp.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="lblCopyright.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="lblFirma1.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -276,8 +273,8 @@
   <data name="lnkItesys.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
   </data>
-  <data name="lblAllRights.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 151</value>
+  <data name="lblFirma2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
   </data>
   <data name="lblVersion.Text" xml:space="preserve">
     <value>Version 1.1 (Build: {0})</value>
@@ -291,6 +288,9 @@
   <data name="lblFirma2.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
+  <data name="lblFirma1.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="lblLizenzNr.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -300,8 +300,8 @@
   <data name="&gt;&gt;lblLizenzNr.Name" xml:space="preserve">
     <value>lblLizenzNr</value>
   </data>
-  <data name="lblLizenztyp.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
+  <data name="pictureBox1.ImageLocation" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="lblCopyright.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
@@ -309,26 +309,20 @@
   <data name="lblLizenztyp.ImageIndex" type="System.Int32, mscorlib">
     <value>-1</value>
   </data>
-  <data name="lblFirma2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
-  <data name="lnkItesys.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Normal</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="lblLizenzNr.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
   <data name="lnkItesys.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="lblAllRights.Text" xml:space="preserve">
-    <value>Alle Rechte vorbehalten.</value>
-  </data>
   <data name="lblFirma2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="lblAllRights.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 16</value>
   </data>
   <data name="lblAllRights.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
@@ -336,26 +330,20 @@
   <data name="lblLizenztyp.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Tile</value>
   </data>
-  <data name="$this.Icon" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="lblFirma2.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
   <data name="lblName.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
   <data name="lblFirma1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Tile</value>
   </data>
-  <data name="lblAllRights.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
   <data name="lblVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>58, 30</value>
   </data>
   <data name="lnkItesys.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
+  </data>
+  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="lblAllRights.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -384,6 +372,9 @@
   <data name="lblCopyright.ImageKey" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;lblLizenzNr.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="lblLizenzNr.ImageIndex" type="System.Int32, mscorlib">
     <value>-1</value>
   </data>
@@ -408,6 +399,9 @@
   <data name="lblAllRights.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
+  <data name="lblVersion.ImageKey" xml:space="preserve">
+    <value />
+  </data>
   <data name="lblName.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Tile</value>
   </data>
@@ -429,11 +423,14 @@
   <data name="lblVersion.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="&gt;&gt;lblName.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="pictureBox1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="&gt;&gt;lblAllRights.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVersion.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lblLizenztyp.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -468,6 +465,9 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>WindowsDefaultLocation</value>
   </data>
+  <data name="&gt;&gt;lblLizenztyp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;lblCopyright.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -479,9 +479,6 @@
   </data>
   <data name="lblLizenztyp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
-  </data>
-  <data name="lblFirma1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="lblCopyright.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -527,10 +524,10 @@
   <data name="&gt;&gt;lblAllRights.Name" xml:space="preserve">
     <value>lblAllRights</value>
   </data>
-  <data name="lblFirma1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
   <data name="lblAllRights.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="lnkItesys.ImageKey" xml:space="preserve">
     <value />
   </data>
   <data name="lblAllRights.ImageKey" xml:space="preserve">
@@ -542,20 +539,26 @@
   <data name="lblLizenztyp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left</value>
   </data>
-  <data name="lblFirma2.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
+  <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>4</value>
   </data>
   <data name="lblCopyright.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Inherit</value>
   </data>
+  <data name="lblFirma1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 72</value>
+  </data>
   <data name="lnkItesys.Text" xml:space="preserve">
     <value>http://www.itesys-gmbh.de</value>
   </data>
-  <data name="pictureBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
+  <data name="lblLizenzNr.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="lnkItesys.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
   </data>
   <data name="&gt;&gt;lblFirma1.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -566,14 +569,11 @@
   <data name="lblVersion.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;lblFirma1.Name" xml:space="preserve">
-    <value>lblFirma1</value>
+  <data name="lblFirma2.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="lblFirma1.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
-  </data>
-  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Normal</value>
   </data>
   <data name="lblAllRights.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Tile</value>
@@ -584,32 +584,26 @@
   <data name="lblFirma2.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 16</value>
   </data>
-  <data name="lblLizenzNr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 55</value>
+  <data name="lblVersion.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
   </data>
   <data name="lblCopyright.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblFirma1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
+  <data name="lblVersion.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
-  <data name="&gt;&gt;lblLizenztyp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblFirma1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblAllRights.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="lblCopyright.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="lblName.Location" type="System.Drawing.Point, System.Drawing">
     <value>58, 14</value>
-  </data>
-  <data name="lblLizenzNr.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="pictureBox1.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="lblVersion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
   </data>
   <data name="lblLizenzNr.ImageKey" xml:space="preserve">
     <value />
@@ -620,11 +614,14 @@
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;lblVersion.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="lblFirma1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="lblFirma1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>
+  </data>
+  <data name="lblFirma2.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
   <data name="lblFirma2.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -638,35 +635,29 @@
   <data name="lnkItesys.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 16</value>
   </data>
-  <data name="lnkItesys.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 167</value>
+  <data name="lblName.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
-  <data name="lblCopyright.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 134</value>
+  <data name="&gt;&gt;lblName.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="lblLizenzNr.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="lblLizenztyp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="pictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
+  <data name="&gt;&gt;lblLizenztyp.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lblVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;lblLizenztyp.Name" xml:space="preserve">
-    <value>lblLizenztyp</value>
-  </data>
   <data name="lblLizenztyp.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
-  </data>
-  <data name="lblLizenzNr.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
   </data>
   <data name="lblFirma2.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="lblFirma2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
+  <data name="lblLizenzNr.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="lblVersion.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Inherit</value>
@@ -674,8 +665,11 @@
   <data name="&gt;&gt;lblFirma1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lblLizenztyp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 15</value>
+  <data name="lblFirma2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCopyright.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="lnkItesys.ImageIndex" type="System.Int32, mscorlib">
     <value>-1</value>
@@ -683,20 +677,23 @@
   <data name="&gt;&gt;lblFirma2.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="lblLizenztyp.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="lblName.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="lblLizenztyp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 15</value>
   </data>
-  <data name="lblName.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;lblCopyright.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblLizenztyp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="pictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
   </data>
   <data name="lblName.ImageIndex" type="System.Int32, mscorlib">
     <value>-1</value>
@@ -713,10 +710,7 @@
   <data name="&gt;&gt;lblCopyright.Name" xml:space="preserve">
     <value>lblCopyright</value>
   </data>
-  <data name="lblAllRights.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="lblLizenztyp.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="lblName.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="lblAllRights.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
@@ -725,38 +719,41 @@
   <data name="&gt;&gt;lblLizenzNr.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblLizenzNr.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
+  <data name="lnkItesys.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 167</value>
   </data>
-  <data name="lblAllRights.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 16</value>
+  <data name="lblAllRights.Text" xml:space="preserve">
+    <value>Alle Rechte vorbehalten.</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
   </data>
-  <data name="lblLizenzNr.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
+  <data name="lblLizenztyp.Text" xml:space="preserve">
+    <value>type</value>
   </data>
-  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
+  <data name="lblVersion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="lblLizenzNr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 55</value>
   </data>
   <data name="lblAllRights.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lnkItesys.ImageKey" xml:space="preserve">
-    <value />
+  <data name="lblFirma1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="lnkItesys.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="pictureBox1.WaitOnLoad" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="lblLizenzNr.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>347, 196</value>
   </data>
-  <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="lblLizenzNr.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="lblFirma2.ImageKey" xml:space="preserve">
     <value />
@@ -764,8 +761,8 @@
   <data name="lblName.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="lblFirma2.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="lblFirma2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
   </data>
   <data name="lblFirma1.Text" xml:space="preserve">
     <value>Lizenziert für: </value>
@@ -785,20 +782,17 @@
   <data name="$this.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="lblFirma1.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="pictureBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="lblAllRights.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="lblLizenzNr.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lblVersion.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="lblAllRights.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="lblCopyright.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="&gt;&gt;lblLizenztyp.Name" xml:space="preserve">
+    <value>lblLizenztyp</value>
   </data>
   <data name="lblCopyright.ImageIndex" type="System.Int32, mscorlib">
     <value>-1</value>
@@ -806,8 +800,8 @@
   <data name="lblFirma1.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="lnkItesys.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblLizenztyp.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="lnkItesys.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
@@ -815,17 +809,17 @@
   <data name="lblCopyright.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="&gt;&gt;lblLizenzNr.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblAllRights.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
-  <data name="lblFirma2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;lblFirma1.Name" xml:space="preserve">
+    <value>lblFirma1</value>
   </data>
   <data name="&gt;&gt;lblFirma2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lblVersion.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="lblAllRights.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 151</value>
   </data>
   <data name="&gt;&gt;lblLizenztyp.Parent" xml:space="preserve">
     <value>$this</value>
@@ -836,14 +830,17 @@
   <data name="lblFirma1.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
+  <data name="lnkItesys.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lnkItesys.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Inherit</value>
   </data>
   <data name="lblCopyright.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="lblFirma1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 72</value>
+  <data name="lblFirma2.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -851,20 +848,23 @@
   <data name="$this.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="lblLizenztyp.Text" xml:space="preserve">
-    <value>type</value>
+  <data name="&gt;&gt;lblName.Name" xml:space="preserve">
+    <value>lblName</value>
   </data>
-  <data name="lblCopyright.Text" xml:space="preserve">
-    <value>Copyright (c) 2006 ITESYS Institut für technische Systeme GmbH</value>
+  <data name="&gt;&gt;lblFirma1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblFirma2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 88</value>
   </data>
   <data name="$this.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="pictureBox1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
+  <data name="lblLizenzNr.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
-  <data name="&gt;&gt;lblName.Name" xml:space="preserve">
-    <value>lblName</value>
+  <data name="lblVersion.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

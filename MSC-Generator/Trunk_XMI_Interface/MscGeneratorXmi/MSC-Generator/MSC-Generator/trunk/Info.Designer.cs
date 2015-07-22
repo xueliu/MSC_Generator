@@ -41,10 +41,6 @@ namespace nGenerator
 			this.lnkItesys = new System.Windows.Forms.LinkLabel();
 			this.lblAllRights = new System.Windows.Forms.Label();
 			this.lblCopyright = new System.Windows.Forms.Label();
-			this.lblLizenztyp = new System.Windows.Forms.Label();
-			this.lblFirma2 = new System.Windows.Forms.Label();
-			this.lblFirma1 = new System.Windows.Forms.Label();
-			this.lblLizenzNr = new System.Windows.Forms.Label();
 			this.lblVersion = new System.Windows.Forms.Label();
 			this.lblName = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -138,94 +134,6 @@ namespace nGenerator
 			this.lblCopyright.Text = resources.GetString("lblCopyright.Text");
 			this.lblCopyright.TextAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("lblCopyright.TextAlign")));
 			// 
-			// lblLizenztyp
-			// 
-			this.lblLizenztyp.AccessibleDescription = resources.GetString("lblLizenztyp.AccessibleDescription");
-			this.lblLizenztyp.AccessibleName = resources.GetString("lblLizenztyp.AccessibleName");
-			this.lblLizenztyp.Anchor = ((System.Windows.Forms.AnchorStyles)(resources.GetObject("lblLizenztyp.Anchor")));
-			this.lblLizenztyp.AutoSize = ((bool)(resources.GetObject("lblLizenztyp.AutoSize")));
-			this.lblLizenztyp.BackgroundImageLayout = ((System.Windows.Forms.ImageLayout)(resources.GetObject("lblLizenztyp.BackgroundImageLayout")));
-			this.lblLizenztyp.Dock = ((System.Windows.Forms.DockStyle)(resources.GetObject("lblLizenztyp.Dock")));
-			this.lblLizenztyp.Font = ((System.Drawing.Font)(resources.GetObject("lblLizenztyp.Font")));
-			this.lblLizenztyp.ImageAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("lblLizenztyp.ImageAlign")));
-			this.lblLizenztyp.ImageIndex = ((int)(resources.GetObject("lblLizenztyp.ImageIndex")));
-			this.lblLizenztyp.ImageKey = resources.GetString("lblLizenztyp.ImageKey");
-			this.lblLizenztyp.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("lblLizenztyp.ImeMode")));
-			this.lblLizenztyp.Location = ((System.Drawing.Point)(resources.GetObject("lblLizenztyp.Location")));
-			this.lblLizenztyp.MaximumSize = ((System.Drawing.Size)(resources.GetObject("lblLizenztyp.MaximumSize")));
-			this.lblLizenztyp.Name = "lblLizenztyp";
-			this.lblLizenztyp.RightToLeft = ((System.Windows.Forms.RightToLeft)(resources.GetObject("lblLizenztyp.RightToLeft")));
-			this.lblLizenztyp.Size = ((System.Drawing.Size)(resources.GetObject("lblLizenztyp.Size")));
-			this.lblLizenztyp.TabIndex = ((int)(resources.GetObject("lblLizenztyp.TabIndex")));
-			this.lblLizenztyp.Text = resources.GetString("lblLizenztyp.Text");
-			this.lblLizenztyp.TextAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("lblLizenztyp.TextAlign")));
-			// 
-			// lblFirma2
-			// 
-			this.lblFirma2.AccessibleDescription = resources.GetString("lblFirma2.AccessibleDescription");
-			this.lblFirma2.AccessibleName = resources.GetString("lblFirma2.AccessibleName");
-			this.lblFirma2.Anchor = ((System.Windows.Forms.AnchorStyles)(resources.GetObject("lblFirma2.Anchor")));
-			this.lblFirma2.AutoSize = ((bool)(resources.GetObject("lblFirma2.AutoSize")));
-			this.lblFirma2.BackgroundImageLayout = ((System.Windows.Forms.ImageLayout)(resources.GetObject("lblFirma2.BackgroundImageLayout")));
-			this.lblFirma2.Dock = ((System.Windows.Forms.DockStyle)(resources.GetObject("lblFirma2.Dock")));
-			this.lblFirma2.Font = ((System.Drawing.Font)(resources.GetObject("lblFirma2.Font")));
-			this.lblFirma2.ImageAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("lblFirma2.ImageAlign")));
-			this.lblFirma2.ImageIndex = ((int)(resources.GetObject("lblFirma2.ImageIndex")));
-			this.lblFirma2.ImageKey = resources.GetString("lblFirma2.ImageKey");
-			this.lblFirma2.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("lblFirma2.ImeMode")));
-			this.lblFirma2.Location = ((System.Drawing.Point)(resources.GetObject("lblFirma2.Location")));
-			this.lblFirma2.MaximumSize = ((System.Drawing.Size)(resources.GetObject("lblFirma2.MaximumSize")));
-			this.lblFirma2.Name = "lblFirma2";
-			this.lblFirma2.RightToLeft = ((System.Windows.Forms.RightToLeft)(resources.GetObject("lblFirma2.RightToLeft")));
-			this.lblFirma2.Size = ((System.Drawing.Size)(resources.GetObject("lblFirma2.Size")));
-			this.lblFirma2.TabIndex = ((int)(resources.GetObject("lblFirma2.TabIndex")));
-			this.lblFirma2.Text = resources.GetString("lblFirma2.Text");
-			this.lblFirma2.TextAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("lblFirma2.TextAlign")));
-			// 
-			// lblFirma1
-			// 
-			this.lblFirma1.AccessibleDescription = resources.GetString("lblFirma1.AccessibleDescription");
-			this.lblFirma1.AccessibleName = resources.GetString("lblFirma1.AccessibleName");
-			this.lblFirma1.Anchor = ((System.Windows.Forms.AnchorStyles)(resources.GetObject("lblFirma1.Anchor")));
-			this.lblFirma1.AutoSize = ((bool)(resources.GetObject("lblFirma1.AutoSize")));
-			this.lblFirma1.BackgroundImageLayout = ((System.Windows.Forms.ImageLayout)(resources.GetObject("lblFirma1.BackgroundImageLayout")));
-			this.lblFirma1.Dock = ((System.Windows.Forms.DockStyle)(resources.GetObject("lblFirma1.Dock")));
-			this.lblFirma1.Font = ((System.Drawing.Font)(resources.GetObject("lblFirma1.Font")));
-			this.lblFirma1.ImageAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("lblFirma1.ImageAlign")));
-			this.lblFirma1.ImageIndex = ((int)(resources.GetObject("lblFirma1.ImageIndex")));
-			this.lblFirma1.ImageKey = resources.GetString("lblFirma1.ImageKey");
-			this.lblFirma1.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("lblFirma1.ImeMode")));
-			this.lblFirma1.Location = ((System.Drawing.Point)(resources.GetObject("lblFirma1.Location")));
-			this.lblFirma1.MaximumSize = ((System.Drawing.Size)(resources.GetObject("lblFirma1.MaximumSize")));
-			this.lblFirma1.Name = "lblFirma1";
-			this.lblFirma1.RightToLeft = ((System.Windows.Forms.RightToLeft)(resources.GetObject("lblFirma1.RightToLeft")));
-			this.lblFirma1.Size = ((System.Drawing.Size)(resources.GetObject("lblFirma1.Size")));
-			this.lblFirma1.TabIndex = ((int)(resources.GetObject("lblFirma1.TabIndex")));
-			this.lblFirma1.Text = resources.GetString("lblFirma1.Text");
-			this.lblFirma1.TextAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("lblFirma1.TextAlign")));
-			// 
-			// lblLizenzNr
-			// 
-			this.lblLizenzNr.AccessibleDescription = resources.GetString("lblLizenzNr.AccessibleDescription");
-			this.lblLizenzNr.AccessibleName = resources.GetString("lblLizenzNr.AccessibleName");
-			this.lblLizenzNr.Anchor = ((System.Windows.Forms.AnchorStyles)(resources.GetObject("lblLizenzNr.Anchor")));
-			this.lblLizenzNr.AutoSize = ((bool)(resources.GetObject("lblLizenzNr.AutoSize")));
-			this.lblLizenzNr.BackgroundImageLayout = ((System.Windows.Forms.ImageLayout)(resources.GetObject("lblLizenzNr.BackgroundImageLayout")));
-			this.lblLizenzNr.Dock = ((System.Windows.Forms.DockStyle)(resources.GetObject("lblLizenzNr.Dock")));
-			this.lblLizenzNr.Font = ((System.Drawing.Font)(resources.GetObject("lblLizenzNr.Font")));
-			this.lblLizenzNr.ImageAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("lblLizenzNr.ImageAlign")));
-			this.lblLizenzNr.ImageIndex = ((int)(resources.GetObject("lblLizenzNr.ImageIndex")));
-			this.lblLizenzNr.ImageKey = resources.GetString("lblLizenzNr.ImageKey");
-			this.lblLizenzNr.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("lblLizenzNr.ImeMode")));
-			this.lblLizenzNr.Location = ((System.Drawing.Point)(resources.GetObject("lblLizenzNr.Location")));
-			this.lblLizenzNr.MaximumSize = ((System.Drawing.Size)(resources.GetObject("lblLizenzNr.MaximumSize")));
-			this.lblLizenzNr.Name = "lblLizenzNr";
-			this.lblLizenzNr.RightToLeft = ((System.Windows.Forms.RightToLeft)(resources.GetObject("lblLizenzNr.RightToLeft")));
-			this.lblLizenzNr.Size = ((System.Drawing.Size)(resources.GetObject("lblLizenzNr.Size")));
-			this.lblLizenzNr.TabIndex = ((int)(resources.GetObject("lblLizenzNr.TabIndex")));
-			this.lblLizenzNr.Text = resources.GetString("lblLizenzNr.Text");
-			this.lblLizenzNr.TextAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("lblLizenzNr.TextAlign")));
-			// 
 			// lblVersion
 			// 
 			this.lblVersion.AccessibleDescription = resources.GetString("lblVersion.AccessibleDescription");
@@ -285,10 +193,6 @@ namespace nGenerator
 			this.Controls.Add(this.lnkItesys);
 			this.Controls.Add(this.lblAllRights);
 			this.Controls.Add(this.lblCopyright);
-			this.Controls.Add(this.lblLizenztyp);
-			this.Controls.Add(this.lblFirma2);
-			this.Controls.Add(this.lblFirma1);
-			this.Controls.Add(this.lblLizenzNr);
 			this.Controls.Add(this.lblVersion);
 			this.Controls.Add(this.lblName);
 			this.Controls.Add(this.pictureBox1);
@@ -308,10 +212,6 @@ namespace nGenerator
 		}
 		private System.Windows.Forms.Label lblName;
 		private System.Windows.Forms.Label lblVersion;
-		private System.Windows.Forms.Label lblLizenzNr;
-		private System.Windows.Forms.Label lblFirma1;
-		private System.Windows.Forms.Label lblFirma2;
-		private System.Windows.Forms.Label lblLizenztyp;
 		private System.Windows.Forms.Label lblCopyright;
 		private System.Windows.Forms.Label lblAllRights;
 		private System.Windows.Forms.LinkLabel lnkItesys;

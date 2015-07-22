@@ -31,7 +31,6 @@ namespace nGenerator
 			InitializeComponent();
 			ResourceManager strings = new ResourceManager ("nGenerator.strings", Assembly.GetAssembly(typeof(Info)));
 			this.lblVersion.Text = string.Format(this.lblVersion.Text, Application.ProductVersion);
-			this.lblLizenztyp.Text = "";
 		}
 	}
 }
