@@ -1790,8 +1790,8 @@ namespace nGenerator
 		}
         
 		//LG
-		/*
- *        protected override void ImportFromXmi()
+
+        protected override void ImportFromXmi()
        {	
        		XmiImportChoiceDialog xmiFormatChoiceDialog=new XmiImportChoiceDialog();
        		DialogResult xmiFormatDialogResult=xmiFormatChoiceDialog.ShowDialog();
@@ -1819,7 +1819,7 @@ namespace nGenerator
        			CreateEditorEntriesForDiagrams(editorContent);
        		}
        }
-*/
+
 		public void CreateEditorEntriesForDiagrams(ArrayList[] editorContentDiagrams)
 		{
 			int editorContentDiagramsCount = editorContentDiagrams.GetLength(0);
