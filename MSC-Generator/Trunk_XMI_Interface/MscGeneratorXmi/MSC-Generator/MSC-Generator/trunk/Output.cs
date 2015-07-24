@@ -1791,34 +1791,29 @@ namespace nGenerator
         
 		//LG
 
-        protected override void ImportFromXmi()
-       {	
-       		XmiImportChoiceDialog xmiFormatChoiceDialog=new XmiImportChoiceDialog();
-       		DialogResult xmiFormatDialogResult=xmiFormatChoiceDialog.ShowDialog();
-       		XmiDocumentImport documentImport;
-       		ArrayList [] editorContent=null;
+		protected override void ImportFromXmi()
+		{	
+			XmiImportChoiceDialog xmiFormatChoiceDialog = new XmiImportChoiceDialog();
+			DialogResult xmiFormatDialogResult = xmiFormatChoiceDialog.ShowDialog();
+			XmiDocumentImport documentImport;
+			ArrayList[] editorContent = null;
        		
-       		if(xmiFormatDialogResult==DialogResult.OK)
-       		{
-       			Object xmiFormatObject=xmiFormatChoiceDialog.ImportFormatChoiceComboBox.SelectedItem;
-       			string xmiFormatString=xmiFormatObject.ToString();
+			if (xmiFormatDialogResult == DialogResult.OK) {
+				Object xmiFormatObject = xmiFormatChoiceDialog.ImportFormatChoiceComboBox.SelectedItem;
+				string xmiFormatString = xmiFormatObject.ToString();
        			
-       			if(xmiFormatString.Equals(STANDARD_XMI_FORMAT))
-       			{
+				if (xmiFormatString.Equals(STANDARD_XMI_FORMAT)) {
        				
-       			}
-       			else if(xmiFormatString.Equals(PAPYRUS_XMI_FORMAT))
-       			{
-       				documentImport=new PapyrusXmiDocumentImport();
-       				editorContent=documentImport.ImportXmiDocument();
-       			}
-       		}
+				} else if (xmiFormatString.Equals(PAPYRUS_XMI_FORMAT)) {
+					documentImport = new PapyrusXmiDocumentImport();
+					editorContent = documentImport.ImportXmiDocument();
+				}
+			}
        		
-       		if(editorContent!=null)
-       		{
-       			CreateEditorEntriesForDiagrams(editorContent);
-       		}
-       }
+			if (editorContent != null) {
+				CreateEditorEntriesForDiagrams(editorContent);
+			}
+		}
 
 		public void CreateEditorEntriesForDiagrams(ArrayList[] editorContentDiagrams)
 		{
