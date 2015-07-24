@@ -15,7 +15,7 @@ namespace xmiPapyrus
 	/// <summary>
 	/// Description of PapyrusXmiModelNamespaceManager.
 	/// </summary>
-	public class PapyrusXmiModelNamespaceManager:XmlNamespaceManager
+	public sealed class PapyrusXmiModelNamespaceManager:XmlNamespaceManager
 	{
 		public const string UML_NAMESPACE_PREFIX="uml";
         public const string UML_NAMESPACE_URI="http://www.eclipse.org/uml2/2.1.0/UML";

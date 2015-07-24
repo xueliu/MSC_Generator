@@ -15,7 +15,7 @@ namespace xmiPapyrus
 	/// <summary>
 	/// Description of PapyrusXmiModelNamespaceManager.
 	/// </summary>
-	public class PapyrusXmiDiNamespaceManager:System.Xml.XmlNamespaceManager
+	public sealed class PapyrusXmiDiNamespaceManager:System.Xml.XmlNamespaceManager
 	{
 		private const string PAPYRUS_DI_NAMESPACE_PREFIX="di2";
 		private const string PAPYRUS_DI_NAMESPACE_URI="http://www.papyrusuml.org";
