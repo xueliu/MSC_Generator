@@ -54,9 +54,6 @@
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GeneratorGUI">
-      <HintPath>..\..\GeneratorGUI\bin\Debug\GeneratorGUI.dll</HintPath>
-    </Reference>
     <Reference Include="NumberingEditor">
       <HintPath>..\..\Generator Editor\NumberingEditor\bin\Debug\NumberingEditor.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
@@ -552,6 +549,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MSC-SD-Generator.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\GeneratorGUI\GeneratorGUI.csproj">
+      <Project>{46AC51BF-66E4-4D8B-BE2F-12DE5D25211B}</Project>
+      <Name>GeneratorGUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
