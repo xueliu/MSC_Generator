@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <RootNamespace>GeneratorGUI</RootNamespace>
@@ -26,10 +27,6 @@
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MSC-SD-Generator">
-      <HintPath>..\..\MSC-Generator\MSC-Generator\trunk\bin\Debug\MSC-SD-Generator.exe</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="sharpPDF">
       <HintPath>..\MSC-Generator\trunk\LIB\sharpPDF.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
@@ -45,10 +42,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="NumberingEditor">
-      <HintPath>..\Generator Editor\NumberingEditor\bin\Debug\NumberingEditor.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -209,6 +202,12 @@
     <Content Include="icons\seitenhöhe.ico" />
     <Content Include="icons\zoom+2.png" />
     <Content Include="icons\zoom-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Generator Editor\NumberingEditor\NumberingEditor.csproj">
+      <Project>{9FA0F0B7-9BEF-4DA5-9E03-C80716750EC7}</Project>
+      <Name>NumberingEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>

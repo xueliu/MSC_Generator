@@ -54,10 +54,6 @@
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NumberingEditor">
-      <HintPath>..\..\Generator Editor\NumberingEditor\bin\Debug\NumberingEditor.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -551,6 +547,10 @@
     <Content Include="MSC-SD-Generator.cd" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Generator Editor\NumberingEditor\NumberingEditor.csproj">
+      <Project>{9FA0F0B7-9BEF-4DA5-9E03-C80716750EC7}</Project>
+      <Name>NumberingEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\GeneratorGUI\GeneratorGUI.csproj">
       <Project>{46AC51BF-66E4-4D8B-BE2F-12DE5D25211B}</Project>
       <Name>GeneratorGUI</Name>
