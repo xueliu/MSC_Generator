@@ -217,7 +217,11 @@ namespace NumberingEditor
 	                                           int msg,
 	                                           int wParam,
 	                                           int lParam );
-	    
+	    public int Updating{
+	    	get{
+	    		return updating;
+	    	}
+	    }
 				
 		public void BeginUpdate()
 		{
@@ -259,6 +263,11 @@ namespace NumberingEditor
 			//for (int i=0; i<10; i++)
 			SendMessageA(new HandleRef( this, Handle ),
 			                             EM_UNDO, 0, 0 );
+		}
+		protected override void OnLayout(LayoutEventArgs levent)
+		{
+			if(updating==0)
+				base.OnLayout(levent);
 		}
 	}
 	public struct ErrorPosition{

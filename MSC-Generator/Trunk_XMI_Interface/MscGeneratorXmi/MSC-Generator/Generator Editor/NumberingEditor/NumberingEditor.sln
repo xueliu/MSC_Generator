@@ -1,7 +1,5 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-# SharpDevelop 3.1.1.5327
+﻿Microsoft Visual Studio Solution File, Format Version 9.00
+# SharpDevelop 2.0.0.1591
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberingEditor", "NumberingEditor.csproj", "{9FA0F0B7-9BEF-4DA5-9E03-C80716750EC7}"
 EndProject
 Global
