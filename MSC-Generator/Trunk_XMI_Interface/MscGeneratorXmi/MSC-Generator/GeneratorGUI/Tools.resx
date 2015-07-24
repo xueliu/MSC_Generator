@@ -117,52 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Size" xml:space="preserve">
-    <value>Größe: </value>
-  </data>
-  <data name="SaveFile?" xml:space="preserve">
-    <value>Die Datei wurde verändert. Sollen die Änderungen gespeichert werden?</value>
-  </data>
-  <data name="Override" xml:space="preserve">
-    <value>ÜB</value>
-  </data>
-  <data name="Export" xml:space="preserve">
-    <value>Ausgabe exportieren</value>
-  </data>
-  <data name="SaveAs" xml:space="preserve">
-    <value>Datei Speichern unter...</value>
-  </data>
-  <data name="TextNotFound" xml:space="preserve">
-    <value>Der gesuchte Text konnte innerhalb der Datei nicht gefunden werden.</value>
-  </data>
-  <data name="PrintPreview" xml:space="preserve">
-    <value>Druckvorschau</value>
-  </data>
-  <data name="FileOutsideGeneratorChanged" xml:space="preserve">
-    <value>Die verwendete Datei wurde außerhalb des Generators verändert. Sollen die Änderungen übernommen werden?</value>
-  </data>
-  <data name="UserDefined" xml:space="preserve">
-    <value>Benutzerdefiniert</value>
-  </data>
-  <data name="FileName" xml:space="preserve">
-    <value>Dateiname: </value>
-  </data>
-  <data name="PrintDate" xml:space="preserve">
-    <value>Druckdatum: </value>
-  </data>
-  <data name="Company" xml:space="preserve">
-    <value>Firma: </value>
-  </data>
-  <data name="Author" xml:space="preserve">
-    <value>Autor: </value>
-  </data>
-  <data name="Date" xml:space="preserve">
-    <value>Datum: </value>
-  </data>
-  <data name="Version" xml:space="preserve">
-    <value>Version: </value>
-  </data>
-  <data name="PatternNotFound" xml:space="preserve">
-    <value>Suchtext nicht gefunden.</value>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>116, 17</value>
+  </metadata>
+  <data name="toolImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAY
+        CgAAAk1TRnQBSQFMAgEBAwEAAQQBAAEEAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
+        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
+        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
+        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
+        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
+        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
+        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
+        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
+        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
+        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
+        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
+        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
+        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
+        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
+        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
+        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
+        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
+        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
+        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
+        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
+        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
+        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
+        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
+        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
+        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
+        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
+        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
+        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/wkAAaEB6wGuAYYUAAJy
+        A1AGAAVPGAABpwHvAfEB6wGhDgACoQMAAXIBmAF4AXIBoQcAAU8CcgFPFAABoQMAAewB8QHvAYYOAAGh
+        AWcBSwFmAgABcgGYApcBcgGhBQABbANyAU8UAAGuAaEBAAGnAe8B9AHsAaENAAGhAWcBdAGZAUsCAAGX
+        AXIBlwGYAZcBcgQAAWwBcgGXAXICTxQAAfcB7QGnAewB8QEHAa4NAAGhAW0BdAGZAXQBSwIAAZcBAAFs
+        ApcBbAQAAWwCcgFPAaEBTxQAAfcB8AGSAfAB8wHtAaECAAKhAwABoQHPBLQBkQF0AZoBdAFLAcQFAAJs
+        BgABbAFxAaEWAAHvAfQD8gHtAa4C7AGGAwABoQG0AQkEGQG7AbUBkwFLAcQnAAHvAfMB8gHxA/IBBwGu
+        BAABzwEJAxkB3QIZAbsB7QHEKAAB7wH0BPIBBwHPBQABCQUZAd0CGQG0KQAB7wH0AfMB8gHzAQcBzwYA
+        AQkGGQHdARkBtCkAAQcB9ALzAbwBzwcAAQkB9AcZAbUHAAGhAXIBkAYAAmwXAAEHAfQB8wHwAc8IAAEJ
+        CBkBtAUAAZcBoQGXAZgBeAGQBAABbAKXAWwBAAFQFAABBwH0AfABzwkAAdUBGQH0BRkBCQHPBQAClwKY
+        AXgBkAQAAXIBlwGYAZcCchQAAQcB8QHPCgABoQHWAhkC9AEZAd0BtAGhBQABlwKYAXgBkAUAAaEBcgGX
+        AXgBmAFyFAABvAHPDAABoQHVBAkBzwGhBgABlwKYAZcHAAGhAZcCmAFyFAABzxsABZcGAAOXAnIQAAFC
+        AU0BPgcAAT4DAAEoAwABQAMAARADAAEBAQABAQUAAYAXAAP/AQAB/wEPAv8BBwHgAgAB/wEHAf8B5wEH
+        AfACAAH3AQ8B/wHDAQMB4AIAAfIBDwH/AYMBAwHAAgAB8AEfAf8BAwFDAcACAAHwARkBwAEDAecB4wIA
+        AfABAwGAAQcC/wIAAfABBwGAAQ8C/wIAAfABDwGAAR8C/wIAAfABHwGAAR8C/wIAAfABPwGAAR8BxwHn
+        AgAB8AF/AYABHwEDAcICAAHwAf8BgAEfAQMBwAIAAfEB/wGAAR8BBwHAAgAB8wH/AcABPwEPAeACAAH3
+        A/8BBwHgAgAL
+</value>
   </data>
 </root>

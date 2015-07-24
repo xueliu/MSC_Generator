@@ -77,6 +77,8 @@ namespace GeneratorGUI
 		protected FileStream fs = null;
 		protected System.Drawing.Drawing2D.SmoothingMode imageSmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
         protected float dpiOutput;
+        protected string toolState;
+ 		private Tools tools;
         private static bool saveUndo = true;
 		private static int exportFileFormatIndex = FILE_FORMAT_EMF;
         private bool mouseMoveIsAtWork = false;
@@ -102,7 +104,6 @@ namespace GeneratorGUI
 			
 			try{
 				OwenInitializeComponent();		// not automaticly generated code to initialize components. Must be before InitializeComponent()!
-		
 				dpiOutput = imageBitmap.HorizontalResolution;		// dots per inch resolution of the GUI picture. Necessary to calculate the preview sizes
 				worksheet.Dpi = dpiOutput;
 				// initialize the status bar output
@@ -112,6 +113,9 @@ namespace GeneratorGUI
 				this.picOutput.Size = new System.Drawing.Size(worksheet.GetWorksheetWidth(), worksheet.GetWorksheetHeight());
 				this.dlgPreviewPage.Document = printDocument;
 				RtbTextInitUndo();
+				tools = new Tools(this);
+
+				tools.Show();
                 // TODO: this.CenterPage(); anstelle des Timers 
         	}
 			catch (System.Security.SecurityException ex) {
@@ -127,6 +131,11 @@ namespace GeneratorGUI
         		return repertory;
         	}
         }
+        public string ToolState{
+        	get{
+        		return tools.ToolState;
+        	}
+       }
         
        
         
@@ -838,7 +847,7 @@ namespace GeneratorGUI
 			if (searchUpperLowerCase) options |= RichTextBoxFinds.MatchCase;
 			if ((this.rtbMscEditor.Find(searchText,this.rtbMscEditor.SelectionStart + Math.Min(searchText.Length, this.rtbMscEditor.SelectionLength), options)==-1)&&(this.rtbMscEditor.SelectionStart + Math.Min(searchText.Length, this.rtbMscEditor.SelectionLength) > 0)){
 				if(this.rtbMscEditor.Find(searchText,0, searchStartPosition ,options)==-1){
-					MessageBox.Show(strings.GetString("FileNotFound"));
+					MessageBox.Show(strings.GetString("TextNotFound"));
 				}
 			}
 		}
@@ -1477,7 +1486,7 @@ namespace GeneratorGUI
 			RepertoryItem repertoryItem;
 			IEnumerator enumerator = repertory.GetEnumerator();
 			e.DrawBackground();
-			for(uint i=0; i<repertory.Count;i++){											// for all generetad preview images
+			for(uint i=0; i<repertory.Count;i++){											// for alExportToXmieneretad preview images
 				enumerator.MoveNext();
 				if (i==e.Index){
 					repertoryItem = (RepertoryItem) enumerator.Current;
@@ -1521,7 +1530,6 @@ namespace GeneratorGUI
 		protected virtual void PrintImage()
 		{
 			try{
-				
 				if(this.lstPreview.Items.Count==0) return;				// something to do?
 				if(worksheet.Width> worksheet.Height)
 					printDocument.DefaultPageSettings.Landscape = true;
@@ -1530,7 +1538,6 @@ namespace GeneratorGUI
 				dlgPrinter.Document = printDocument;					
 				dlgPrinter.PrinterSettings.FromPage = 1;
 				dlgPrinter.PrinterSettings.ToPage = 1;
-				dlgPrinter.UseEXDialog = true;
 				if (dlgPrinter.ShowDialog()==DialogResult.OK){			// show print dialog
 					printPage = (uint)Math.Max(1,dlgPrinter.PrinterSettings.FromPage);
 					if(dlgPrinter.PrinterSettings.PrintRange == PrintRange.AllPages){
@@ -1542,9 +1549,7 @@ namespace GeneratorGUI
 					printDocument.Print();									// print page
 				}
 			}
-			catch(Exception e){
-				MessageBox.Show(e.Message);
-			}
+			catch{}
 		}
 		private void UmnuSaveClick(object sender, System.EventArgs e)
 		{
@@ -1560,9 +1565,16 @@ namespace GeneratorGUI
 			this.PrintImage();
 		}
 		
+		// L G
 		private void UmnuXmiExportClick(object sender, System.EventArgs e)
 		{
 			this.ExportToXmi();
+		}
+		
+		// L G
+		private void UmnuXmiImportClick(object sender, System.EventArgs e)
+		{
+			this.ImportFromXmi();
 		}
 		
 		private void UmnuPrinterClick(object sender, System.EventArgs e)
@@ -2315,6 +2327,22 @@ namespace GeneratorGUI
 		
 		//LG the method that calls the implementation for the XmiExport   
 		protected virtual void ExportToXmi(){}
+		
+		//LG the method that calls the implementation for the XmiImport   
+		protected virtual void ImportFromXmi(){}
+
+		public virtual void ToolCursor(bool state){
+			this.pnlOutput.Cursor = Cursors.Arrow;
+			//MessageBox.Show("Works!" + state);
+		}
+		public virtual void ToolZoom(bool state){
+			//MessageBox.Show("Works fine!" + state);
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
+			Bitmap img = ((System.Drawing.Bitmap)(resources.GetObject("magnifier")));
+			Cursor c = new Cursor (img.GetHicon());
+			this.pnlOutput.Cursor = c;
+		}
+
    	}	
 }
 

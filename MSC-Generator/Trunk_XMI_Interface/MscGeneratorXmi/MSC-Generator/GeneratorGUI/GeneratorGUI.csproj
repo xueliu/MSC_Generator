@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <RootNamespace>GeneratorGUI</RootNamespace>
@@ -9,12 +8,6 @@
     <ProjectGuid>{46AC51BF-66E4-4D8B-BE2F-12DE5D25211B}</ProjectGuid>
     <SourceAnalysisOverrideSettingsFile>C:\Dokumente und Einstellungen\admin\Anwendungsdaten\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <NoWin32Manifest>False</NoWin32Manifest>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-    <NoStdLib>False</NoStdLib>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -23,8 +16,6 @@
     <DebugSymbols>True</DebugSymbols>
     <DebugType>Full</DebugType>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
-    <StartAction>Project</StartAction>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -34,16 +25,9 @@
     <DebugType>None</DebugType>
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-    <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <RegisterForComInterop>False</RegisterForComInterop>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <FileAlignment>4096</FileAlignment>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NumberingEditor">
-      <HintPath>..\Generator Editor\NumberingEditor\bin\Debug\NumberingEditor.dll</HintPath>
+    <Reference Include="MSC-SD-Generator">
+      <HintPath>..\..\MSC-Generator\MSC-Generator\trunk\bin\Debug\MSC-SD-Generator.exe</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="sharpPDF">
@@ -61,6 +45,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="NumberingEditor">
+      <HintPath>..\Generator Editor\NumberingEditor\bin\Debug\NumberingEditor.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -83,6 +71,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Icons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Compile Include="ModalDialogOk.cs" />
+    <Compile Include="ModalDialogOk.Designer.cs">
+      <DependentUpon>ModalDialogOk.cs</DependentUpon>
+    </Compile>
     <Compile Include="OptionsDialog.Designer.cs">
       <DependentUpon>OptionsDialog.cs</DependentUpon>
     </Compile>
@@ -118,6 +110,9 @@
     <Compile Include="Replace.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="ModalDialogOk.resx">
+      <DependentUpon>ModalDialogOk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Replace.resx">
       <DependentUpon>Replace.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +158,10 @@
     <Compile Include="OutputPicturePanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XmiImportChoiceDialog.cs" />
+    <Compile Include="XmiImportChoiceDialog.Designer.cs">
+      <DependentUpon>XmiImportChoiceDialog.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="OptionsDialog.resx">
       <DependentUpon>OptionsDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +191,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.resx" />
     <EmbeddedResource Include="Strings.en.resx" />
+    <EmbeddedResource Include="XmiImportChoiceDialog.resx">
+      <DependentUpon>XmiImportChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Tools.Designer.cs">
+      <DependentUpon>Tools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools.cs" />
+    <EmbeddedResource Include="Tools.resx">
+      <DependentUpon>Tools.Designer.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons\comment.ico" />
