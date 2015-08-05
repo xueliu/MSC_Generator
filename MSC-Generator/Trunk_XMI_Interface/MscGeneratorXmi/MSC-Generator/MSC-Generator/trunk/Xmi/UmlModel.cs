@@ -42,7 +42,7 @@ namespace xmi{
 	
 	
 	
-	public class UmlModel
+	public static class UmlModel
 	{
 		public const string UML_MODEL="Model";
 		public const string GRAPH_CONNECTOR="GraphConnector";

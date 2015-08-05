@@ -15,7 +15,7 @@ namespace xmi
 	/// <summary>
 	/// Description of XmiElementValidor.
 	/// </summary>
-	public class XmiElementValidator
+	public static class XmiElementValidator
 	{
 		private const string DOUBLE_POINT=":";
 		

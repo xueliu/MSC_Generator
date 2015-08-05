@@ -27,20 +27,14 @@ namespace sequenceChartModel
 	/// </summary>
 	public class FormalGate:MessageEnd
 	{
-		private FormalGateType formalGateKind;
 		
 		public FormalGate(Point position,string xmiId,XmlElement xmlRepresentation):
 				base(position,xmiId,xmlRepresentation){}
 		
 		
-		public FormalGateType FormalGateKind{
-			get{
-				
-				return formalGateKind;
-			}
-			set{
-				formalGateKind=value;
-			}
+		public FormalGateType FormalGateKind {
+			get;
+			set;
 		}		
 	}
 }
