@@ -84,9 +84,9 @@ namespace xmiImportPapyrus
 			IsCorrectImportedPackageElement(packageImportElement);
 		}
 		
-		private void IsCorrectImportedPackageElement(XmlElement packageImportElement)
+		private void IsCorrectImportedPackageElement(XmlNode packageImportElement)
 		{
-			XmlElement importedPackageElement=(XmlElement)packageImportElement.FirstChild;
+			var importedPackageElement=(XmlElement)packageImportElement.FirstChild;
 			
 			if(importedPackageElement==null)
 			{

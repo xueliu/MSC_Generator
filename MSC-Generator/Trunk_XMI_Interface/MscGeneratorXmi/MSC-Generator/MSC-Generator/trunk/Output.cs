@@ -1803,8 +1803,9 @@ namespace nGenerator
 				string xmiFormatString = xmiFormatObject.ToString();
        			
 				if (xmiFormatString.Equals(STANDARD_XMI_FORMAT)) {
-       				
+					// TODO: Implementation of standard XMI
 				} else if (xmiFormatString.Equals(PAPYRUS_XMI_FORMAT)) {
+					// TODO: Start point
 					documentImport = new PapyrusXmiDocumentImport();
 					editorContent = documentImport.ImportXmiDocument();
 				}
@@ -1818,6 +1819,7 @@ namespace nGenerator
 		public void CreateEditorEntriesForDiagrams(ArrayList[] editorContentDiagrams)
 		{
 			int editorContentDiagramsCount = editorContentDiagrams.GetLength(0);
+			// TODO: Check is there some unsave work ?
 			this.rtbMscEditor.Clear();
 			ArrayList editorContentCurrentDiagram;
        		

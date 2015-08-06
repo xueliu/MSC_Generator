@@ -27,6 +27,8 @@ namespace GeneratorGUI
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
+			// Set "PapyrusXmiFormat" as default
+			importFormatChoiceComboBox.SelectedIndex = 1;
 		}
 		
 		public ComboBox ImportFormatChoiceComboBox{
