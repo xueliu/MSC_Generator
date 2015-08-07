@@ -1785,9 +1785,19 @@ namespace nGenerator
 			XmlDocument createdDocument = diagramInterpreter.InterpretMscDiagram();
 			
 			// Call SaveFileDialog
-			string fileName = SaveFileDialog();
-			if(fileName != "") {
-				createdDocument.Save(fileName);
+			string fullFileName 			= SaveFileDialog();
+			string fileNameWithoutExtension	= System.IO.Path.GetFileNameWithoutExtension(fullFileName);
+			string fileName 				= System.IO.Path.GetFileName(fullFileName);
+			string pathName 				= fullFileName.Substring(0, fullFileName.LastIndexOf("\\"));
+			string newPathName 				= pathName + "\\" + fileNameWithoutExtension;
+			string newFileName  			= newPathName + "\\" + fileName;
+			
+			if(fullFileName != "") {
+				if (!Directory.Exists(newPathName))
+	            {
+	                Directory.CreateDirectory(newPathName);
+	            }
+				createdDocument.Save(newFileName);
 			}
 		}
 		
@@ -1795,34 +1805,35 @@ namespace nGenerator
 		private string SaveFileDialog()
 		{
 			//string localFilePath, fileNameExt, newFileName, FilePath;
-			SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
 		
 			// Set file type
-			saveFileDialog1.Filter = " XMI files(*.xmi)|*.xmi";
+			saveFileDialog.Filter = " XMI files(*.xmi)|*.xmi";
+			
+			saveFileDialog.Title = "Save XMI file in a project";
 		
-			//设置默认文件类型显示顺序
-			saveFileDialog1.FilterIndex = 1;
+			// Set default sequence of file type
+			saveFileDialog.FilterIndex = 1;
 		
-			//保存对话框是否记忆上次打开的目录
-			saveFileDialog1.RestoreDirectory = true;
+			// Wheter store the location
+			saveFileDialog.RestoreDirectory = true;
 		
-			//点了保存按钮进入
-			if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
-				//获得文件路径
+				// Get file path
 				//localFilePath = saveFileDialog1.FileName.ToString();
-				return saveFileDialog1.FileName.ToString();
+				return saveFileDialog.FileName.ToString();
 		
-				//获取文件名，不带路径
+				// Get file name without path name
 				//fileNameExt = localFilePath.Substring(localFilePath.LastIndexOf("\\") + 1);
 		
-				//获取文件路径，不带文件名
+				// Get path name without file name 
 				//FilePath = localFilePath.Substring(0, localFilePath.LastIndexOf("\\"));
 		
-				//给文件名前加上时间
+				// Add time stamp into the file name
 				//newFileName = DateTime.Now.ToString("yyyyMMdd") + fileNameExt;
 		
-				//在文件名里加字符
+				// Add characters into the file name
 				//saveFileDialog1.FileName.Insert(1,"dameng");
 			} else {
 				return "";
