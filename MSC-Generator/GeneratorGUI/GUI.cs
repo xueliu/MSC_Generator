@@ -18,7 +18,7 @@ using System.Threading;
 using System.Resources;
 using System.Reflection;
 using System.IO;
-using sharpPDF;
+// using sharpPDF;
 
 namespace GeneratorGUI
 {

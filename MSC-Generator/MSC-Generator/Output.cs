@@ -1786,13 +1786,13 @@ namespace nGenerator
 			
 			// Call SaveFileDialog
 			string fullFileName 			= SaveFileDialog();
-			string fileNameWithoutExtension	= System.IO.Path.GetFileNameWithoutExtension(fullFileName);
-			string fileName 				= System.IO.Path.GetFileName(fullFileName);
-			string pathName 				= fullFileName.Substring(0, fullFileName.LastIndexOf("\\"));
-			string newPathName 				= pathName + "\\" + fileNameWithoutExtension;
-			string newFileName  			= newPathName + "\\" + fileName;
 			
 			if(fullFileName != "") {
+				string fileNameWithoutExtension	= System.IO.Path.GetFileNameWithoutExtension(fullFileName);
+				string fileName 				= System.IO.Path.GetFileName(fullFileName);
+				string pathName 				= fullFileName.Substring(0, fullFileName.LastIndexOf("\\"));
+				string newPathName 				= pathName + "\\" + fileNameWithoutExtension;
+				string newFileName  			= newPathName + "\\" + fileName;
 				if (!Directory.Exists(newPathName))
 	            {
 	                Directory.CreateDirectory(newPathName);
