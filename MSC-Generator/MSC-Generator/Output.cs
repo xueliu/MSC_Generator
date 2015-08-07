@@ -47,8 +47,6 @@ namespace nGenerator
 		//TODO: Propertyfenster einrasten
 		public static string	stringResources = "nGenerator.strings";
 		
-		//private const uint 		appType					= 0x4D534301;
-		//private License 		license 				= new License();
 		private Editor editor = null;
 		private MscStyle oldRepertoryStyle = MscStyle.Unknown;
 		private bool mRedrawOutput = true;
@@ -1785,9 +1783,52 @@ namespace nGenerator
         	
 			diagramInterpreter = new MscDiagramInterpreter(this.generator, documentBuilder);
 			XmlDocument createdDocument = diagramInterpreter.InterpretMscDiagram();
-			createdDocument.Save("C:\\testXmlExport.xmi");
-        	
+			
+			// Call SaveFileDialog
+			string fileName = SaveFileDialog();
+			if(fileName != "") {
+				createdDocument.Save(fileName);
+			}
 		}
+		
+		#region SaveFileDialog
+		private string SaveFileDialog()
+		{
+			//string localFilePath, fileNameExt, newFileName, FilePath;
+			SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+		
+			// Set file type
+			saveFileDialog1.Filter = " XMI files(*.xmi)|*.xmi";
+		
+			//设置默认文件类型显示顺序
+			saveFileDialog1.FilterIndex = 1;
+		
+			//保存对话框是否记忆上次打开的目录
+			saveFileDialog1.RestoreDirectory = true;
+		
+			//点了保存按钮进入
+			if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+			{
+				//获得文件路径
+				//localFilePath = saveFileDialog1.FileName.ToString();
+				return saveFileDialog1.FileName.ToString();
+		
+				//获取文件名，不带路径
+				//fileNameExt = localFilePath.Substring(localFilePath.LastIndexOf("\\") + 1);
+		
+				//获取文件路径，不带文件名
+				//FilePath = localFilePath.Substring(0, localFilePath.LastIndexOf("\\"));
+		
+				//给文件名前加上时间
+				//newFileName = DateTime.Now.ToString("yyyyMMdd") + fileNameExt;
+		
+				//在文件名里加字符
+				//saveFileDialog1.FileName.Insert(1,"dameng");
+			} else {
+				return "";
+			}
+		}
+		#endregion
         
 		//LG
 
