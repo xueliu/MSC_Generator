@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 5.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSC-SD-Generator", "MSC-SD-Generator.csproj", "{1A543348-9454-4400-B166-D57B8903CC7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sdgen", "mscgen\sdgen.csproj", "{1E11CDC2-B66A-497F-A8FA-213AB2AC7FEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberingEditor", "..\Generator Editor\NumberingEditor\NumberingEditor.csproj", "{9FA0F0B7-9BEF-4DA5-9E03-C80716750EC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorGUI", "..\GeneratorGUI\GeneratorGUI.csproj", "{46AC51BF-66E4-4D8B-BE2F-12DE5D25211B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A543348-9454-4400-B166-D57B8903CC7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A543348-9454-4400-B166-D57B8903CC7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A543348-9454-4400-B166-D57B8903CC7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A543348-9454-4400-B166-D57B8903CC7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E11CDC2-B66A-497F-A8FA-213AB2AC7FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E11CDC2-B66A-497F-A8FA-213AB2AC7FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E11CDC2-B66A-497F-A8FA-213AB2AC7FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E11CDC2-B66A-497F-A8FA-213AB2AC7FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA0F0B7-9BEF-4DA5-9E03-C80716750EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA0F0B7-9BEF-4DA5-9E03-C80716750EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA0F0B7-9BEF-4DA5-9E03-C80716750EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA0F0B7-9BEF-4DA5-9E03-C80716750EC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46AC51BF-66E4-4D8B-BE2F-12DE5D25211B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46AC51BF-66E4-4D8B-BE2F-12DE5D25211B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46AC51BF-66E4-4D8B-BE2F-12DE5D25211B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46AC51BF-66E4-4D8B-BE2F-12DE5D25211B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
