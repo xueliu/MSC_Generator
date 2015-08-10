@@ -1783,7 +1783,6 @@ namespace nGenerator
         	
 			diagramInterpreter = new MscDiagramInterpreter(this.generator, documentBuilder);
 			XmlDocument createdDocument = diagramInterpreter.InterpretMscDiagram();
-			
 			// Call SaveFileDialog
 			string fullFileName 			= SaveFileDialog();
 			
@@ -1805,7 +1804,7 @@ namespace nGenerator
 		private string SaveFileDialog()
 		{
 			//string localFilePath, fileNameExt, newFileName, FilePath;
-			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			var saveFileDialog = new SaveFileDialog();
 		
 			// Set file type
 			saveFileDialog.Filter = " XMI files(*.xmi)|*.xmi";
@@ -1814,6 +1813,9 @@ namespace nGenerator
 		
 			// Set default sequence of file type
 			saveFileDialog.FilterIndex = 1;
+			
+			//saveFileDialog.CheckFileExists = true;
+    		saveFileDialog.CheckPathExists = true;
 		
 			// Wheter store the location
 			saveFileDialog.RestoreDirectory = true;
