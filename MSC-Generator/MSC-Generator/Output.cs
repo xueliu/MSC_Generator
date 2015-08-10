@@ -33,6 +33,7 @@ using xmiImport;
 using xmiImportPapyrus;
 using System.Xml;
 using xmi;
+using nGenerator.Xmi;
 
 
 namespace nGenerator
@@ -1795,6 +1796,8 @@ namespace nGenerator
 				if (!Directory.Exists(newPathName))
 	            {
 	                Directory.CreateDirectory(newPathName);
+	                var eclipseProjectFile = new EclipseProject(newPathName, fileNameWithoutExtension);
+	                eclipseProjectFile.Export();
 	            }
 				createdDocument.Save(newFileName);
 			}

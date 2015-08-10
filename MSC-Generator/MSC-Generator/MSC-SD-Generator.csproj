@@ -473,6 +473,7 @@
     </Compile>
     <Compile Include="DiagramItems\TimerEndExtension.cs" />
     <Compile Include="ItemPropertiesDialogs\TimerEndProp.cs" />
+    <Compile Include="Xmi\EclipseProject.cs" />
     <Compile Include="Xmi\ErrorMessages.cs" />
     <Compile Include="Xmi\SequenceChartModel\ExecutionOccurrenceSpecification.cs" />
     <Compile Include="Xmi\SequenceChartModel\FormalGate.cs" />
