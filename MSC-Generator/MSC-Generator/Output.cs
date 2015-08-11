@@ -1810,9 +1810,9 @@ namespace nGenerator
 			var saveFileDialog = new SaveFileDialog();
 		
 			// Set file type
-			saveFileDialog.Filter = " XMI files(*.xmi)|*.xmi";
+			saveFileDialog.Filter = " UML files(*.uml)|*.uml";
 			
-			saveFileDialog.Title = "Save XMI file in a project";
+			saveFileDialog.Title = "Save UML file in a Papyrus project";
 		
 			// Set default sequence of file type
 			saveFileDialog.FilterIndex = 1;
